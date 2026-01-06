@@ -457,7 +457,8 @@ export async function getResourcesByCategory(category: string): Promise<Array<{
         
         if (markdownPath) {
           const content = await readFile(markdownPath, 'utf-8');
-          const name = extractTitle(content);
+          // Use folder name as the display name (not markdown title)
+          const name = entry.name;
           const description = extractDescription(content);
           
           // Create slug from directory name

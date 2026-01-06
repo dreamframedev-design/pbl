@@ -921,62 +921,62 @@ export default function Header() {
                       <ul className="space-y-1">
                         <li>
                           <Link 
-                            href="/resources/general-protocols/flow-cytometry-ifnar2" 
+                            href="/resources/general-protocols/flow-cytometry-for-ifnar2-on-human-pbmc" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/general-protocols/flow-cytometry-ifnar2')
+                              isDropdownActive('/resources/general-protocols/flow-cytometry-for-ifnar2-on-human-pbmc')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Flow Cytometry For IFNAR2
+                            Flow Cytometry For IFNAR2 On Human PBMC
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/general-protocols/cell-surface-staining" 
+                            href="/resources/general-protocols/general-procedure-for-cell-surface-staining" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/general-protocols/cell-surface-staining')
+                              isDropdownActive('/resources/general-protocols/general-procedure-for-cell-surface-staining')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Cell Surface Staining
+                            General Procedure For Cell Surface Staining
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/general-protocols/protein-handling" 
+                            href="/resources/general-protocols/general-protein-handling-guide" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/general-protocols/protein-handling')
+                              isDropdownActive('/resources/general-protocols/general-protein-handling-guide')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Protein Handling Guide
+                            General Protein Handling Guide
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/general-protocols/cpe-assay" 
+                            href="/resources/general-protocols/general-protocol-for-human-interferon-alpha-cytopathic-effect-cpe-assay" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/general-protocols/cpe-assay')
+                              isDropdownActive('/resources/general-protocols/general-protocol-for-human-interferon-alpha-cytopathic-effect-cpe-assay')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            CPE Assay Protocol
+                            General Protocol For Human Interferon Alpha Cytopathic Effect (CPE) Assay
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/general-protocols/spike-recovery" 
+                            href="/resources/general-protocols/general-spike-and-recovery-protocol-for-elisa" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/general-protocols/spike-recovery')
+                              isDropdownActive('/resources/general-protocols/general-spike-and-recovery-protocol-for-elisa')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Spike and Recovery Protocol
+                            General Spike and Recovery Protocol For ELISA
                           </Link>
                         </li>
                       </ul>
@@ -986,62 +986,62 @@ export default function Header() {
                       <ul className="space-y-1">
                         <li>
                           <Link 
-                            href="/resources/scientific-articles/interferons-sars-cov2" 
+                            href="/resources/scientific-articles/a-brief-primer-on-interferons-and-sars-cov-2" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/scientific-articles/interferons-sars-cov2')
+                              isDropdownActive('/resources/scientific-articles/a-brief-primer-on-interferons-and-sars-cov-2')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Interferons and SARS-CoV-2
+                            A Brief Primer on Interferons and SARS-CoV-2
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/scientific-articles/interferonopathies" 
+                            href="/resources/scientific-articles/interferonopathies-an-overview" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/scientific-articles/interferonopathies')
+                              isDropdownActive('/resources/scientific-articles/interferonopathies-an-overview')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Interferonopathies Overview
+                            Interferonopathies An Overview
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/scientific-articles/mouse-models" 
+                            href="/resources/scientific-articles/mouse-models-of-interferon-associated-diseases" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/scientific-articles/mouse-models')
+                              isDropdownActive('/resources/scientific-articles/mouse-models-of-interferon-associated-diseases')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Mouse Models of IFN Diseases
+                            Mouse Models of Interferon-Associated Diseases
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/scientific-articles/rna-interference" 
+                            href="/resources/scientific-articles/rna-interference-and-interferon-response" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/scientific-articles/rna-interference')
+                              isDropdownActive('/resources/scientific-articles/rna-interference-and-interferon-response')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            RNA Interference and IFN
+                            RNA Interference and Interferon Response
                           </Link>
                         </li>
                         <li>
                           <Link 
-                            href="/resources/scientific-articles/nhp-models" 
+                            href="/resources/scientific-articles/type-i-ifns-as-readouts-in-non-human-primate-nhp-models" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/scientific-articles/nhp-models')
+                              isDropdownActive('/resources/scientific-articles/type-i-ifns-as-readouts-in-non-human-primate-nhp-models')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            NHP Models
+                            Type I IFNs As Readouts In Non-Human Primate (NHP) Models
                           </Link>
                         </li>
                       </ul>
@@ -1051,62 +1051,62 @@ export default function Header() {
                       <ul className="space-y-1">
                         <li>
                           <Link 
-                            href="/resources/technical-presentations/monoclonal-antibodies-ifn-alpha" 
+                            href="/resources/technical-presentations/binding-and-neutralizing-of-monoclonal-antibodies-to-human-ifn-alpha-subtypes" 
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/technical-presentations/monoclonal-antibodies-ifn-alpha')
+                              isDropdownActive('/resources/technical-presentations/binding-and-neutralizing-of-monoclonal-antibodies-to-human-ifn-alpha-subtypes')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Monoclonal Antibodies to IFN-Alpha
+                            Binding and Neutralizing of Monoclonal Antibodies to Human IFN-Alpha Subtypes
                           </Link>
                         </li>
                         <li>
-                          <Link 
-                            href="/resources/technical-presentations/influenza-biomarkers" 
+                          <Link
+                            href="/resources/technical-presentations/determination-of-interferons-and-biomarkers-in-influenza-donor-samples"
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/technical-presentations/influenza-biomarkers')
+                              isDropdownActive('/resources/technical-presentations/determination-of-interferons-and-biomarkers-in-influenza-donor-samples')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            Influenza Biomarkers
+                            Determination Of Interferons And Biomarkers in Influenza Donor Samples
                           </Link>
                         </li>
                         <li>
-                          <Link 
-                            href="/resources/technical-presentations/ifn-beta-autoimmune" 
+                          <Link
+                            href="/resources/technical-presentations/high-sensitivity-human-ifn-beta-autoimmune-disease-sera-validation-study"
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/technical-presentations/ifn-beta-autoimmune')
+                              isDropdownActive('/resources/technical-presentations/high-sensitivity-human-ifn-beta-autoimmune-disease-sera-validation-study')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            IFN-Beta Autoimmune Study
+                            High Sensitivity Human IFN-Beta Autoimmune Disease Sera Validation Study
                           </Link>
                         </li>
                         <li>
-                          <Link 
-                            href="/resources/technical-presentations/il-22-elisa" 
+                          <Link
+                            href="/resources/technical-presentations/performance-characterization-of-a-high-sensitivity-human-il-22-elisa-kit"
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/technical-presentations/il-22-elisa')
+                              isDropdownActive('/resources/technical-presentations/performance-characterization-of-a-high-sensitivity-human-il-22-elisa-kit')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            IL-22 ELISA Characterization
+                            Performance Characterization of a High Sensitivity Human IL-22 ELISA Kit
                           </Link>
                         </li>
                         <li>
-                          <Link 
-                            href="/resources/technical-presentations/smc-assays" 
+                          <Link
+                            href="/resources/technical-presentations/single-molecule-counting-smc-assays-characterization"
                             className={`text-xs transition-colors block py-0.5 ${
-                              isDropdownActive('/resources/technical-presentations/smc-assays')
+                              isDropdownActive('/resources/technical-presentations/single-molecule-counting-smc-assays-characterization')
                                 ? 'text-secondary-teal font-semibold'
                                 : 'text-gray-600 hover:text-secondary-teal'
                             }`}
                           >
-                            SMC Assays Characterization
+                            Single Molecule Counting (SMC) Assays Characterization
                           </Link>
                         </li>
                       </ul>

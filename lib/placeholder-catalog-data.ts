@@ -118,26 +118,28 @@ export function getPlaceholderCatalogData(pagePath: string): CatalogProduct[] | 
     // Interleukin (IL) ELISA Kits
     'interleukin-elisas': [
       {
-        catalogNo: '41700-1',
-        description: 'Total Human IL-15 ELISA Kit, High Sensitivity',
-        packSize: '1 x 96-well plate',
-        documents: [
-          { label: '41700-1 CoA & Protocol' },
-          { label: '41700 Protocol (Full)' },
-          { label: '41700 SDS' },
-        ],
-        price: '$625.00',
-      },
-      {
         catalogNo: '41701-1',
-        description: 'Human IL-22 ELISA, High Sensitivity',
+        description: 'Human IL-22 ELISA, High Sensitivity (Serum, Plasma, TCM)',
         packSize: '1 x 96-well plate',
         documents: [
-          { label: '41701-1 CoA & Protocol' },
-          { label: '41701 Protocol (Full)' },
+          { label: 'Performance Characterization of a High Sensitivity Human IL-22 ELISA Kit' },
+          { label: '41701-1 Technical Data Sheet' },
+          { label: '41701-1 CoA & Protocol (One-Page)' },
           { label: '41701 SDS' },
         ],
-        price: '$625.00',
+        price: '$675.00',
+      },
+      {
+        catalogNo: '41702-1',
+        description: 'Total Human IL-15 ELISA Kit, High Sensitivity (Serum, Plasma, TCM)',
+        packSize: '1 x 96-well plate',
+        documents: [
+          { label: '41702-1 CoA & Protocol (One-Page)' },
+          { label: '41702-1 Technical Data Sheet' },
+          { label: 'Poster Presentation' },
+          { label: '41702 SDS' },
+        ],
+        price: '$675.00',
       },
     ],
 
@@ -566,9 +568,129 @@ export function getPlaceholderCatalogData(pagePath: string): CatalogProduct[] | 
         price: '$478.00',
       },
     ],
+
+    // Polyclonal Antibodies
+    'polyclonal/anti-human-ifn': [
+      {
+        catalogNo: '31101-1',
+        description: 'Anti-Human IFN-Alpha, Rabbit Serum (PAb)',
+        packSize: '1 x 10⁵ units',
+        documents: [{ label: '31101-1 CoA' }, { label: '31101 SDS' }],
+        price: '$315.00',
+      },
+      {
+        catalogNo: '31110-1',
+        description: 'Anti-Human IFN-Alpha, Sheep Serum (PAb)',
+        packSize: '1 x 10⁵ units',
+        documents: [{ label: '31110-1 CoA' }, { label: '31110 SDS' }],
+        price: '$351.00',
+      },
+      {
+        catalogNo: '31135-1',
+        description: 'Anti-Human IFN-Alpha (All Subtypes), Rabbit Serum (PAb)',
+        packSize: '1 x 10⁵ units',
+        documents: [{ label: '31135-1 CoA' }, { label: '31135 SDS' }],
+        price: '$351.00',
+      },
+      {
+        catalogNo: '31401-1',
+        description: 'Anti-Human IFN-Beta, Sheep Serum (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '31401-1 CoA' }, { label: '31401 SDS' }],
+        price: '$351.00',
+      },
+      {
+        catalogNo: '31405-1',
+        description: 'Anti-Human IFN-Beta, Rabbit IgG, protein A purified (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '31405-1 CoA' }, { label: '31405 SDS' }],
+        price: '$335.00',
+      },
+      {
+        catalogNo: '31410-1',
+        description: 'Anti-Human IFN-Beta, Rabbit Serum (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '31410-1 CoA' }, { label: '31410 SDS' }],
+        price: '$320.00',
+      },
+      {
+        catalogNo: '31420-1',
+        description: 'Anti-Human IFN-Beta, Goat IgG, Affinity Purified (PAb)',
+        packSize: '100 μg',
+        documents: [{ label: '31420-1 CoA' }, { label: '31420 SDS' }],
+        price: '$1,295.00',
+      },
+      {
+        catalogNo: '31500-1',
+        description: 'Anti-Human IFN-Gamma, Rabbit Serum (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '31500-1 CoA' }, { label: '31500 SDS' }],
+        price: '$198.00',
+      },
+      {
+        catalogNo: '39000-1',
+        description: 'Human Type I IFN Neutralizing Antibody Mixture',
+        packSize: '0.2 ml',
+        documents: [{ label: '39000-1 CoA' }, { label: '39000 SDS' }],
+        price: '$711.00',
+      },
+    ],
+    'polyclonal/anti-mouse-ifn': [
+      {
+        catalogNo: '32100-1',
+        description: 'Anti-Mouse IFN-Alpha, Rabbit Serum (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '32100-1 CoA' }, { label: '32100 SDS' }],
+        price: '$478.00',
+      },
+      {
+        catalogNo: '32120-1',
+        description: 'Anti-Mouse IFN-Alpha, Chicken IgY, Purified (PAb)',
+        packSize: '500 μg',
+        documents: [{ label: '32120-1 CoA' }, { label: '32120 SDS' }],
+        price: '$381.00',
+      },
+      {
+        catalogNo: '32400-1',
+        description: 'Anti-Mouse IFN-Beta, Rabbit Serum (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '32400-1 CoA' }, { label: '32400 SDS' }],
+        price: '$401.00',
+      },
+      {
+        catalogNo: '32401-1',
+        description: 'Anti-Mouse IFN-Beta, Rabbit IgG, Protein A purified (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '32401-1 CoA' }, { label: '32401 SDS' }],
+        price: '$467.00',
+      },
+      {
+        catalogNo: '32500-1',
+        description: 'Anti-Mouse IFN-Gamma, Rabbit Serum (PAb)',
+        packSize: '2 x 10⁴ units',
+        documents: [{ label: '32500-1 CoA' }, { label: '32500 SDS' }],
+        price: '$300.00',
+      },
+    ],
+    'polyclonal/anti-rat-ifn': [
+      {
+        catalogNo: '33100-1',
+        description: 'Anti-Rat IFN-Alpha, Rabbit IgG, Protein A Purified (PAb)',
+        packSize: '500 μg',
+        documents: [{ label: '33100-1 CoA' }, { label: '33100 SDS' }],
+        price: '$1,000.00',
+      },
+      {
+        catalogNo: '33400-1',
+        description: 'Anti-Rat IFN-Beta, Rabbit IgG, Protein A purified (PAb)',
+        packSize: '500 μg',
+        documents: [{ label: '33400-1 CoA' }, { label: '33400 SDS' }],
+        price: '$1,000.00',
+      },
+    ],
   };
 
-  // Try to find matching data by checking if the path contains any key
+  // Try to find matching data
   for (const [key, data] of Object.entries(catalogDataMap)) {
     if (pagePath.includes(key)) {
       return data;
