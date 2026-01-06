@@ -1,0 +1,5 @@
+The VeriKine Cynomolgus/Rhesus IFN-Alpha Serum ELISA has been developed to analyze the presence of non-human primate IFN-Alpha in tissue culture media, serum, or plasma samples by sandwich enzyme-linked immunosorbent assay (ELISA). The kit is based on an ELISA with a biotinylated anti-detection antibody and a streptavidin horseradish peroxidase (HRP). Tetramethylbenzidine (TMB) is the substrate. The assay is based on PBL’s Rhesus/Cynomolgus IFNA-α2 (PBL 14110), which has been calibrated in reference to the International Standard to Human Interferon Alpha-2a.
+
+As such, it should prove an important tool in _virology_, _immunomodulation_ and _immunotoxicology_ studies conducted in non-human primates.
+
+**Note:** The lowest limit of quantitation (LLOQ) is 25 pg/ml. Concentrations of unknown samples that measure < 25 pg/ml are suspect.

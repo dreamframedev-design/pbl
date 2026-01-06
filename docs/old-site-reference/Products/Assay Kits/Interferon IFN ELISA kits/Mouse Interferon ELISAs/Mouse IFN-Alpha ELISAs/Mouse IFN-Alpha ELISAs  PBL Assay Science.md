@@ -1,0 +1,3 @@
+These **Mouse IFN-Alpha All-Subtype ELISA** kits are designed to provide **global IFN-Alpha subtype detection** (14 of 14). As multiple IFN-Alpha (IFNa, IFN-a) species are often present in biological samples, the ability to determine the total amount of IFN-Alpha subtypes is integral to a full understanding of IFN-Alpha's role within the immune system.
+
+If you would like assistance selecting the immunoassay most useful for your research, PBL would be happy to help you choose the ELISA that will work best for you. Please [connect with PBL](https://www.pblassaysci.com/customer-support#Contact%20Us) via chat, phone, or email!

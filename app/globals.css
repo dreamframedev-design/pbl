@@ -1,0 +1,118 @@
+/* Open Sauce One Font Family */
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('./fonts/OpenSauceOne-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('./fonts/OpenSauceOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('./fonts/OpenSauceOne-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('./fonts/OpenSauceOne-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('./fonts/OpenSauceOne-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('./fonts/OpenSauceOne-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sauce One';
+  src: url('./fonts/OpenSauceOne-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Open Sauce One", system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-background-white text-gray-900;
+  }
+
+  h1 {
+    @apply text-display-1 font-bold;
+  }
+
+  h2 {
+    @apply text-display-2 font-bold;
+  }
+
+  h3 {
+    @apply text-heading-3 font-medium;
+  }
+
+  p {
+    @apply text-body font-light;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-section;
+  }
+  
+  .container-padding {
+    @apply px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+

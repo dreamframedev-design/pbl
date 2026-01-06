@@ -1,0 +1,1 @@
+PBL Assay Science's Interferon (IFN) ELISA kits are designed to provide accurate and reproducible quantitation of IFNs in samples from human, mouse, and other species. They have been cited in high impact journals by IFN & Cytokine researchers for over three decades.

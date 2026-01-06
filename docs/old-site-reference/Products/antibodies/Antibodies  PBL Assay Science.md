@@ -1,0 +1,5 @@
+Monoclonal and polyclonal antibodies are interchangeable for some applications; in some cases, one or the other antibody will give better results.
+
+Monoclonal antibodies offer high specificity in applications such as **ELISA**, **flow cytometry**, or **epitope mapping** - where specific binding is desirable. Polyclonal antibodies are preferable for **neutralization** because they target a variety of specific epitopes of a particular antigen.
+
+PBL offers a range of both monoclonal and polyclonal antibodies raised against different interferons (IFNs) from various mammalian species. As opposed to other commercially available Anti-IFN antibodies, [PBL's human IFN-Alpha antibodies are tested against a wide range of human IFN subtypes](https://www.pblassaysci.com/technical-resources/antibodies-against-human-ifn-alpha-subtype-specificities-comparison-chart).

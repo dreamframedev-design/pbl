@@ -1,0 +1,3 @@
+With over 30 years of experience developing and manufacturing recombinant proteins for life science research, our manufacturing and quality standards ensure that our proteins exhibit **lot-to-lot consistency**, as well as high levels of **bioactivity**, high **purity**, and **low endotoxin** levels. 
+
+Many of our proteins are sold as units of **activity** per vial instead of in units of mass per vial (µg or mg). Each new lot of protein is tested internally using the same bioassay to provide a valid activity comparison between lots. (ED<sub>50</sub> is the amount of protein required to elicit a 50% maximum response in the bioassay.) Providing our proteins by activity instead of mass ensures that your results are biologically relevant.

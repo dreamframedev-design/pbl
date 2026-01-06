@@ -1,0 +1,3 @@
+These Mouse IFN-Beta ELISAs are developed to measure IFN-Beta in specific matrices (e.g. serum, plasma, tissue culture media (TCM)) at varying level of sensitivity.
+
+If you would like assistance selecting the kit that would work best for your research needs, contact PBL by chat, phone (+1 732-777-9123) or [e-mail](mailto:info@pblassaysci.com?subject=Which%20Human%20IFN%20Beta%20ELISA%20is%20right%20for%20me%3F).

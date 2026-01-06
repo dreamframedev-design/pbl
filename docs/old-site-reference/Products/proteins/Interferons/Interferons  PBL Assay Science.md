@@ -1,0 +1,1 @@
+PBL offers a range of interferons from different species and of different classes including multiple IFN-Alpha and IFN-Beta subtypes. Our interferons are high purity, provide consistent performance and biological activity, and are suitable for use in a range of research applications.
