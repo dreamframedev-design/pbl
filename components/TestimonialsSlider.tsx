@@ -113,7 +113,6 @@ export default function TestimonialsSlider() {
           dragElastic={0.1}
           dragMomentum={false}
           dragConstraints={{ left: -Infinity, right: Infinity }}
-          x={x}
           animate={controls}
           onDragStart={() => {
             setIsDragging(true);
