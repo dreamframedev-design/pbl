@@ -254,3 +254,81 @@
   color: #058A9F;
 }
 
+/* Brand Logo Animations */
+.brand-logo {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glyph Bounce & Glow */
+.glyph-group {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.brand-link:hover .glyph-group {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 0 8px rgba(0, 240, 243, 0.4));
+}
+
+/* Path Color Transitions */
+.path-pbl {
+  fill: #002776;
+  transition: fill 0.4s ease;
+}
+
+.path-science {
+  fill: #94a3b8;
+  transition: all 0.4s ease;
+}
+
+.brand-link:hover .path-pbl {
+  fill: #058A9F;
+}
+
+.brand-link:hover .path-science {
+  fill: #002776;
+}
+
+/* Glow Line Underline */
+.glow-line {
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #00F0F3, #058A9F);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 99px;
+  margin-top: 4px;
+}
+
+.brand-link:hover .glow-line {
+  width: 100%;
+}
+
+/* Filter Tab Styles */
+.filter-tab {
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.filter-tab.active {
+  background: #002776;
+  color: white;
+  border-color: #002776;
+}
+
+/* Glass Card Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glow-border:hover {
+  box-shadow: 0 0 40px rgba(0, 240, 243, 0.2);
+  border-color: #00F0F3;
+  transform: translateY(-8px);
+}
+
+.platform-badge {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid rgba(0, 240, 243, 0.2);
+}
+

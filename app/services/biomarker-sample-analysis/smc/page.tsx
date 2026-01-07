@@ -1,13 +1,24 @@
 import Link from 'next/link';
-import BannerHero from '@/components/BannerHero';
 
 export default function SmcAssayServicesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <BannerHero 
-        title="SMC Assay Services"
-      />
+      <header className="relative pt-32 pb-24 overflow-hidden" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+      }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+            <span>PBL</span> <span className="text-gray-300">/</span> <span>Services</span> <span className="text-gray-300">/</span> <span>Biomarker Sample Analysis</span> <span className="text-gray-300">/</span> <span>SMC</span>
+          </nav>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+            <span className="text-[#002776]">SMC Assay</span> <br/> <span className="font-light text-gray-400 font-serif italic">Services</span>
+          </h1>
+          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+            Single Molecule Counting (SMCxPRO® & Erenna®) technology for sub-picogram level measurements of low-abundance analytes.
+          </p>
+        </div>
+      </header>
 
       {/* Main Content */}
       <section className="section-padding bg-white">
@@ -145,17 +156,20 @@ export default function SmcAssayServicesPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="section-padding bg-background-offwhite">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-center">
-            <Link
-              href="/speak-to-a-scientist"
-              className="inline-flex items-center justify-center px-10 py-5 bg-secondary-teal text-white font-medium rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ease-out text-lg"
-            >
-              Talk to a Scientist
-            </Link>
-          </div>
+      {/* Bottom CTA Section */}
+      <section className="py-32 bg-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
+          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>
+          <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
+            Fit-for-purpose assay development, customization and execution.
+          </p>
+          <Link
+            href="/speak-to-a-scientist"
+            className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
+          >
+            Talk to a Scientist
+          </Link>
         </div>
       </section>
     </main>

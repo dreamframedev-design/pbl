@@ -10,9 +10,12 @@ export default async function ResourcesPage() {
   const technicalPresentations = await getResourcesByCategory('technical-presentations');
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#FBFBFE]">
       {/* Hero Section */}
-      <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-center overflow-hidden">
+      <header className="relative pt-32 pb-24 overflow-hidden" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+      }}>
+        {/* Background Image with White Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/23.webp"
@@ -21,154 +24,163 @@ export default async function ResourcesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-primary-navy/60"></div>
+          {/* White gradient overlay - solid white on left, fades to transparent on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 via-white/40 to-transparent"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-              Resources
-            </h1>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+            <span>PBL</span> <span className="text-gray-300">/</span> <span>Technical Resources</span>
+          </nav>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+            <span className="text-[#002776]">Technical</span> <br/> <span className="font-light text-gray-400 font-serif italic">Resources</span>
+          </h1>
+          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+            Access our comprehensive database of validated procedures, characterization studies, 
+            and published scientific insights.
+          </p>
         </div>
-      </section>
+      </header>
 
       {/* Three-Column Entry Portal */}
-      <section className="section-padding bg-white">
+      <section className="py-24 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {/* Column 1: Technical Resources */}
-            <div className="group relative bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-cyan/30 hover:ring-2 hover:ring-accent-cyan/20 flex flex-col">
-              <div className="flex flex-col items-center text-center mb-6">
-                <div className="w-full max-w-md mb-6 flex items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Column 1: Technical Presentations */}
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-8 h-full flex flex-col">
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner grayscale group-hover:grayscale-0 transition-all duration-700">
                   <Image
                     src="/images/Technical Presentations.webp"
-                    alt="Technical Resources"
+                    alt="Technical Presentations"
                     width={800}
                     height={450}
-                    className="rounded-lg object-cover w-full h-auto"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-primary-navy mb-4">
-                  Technical Resources
-                </h3>
-                <p className="text-gray-700 leading-relaxed font-light mb-6">
-                  Protocols, white papers, presentations, and scientific articles
-                </p>
-              </div>
-              {/* Technical Presentations Links */}
-              {technicalPresentations.length > 0 && (
-                <div className="w-full mt-auto space-y-2">
-                  {technicalPresentations.slice(0, 5).map((presentation) => (
-                    <Link
-                      key={presentation.slug}
-                      href={`/resources/technical-presentations/${presentation.slug}`}
-                      className="block text-sm text-primary-navy hover:text-secondary-teal font-medium transition-colors py-1.5 border-l-2 border-transparent hover:border-secondary-teal pl-2"
-                    >
-                      {presentation.name}
-                    </Link>
-                  ))}
-                  {technicalPresentations.length > 5 && (
-                    <Link
-                      href="/resources/technical-presentations"
-                      className="block text-sm text-secondary-teal hover:text-primary-navy font-semibold transition-colors py-1.5 mt-2"
-                    >
-                      View All Presentations →
-                    </Link>
+                <h3 className="text-2xl font-bold mb-2">Technical Presentations</h3>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Characterization Studies</p>
+                
+                <div className="space-y-3 mb-10 overflow-hidden">
+                  {technicalPresentations.length > 0 ? (
+                    technicalPresentations.slice(0, 5).map((presentation) => (
+                      <Link
+                        key={presentation.slug}
+                        href={`/resources/technical-presentations/${presentation.slug}`}
+                        className="block phosphor-link text-[11px] font-semibold text-slate-600 truncate"
+                      >
+                        {presentation.name}
+                      </Link>
+                    ))
+                  ) : (
+                    <p className="text-[11px] text-slate-400">No presentations available</p>
                   )}
                 </div>
-              )}
+                
+                <div className="mt-auto">
+                  <Link
+                    href="/resources/technical-presentations"
+                    className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all"
+                  >
+                    Browse Presentations
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Column 2: General Protocols */}
-            <div className="group relative bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-cyan/30 hover:ring-2 hover:ring-accent-cyan/20 flex flex-col">
-              <Link
-                href="/resources/general-protocols"
-                className="flex flex-col items-center text-center mb-6"
-              >
-                <div className="w-full max-w-md mb-6 flex items-center justify-center">
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-8 h-full flex flex-col">
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner grayscale group-hover:grayscale-0 transition-all duration-700">
                   <Image
                     src="/images/General Protocols hero2.webp"
                     alt="General Protocols"
                     width={800}
                     height={450}
-                    className="rounded-lg object-cover w-full h-auto"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-primary-navy mb-4">
-                  General Protocols
-                </h3>
-                <p className="text-gray-700 leading-relaxed font-light mb-6">
-                  Step-by-step protocols for common laboratory procedures
-                </p>
-              </Link>
-              {/* General Protocols Links */}
-              {generalProtocols.length > 0 && (
-                <div className="w-full mt-auto space-y-2">
-                  {generalProtocols.slice(0, 5).map((protocol) => (
-                    <Link
-                      key={protocol.slug}
-                      href={`/resources/general-protocols/${protocol.slug}`}
-                      className="block text-sm text-primary-navy hover:text-secondary-teal font-medium transition-colors py-1.5 border-l-2 border-transparent hover:border-secondary-teal pl-2"
-                    >
-                      {protocol.name}
-                    </Link>
-                  ))}
-                  {generalProtocols.length > 5 && (
-                    <Link
-                      href="/resources/general-protocols"
-                      className="block text-sm text-secondary-teal hover:text-primary-navy font-semibold transition-colors py-1.5 mt-2"
-                    >
-                      View All Protocols →
-                    </Link>
+                <h3 className="text-2xl font-bold mb-2">General Protocols</h3>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Laboratory Procedures</p>
+                
+                <div className="space-y-3 mb-10 overflow-hidden">
+                  {generalProtocols.length > 0 ? (
+                    generalProtocols.slice(0, 5).map((protocol) => (
+                      <Link
+                        key={protocol.slug}
+                        href={`/resources/general-protocols/${protocol.slug}`}
+                        className="block phosphor-link text-[11px] font-semibold text-slate-600 truncate"
+                      >
+                        {protocol.name}
+                      </Link>
+                    ))
+                  ) : (
+                    <p className="text-[11px] text-slate-400">No protocols available</p>
                   )}
                 </div>
-              )}
+                
+                <div className="mt-auto">
+                  <Link
+                    href="/resources/general-protocols"
+                    className="w-full py-4 bg-slate-50 group-hover:bg-[#058A9F] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all"
+                  >
+                    View All Protocols
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Column 3: Scientific Articles */}
-            <div className="group relative bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-cyan/30 hover:ring-2 hover:ring-accent-cyan/20 flex flex-col">
-              <Link
-                href="/resources/scientific-articles"
-                className="flex flex-col items-center text-center mb-6"
-              >
-                <div className="w-full max-w-md mb-6 flex items-center justify-center">
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-8 h-full flex flex-col">
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner grayscale group-hover:grayscale-0 transition-all duration-700">
                   <Image
                     src="/images/Scientific Articles.webp"
                     alt="Scientific Articles"
                     width={800}
                     height={450}
-                    className="rounded-lg object-cover w-full h-auto"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-primary-navy mb-4">
-                  Scientific Articles
-                </h3>
-                <p className="text-gray-700 leading-relaxed font-light mb-6">
-                  Research articles and technical presentations
-                </p>
-              </Link>
-              {/* Scientific Articles Links */}
-              {scientificArticles.length > 0 && (
-                <div className="w-full mt-auto space-y-2">
-                  {scientificArticles.slice(0, 5).map((article) => (
-                    <Link
-                      key={article.slug}
-                      href={`/resources/scientific-articles/${article.slug}`}
-                      className="block text-sm text-primary-navy hover:text-secondary-teal font-medium transition-colors py-1.5 border-l-2 border-transparent hover:border-secondary-teal pl-2"
-                    >
-                      {article.name}
-                    </Link>
-                  ))}
-                  {scientificArticles.length > 5 && (
-                    <Link
-                      href="/resources/scientific-articles"
-                      className="block text-sm text-secondary-teal hover:text-primary-navy font-semibold transition-colors py-1.5 mt-2"
-                    >
-                      View All Articles →
-                    </Link>
+                <h3 className="text-2xl font-bold mb-2">Scientific Articles</h3>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Published Research</p>
+                
+                <div className="space-y-3 mb-10 overflow-hidden">
+                  {scientificArticles.length > 0 ? (
+                    scientificArticles.slice(0, 5).map((article) => (
+                      <Link
+                        key={article.slug}
+                        href={`/resources/scientific-articles/${article.slug}`}
+                        className="block phosphor-link text-[11px] font-semibold text-slate-600 truncate"
+                      >
+                        {article.name}
+                      </Link>
+                    ))
+                  ) : (
+                    <p className="text-[11px] text-slate-400">No articles available</p>
                   )}
                 </div>
-              )}
+
+                <div className="mt-auto">
+                  <Link
+                    href="/resources/scientific-articles"
+                    className="w-full py-4 bg-slate-50 group-hover:bg-cyan-500 group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all"
+                  >
+                    Read All Articles
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>

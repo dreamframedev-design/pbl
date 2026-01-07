@@ -417,12 +417,17 @@ export default function InterferonDecoyReceptorPage() {
       {/* Product Catalog Table */}
       <ProductCatalog products={catalogProducts} />
 
-      {/* Bottom CTA */}
-      <section className="section-padding bg-gradient-to-br from-background-lavender/20 via-white to-background-periwinkle/20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      {/* Bottom CTA Section */}
+      <section className="py-32 bg-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
+          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>
+          <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
+            Fit-for-purpose assay development, customization and execution.
+          </p>
           <Link
             href="/speak-to-a-scientist"
-            className="btn-primary"
+            className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
           >
             Talk to a Scientist
           </Link>

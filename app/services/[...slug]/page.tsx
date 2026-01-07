@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import MarkdownContent from '@/components/MarkdownContent';
 import Link from 'next/link';
 import { getMarkdownContent } from '@/lib/markdown-utils';
+import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
@@ -39,15 +40,33 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full min-h-[350px] lg:min-h-[450px] flex items-center justify-center bg-gradient-to-br from-background-periwinkle/20 via-white to-background-lavender/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-headline-primary leading-tight mb-8">
-              {markdownData.title}
-            </h1>
-          </div>
+      <header className="relative pt-32 pb-24 overflow-hidden" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+      }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+            <span>PBL</span> <span className="text-gray-300">/</span> <span>Services</span>
+            {slug.length > 0 && (
+              <>
+                {slug.map((segment, index) => (
+                  <React.Fragment key={index}>
+                    <span className="text-gray-300">/</span>
+                    <span>{segment.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</span>
+                  </React.Fragment>
+                ))}
+              </>
+            )}
+          </nav>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+            <span className="text-[#002776]">{markdownData.title}</span>
+          </h1>
+          {markdownData.description && (
+            <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+              {markdownData.description}
+            </p>
+          )}
         </div>
-      </section>
+      </header>
 
       {/* Main Content */}
       <section className="section-padding bg-white">

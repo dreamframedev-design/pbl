@@ -5,25 +5,33 @@ export default function AssayDevelopmentPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-center overflow-hidden">
+      <header className="relative pt-32 pb-24 overflow-hidden" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+      }}>
+        {/* Background Image with White Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/18.webp"
-            alt="Assay Development Services"
+            alt="Assay Development"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-primary-navy/60"></div>
+          {/* White gradient overlay - solid white on left, fades to transparent on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 via-white/40 to-transparent"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-              Assay Development
-            </h1>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+            <span>PBL</span> <span className="text-gray-300">/</span> <span>Services</span> <span className="text-gray-300">/</span> <span>Assay Development</span>
+          </nav>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+            <span className="text-[#002776]">Assay</span> <br/> <span className="font-light text-gray-400 font-serif italic">Development</span>
+          </h1>
+          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+            Immunoassay Design & Development from Antibody Screening & Proof-of-Concept Feasibility to Validation & Characterization.
+          </p>
         </div>
-      </section>
+      </header>
 
       {/* Three-Box Service Grid */}
       <section className="section-padding bg-white">
@@ -85,12 +93,17 @@ export default function AssayDevelopmentPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="section-padding bg-gradient-to-br from-background-periwinkle/20 via-white to-background-lavender/20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      {/* Bottom CTA Section */}
+      <section className="py-32 bg-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
+          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>
+          <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
+            Fit-for-purpose assay development, customization and execution.
+          </p>
           <Link
             href="/speak-to-a-scientist"
-            className="btn-primary"
+            className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
           >
             Talk to a Scientist
           </Link>

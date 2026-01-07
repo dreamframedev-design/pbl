@@ -111,29 +111,37 @@ export default function ResourcesFilter() {
       : resources.filter((resource) => resource.category === activeFilter);
 
   return (
-    <section id="technical-resources" className="section-padding bg-background-offwhite">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-12 text-center">
-          Technical Resources
-        </h2>
+    <section id="technical-resources" className="py-32 bg-[#F4F4F9]/40">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <h2 className="text-4xl font-bold mb-12 tracking-tight">Technical Resources Database</h2>
+        
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {filterCategories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveFilter(category)}
+              className={`filter-tab px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                activeFilter === category
+                  ? 'active bg-[#002776] text-white border-[#002776]'
+                  : 'bg-white text-gray-700 border border-slate-200 hover:border-slate-300'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
-        {/* Filter Bar */}
-        <div className="mb-12">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {filterCategories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveFilter(category)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  activeFilter === category
-                    ? 'bg-secondary-teal text-white shadow-md'
-                    : 'bg-white text-gray-700 hover:bg-gray-50 border-2 border-transparent hover:border-accent-cyan/30'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+        <div className="max-w-4xl mx-auto relative group mb-12">
+          <div className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
           </div>
+          <input 
+            type="text" 
+            placeholder="Search by topic, keyword, or publication..." 
+            className="w-full pl-16 pr-6 py-6 rounded-3xl border border-slate-200 shadow-2xl focus:outline-none focus:ring-4 focus:ring-cyan-400/10 transition-all text-sm"
+          />
         </div>
 
         {/* Resources List */}

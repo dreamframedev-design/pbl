@@ -1,341 +1,195 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
 export default function ContactUsPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section */}
-      <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/23.webp"
-            alt="Contact Us"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-primary-navy/60"></div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-              Contact Us
-            </h1>
-          </div>
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="section-padding bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed">
-            PBL's Customer Support Team is ready to assist by email, phone, or chat.
+      <header className="relative pt-32 pb-20 overflow-hidden" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+      }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+            <span>Support</span> <span className="text-gray-300">/</span> <span>Contact</span>
+          </nav>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+            How can we <br/> help you <span className="font-light text-gray-400 font-serif italic">today?</span>
+          </h1>
+          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+            Our subject matter experts are standing by to assist with product selection, 
+            technical protocols, and global logistics.
           </p>
         </div>
-      </section>
+      </header>
 
       {/* Contact Categories Grid */}
-      <section className="section-padding bg-background-offwhite">
+      <section className="py-24 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
             {/* General Support */}
-            <div className="group relative bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-cyan/30 hover:ring-2 hover:ring-accent-cyan/20 flex flex-col">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary-navy mb-6">
-                General Support
-              </h3>
-              <div className="space-y-4 flex-grow">
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Email</p>
-                  <a
-                    href="mailto:info@pblassaysci.com"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium break-all"
-                  >
-                    info@pblassaysci.com
-                  </a>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Phone</p>
-                  <a
-                    href="tel:+17327779123"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium"
-                  >
-                    +1 732-777-9123
-                  </a>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Toll-Free</p>
-                  <a
-                    href="tel:+18777258881"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium"
-                  >
-                    +1 877-PBL-8881<br />
-                    <span className="text-sm">(+1 877-725-8881)</span>
-                  </a>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Fax</p>
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <a
-                    href="tel:+17327779141"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium"
-                  >
-                    +1 732-777-9141
-                  </a>
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.9)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
+                <h3 className="text-2xl font-bold mb-6">General <br/>Support</h3>
+                <div className="space-y-6 text-sm">
+                  <div>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Email</span>
+                    <a href="mailto:info@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors">info@pblassaysci.com</a>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Direct Phone</span>
+                    <p className="font-bold">+1 732-777-9123</p>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Toll-Free</span>
+                    <p className="font-bold">+1 877-PBL-8881</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Order Support */}
-            <div className="group relative bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-cyan/30 hover:ring-2 hover:ring-accent-cyan/20 flex flex-col">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary-navy mb-6">
-                Order Support
-              </h3>
-              <div className="space-y-4 flex-grow">
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Email</p>
-                  <a
-                    href="mailto:sales@pblassaysci.com"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium break-all"
-                  >
-                    sales@pblassaysci.com
-                  </a>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Phone</p>
-                  <a
-                    href="tel:+17327779123"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium"
-                  >
-                    +1 732-777-9123 Option 2
-                  </a>
-                </div>
-                <div className="pt-2 border-t border-gray-200">
-                  <p className="text-sm text-gray-600 font-light mb-1">Accounts Payable</p>
-                  <a
-                    href="mailto:ap@pblbio.com"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium break-all text-sm"
-                  >
-                    ap@pblbio.com
-                  </a>
-                  <p className="text-sm text-gray-600 font-light mt-1">
-                    Phone: <a href="tel:+17327779123" className="text-primary-navy hover:text-secondary-teal transition-colors font-medium">+1 732-777-9123 Option 4</a>
-                  </p>
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.9)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
+                <h3 className="text-2xl font-bold mb-6">Order <br/>Support</h3>
+                <div className="space-y-6 text-sm">
+                  <div>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Sales Email</span>
+                    <a href="mailto:sales@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors">sales@pblassaysci.com</a>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Phone Inquiry</span>
+                    <p className="font-bold">+1 732-777-9123 <span className="text-cyan-500 ml-1">Option 2</span></p>
+                  </div>
+                  <div className="pt-4 border-t border-slate-50">
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1 italic">Accounts Payable</span>
+                    <a href="mailto:ap@pblbio.com" className="text-xs font-semibold text-slate-500 hover:text-[#002776] transition-colors">ap@pblbio.com</a>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Assay Services */}
-            <div className="group relative bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-cyan/30 hover:ring-2 hover:ring-accent-cyan/20 flex flex-col">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary-navy mb-6">
-                Assay Services
-              </h3>
-              <div className="space-y-4 flex-grow">
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Email</p>
-                  <a
-                    href="mailto:assayservices@pblassaysci.com"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium break-all"
-                  >
-                    assayservices@pblassaysci.com
-                  </a>
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.9)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
+                <h3 className="text-2xl font-bold mb-6">Assay <br/>Services</h3>
+                <div className="space-y-6 text-sm">
+                  <div>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Email Specialist</span>
+                    <a href="mailto:assayservices@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors">assayservices@pblassaysci.com</a>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Service Direct</span>
+                    <p className="font-bold">+1 732-777-9123 <span className="text-cyan-500 ml-1">Option 6</span></p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-light mb-1">Phone</p>
-                  <a
-                    href="tel:+17327779123"
-                    className="text-primary-navy hover:text-secondary-teal transition-colors font-medium"
-                  >
-                    +1 732-777-9123 Option 6
-                  </a>
+                <div className="mt-auto pt-8">
+                  <span className="w-full py-3 bg-slate-50 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-2">Ready to Start Study →</span>
                 </div>
               </div>
             </div>
 
-            {/* Distributors */}
-            <div className="group relative bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-cyan/30 hover:ring-2 hover:ring-accent-cyan/20 flex flex-col">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary-navy mb-6">
-                Distributors
-              </h3>
-              <div className="flex-grow flex items-start">
-                <Link
-                  href="https://www.pblassaysci.com/distributors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-secondary-teal hover:text-primary-navy font-medium transition-colors duration-300 group/link"
-                >
-                  <span className="mr-2">View Distributor Information</span>
-                  <ExternalLink className="w-5 h-5 transform group-hover/link:translate-x-0.5 transition-transform" />
-                </Link>
+            {/* Global Distributors */}
+            <div className="group p-[2px] rounded-[2.5rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02]">
+              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
+                <h3 className="text-2xl font-bold mb-2">Global <br/>Distributors</h3>
+                <p className="text-xs text-slate-400 mb-8 leading-relaxed">PBL works with a network of distribution partners worldwide to serve our international customers.</p>
+                <div className="mt-auto">
+                  <Link href="/distributors" className="w-full py-4 bg-[#002776] text-white rounded-xl font-bold text-sm text-center block shadow-xl shadow-[#002776]/20 hover:bg-cyan-500 transition-colors">
+                    Find Your Local Partner
+                  </Link>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* How to Place an Order */}
-      <section className="section-padding bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-8 text-center">
-            How to Place an Order
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            {/* Domestic US Orders */}
-            <div className="bg-background-offwhite p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-primary-navy mb-4">
-                Domestic US Orders
-              </h3>
-              <p className="text-gray-700 leading-relaxed font-light mb-6">
-                Orders can be placed via the website, e-mail, phone, fax, or mail.
-              </p>
-            </div>
-
-            {/* International Orders */}
-            <div className="bg-background-offwhite p-8 rounded-xl">
-              <h3 className="text-2xl font-bold text-primary-navy mb-4">
-                International Orders
-              </h3>
-              <p className="text-gray-700 leading-relaxed font-light">
-                PBL ships globally, and international orders can be placed by e-mail, phone, fax, or mail, but not on the website. We work with a network of distribution partners worldwide to serve our international customers.
-              </p>
-            </div>
-          </div>
-
-          {/* Order Methods */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Web */}
-            <div className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-accent-cyan/30 transition-all duration-300">
-              <h4 className="text-xl font-bold text-primary-navy mb-4">Web</h4>
-              <p className="text-gray-700 font-light leading-relaxed text-sm mb-4">
-                Browse our products online, add items to your cart, and complete checkout through our secure website. Available for domestic US orders only.
-              </p>
-            </div>
-
-            {/* Email */}
-            <div className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-accent-cyan/30 transition-all duration-300">
-              <h4 className="text-xl font-bold text-primary-navy mb-4">E-mail</h4>
-              <p className="text-gray-700 font-light leading-relaxed text-sm mb-4">
-                Send your order to:
-              </p>
-              <a
-                href="mailto:sales@pblassaysci.com"
-                className="text-secondary-teal hover:text-primary-navy transition-colors font-medium break-all"
-              >
-                sales@pblassaysci.com
-              </a>
-            </div>
-
-            {/* Phone */}
-            <div className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-accent-cyan/30 transition-all duration-300">
-              <h4 className="text-xl font-bold text-primary-navy mb-4">Phone</h4>
-              <p className="text-gray-700 font-light leading-relaxed text-sm mb-2">
-                <a href="tel:+17327779123" className="text-secondary-teal hover:text-primary-navy transition-colors font-medium">
-                  +1 732-777-9123 Option 2
-                </a>
-              </p>
-              <p className="text-gray-700 font-light leading-relaxed text-sm">
-                Toll-Free: <a href="tel:+18777258881" className="text-secondary-teal hover:text-primary-navy transition-colors font-medium">+1 877-725-8881 Option 2</a>
-              </p>
-            </div>
-
-            {/* Fax */}
-            <div className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-accent-cyan/30 transition-all duration-300">
-              <h4 className="text-xl font-bold text-primary-navy mb-4 flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Fax
-              </h4>
-              <a
-                href="tel:+17327779141"
-                className="text-secondary-teal hover:text-primary-navy transition-colors font-medium"
-              >
-                +1 732-777-9141
-              </a>
-            </div>
-
-            {/* Mail */}
-            <div className="bg-white p-6 rounded-lg border-2 border-gray-200 hover:border-accent-cyan/30 transition-all duration-300 md:col-span-2 lg:col-span-1">
-              <h4 className="text-xl font-bold text-primary-navy mb-4">Mail</h4>
-              <address className="text-gray-700 font-light leading-relaxed text-sm not-italic">
-                131 Ethel Road West, Suite 6<br />
-                Piscataway, NJ 08854<br />
-                USA
-              </address>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Shipping & Delivery */}
-      <section className="section-padding bg-background-offwhite">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-navy mb-12 text-center">
-            Shipping & Delivery
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-            {/* Domestic Shipping */}
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-2xl font-bold text-primary-navy mb-6">
-                Domestic US Orders
-              </h3>
-              <div className="space-y-4">
+      {/* How to Place an Order & Logistics */}
+      <section className="py-32 bg-[#F4F4F9]/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          <div className="lg:col-span-7">
+            <h2 className="text-4xl font-bold mb-12 tracking-tight">How to Place an Order</h2>
+            <div className="space-y-8">
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 font-bold text-cyan-500">01</div>
                 <div>
-                  <p className="text-gray-700 leading-relaxed font-light mb-2">
-                    Orders received by <strong>1:00 PM EST Monday - Thursday</strong> will typically ship the same day.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed font-light">
-                    Orders placed after 1:00 PM on Thursday will ship the following Monday.
-                  </p>
+                  <h4 className="text-xl font-bold mb-2">Domestic US Orders</h4>
+                  <p className="text-slate-500 font-light leading-relaxed">Orders can be placed via the <Link href="/products" className="text-[#002776] font-semibold underline underline-offset-4 decoration-cyan-400">website</Link>, e-mail, phone, fax, or mail.</p>
                 </div>
               </div>
-            </div>
-
-            {/* International Shipping */}
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-2xl font-bold text-primary-navy mb-6">
-                International Orders
-              </h3>
-              <p className="text-gray-700 leading-relaxed font-light">
-                International orders generally ship on Monday or Friday. Please contact us for specific shipping timelines and carrier options for your region.
-              </p>
-            </div>
-          </div>
-
-          {/* Shipping Fees */}
-          <div className="bg-white p-8 rounded-xl shadow-sm max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-primary-navy mb-6">
-              Shipping & Ice/Handling Fees
-            </h3>
-            <div className="space-y-4">
-              <p className="text-gray-700 leading-relaxed font-light">
-                <strong>$55 overnight shipping</strong> for domestic orders up to $1000 received by 3:00 PM EST Monday - Thursday.
-              </p>
-              <p className="text-gray-700 leading-relaxed font-light">
-                <Link href="/contact-us" className="text-secondary-teal hover:text-primary-navy transition-colors font-medium underline">
-                  Contact us for international shipping rates
-                </Link>.
-              </p>
-              <p className="text-gray-700 leading-relaxed font-light">
-                Shipping fees correspond to the total retail value of your order.
-              </p>
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 font-bold text-cyan-500">02</div>
+                <div>
+                  <h4 className="text-xl font-bold mb-2">International Orders</h4>
+                  <p className="text-slate-500 font-light leading-relaxed">PBL ships globally. International orders can be placed by e-mail, phone, fax, or mail, <strong className="text-[#002776]">but not on the website.</strong></p>
+                </div>
+              </div>
+              <div className="mt-12 p-8 rounded-3xl border border-slate-100 flex items-start gap-6" style={{
+                background: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
+                <div className="w-10 h-10 bg-[#002776] rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <address className="not-italic text-sm text-slate-500 leading-relaxed font-light">
+                  <strong className="text-[#002776] font-bold block mb-1 uppercase tracking-widest text-[10px]">Mailing Address</strong>
+                  131 Ethel Road West, Suite 6<br/>
+                  Piscataway, NJ 08854, USA
+                </address>
+              </div>
             </div>
           </div>
 
-          {/* Final CTA */}
-          <div className="text-center mt-12">
-            <p className="text-gray-700 leading-relaxed font-light text-lg">
-              Please{' '}
-              <Link href="/contact-us" className="text-secondary-teal hover:text-primary-navy transition-colors font-medium underline">
-                contact customer service
-              </Link>{' '}
-              for questions about ordering or order status.
-            </p>
+          <div className="lg:col-span-5 space-y-4">
+            <h2 className="text-4xl font-bold mb-12 tracking-tight">Logistics</h2>
+            <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm">
+              <div className="text-cyan-500 font-bold text-3xl mb-1 italic">1:00 PM EST</div>
+              <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-4">Domestic Cutoff</div>
+              <p className="text-xs text-slate-500 font-light">Orders received Mon–Thurs by this time typically ship same-day.</p>
+            </div>
+            <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm">
+              <div className="text-cyan-500 font-bold text-3xl mb-1 italic">$55</div>
+              <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-4">Overnight Flat Fee</div>
+              <p className="text-xs text-slate-500 font-light">Applies to domestic orders up to $1000 received by 3:00 PM EST.</p>
+            </div>
+            <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm">
+              <div className="text-[#002776] font-bold text-3xl mb-1 italic">Mon / Fri</div>
+              <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-4">International Schedule</div>
+              <p className="text-xs text-slate-500 font-light">Global shipments generally depart at the start and end of the week.</p>
+            </div>
           </div>
+
+        </div>
+      </section>
+      {/* Final CTA Section */}
+      <section className="py-32 bg-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Direct Scientific Connection</span>
+          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Speak to a Scientist</h2>
+          <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
+            PBL's Customer Support Team is ready to assist by email, phone, or chat.
+          </p>
+          <Link
+            href="/speak-to-a-scientist"
+            className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
+          >
+            Initiate Chat
+          </Link>
         </div>
       </section>
     </main>
