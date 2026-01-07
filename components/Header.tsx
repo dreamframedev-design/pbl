@@ -1357,7 +1357,7 @@ export default function Header() {
             </div>
 
             {/* Scrollable Content Area */}
-            <div className="flex-1 overflow-y-auto overscroll-contain px-6 py-8">
+            <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain px-6 py-8">
               <nav className="space-y-6 pb-20">
               {/* Mobile Icons - Shopping Cart, Mail, User */}
               <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
