@@ -54,7 +54,9 @@ export default function SpeakToAScientistPage() {
             <span>Expertise</span> <span className="text-gray-300">/</span> <span>Consultation</span>
           </nav>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
-            Collaborate with <br/> our <span className="font-light text-gray-400 font-serif italic">Scientists</span>
+            <span className="block md:inline">Collaborate</span>
+            <span className="block md:inline"> <span className="md:hidden">with our</span><span className="hidden md:inline">with</span></span>
+            <span className="block md:inline"> <span className="md:hidden"><span className="font-light text-gray-400 font-serif italic">Scientists</span></span><span className="hidden md:inline"> our <span className="font-light text-gray-400 font-serif italic">Scientists</span></span></span>
           </h1>
           <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
             Bridge the gap between discovery and validation. Our subject matter experts respond to technical inquiries within <strong className="text-[#002776]">2 business days.</strong>

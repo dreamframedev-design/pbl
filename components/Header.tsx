@@ -1360,33 +1360,33 @@ export default function Header() {
             <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain px-6 py-8">
               <nav className="space-y-6 pb-20">
               {/* Mobile Icons - Shopping Cart, Mail, User */}
-              <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
+              <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
                 <Link
                   href="/cart"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2 p-3 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50 flex-1 justify-center"
+                  className="flex items-center gap-1.5 px-3 py-2 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50"
                   aria-label="Shopping cart"
                 >
-                  <ShoppingCart className="h-5 w-5" />
-                  <span className="text-sm font-medium">Cart</span>
+                  <ShoppingCart className="h-4 w-4" />
+                  <span className="text-xs font-medium">Cart</span>
                 </Link>
                 <Link
                   href="/contact-us"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2 p-3 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50 flex-1 justify-center"
+                  className="flex items-center gap-1.5 px-3 py-2 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50"
                   aria-label="Contact us"
                 >
-                  <Mail className="h-5 w-5" />
-                  <span className="text-sm font-medium">Contact</span>
+                  <Mail className="h-4 w-4" />
+                  <span className="text-xs font-medium">Contact</span>
                 </Link>
                 <Link
                   href="/user/login"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2 p-3 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50 flex-1 justify-center"
+                  className="flex items-center gap-1.5 px-3 py-2 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50"
                   aria-label="Account"
                 >
-                  <User className="h-5 w-5" />
-                  <span className="text-sm font-medium">Account</span>
+                  <User className="h-4 w-4" />
+                  <span className="text-xs font-medium">Account</span>
                 </Link>
               </div>
 

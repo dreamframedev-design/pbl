@@ -12,7 +12,8 @@ export default function ContactUsPage() {
             <span>Support</span> <span className="text-gray-300">/</span> <span>Contact</span>
           </nav>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
-            How can we <br/> help you <span className="font-light text-gray-400 font-serif italic">today?</span>
+            <span className="block md:inline">How can we</span>
+            <span className="block md:inline"> help you <span className="font-light text-gray-400 font-serif italic">today?</span></span>
           </h1>
           <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
             Our subject matter experts are standing by to assist with product selection, 
