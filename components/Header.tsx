@@ -68,11 +68,14 @@ export default function Header() {
   useEffect(() => {
     if (mobileMenuOpen || isSearchOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none'; // Blocks background drag on mobile
     } else {
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     }
     return () => {
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     };
   }, [mobileMenuOpen, isSearchOpen]);
 
@@ -1340,19 +1343,22 @@ export default function Header() {
           
           {/* 2. The Sheet - MUST be solid white to block out the hero text behind it */}
           <div 
-            className="fixed right-0 top-0 h-full w-[85%] bg-white shadow-2xl flex flex-col z-[210] border-l border-slate-100 specular-glass"
+            className="fixed right-0 top-0 h-[100dvh] w-[85%] bg-white shadow-2xl flex flex-col z-[210] border-l border-slate-100 specular-glass overflow-hidden"
             style={{ 
               animation: 'slideSheet 0.4s cubic-bezier(0.32, 0.72, 0, 1) forwards'
             }}
           >
-            <div className="p-6 flex justify-between items-center border-b border-slate-100">
+            {/* Header (Stay Static) */}
+            <div className="p-6 flex justify-between items-center border-b border-slate-100 flex-shrink-0">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Knowledge Hub</span>
               <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-[#002776]">
                 <X className="h-6 w-6" />
               </button>
             </div>
 
-            <nav className="flex-1 overflow-y-auto px-6 py-8 space-y-6">
+            {/* Scrollable Content Area */}
+            <div className="flex-1 overflow-y-auto overscroll-contain px-6 py-8">
+              <nav className="space-y-6 pb-20">
               {/* Mobile Icons - Shopping Cart, Mail, User */}
               <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
                 <Link
@@ -1523,10 +1529,11 @@ export default function Header() {
                   CONTACT US
                 </Link>
               </div>
-            </nav>
+              </nav>
+            </div>
 
-            {/* 3. Compact Bottom Action */}
-            <div className="p-6 bg-slate-50/50">
+            {/* Bottom Action (Stay Static) */}
+            <div className="p-6 bg-slate-50/50 border-t border-slate-100 flex-shrink-0">
               <Link
                 href="/speak-to-a-scientist"
                 onClick={() => setMobileMenuOpen(false)}
