@@ -102,9 +102,9 @@ export default function TestimonialsSlider() {
   }, [isDragging, controls, x]);
 
   return (
-    <div className="relative w-full py-4 overflow-x-hidden">
+    <div className="relative w-full py-4 overflow-x-hidden" style={{ overflowY: 'visible', paddingBottom: '64px' }}>
       {/* Padding wrapper to allow shadows to show - extra padding for shadow space */}
-      <div className="px-4 sm:px-6 lg:px-12 -mx-4 sm:-mx-6 lg:-mx-12">
+      <div className="px-4 sm:px-6 lg:px-12 -mx-4 sm:-mx-6 lg:-mx-12" style={{ paddingBottom: '32px' }}>
         {/* Slider Container */}
         <motion.div
           ref={sliderRef}
@@ -138,7 +138,8 @@ export default function TestimonialsSlider() {
               background: 'rgba(255, 255, 255, 0.8)',
               backdropFilter: 'blur(16px)',
               border: '1px solid rgba(226, 232, 240, 0.8)',
-              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+              marginBottom: '40px'
             }}>
               <div className="text-cyan-400 text-6xl absolute top-4 left-6 opacity-20 font-serif leading-none">"</div>
               <p className="text-xl font-light text-gray-700 italic leading-relaxed mb-4 flex-grow relative z-10 pl-8 pt-2">

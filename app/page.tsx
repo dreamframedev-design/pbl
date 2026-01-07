@@ -263,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* Section 5: Quality Products */}
-      <section className="py-32 bg-white overflow-x-hidden">
+      <section className="py-32 bg-white overflow-x-hidden" style={{ overflowY: 'visible' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-5xl font-bold text-center mb-20 bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">
             Quality Products You Won't Find Anywhere Else
@@ -412,7 +412,7 @@ export default function Home() {
             </h2>
 
             {/* Testimonials Slider */}
-            <div className="py-8">
+            <div className="py-8 overflow-visible" style={{ overflowY: 'visible', paddingBottom: '48px' }}>
               <TestimonialsSlider />
             </div>
           </div>
