@@ -6,12 +6,13 @@ Reporter gene cells for Human Type 1 Interferon bioactivity measurement. Indir
 
 $1,875.00
 
-| **Suggested Applications\*** | -   Type 1 IFN Quantification (IU/ml): 7 - 17 hours incubation time
+**Suggested Applications\***:
+-   Type 1 IFN Quantification (IU/ml): 7 - 17 hours incubation time
 -   NAbs to IFN beta 1a (TRU/ml): 30 min + 18 hours
--   NAbs to IFN alpha: 30 min + 6 hours |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+-   NAbs to IFN alpha: 30 min + 6 hours
 
 _\*Please note that these applications are presented for suggested use only and have not been fully evaluated by PBL_
+
 
 The iLite Human Type I Interferon Responsive Cells are engineered cells optimized to express Firefly Luciferase under the control of an IFN a/b responsive promoter. IFN-Alpha or IFN-Beta binds to the IFN a/b receptor on the cell surface and activates the IFN a/b regulated Firefly Luciferase reporter gene construct. 
 

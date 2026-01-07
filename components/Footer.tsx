@@ -3,132 +3,119 @@ import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-background-offwhite border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left Column */}
-          <div className="flex flex-col">
-            {/* Logo */}
-            <Link href="/" className="mb-8">
-              <h2 className="text-2xl font-bold text-primary-navy font-sans">
-                PBL Assay Science
-              </h2>
-            </Link>
-
-            {/* Links List */}
-            <nav className="flex flex-col gap-3">
-              <Link
-                href="/shipping"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Shipping
-              </Link>
-              <Link
-                href="/history"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                History
-              </Link>
-              <Link
-                href="/pbl-team"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                PBL Team
-              </Link>
-              <Link
-                href="/distributors"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Distributors
-              </Link>
-              <Link
-                href="/values"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Values
-              </Link>
-              <Link
-                href="/privacy"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Privacy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Terms
-              </Link>
-              <Link
-                href="/events"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Events
-              </Link>
-              <Link
-                href="/careers"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Careers
-              </Link>
-              <Link
-                href="/company-values"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors"
-              >
-                Company Values
-              </Link>
-            </nav>
+    <footer className="bg-white border-t border-slate-100 mt-32">
+      <div className="max-w-[1600px] mx-auto px-8 pt-24 pb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
+          {/* Company Info */}
+          <div className="col-span-2 lg:col-span-2 space-y-8">
+            <h2 className="text-2xl font-black text-[#002776] tracking-tighter">PBL ASSAY SCIENCE</h2>
+            <p className="text-sm text-slate-500 font-light leading-relaxed max-w-sm">
+              Expertise in interferons and cytokines since 1990. Providing high-performance reagents to the global life science community.
+            </p>
           </div>
 
-          {/* Right Column */}
-          <div className="flex flex-col">
-            {/* LinkedIn Icon */}
-            <div className="mb-8">
-              <Link
-                href="https://www.linkedin.com/company/pbl-assay-science"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-navy hover:bg-secondary-teal transition-colors group"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5 text-white group-hover:text-white" />
-              </Link>
-            </div>
+          {/* Products */}
+          <div>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Products</h4>
+            <ul className="space-y-4 text-xs text-slate-500 font-light">
+              <li>
+                <Link href="/products/assay-kits" className="hover:text-cyan-600 transition-colors">Assay Kits</Link>
+              </li>
+              <li>
+                <Link href="/products/proteins" className="hover:text-cyan-600 transition-colors">Proteins</Link>
+              </li>
+              <li>
+                <Link href="/products/antibodies" className="hover:text-cyan-600 transition-colors">Antibodies</Link>
+              </li>
+              <li>
+                <Link href="/products/antibodies/monoclonal" className="hover:text-cyan-600 transition-colors">Monoclonal (MAbs)</Link>
+              </li>
+              <li>
+                <Link href="/products/antibodies/polyclonal" className="hover:text-cyan-600 transition-colors">Polyclonal (PAbs)</Link>
+              </li>
+              <li>
+                <Link href="/products/proteins/interferons" className="hover:text-cyan-600 transition-colors">Interferons</Link>
+              </li>
+              <li>
+                <Link href="/products/proteins/interferon-decoy-receptor" className="hover:text-cyan-600 transition-colors">Decoy Receptors</Link>
+              </li>
+            </ul>
+          </div>
 
-            {/* Address */}
-            <address className="not-italic mb-6 text-sm text-primary-navy leading-relaxed">
-              131 Ethel Road West Suite 6<br />
-              Piscataway, NJ 08854<br />
-              United States of America
-            </address>
+          {/* Services */}
+          <div>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Services</h4>
+            <ul className="space-y-4 text-xs text-slate-500 font-light">
+              <li>
+                <Link href="/services/assay-development" className="hover:text-cyan-600 transition-colors">Assay Development</Link>
+              </li>
+              <li>
+                <Link href="/services/biomarker-sample-analysis" className="hover:text-cyan-600 transition-colors">Biomarker Analysis</Link>
+              </li>
+              <li>
+                <Link href="/services/biomarker-sample-analysis/simoa" className="hover:text-cyan-600 transition-colors">SIMOA Services</Link>
+              </li>
+              <li>
+                <Link href="/services/biomarker-sample-analysis/smc" className="hover:text-cyan-600 transition-colors">SMC Services</Link>
+              </li>
+              <li>
+                <Link href="/services/cell-based-services" className="hover:text-cyan-600 transition-colors">Cell-Based Services</Link>
+              </li>
+              <li>
+                <Link href="/services/custom-production" className="hover:text-cyan-600 transition-colors">Custom Production</Link>
+              </li>
+            </ul>
+          </div>
 
-            {/* Phone Numbers */}
-            <div className="mb-6 text-sm text-primary-navy">
-              <a
-                href="tel:+17327779123"
-                className="hover:text-secondary-teal transition-colors"
-              >
-                +1 732-777-9123
-              </a>
-            </div>
+          {/* Support */}
+          <div>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Support</h4>
+            <ul className="space-y-4 text-xs text-slate-500 font-light">
+              <li>
+                <Link href="/shipping" className="hover:text-cyan-600 transition-colors">Shipping Info</Link>
+              </li>
+              <li>
+                <Link href="/distributors" className="hover:text-cyan-600 transition-colors">Distributors</Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-cyan-600 transition-colors">Technical Blog</Link>
+              </li>
+              <li>
+                <Link href="/contact-us" className="hover:text-cyan-600 transition-colors">Contact us</Link>
+              </li>
+              <li>
+                <Link href="/resources" className="hover:text-cyan-600 transition-colors">Resources</Link>
+              </li>
+            </ul>
+          </div>
 
-            {/* Blog Link */}
-            <div>
-              <Link
-                href="/blog"
-                className="text-sm text-primary-navy hover:text-secondary-teal transition-colors font-medium"
-              >
-                Blog
-              </Link>
-            </div>
+          {/* Company */}
+          <div>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Company</h4>
+            <ul className="space-y-4 text-xs text-slate-500 font-light">
+              <li>
+                <Link href="/history" className="hover:text-cyan-600 transition-colors">Our History</Link>
+              </li>
+              <li>
+                <Link href="/pbl-team" className="hover:text-cyan-600 transition-colors">PBL Team</Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-cyan-600 transition-colors">Careers</Link>
+              </li>
+              <li>
+                <Link href="/values" className="hover:text-cyan-600 transition-colors">Values</Link>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-300">
-          <p className="text-xs text-neutral-steel text-center">
-            © {new Date().getFullYear()} PBL Assay Science. All rights reserved.
-          </p>
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black text-slate-300 tracking-widest uppercase italic">
+          <p>© {new Date().getFullYear()} PBL ASSAY SCIENCE. PRECISION REAGENTS.</p>
+          <div className="flex gap-10 text-slate-400">
+            <Link href="/terms" className="hover:text-slate-600 transition-colors">Terms</Link>
+            <Link href="/privacy" className="hover:text-slate-600 transition-colors">Privacy</Link>
+          </div>
         </div>
       </div>
     </footer>

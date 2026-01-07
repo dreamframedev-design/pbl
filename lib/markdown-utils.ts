@@ -270,36 +270,49 @@ export async function getSubCategories(
               if (subEntry.isFile() && subEntry.name.endsWith('.md')) {
                 const mdPath = join(subDirPath, subEntry.name);
                 const content = await readFile(mdPath, 'utf-8');
-                // Clean markdown: remove images, links, headers, etc.
-                let cleanContent = content
-                  // Remove markdown images ![alt](url)
-                  .replace(/!\[.*?\]\(.*?\)/g, '')
-                  // Remove markdown links [text](url) but keep text
-                  .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
-                  // Remove headers (# ## ###)
-                  .replace(/^#{1,6}\s+/gm, '')
-                  // Remove bold/italic markers but keep text
-                  .replace(/\*\*([^\*]+)\*\*/g, '$1')
-                  .replace(/\*([^\*]+)\*/g, '$1')
-                  .replace(/__([^_]+)__/g, '$1')
-                  .replace(/_([^_]+)_/g, '$1')
-                  // Remove URLs
-                  .replace(/https?:\/\/[^\s\)]+/g, '')
-                  // Remove markdown table syntax
-                  .replace(/\|/g, ' ')
-                  // Remove extra whitespace
-                  .replace(/\s+/g, ' ')
-                  .trim();
                 
-                // Extract first meaningful paragraph (skip empty lines and short lines)
-                const paragraphs = cleanContent.split('\n\n').filter(p => {
-                  const trimmed = p.trim();
-                  return trimmed.length > 30 && !trimmed.match(/^[\d\s\$\.]+$/);
-                });
+                // Split into paragraphs first (before cleaning)
+                const rawParagraphs = content.split(/\n\s*\n/).filter(p => p.trim().length > 0);
                 
-                if (paragraphs.length > 0) {
-                  description = paragraphs[0].trim().substring(0, 200);
-                  if (description.length === 200) description += '...';
+                // Find first meaningful paragraph (skip headers, tables, etc.)
+                for (const rawPara of rawParagraphs) {
+                  // Skip if it's a header
+                  if (/^#{1,6}\s+/.test(rawPara.trim())) continue;
+                  // Skip if it looks like a table (has multiple | characters)
+                  if ((rawPara.match(/\|/g) || []).length > 2) continue;
+                  // Skip if it's too short
+                  if (rawPara.trim().length < 30) continue;
+                  // Skip if it's just numbers/dollars
+                  if (/^[\d\s\$\.]+$/.test(rawPara.trim())) continue;
+                  
+                  // Clean this paragraph: remove images, links, headers, etc.
+                  let cleanPara = rawPara
+                    // Remove markdown images ![alt](url)
+                    .replace(/!\[.*?\]\(.*?\)/g, '')
+                    // Remove markdown links [text](url) but keep text
+                    .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
+                    // Remove headers (# ## ###)
+                    .replace(/^#{1,6}\s+/gm, '')
+                    // Remove bold/italic markers but keep text
+                    .replace(/\*\*([^\*]+)\*\*/g, '$1')
+                    .replace(/\*([^\*]+)\*/g, '$1')
+                    .replace(/__([^_]+)__/g, '$1')
+                    .replace(/_([^_]+)_/g, '$1')
+                    // Remove URLs
+                    .replace(/https?:\/\/[^\s\)]+/g, '')
+                    // Remove markdown table syntax
+                    .replace(/\|/g, ' ')
+                    // Normalize whitespace (keep single spaces and newlines within paragraph)
+                    .replace(/[ \t]+/g, ' ')
+                    .replace(/\n+/g, ' ')
+                    .trim();
+                  
+                  // Take the entire first paragraph (it should already be just one sentence)
+                  if (cleanPara.length > 0) {
+                    description = cleanPara.substring(0, 300);
+                    if (description.length === 300) description += '...';
+                    break;
+                  }
                 }
                 break;
               }

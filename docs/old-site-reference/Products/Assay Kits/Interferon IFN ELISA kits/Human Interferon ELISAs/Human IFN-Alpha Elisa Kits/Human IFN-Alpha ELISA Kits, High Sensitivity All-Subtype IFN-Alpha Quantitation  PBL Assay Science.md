@@ -1,4 +1,6 @@
-**VeriKine-HS Human IFN-Alpha ELISA (All-Subtype)** kits are designed to provide low pg/ml (LOQ 1.95 pg/ml) sensitivity and **global IFN-Alpha subtype detection** (12 of 12) in serum, plasma, and tissue culture media (TCM). As multiple IFN-Alpha (IFNa, IFN-a) species are often present in biological samples, the ability to determine the total amount of IFN-Alpha subtypes is integral to a full understanding of IFN-Alpha's role within the immune system.
+Human IFN-Alpha ELISA kits are designed to provide low pg/ml (LOQ 1.95 pg/ml) sensitivity and global IFN-Alpha subtype detection (12 of 12) in serum, plasma, and tissue culture media (TCM).
+
+As multiple IFN-Alpha (IFNa, IFN-a) species are often present in biological samples, the ability to determine the total amount of IFN-Alpha subtypes is integral to a full understanding of IFN-Alpha's role within the immune system.
 
 Click [here](https://www.pblassaysci.com/which-human-ifn-alpha-elisa-kit-should-i-choose) to see which PBL Human IFN-Alpha ELISA kit is best fit for your research need.
 

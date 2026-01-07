@@ -4,73 +4,90 @@ import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section */}
-      <section className="relative w-full min-h-[600px] lg:min-h-[700px] flex items-center justify-start">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/1.webp"
-            alt="Ribbon background"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Overlay for text readability */}
-          <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]"></div>
+      <section className="relative pt-32 pb-32 overflow-hidden" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.1) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+      }}>
+        {/* Decorative SVG - Behind everything */}
+        <div className="absolute top-0 right-0 w-2/3 h-full opacity-20 pointer-events-none z-0">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full scale-150">
+            <path fill="#00F0F3" d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,76.4,-44.7C83.6,-31.3,86.9,-15.7,85.5,-0.8C84.1,14C78,28,69.2,40.1,58.1,50.2C47,60.3,39.6,74.5,28.8,80.8C18,87.1,3.8,85.5,-10.1,81.4C-24,77.3,-37.6,70.7,-49.2,61.4C-60.8,52.1,-70.4,40.1,-76.5,26.6C-82.6,13.1,-85.2,-1.9,-82.1,-15.8C-79,-29.7,-70.2,-42.5,-59,-50C-47.8,-57.5,-34.2,-59.7,-21.8,-66.2C-9.4,-72.7,1.8,-83.5,16.5,-85.5C31.2,-87.5,31.3,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+          </svg>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-          <div className="flex flex-col justify-between min-h-[600px] lg:min-h-[700px] py-16 lg:py-24">
-            {/* Headline - Top Left */}
-            <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-navy leading-tight mb-8">
-                Fit-for-purpose assay development, customization and execution.
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
+            {/* Left Column - Text */}
+            <div className="relative z-20 max-w-xl lg:max-w-lg lg:pr-12">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-10 leading-[1.1] text-[#002776]">
+                Fit-for-purpose assay&nbsp;development, <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">customization and execution.</span>
               </h1>
+              <div className="flex flex-col sm:flex-row gap-6 mt-12">
+                <Link
+                  href="/products"
+                  className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all shadow-xl shadow-blue-900/20 hover:scale-105"
+                >
+                  Go to Products
+                </Link>
+                <Link
+                  href="/services"
+                  className="px-10 py-5 rounded-full font-bold text-lg transition-all hover:scale-105"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.8)',
+                    backdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(226, 232, 240, 0.8)',
+                    color: '#002776'
+                  }}
+                >
+                  View Services
+                </Link>
+              </div>
             </div>
 
-            {/* CTAs - Bottom of Hero */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-              <Link
-                href="/products"
-                className="group relative inline-flex items-center justify-center px-8 py-4 bg-secondary-teal text-white font-medium rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ease-out overflow-hidden"
-              >
-                <span className="relative z-10">Products</span>
-                <div className="absolute inset-0 bg-primary-navy rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Link>
-              <Link
-                href="/services"
-                className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-primary-navy font-medium rounded-xl border-2 border-primary-navy shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ease-out"
-              >
-                <span className="relative z-10">Services</span>
-              </Link>
+            {/* Right Column - Image */}
+            <div className="relative z-20 lg:order-2 lg:pl-12">
+              <div className="relative group max-w-md mx-auto lg:max-w-full">
+                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-3xl opacity-10 group-hover:opacity-20 transition-opacity z-0"></div>
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl z-10">
+                  <Image
+                    src="/images/1.webp"
+                    alt="PBL Assay Science"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Section 2: Tailored Services */}
-      <section className="section-padding bg-white">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Column - Image */}
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/2.webp"
-                alt="Scientist in lab"
-                fill
-                className="object-cover"
-              />
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-3xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/2.webp"
+                  alt="Scientist in lab"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             {/* Right Column - Content */}
             <div className="flex flex-col">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-navy mb-6 leading-tight">
+              <h2 className="text-5xl font-bold mb-8 leading-tight text-[#002776]">
                 Tailored Services that Meet Your Needs
               </h2>
               
-              <p className="text-lg text-gray-700 leading-relaxed mb-8 font-light">
+              <p className="text-xl text-gray-600 font-light leading-relaxed mb-10">
                 At PBL our 3 decades of assay development experience mean we
                 deeply understand the technical challenges you face. Our
                 Bioanalytical Services solutions combine subject matter expertise
@@ -79,28 +96,32 @@ export default function Home() {
               </p>
 
               {/* Stats Bar */}
-              <div className="grid grid-cols-3 gap-6 mb-8 py-6 border-y border-gray-200">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-navy mb-1">
+              <div className="grid grid-cols-3 gap-8 p-8 rounded-3xl mb-8" style={{
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
+                <div>
+                  <div className="text-4xl font-bold text-cyan-500 mb-1">
                     X
                   </div>
-                  <div className="text-sm text-gray-600 font-light">
+                  <div className="text-[10px] uppercase tracking-widest font-bold text-gray-400">
                     days to study start
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-navy mb-1">
+                <div>
+                  <div className="text-4xl font-bold text-cyan-500 mb-1">
                     X%
                   </div>
-                  <div className="text-sm text-gray-600 font-light">
+                  <div className="text-[10px] uppercase tracking-widest font-bold text-gray-400">
                     client retention rate
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-navy mb-1">
+                <div>
+                  <div className="text-4xl font-bold text-cyan-500 mb-1">
                     X
                   </div>
-                  <div className="text-sm text-gray-600 font-light">
+                  <div className="text-[10px] uppercase tracking-widest font-bold text-gray-400">
                     projects completed
                   </div>
                 </div>
@@ -109,7 +130,7 @@ export default function Home() {
               {/* CTA Button */}
               <Link
                 href="/speak-to-a-scientist"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-secondary-teal text-white font-medium rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ease-out w-fit"
+                className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all shadow-xl shadow-blue-900/20 w-fit"
               >
                 Speak to a Scientist
               </Link>
@@ -119,26 +140,29 @@ export default function Home() {
       </section>
 
       {/* Section 3: Products that Won't Let You Down */}
-      <section className="section-padding bg-background-offwhite">
+      <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Column - Image */}
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg order-2 lg:order-1">
-              <Image
-                src="/images/3.webp"
-                alt="PBL Assay Box"
-                fill
-                className="object-cover"
-              />
+            <div className="relative group order-2 lg:order-1">
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-3xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/3.webp"
+                  alt="PBL Assay Box"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             {/* Right Column - Content */}
             <div className="flex flex-col order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-navy mb-6 leading-tight">
+              <h2 className="text-5xl font-bold mb-8 leading-tight text-[#002776]">
                 Products that Won't Let You Down
               </h2>
               
-              <p className="text-lg text-gray-700 leading-relaxed mb-8 font-light">
+              <p className="text-xl text-gray-600 font-light leading-relaxed mb-10">
                 PBL products are developed with real-world biology in mind. We
                 support you with assays and reagents, i.e., proteins and
                 antibodies, that are high quality, consistent and reliable, three
@@ -148,37 +172,37 @@ export default function Home() {
               </p>
 
               {/* Featured Products List */}
-              <div className="mb-8 space-y-4">
+              <div className="mb-10 space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary-teal/20 flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 rounded-full bg-secondary-teal"></div>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
                   </div>
-                  <span className="text-gray-700 font-light">Optimized for Variability</span>
+                  <span className="text-gray-600 font-light">Optimized for Variability</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary-teal/20 flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 rounded-full bg-secondary-teal"></div>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
                   </div>
-                  <span className="text-gray-700 font-light">High Sensitivity</span>
+                  <span className="text-gray-600 font-light">High Sensitivity</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary-teal/20 flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 rounded-full bg-secondary-teal"></div>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
                   </div>
-                  <span className="text-gray-700 font-light">Accurate Quantification</span>
+                  <span className="text-gray-600 font-light">Accurate Quantification</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary-teal/20 flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 rounded-full bg-secondary-teal"></div>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
                   </div>
-                  <span className="text-gray-700 font-light">Full-spec Assay Range and LLOQ</span>
+                  <span className="text-gray-600 font-light">Full-spec Assay Range and LLOQ</span>
                 </div>
               </div>
 
               {/* CTA Button */}
               <Link
                 href="/products"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-secondary-teal text-white font-medium rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ease-out w-fit"
+                className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all shadow-xl shadow-blue-900/20 w-fit"
               >
                 Go to Products
               </Link>
@@ -188,181 +212,218 @@ export default function Home() {
       </section>
 
       {/* Section 4: Let Us Do It For You */}
-      <section className="section-padding bg-white">
+      <section className="py-32 bg-[#F4F4F9]/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-navy mb-12 lg:mb-16 text-center">
+          <h2 className="text-5xl font-bold text-center mb-20 text-[#002776]">
             Let Us Do It For You
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Bioanalytical Testing */}
-            <div className="group">
-              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg mb-6">
-                <Image
-                  src="/images/4.webp"
-                  alt="Bioanalytical Testing"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+            <div className="group p-2 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.8)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-8 shadow-inner">
+                  <Image
+                    src="/images/4.webp"
+                    alt="Bioanalytical Testing"
+                    fill
+                    className="object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-3xl font-bold mb-6 text-[#002776]">
+                  Bioanalytical Testing
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-6 flex-grow">
+                  At PBL we expedite your R&D work by adhering to fit-for-purpose
+                  guidelines and generating only the data you need. Our team is an
+                  extension of yours. Our assays are validated under ICH M10
+                  guidelines and support discovery, pre-clinical studies, and
+                  exploratory clinical trial endpoints.
+                </p>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-primary-navy mb-4">
-                Bioanalytical Testing
-              </h3>
-              <p className="text-gray-700 leading-relaxed font-light mb-6">
-                At PBL we expedite your R&D work by adhering to fit-for-purpose
-                guidelines and generating only the data you need. Our team is an
-                extension of yours. Our assays are validated under ICH M10
-                guidelines and support discovery, pre-clinical studies, and
-                exploratory clinical trial endpoints.
-              </p>
             </div>
 
             {/* Assay Development */}
-            <div className="group">
-              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg mb-6">
-                <Image
-                  src="/images/5.webp"
-                  alt="Assay Development"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+            <div className="group p-2 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.8)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-8 shadow-inner">
+                  <Image
+                    src="/images/5.webp"
+                    alt="Assay Development"
+                    fill
+                    className="object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-3xl font-bold mb-6 text-[#002776]">
+                  Assay Development
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-6 flex-grow">
+                  PBL develops assays for research use or to a standard that will
+                  support GLP validation - the choice is yours. We support
+                  cell-based assay development, immunoassay development and assay
+                  optimization. Wherever you are in the research journey, our team
+                  is here to work alongside you.
+                </p>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-primary-navy mb-4">
-                Assay Development
-              </h3>
-              <p className="text-gray-700 leading-relaxed font-light mb-6">
-                PBL develops assays for research use or to a standard that will
-                support GLP validation - the choice is yours. We support
-                cell-based assay development, immunoassay development and assay
-                optimization. Wherever you are in the research journey, our team
-                is here to work alongside you.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Section 5: Quality Products */}
-      <section className="section-padding bg-background-offwhite">
+      <section className="py-32 bg-white overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-navy mb-12 lg:mb-16 text-center">
+          <h2 className="text-5xl font-bold text-center mb-20 bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">
             Quality Products You Won't Find Anywhere Else
           </h2>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
             {/* Product 1 */}
             <Link
               href="/assay-kits/human-il-15-elisa-kit-high-sensitivity-serum-plasma-tcm-41702"
-              className="group"
+              className="group cursor-pointer"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md mb-4 group-hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
                 <Image
                   src="/images/6.webp"
                   alt="Total Human IL-15 ELISA Kit"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover rounded-3xl transition-transform group-hover:scale-110"
                 />
               </div>
-              <p className="text-primary-navy font-medium group-hover:text-secondary-teal transition-colors">
+              <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Total Human IL-15 ELISA Kit
-              </p>
+              </h4>
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">High-Sensitivity</span>
             </Link>
 
             {/* Product 2 */}
             <Link
               href="/assay-kits/elisas/human-interferon-elisas/human-ifn-alpha-elisas"
-              className="group"
+              className="group cursor-pointer"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md mb-4 group-hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
                 <Image
                   src="/images/7.webp"
                   alt="Human IFN Alpha ELISA Kits"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover rounded-3xl transition-transform group-hover:scale-110"
                 />
               </div>
-              <p className="text-primary-navy font-medium group-hover:text-secondary-teal transition-colors">
+              <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human IFN Alpha ELISA Kits
-              </p>
+              </h4>
             </Link>
 
             {/* Product 3 */}
             <Link
               href="/assay-kits/elisas/mouse-interferon-elisas/mouse-ifn-beta-elisas"
-              className="group"
+              className="group cursor-pointer"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md mb-4 group-hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
                 <Image
                   src="/images/8.webp"
                   alt="Mouse IFN-Beta ELISAs"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover rounded-3xl transition-transform group-hover:scale-110"
                 />
               </div>
-              <p className="text-primary-navy font-medium group-hover:text-secondary-teal transition-colors">
+              <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Mouse IFN-Beta ELISAs
-              </p>
+              </h4>
             </Link>
 
             {/* Product 4 */}
             <Link
               href="/proteins/human-ifn-alpha-alpha2a-11100"
-              className="group"
+              className="group cursor-pointer"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md mb-4 group-hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
                 <Image
                   src="/images/9.webp"
                   alt="Human IFN-Alpha 2a (Alpha A) Protein"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover rounded-3xl transition-transform group-hover:scale-110"
                 />
               </div>
-              <p className="text-primary-navy font-medium group-hover:text-secondary-teal transition-colors">
+              <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human IFN-Alpha 2a (Alpha A) Protein
-              </p>
+              </h4>
             </Link>
 
             {/* Product 5 */}
             <Link
               href="/antibodies/human-type-1-ifn-neutralizing-antibody-mixture-39000"
-              className="group"
+              className="group cursor-pointer"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md mb-4 group-hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
                 <Image
                   src="/images/10.webp"
                   alt="Human Type I IFN Neutralizing Antibody Mixture"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover rounded-3xl transition-transform group-hover:scale-110"
                 />
               </div>
-              <p className="text-primary-navy font-medium group-hover:text-secondary-teal transition-colors">
+              <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human Type I IFN Neutralizing Antibody Mixture
-              </p>
+              </h4>
             </Link>
 
             {/* Product 6 */}
             <Link
               href="/proteins/human-interleukin-15-il15ra-heterodimer-human-cell-expressed-11702"
-              className="group"
+              className="group cursor-pointer"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md mb-4 group-hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
+                background: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(226, 232, 240, 0.8)'
+              }}>
                 <Image
-                  src="/images/11.webp"
+                  src="/images/12.webp"
                   alt="Human Interleukin 15 / IL-15Rα Heterodimer"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover rounded-3xl transition-transform group-hover:scale-110"
                 />
               </div>
-              <p className="text-primary-navy font-medium group-hover:text-secondary-teal transition-colors">
+              <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human Interleukin 15 / IL-15Rα Heterodimer
-              </p>
+              </h4>
             </Link>
           </div>
 
           {/* Testimonials Section */}
-          <div className="mt-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-navy mb-12 lg:mb-16 text-center">
+          <div className="mt-32 pt-8">
+            <h2 className="text-5xl font-bold mb-16 tracking-tight text-center text-[#002776]">
               Don't Take Our Word For It
             </h2>
 
@@ -375,16 +436,19 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-center">
-            <Link
-              href="/speak-to-a-scientist"
-              className="group inline-flex items-center justify-center px-10 py-5 bg-secondary-teal text-white font-medium rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ease-out text-lg"
-            >
-              Talk to a Scientist
-            </Link>
-          </div>
+      <section className="py-32 bg-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
+          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>
+          <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
+            Fit-for-purpose assay&nbsp;development, customization and execution.
+          </p>
+          <Link
+            href="/speak-to-a-scientist"
+            className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
+          >
+            Talk to a Scientist
+          </Link>
         </div>
       </section>
     </main>

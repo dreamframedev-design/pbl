@@ -21,18 +21,30 @@ const config: Config = {
         },
         accent: {
           cyan: "#00F0F3",
+          coral: "#FF6F61",
+          skyBlue: "#4A99E4",
         },
         purple: {
           deep: "#7C3AED",
           professional: "#6D28D9",
+          lavender: "#EDE6FF",
+          periwinkle: "#B7C3F3",
         },
         background: {
           white: "#FFFFFF",
           offwhite: "#F4F4F9",
+          lavender: "#EDE6FF",
+          periwinkle: "#B7C3F3",
+          skyBlue: "#4A99E4",
+        },
+        charcoal: {
+          DEFAULT: "#2A3C4C",
         },
       },
       fontFamily: {
-        sans: ['"Open Sauce One"', "system-ui", "sans-serif"],
+        sans: ['var(--font-inter)', '"Open Sauce One"', "system-ui", "sans-serif"],
+        display: ['"Open Sauce One"', "system-ui", "sans-serif"],
+        body: ['var(--font-inter)', "system-ui", "sans-serif"],
       },
       fontSize: {
         "display-1": ["4rem", { lineHeight: "1.1", fontWeight: "700" }],
@@ -47,6 +59,12 @@ const config: Config = {
       },
       spacing: {
         "section": "6rem", // py-24 equivalent
+      },
+      boxShadow: {
+        'image': '0 10px 40px -10px rgba(0, 39, 118, 0.15), 0 4px 20px -5px rgba(5, 138, 159, 0.1)',
+        'image-lg': '0 20px 60px -15px rgba(0, 39, 118, 0.2), 0 8px 30px -8px rgba(5, 138, 159, 0.15)',
+        'cta': '0 4px 20px -5px rgba(5, 138, 159, 0.4), 0 2px 10px -2px rgba(0, 240, 243, 0.3)',
+        'cta-hover': '0 8px 30px -8px rgba(5, 138, 159, 0.5), 0 4px 15px -4px rgba(0, 240, 243, 0.4)',
       },
     },
   },

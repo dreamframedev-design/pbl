@@ -1,21 +1,13 @@
 import Link from 'next/link';
-import FloatingCTA from '@/components/FloatingCTA';
+import BannerHero from '@/components/BannerHero';
 
 export default function SmcAssayServicesPage() {
   return (
     <main className="min-h-screen">
-      <FloatingCTA />
-
       {/* Hero Section */}
-      <section className="relative w-full min-h-[350px] lg:min-h-[450px] flex items-center justify-center bg-background-offwhite">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-navy leading-tight mb-8">
-              SMC Assay Services
-            </h1>
-          </div>
-        </div>
-      </section>
+      <BannerHero 
+        title="SMC Assay Services"
+      />
 
       {/* Main Content */}
       <section className="section-padding bg-white">

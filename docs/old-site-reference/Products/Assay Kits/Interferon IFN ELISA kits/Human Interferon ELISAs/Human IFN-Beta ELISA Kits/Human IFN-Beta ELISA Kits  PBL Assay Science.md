@@ -1,4 +1,6 @@
-These Human IFN-Beta ELISAs are highly sensitive immunoassays (< 3 pg/ml LLOQ) developed to measure human interferon beta (IFN-Beta) in specific matrices (e.g. healthy and disease sera, plasma, tissue culture media (TCM)). These high sensitivity assays display no inhibition of human IFN-Beta detection in the presence of 3-Log excess of soluble IFN-Alpha/Beta Receptor 2 (sIFNAR2) protein, thus measuring "total" IFN-Beta. 
+These Human IFN-Beta ELISAs are highly sensitive immunoassays developed to measure human IFN-Beta in specific matrices (e.g. healthy and disease sera, plasma, tissue culture media (TCM)).
+
+These high sensitivity assays display no inhibition of human IFN-Beta detection in the presence of 3-Log excess of soluble IFN-Alpha/Beta Receptor 2 (sIFNAR2) protein, thus measuring "total" IFN-Beta. 
 
 If you would like assistance selecting the kit that would work best for your research needs, contact PBL by chat, phone (+1 732-777-9123) or [e-mail](mailto:info@pblassaysci.com?subject=Which%20Human%20IFN%20Beta%20ELISA%20is%20right%20for%20me%3F).
 

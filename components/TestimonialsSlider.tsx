@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, useMotionValue } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 
 interface Testimonial {
@@ -55,22 +55,28 @@ export default function TestimonialsSlider() {
   const [isDragging, setIsDragging] = useState(false);
   const controls = useAnimation();
   const sliderRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const dragStartX = useRef(0);
 
   // Duplicate testimonials for seamless loop (2 sets for smooth infinite scroll)
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   useEffect(() => {
     if (!isDragging && sliderRef.current) {
-      // Calculate width based on actual rendered size
       const slider = sliderRef.current;
       const firstChild = slider.firstElementChild as HTMLElement;
-      if (firstChild) {
+      
+      if (firstChild && firstChild.offsetWidth > 0) {
         const cardWidth = firstChild.offsetWidth;
         const gap = 24; // gap-6 = 24px
         const singleSetWidth = testimonials.length * (cardWidth + gap);
         
+        // Get current position (preserves drag position)
+        const currentPosition = x.get();
+        
+        // Start animation from current position
         controls.start({
-          x: [0, -singleSetWidth],
+          x: [currentPosition, currentPosition - singleSetWidth],
           transition: {
             x: {
               repeat: Infinity,
@@ -80,46 +86,73 @@ export default function TestimonialsSlider() {
             },
           },
         });
+      } else {
+        // Retry if element not ready
+        const timeout = setTimeout(() => {
+          if (!isDragging) {
+            // Trigger re-render to retry
+            setIsDragging(false);
+          }
+        }, 100);
+        return () => clearTimeout(timeout);
       }
+    } else if (isDragging) {
+      controls.stop();
     }
-  }, [isDragging, controls]);
+  }, [isDragging, controls, x]);
 
   return (
-    <div className="relative w-full overflow-hidden py-4 -mx-3">
-      {/* Slider Container */}
-      <motion.div
-        ref={sliderRef}
-        className="flex gap-6 cursor-grab active:cursor-grabbing will-change-transform"
-        drag="x"
-        dragElastic={0.2}
-        dragMomentum={false}
-        onDragStart={() => {
-          setIsDragging(true);
-          controls.stop();
-        }}
-        onDragEnd={() => {
-          setIsDragging(false);
-        }}
-        animate={controls}
-        style={{ width: 'max-content' }}
-      >
+    <div className="relative w-full py-4">
+      {/* Padding wrapper to allow shadows to show - extra padding for shadow space */}
+      <div className="px-12 -mx-12">
+        {/* Slider Container */}
+        <motion.div
+          ref={sliderRef}
+          className="flex gap-6 cursor-grab active:cursor-grabbing will-change-transform"
+          drag="x"
+          dragElastic={0.1}
+          dragMomentum={false}
+          dragConstraints={{ left: -Infinity, right: Infinity }}
+          x={x}
+          animate={controls}
+          onDragStart={() => {
+            setIsDragging(true);
+            controls.stop();
+            dragStartX.current = x.get();
+          }}
+          onDrag={(event, info) => {
+            const newX = dragStartX.current + info.offset.x;
+            x.set(newX);
+          }}
+          onDragEnd={() => {
+            setIsDragging(false);
+          }}
+          style={{ width: 'max-content', x }}
+        >
         {duplicatedTestimonials.map((testimonial, index) => (
           <motion.div
             key={`${index}-${testimonial.attribution.slice(0, 20)}`}
             className="flex-shrink-0 w-[320px] md:w-[380px] lg:w-[450px]"
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-md h-full flex flex-col">
-              <p className="text-primary-navy italic leading-relaxed font-light mb-6 flex-grow text-base md:text-lg">
-                "{testimonial.quote}"
+            <div className="relative p-10 rounded-[3rem] h-full flex flex-col" style={{
+              background: 'rgba(255, 255, 255, 0.8)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+            }}>
+              <div className="text-cyan-400 text-6xl absolute top-4 left-6 opacity-20 font-serif leading-none">"</div>
+              <p className="text-xl font-light text-gray-700 italic leading-relaxed mb-4 flex-grow relative z-10 pl-8 pt-2">
+                {testimonial.quote}
               </p>
-              <p className="text-sm md:text-base text-neutral-steel font-medium">
+              <p className="text-sm md:text-base text-gray-600 font-medium relative z-10">
                 — {testimonial.attribution}
               </p>
             </div>
           </motion.div>
         ))}
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 }

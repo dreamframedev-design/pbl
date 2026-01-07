@@ -1,12 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import FloatingCTA from '@/components/FloatingCTA';
 
 export default function CustomProductionPage() {
   return (
     <main className="min-h-screen">
-      <FloatingCTA />
-
       {/* Hero Section */}
       <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -80,7 +77,7 @@ export default function CustomProductionPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <Link
             href="/speak-to-a-scientist"
-            className="inline-flex items-center justify-center px-8 py-4 bg-secondary-teal text-white font-medium rounded-xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 ease-out"
+            className="btn-primary"
           >
             Talk to a Scientist
           </Link>

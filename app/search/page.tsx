@@ -4,7 +4,6 @@ import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Search, ArrowRight } from 'lucide-react';
-import FloatingCTA from '@/components/FloatingCTA';
 
 interface SearchResult {
   title: string;
@@ -76,8 +75,6 @@ function SearchResultsContent() {
 
   return (
     <div className="min-h-screen bg-white">
-      <FloatingCTA />
-      
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-primary-navy to-primary-navy/90 text-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">

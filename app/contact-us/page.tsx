@@ -1,13 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import FloatingCTA from '@/components/FloatingCTA';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 
 export default function ContactUsPage() {
   return (
     <main className="min-h-screen">
-      <FloatingCTA />
-
       {/* Hero Section */}
       <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
