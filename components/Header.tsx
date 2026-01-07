@@ -1252,6 +1252,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200 max-h-[calc(100vh-200px)] overflow-y-auto">
           <nav className="px-4 py-6 space-y-4">
+            {/* Products */}
             <div>
               <Link
                 href="/products"
@@ -1260,12 +1261,75 @@ export default function Header() {
               >
                 PRODUCTS
               </Link>
-              <div className="pl-4 pt-2 space-y-2">
-                <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Assay Kits</Link>
-                <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Proteins</Link>
-                <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Antibodies</Link>
+              <div className="pl-4 pt-2 space-y-3">
+                {/* Assay Kits */}
+                <div>
+                  <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700">Assay Kits</Link>
+                  <div className="pl-4 space-y-1.5">
+                    <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">All Assay Kits</Link>
+                    <Link href="/products/assay-kits/cell-based-assays" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Cell-Based Assays</Link>
+                    <div>
+                      <Link href="/products/assay-kits/interferon-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Interferon (IFN) ELISA Kits</Link>
+                      <div className="pl-3 space-y-1">
+                        <Link href="/products/assay-kits/interferon-elisas/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human Interferon ELISAs</Link>
+                        <Link href="/products/assay-kits/interferon-elisas/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Mouse Interferon ELISAs</Link>
+                        <Link href="/products/assay-kits/interferon-elisas/non-human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Non-Human Interferon ELISAs</Link>
+                      </div>
+                    </div>
+                    <div>
+                      <Link href="/products/assay-kits/interleukin-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Interleukin (IL) ELISA Kits</Link>
+                      <div className="pl-3 space-y-1">
+                        <Link href="/products/assay-kits/interleukin-elisas/human-il-15" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human IL-15 ELISA</Link>
+                        <Link href="/products/assay-kits/interleukin-elisas/human-il-22" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human IL-22 ELISA</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Proteins */}
+                <div>
+                  <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700">Proteins</Link>
+                  <div className="pl-4 space-y-1.5">
+                    <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">All Proteins</Link>
+                    <Link href="/products/proteins/cytokines" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Cytokines and Growth Factors</Link>
+                    <Link href="/products/proteins/interferon-decoy-receptor" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Interferon Decoy Receptor</Link>
+                    <div>
+                      <Link href="/products/proteins/interferons" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Interferons</Link>
+                      <div className="pl-3 space-y-1">
+                        <Link href="/products/proteins/interferons/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human IFN Proteins</Link>
+                        <Link href="/products/proteins/interferons/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Mouse IFN Proteins</Link>
+                        <Link href="/products/proteins/interferons/rat" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Rat IFN Proteins</Link>
+                        <Link href="/products/proteins/interferons/mammalian" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Mammalian IFN Proteins</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Antibodies */}
+                <div>
+                  <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700">Antibodies</Link>
+                  <div className="pl-4 space-y-1.5">
+                    <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">All Antibodies</Link>
+                    <div>
+                      <Link href="/products/antibodies/monoclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Monoclonal Antibodies (MAbs)</Link>
+                      <div className="pl-3 space-y-1">
+                        <Link href="/products/antibodies/monoclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Human IFN MAbs</Link>
+                        <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Mouse IFN MAbs</Link>
+                        <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Porcine IFN MAbs</Link>
+                        <Link href="/products/antibodies/monoclonal/labeled" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Labeled Anti-IFN MAbs</Link>
+                      </div>
+                    </div>
+                    <div>
+                      <Link href="/products/antibodies/polyclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Polyclonal Antibodies (PAbs)</Link>
+                      <div className="pl-3 space-y-1">
+                        <Link href="/products/antibodies/polyclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Human IFN PAbs</Link>
+                        <Link href="/products/antibodies/polyclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Mouse IFN PAbs</Link>
+                        <Link href="/products/antibodies/polyclonal/anti-rat-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Rat IFN PAbs</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+            {/* Services */}
             <div>
               <Link
                 href="/services"
@@ -1274,12 +1338,32 @@ export default function Header() {
               >
                 SERVICES
               </Link>
-              <div className="pl-4 pt-2 space-y-2">
-                <Link href="/services/assay-development" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Assay Development</Link>
-                <Link href="/services/biomarker-sample-analysis" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Biomarker Sample Analysis</Link>
-                <Link href="/services/cell-based-services" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Cell-Based Services</Link>
+              <div className="pl-4 pt-2 space-y-3">
+                <div>
+                  <p className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-2 pt-2">Core Services</p>
+                  <div className="space-y-1.5">
+                    <Link href="/services/assay-development" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Assay Development</Link>
+                    <div>
+                      <Link href="/services/biomarker-sample-analysis" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Biomarker Sample Analysis</Link>
+                      <div className="pl-3 space-y-1">
+                        <Link href="/services/biomarker-sample-analysis/simoa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">SIMOA Assay Services</Link>
+                        <Link href="/services/biomarker-sample-analysis/smc" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">SMC Assay Services</Link>
+                        <Link href="/services/biomarker-sample-analysis/multiplex-elisa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Multiplex ELISA Assay Services</Link>
+                      </div>
+                    </div>
+                    <Link href="/services/cell-based-services" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Cell-Based Services</Link>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-2 pt-2">Additional Services</p>
+                  <div className="space-y-1.5">
+                    <Link href="/services/custom-production" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Custom Production</Link>
+                    <Link href="/services/antibody-characterization" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Antibody Characterization Service</Link>
+                  </div>
+                </div>
               </div>
             </div>
+            {/* Resources */}
             <div>
               <Link
                 href="/resources"
@@ -1288,7 +1372,13 @@ export default function Header() {
               >
                 RESOURCES
               </Link>
+              <div className="pl-4 pt-2 space-y-2">
+                <Link href="/resources/technical-presentations" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Technical Presentations</Link>
+                <Link href="/resources/general-protocols" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">General Protocols</Link>
+                <Link href="/resources/scientific-articles" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Scientific Articles</Link>
+              </div>
             </div>
+            {/* Contact Us */}
             <div>
               <Link
                 href="/contact-us"
