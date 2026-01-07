@@ -410,13 +410,13 @@ export default function Home() {
             <h2 className="text-5xl font-bold mb-16 tracking-tight text-center text-[#002776]">
               Don't Take Our Word For It
             </h2>
-
-            {/* Testimonials Slider */}
-            <div className="py-8 overflow-visible" style={{ overflowY: 'visible', paddingBottom: '48px' }}>
-              <TestimonialsSlider />
-            </div>
           </div>
         </div>
+      </section>
+
+      {/* Testimonials Slider - Full Width Section */}
+      <section className="py-8 bg-white overflow-x-hidden" style={{ overflowY: 'visible', paddingBottom: '48px' }}>
+        <TestimonialsSlider />
       </section>
 
       {/* Final CTA Section */}

@@ -103,8 +103,8 @@ export default function TestimonialsSlider() {
 
   return (
     <div className="relative w-full py-4 overflow-x-hidden" style={{ overflowY: 'visible', paddingBottom: '64px' }}>
-      {/* Padding wrapper to allow shadows to show - extra padding for shadow space */}
-      <div className="px-4 sm:px-6 lg:px-12 -mx-4 sm:-mx-6 lg:-mx-12" style={{ paddingBottom: '32px' }}>
+      {/* Padding wrapper to allow shadows to show and full-width travel - negative margins break out of container */}
+      <div className="px-6 lg:px-12 -mx-6 lg:-mx-12" style={{ paddingBottom: '32px' }}>
         {/* Slider Container */}
         <motion.div
           ref={sliderRef}
