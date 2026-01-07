@@ -285,6 +285,7 @@ export default function Header() {
               >
                 <Link
                   href="/products"
+                  onClick={handleLinkClick}
                   className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
                 >
                   PRODUCTS
@@ -299,7 +300,13 @@ export default function Header() {
                   >
                     {/* Assay Kits Column */}
                     <div style={{ marginTop: '0' }}>
-                      <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Assay Kits</h4>
+                      <Link 
+                        href="/products/assay-kits" 
+                        onClick={handleLinkClick}
+                        className="block text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2 hover:text-[#058A9F] transition-colors"
+                      >
+                        Assay Kits
+                      </Link>
                       <div className="space-y-4">
                         <Link 
                           href="/products/assay-kits" 
@@ -487,7 +494,13 @@ export default function Header() {
 
                     {/* Proteins Column */}
                     <div>
-                      <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Proteins</h4>
+                      <Link 
+                        href="/products/proteins" 
+                        onClick={handleLinkClick}
+                        className="block text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2 hover:text-[#058A9F] transition-colors"
+                      >
+                        Proteins
+                      </Link>
                       <div className="space-y-4">
                         <Link 
                           href="/products/proteins" 
@@ -684,7 +697,13 @@ export default function Header() {
 
                     {/* Antibodies Column */}
                     <div>
-                      <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Antibodies</h4>
+                      <Link 
+                        href="/products/antibodies" 
+                        onClick={handleLinkClick}
+                        className="block text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2 hover:text-[#058A9F] transition-colors"
+                      >
+                        Antibodies
+                      </Link>
                       <div className="space-y-4">
                         <Link 
                           href="/products/antibodies" 
@@ -869,6 +888,7 @@ export default function Header() {
               >
                 <Link
                   href="/services"
+                  onClick={handleLinkClick}
                   className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
                 >
                   SERVICES
@@ -1001,6 +1021,7 @@ export default function Header() {
               >
                 <Link
                   href="/resources"
+                  onClick={handleLinkClick}
                   className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
                 >
                   RESOURCES
