@@ -71,6 +71,15 @@
     max-width: 100vw;
   }
 
+  header,
+  nav,
+  nav ul,
+  nav li {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: "Open Sauce One", system-ui, sans-serif;
   }
@@ -226,34 +235,43 @@
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 39, 118, 0.08);
+  overflow: visible !important;
 }
 
 /* Mega Menu Styles */
-.nav-item:hover .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.nav-item {
+  position: relative;
 }
 
 .mega-menu {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  display: grid !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   box-shadow: 0 40px 80px -15px rgba(0, 39, 118, 0.3);
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  overflow: visible !important;
+  margin-top: 0 !important;
 }
 
 /* Phosphor Link Hover Effect */
 .phosphor-link {
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   border-left: 2px solid transparent;
-  padding-left: 8px;
+  padding-left: 12px;
+  display: block;
+  position: relative;
+  min-height: 1.5rem;
 }
 
 .phosphor-link:hover {
   background: rgba(0, 240, 243, 0.05);
-  border-left: 2px solid #00F0F3;
-  padding-left: 12px;
+  border-left-color: #00F0F3;
   color: #058A9F;
 }
 
@@ -270,6 +288,7 @@
 .brand-link:hover .glyph-group {
   transform: translateY(-2px) scale(1.02);
   filter: drop-shadow(0 0 8px rgba(0, 240, 243, 0.4));
+  will-change: transform, filter;
 }
 
 /* Path Color Transitions */

@@ -62,7 +62,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-[100] glass-header overflow-x-hidden">
+    <header className="sticky top-0 z-[100] glass-header" style={{ overflow: 'visible' }}>
       {/* Main Header Bar */}
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-5 flex items-center gap-4 sm:gap-6 lg:gap-12">
         {/* Logo */}
@@ -269,25 +269,36 @@ export default function Header() {
       </div>
 
       {/* Navigation Bar - Row Below with Dropdowns - Hidden on mobile */}
-      <nav className="hidden lg:flex max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 gap-6 lg:gap-10">
-        <ul className="flex items-center gap-1 lg:gap-4 h-full">
+      <nav className="hidden lg:flex max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 gap-6 lg:gap-10 relative" style={{ overflow: 'visible', height: 'auto', maxHeight: 'none' }}>
+        <ul className="flex items-center gap-1 lg:gap-4 relative" style={{ overflow: 'visible', height: 'auto' }}>
               {/* Products Dropdown */}
               <li
-                className="nav-item relative py-4"
+                className="nav-item py-4"
                 onMouseEnter={() => setOpenDropdown('products')}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseLeave={(e) => {
+                  // Only close if mouse is not moving to the dropdown
+                  const relatedTarget = e.relatedTarget as HTMLElement;
+                  if (!relatedTarget || !relatedTarget.closest('.mega-menu')) {
+                    setOpenDropdown(null);
+                  }
+                }}
               >
                 <Link
                   href="/products"
-                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em]"
+                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
                 >
                   PRODUCTS
-                  <ChevronDown className="w-3 h-3" />
+                  <ChevronDown className="w-3 h-3 flex-shrink-0" />
                 </Link>
                 {openDropdown === 'products' && (
-                  <div className="mega-menu absolute left-0 w-[90vw] max-w-[1200px] bg-white rounded-2xl p-8 lg:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 border border-slate-100">
+                  <div 
+                    className="mega-menu w-[90vw] max-w-[1200px] bg-white rounded-2xl px-8 lg:px-12 pb-8 lg:pb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 border border-slate-100"
+                    onMouseEnter={() => setOpenDropdown('products')}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    style={{ marginTop: '-8px', paddingTop: '48px' }}
+                  >
                     {/* Assay Kits Column */}
-                    <div>
+                    <div style={{ marginTop: '0' }}>
                       <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Assay Kits</h4>
                       <div className="space-y-4">
                         <Link 
@@ -846,19 +857,30 @@ export default function Header() {
 
               {/* Services Dropdown */}
               <li
-                className="nav-item relative py-4"
+                className="nav-item py-4"
                 onMouseEnter={() => setOpenDropdown('services')}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseLeave={(e) => {
+                  // Check if mouse is moving to the dropdown
+                  const relatedTarget = e.relatedTarget as HTMLElement;
+                  if (!relatedTarget || !relatedTarget.closest('.mega-menu')) {
+                    setOpenDropdown(null);
+                  }
+                }}
               >
                 <Link
                   href="/services"
-                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em]"
+                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
                 >
                   SERVICES
-                  <ChevronDown className="w-3 h-3" />
+                  <ChevronDown className="w-3 h-3 flex-shrink-0" />
                 </Link>
                 {openDropdown === 'services' && (
-                  <div className="mega-menu absolute left-0 w-[90vw] max-w-[600px] bg-white rounded-2xl p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 border border-slate-100">
+                  <div 
+                    className="mega-menu w-[90vw] max-w-[600px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 border border-slate-100"
+                    onMouseEnter={() => setOpenDropdown('services')}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    style={{ marginTop: '-8px', paddingTop: '48px' }}
+                  >
                     <div>
                       <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-4">Core Services</h4>
                       <div className="space-y-4">
@@ -967,19 +989,30 @@ export default function Header() {
 
               {/* Resources Dropdown */}
               <li
-                className="nav-item relative py-4"
+                className="nav-item py-4"
                 onMouseEnter={() => setOpenDropdown('resources')}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseLeave={(e) => {
+                  // Check if mouse is moving to the dropdown
+                  const relatedTarget = e.relatedTarget as HTMLElement;
+                  if (!relatedTarget || !relatedTarget.closest('.mega-menu')) {
+                    setOpenDropdown(null);
+                  }
+                }}
               >
                 <Link
                   href="/resources"
-                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em]"
+                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
                 >
                   RESOURCES
-                  <ChevronDown className="w-3 h-3" />
+                  <ChevronDown className="w-3 h-3 flex-shrink-0" />
                 </Link>
                 {openDropdown === 'resources' && (
-                  <div className="mega-menu absolute left-0 w-[90vw] max-w-[800px] bg-white rounded-2xl p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 border border-slate-100 max-h-[500px] overflow-y-auto">
+                  <div 
+                    className="mega-menu w-[90vw] max-w-[800px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 border border-slate-100 max-h-[500px] overflow-y-auto"
+                    onMouseEnter={() => setOpenDropdown('resources')}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    style={{ marginTop: '-8px', paddingTop: '48px' }}
+                  >
                     <div>
                       <Link
                         href="/resources/general-protocols"
@@ -1186,7 +1219,7 @@ export default function Header() {
               <li className="py-4">
                 <Link
                   href="/contact-us"
-                  className="text-xs font-black text-[#002776] uppercase tracking-[0.2em]"
+                  className="text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
                 >
                   CONTACT US
                 </Link>
