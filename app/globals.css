@@ -370,3 +370,28 @@
   border: 1px solid rgba(0, 240, 243, 0.2);
 }
 
+.mobile-hero-image-container {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-hero-image-container {
+    display: none !important;
+  }
+}
+
+/* Slide Sheet Animation - iOS-standard swift curve */
+@keyframes slideSheet {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Specular Glass Utility - Mimics light hitting glass edge */
+.specular-glass {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+

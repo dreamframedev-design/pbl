@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Search, ShoppingCart, User, Mail, ChevronDown, Menu, X } from 'lucide-react';
@@ -13,6 +13,8 @@ export default function Header() {
   const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Check if a path is active (for top nav)
   const isActive = (path: string) => {
@@ -43,6 +45,7 @@ export default function Header() {
         q: searchQuery.trim(),
         ...(searchCategory !== 'All' && { category: searchCategory }),
       });
+      setIsSearchOpen(false); // Close search overlay after search
       router.push(`/search?${params.toString()}`);
     }
   };
@@ -51,6 +54,27 @@ export default function Header() {
   const handleLinkClick = () => {
     setOpenDropdown(null);
   };
+
+  // Scroll-reactive header state
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Body scroll lock when overlays are open
+  useEffect(() => {
+    if (mobileMenuOpen || isSearchOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen, isSearchOpen]);
 
   const searchCategories = [
     { value: 'All', label: 'All' },
@@ -62,11 +86,24 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-[100] glass-header" style={{ overflow: 'visible' }}>
+    <header 
+      className={`sticky top-0 z-[100] transition-all duration-300 w-full ${
+        // FORCE solid white background if scrolled, menu is open, OR search is open
+        isScrolled || mobileMenuOpen || isSearchOpen
+          ? "bg-white border-b border-slate-200/50 shadow-sm py-2" 
+          : "bg-transparent py-4"
+      }`}
+      style={{ overflow: 'visible' }}
+    >
       {/* Main Header Bar */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-5 flex items-center gap-4 sm:gap-6 lg:gap-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 sm:gap-6 lg:gap-12">
         {/* Logo */}
-        <Link href="/" className="brand-link flex-shrink-0 flex flex-col items-start no-underline group z-10">
+        <Link 
+          href="/" 
+          className={`brand-link flex-shrink-0 flex flex-col items-start no-underline group z-10 transition-transform duration-300 ${
+            isScrolled ? "scale-90" : "scale-100"
+          }`}
+        >
           <svg 
             className="brand-logo h-8 sm:h-10 w-auto" 
             viewBox="0 0 5306.6733 1228.0721" 
@@ -164,109 +201,153 @@ export default function Header() {
           </form>
         </div>
 
-        {/* Request a Quote Button - Hidden on mobile */}
-        <Link
-          href="/speak-to-a-scientist"
-          className="hidden lg:flex bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 lg:px-8 py-2 lg:py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20 flex-shrink-0"
-        >
-          Request a Quote
-        </Link>
+        {/* Spacer: Push everything after this to the far right on mobile/tablet */}
+        <div className="flex-1 lg:hidden"></div>
 
-        {/* Icons - Far Right */}
-        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-          <Link
-            href="/cart"
-            className="relative p-2 text-gray-700 hover:text-primary-navy transition-colors"
-            aria-label="Shopping cart"
+        {/* Right Side Container: Forced to end alignment */}
+        <div className="flex items-center justify-end gap-3 sm:gap-4 flex-shrink-0">
+          {/* Search Icon Toggle - Mobile */}
+          <button 
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            className="p-2 text-[#002776] md:hidden"
+            aria-label="Toggle search"
           >
-            <ShoppingCart className="h-5 w-5" />
-          </Link>
+            <Search className="h-5 w-5" />
+          </button>
+
+          {/* Request a Quote Button - Mobile: More compact */}
           <Link
-            href="/contact-us"
-            className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
-            aria-label="Contact us"
+            href="/speak-to-a-scientist"
+            className="hidden sm:flex bg-[#002776] text-white text-[10px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full hover:scale-105 transition-all"
           >
-            <Mail className="h-5 w-5" />
+            Speak to a Scientist
           </Link>
-          <Link
-            href="/user/login"
-            className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
-            aria-label="Account"
+
+          {/* Mobile Menu Button: Explicitly last in the flex row */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-[#002776] hover:text-primary-navy transition-colors"
+            aria-label="Toggle menu"
           >
-            <User className="h-5 w-5" />
-          </Link>
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+
+          {/* Desktop Logic: Remains unchanged for large screens */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href="/cart"
+              className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
+              aria-label="Shopping cart"
+            >
+              <ShoppingCart className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/contact-us"
+              className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
+              aria-label="Contact us"
+            >
+              <Mail className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/user/login"
+              className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
+              aria-label="Account"
+            >
+              <User className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/speak-to-a-scientist"
+              className="bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20 ml-4"
+            >
+              Request a Quote
+            </Link>
+          </div>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-gray-700 hover:text-primary-navy transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
       </div>
 
-      {/* Mobile Search Bar */}
-      <div className="md:hidden px-4 pb-4">
-        <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden">
-          <div className="relative h-full z-10">
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                setCategoryDropdownOpen(!categoryDropdownOpen);
-              }}
-              onBlur={() => setTimeout(() => setCategoryDropdownOpen(false), 200)}
-              className="bg-slate-200/50 px-3 h-full text-[10px] font-black text-[#002776] border-r border-slate-200 uppercase tracking-widest hover:bg-slate-200 transition-colors flex items-center gap-1"
-            >
-              {searchCategories.find(cat => cat.value === searchCategory)?.label || 'All'}
-              <ChevronDown className="w-3 h-3" />
-            </button>
-          </div>
-          {categoryDropdownOpen && (
-            <div className="absolute top-full left-4 right-4 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 z-[200] py-1">
-              {searchCategories.map((category) => (
+      {/* Floating Search Overlay - Mobile */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-[150] md:hidden">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-500"
+            onClick={() => setIsSearchOpen(false)}
+          />
+          
+          {/* Search Overlay */}
+          <div className="absolute top-0 left-0 right-0 bg-white/95 backdrop-blur-2xl shadow-2xl border-b border-slate-200/50 p-4">
+            <div className="flex items-center gap-2 mb-4">
+              <button
+                onClick={() => setIsSearchOpen(false)}
+                className="p-2 text-[#002776]"
+                aria-label="Close search"
+              >
+                <X className="h-5 w-5" />
+              </button>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Search</span>
+            </div>
+            
+            <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden">
+              <div className="relative h-full z-10">
                 <button
-                  key={category.value}
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    setSearchCategory(category.value);
-                    setCategoryDropdownOpen(false);
+                    setCategoryDropdownOpen(!categoryDropdownOpen);
                   }}
-                  className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
-                    searchCategory === category.value
-                      ? 'bg-primary-navy/10 text-primary-navy font-medium'
-                      : 'text-gray-700'
-                  }`}
+                  onBlur={() => setTimeout(() => setCategoryDropdownOpen(false), 200)}
+                  className="bg-slate-200/50 px-3 h-full text-[10px] font-black text-[#002776] border-r border-slate-200 uppercase tracking-widest hover:bg-slate-200 transition-colors flex items-center gap-1"
                 >
-                  {category.label}
+                  {searchCategories.find(cat => cat.value === searchCategory)?.label || 'All'}
+                  <ChevronDown className="w-3 h-3" />
                 </button>
-              ))}
-            </div>
-          )}
-          <div className="flex-1 relative h-full">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search..."
-              className="w-full bg-transparent pl-10 pr-3 text-sm outline-none h-full"
-            />
+              </div>
+              {categoryDropdownOpen && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 z-[200] py-1">
+                  {searchCategories.map((category) => (
+                    <button
+                      key={category.value}
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setSearchCategory(category.value);
+                        setCategoryDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
+                        searchCategory === category.value
+                          ? 'bg-primary-navy/10 text-primary-navy font-medium'
+                          : 'text-gray-700'
+                      }`}
+                    >
+                      {category.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <div className="flex-1 relative h-full">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search 60+ technical products, proteins, and services..."
+                  className="w-full bg-transparent pl-10 pr-3 text-sm outline-none h-full"
+                  autoFocus
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-[#058A9F] hover:bg-cyan-500 h-full px-4 text-white transition-colors flex items-center rounded-r-xl"
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5" />
+              </button>
+            </form>
           </div>
-          <button
-            type="submit"
-            className="bg-[#058A9F] hover:bg-cyan-500 h-full px-4 text-white transition-colors flex items-center rounded-r-xl"
-            aria-label="Search"
-          >
-            <Search className="w-5 h-5" />
-          </button>
-        </form>
-      </div>
+        </div>
+      )}
 
       {/* Navigation Bar - Row Below with Dropdowns - Hidden on mobile */}
       <nav className="hidden lg:flex max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 gap-6 lg:gap-10 relative" style={{ overflow: 'visible', height: 'auto', maxHeight: 'none' }}>
@@ -1248,156 +1329,213 @@ export default function Header() {
             </ul>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Slide-over Menu Sheet */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-200 max-h-[calc(100vh-200px)] overflow-y-auto">
-          <nav className="px-4 py-6 space-y-4">
-            {/* Products */}
-            <div>
-              <Link
-                href="/products"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
-              >
-                PRODUCTS
-              </Link>
-              <div className="pl-4 pt-2 space-y-3">
-                {/* Assay Kits */}
-                <div>
-                  <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700">Assay Kits</Link>
-                  <div className="pl-4 space-y-1.5">
-                    <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">All Assay Kits</Link>
-                    <Link href="/products/assay-kits/cell-based-assays" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Cell-Based Assays</Link>
-                    <div>
-                      <Link href="/products/assay-kits/interferon-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Interferon (IFN) ELISA Kits</Link>
-                      <div className="pl-3 space-y-1">
-                        <Link href="/products/assay-kits/interferon-elisas/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human Interferon ELISAs</Link>
-                        <Link href="/products/assay-kits/interferon-elisas/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Mouse Interferon ELISAs</Link>
-                        <Link href="/products/assay-kits/interferon-elisas/non-human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Non-Human Interferon ELISAs</Link>
+        <div className="fixed inset-0 z-[200] lg:hidden">
+          {/* 1. Backdrop - ensure this covers everything */}
+          <div 
+            className="absolute inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity duration-500"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          
+          {/* 2. The Sheet - MUST be solid white to block out the hero text behind it */}
+          <div 
+            className="fixed right-0 top-0 h-full w-[85%] bg-white shadow-2xl flex flex-col z-[210] border-l border-slate-100 specular-glass"
+            style={{ 
+              animation: 'slideSheet 0.4s cubic-bezier(0.32, 0.72, 0, 1) forwards'
+            }}
+          >
+            <div className="p-6 flex justify-between items-center border-b border-slate-100">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Knowledge Hub</span>
+              <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-[#002776]">
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            <nav className="flex-1 overflow-y-auto px-6 py-8 space-y-6">
+              {/* Mobile Icons - Shopping Cart, Mail, User */}
+              <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
+                <Link
+                  href="/cart"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 p-3 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50 flex-1 justify-center"
+                  aria-label="Shopping cart"
+                >
+                  <ShoppingCart className="h-5 w-5" />
+                  <span className="text-sm font-medium">Cart</span>
+                </Link>
+                <Link
+                  href="/contact-us"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 p-3 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50 flex-1 justify-center"
+                  aria-label="Contact us"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span className="text-sm font-medium">Contact</span>
+                </Link>
+                <Link
+                  href="/user/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 p-3 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50 flex-1 justify-center"
+                  aria-label="Account"
+                >
+                  <User className="h-5 w-5" />
+                  <span className="text-sm font-medium">Account</span>
+                </Link>
+              </div>
+
+              {/* Products */}
+              <div>
+                <Link
+                  href="/products"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-3 text-lg font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+                >
+                  PRODUCTS
+                </Link>
+                <div className="pl-4 pt-3 space-y-4">
+                  {/* Assay Kits */}
+                  <div>
+                    <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-slate-700">Assay Kits</Link>
+                    <div className="pl-4 space-y-1.5">
+                      <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">All Assay Kits</Link>
+                      <Link href="/products/assay-kits/cell-based-assays" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Cell-Based Assays</Link>
+                      <div>
+                        <Link href="/products/assay-kits/interferon-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Interferon (IFN) ELISA Kits</Link>
+                        <div className="pl-3 space-y-1">
+                          <Link href="/products/assay-kits/interferon-elisas/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human Interferon ELISAs</Link>
+                          <Link href="/products/assay-kits/interferon-elisas/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mouse Interferon ELISAs</Link>
+                          <Link href="/products/assay-kits/interferon-elisas/non-human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Non-Human Interferon ELISAs</Link>
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <Link href="/products/assay-kits/interleukin-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Interleukin (IL) ELISA Kits</Link>
-                      <div className="pl-3 space-y-1">
-                        <Link href="/products/assay-kits/interleukin-elisas/human-il-15" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human IL-15 ELISA</Link>
-                        <Link href="/products/assay-kits/interleukin-elisas/human-il-22" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human IL-22 ELISA</Link>
+                      <div>
+                        <Link href="/products/assay-kits/interleukin-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Interleukin (IL) ELISA Kits</Link>
+                        <div className="pl-3 space-y-1">
+                          <Link href="/products/assay-kits/interleukin-elisas/human-il-15" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IL-15 ELISA</Link>
+                          <Link href="/products/assay-kits/interleukin-elisas/human-il-22" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IL-22 ELISA</Link>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                {/* Proteins */}
-                <div>
-                  <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700">Proteins</Link>
-                  <div className="pl-4 space-y-1.5">
-                    <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">All Proteins</Link>
-                    <Link href="/products/proteins/cytokines" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Cytokines and Growth Factors</Link>
-                    <Link href="/products/proteins/interferon-decoy-receptor" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Interferon Decoy Receptor</Link>
-                    <div>
-                      <Link href="/products/proteins/interferons" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Interferons</Link>
-                      <div className="pl-3 space-y-1">
-                        <Link href="/products/proteins/interferons/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Human IFN Proteins</Link>
-                        <Link href="/products/proteins/interferons/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Mouse IFN Proteins</Link>
-                        <Link href="/products/proteins/interferons/rat" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Rat IFN Proteins</Link>
-                        <Link href="/products/proteins/interferons/mammalian" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Mammalian IFN Proteins</Link>
+                  {/* Proteins */}
+                  <div>
+                    <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-slate-700">Proteins</Link>
+                    <div className="pl-4 space-y-1.5">
+                      <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">All Proteins</Link>
+                      <Link href="/products/proteins/cytokines-growth-factors" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Cytokines and Growth Factors</Link>
+                      <Link href="/products/proteins/interferon-decoy-receptor" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Interferon Decoy Receptor</Link>
+                      <div>
+                        <Link href="/products/proteins/interferons" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Interferons</Link>
+                        <div className="pl-3 space-y-1">
+                          <Link href="/products/proteins/interferons/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IFN Proteins</Link>
+                          <Link href="/products/proteins/interferons/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mouse IFN Proteins</Link>
+                          <Link href="/products/proteins/interferons/rat" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Rat IFN Proteins</Link>
+                          <Link href="/products/proteins/interferons/mammalian" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mammalian IFN Proteins</Link>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                {/* Antibodies */}
-                <div>
-                  <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs font-semibold text-slate-700">Antibodies</Link>
-                  <div className="pl-4 space-y-1.5">
-                    <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">All Antibodies</Link>
-                    <div>
-                      <Link href="/products/antibodies/monoclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Monoclonal Antibodies (MAbs)</Link>
-                      <div className="pl-3 space-y-1">
-                        <Link href="/products/antibodies/monoclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Human IFN MAbs</Link>
-                        <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Mouse IFN MAbs</Link>
-                        <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Porcine IFN MAbs</Link>
-                        <Link href="/products/antibodies/monoclonal/labeled" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Labeled Anti-IFN MAbs</Link>
+                  {/* Antibodies */}
+                  <div>
+                    <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-slate-700">Antibodies</Link>
+                    <div className="pl-4 space-y-1.5">
+                      <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">All Antibodies</Link>
+                      <div>
+                        <Link href="/products/antibodies/monoclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Monoclonal Antibodies (MAbs)</Link>
+                        <div className="pl-3 space-y-1">
+                          <Link href="/products/antibodies/monoclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Human IFN MAbs</Link>
+                          <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Mouse IFN MAbs</Link>
+                          <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Porcine IFN MAbs</Link>
+                          <Link href="/products/antibodies/monoclonal/labeled" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Labeled Anti-IFN MAbs</Link>
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <Link href="/products/antibodies/polyclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Polyclonal Antibodies (PAbs)</Link>
-                      <div className="pl-3 space-y-1">
-                        <Link href="/products/antibodies/polyclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Human IFN PAbs</Link>
-                        <Link href="/products/antibodies/polyclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Mouse IFN PAbs</Link>
-                        <Link href="/products/antibodies/polyclonal/anti-rat-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Anti-Rat IFN PAbs</Link>
+                      <div>
+                        <Link href="/products/antibodies/polyclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Polyclonal Antibodies (PAbs)</Link>
+                        <div className="pl-3 space-y-1">
+                          <Link href="/products/antibodies/polyclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Human IFN PAbs</Link>
+                          <Link href="/products/antibodies/polyclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Mouse IFN PAbs</Link>
+                          <Link href="/products/antibodies/polyclonal/anti-rat-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Rat IFN PAbs</Link>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            {/* Services */}
-            <div>
-              <Link
-                href="/services"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
-              >
-                SERVICES
-              </Link>
-              <div className="pl-4 pt-2 space-y-3">
-                <div>
-                  <p className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-2 pt-2">Core Services</p>
-                  <div className="space-y-1.5">
-                    <Link href="/services/assay-development" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Assay Development</Link>
-                    <div>
-                      <Link href="/services/biomarker-sample-analysis" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] font-semibold text-slate-700">Biomarker Sample Analysis</Link>
-                      <div className="pl-3 space-y-1">
-                        <Link href="/services/biomarker-sample-analysis/simoa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">SIMOA Assay Services</Link>
-                        <Link href="/services/biomarker-sample-analysis/smc" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">SMC Assay Services</Link>
-                        <Link href="/services/biomarker-sample-analysis/multiplex-elisa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[10px] text-slate-500">Multiplex ELISA Assay Services</Link>
+
+              {/* Services */}
+              <div>
+                <Link
+                  href="/services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-3 text-lg font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+                >
+                  SERVICES
+                </Link>
+                <div className="pl-4 pt-3 space-y-4">
+                  <div>
+                    <p className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-2 pt-2">Core Services</p>
+                    <div className="space-y-1.5">
+                      <Link href="/services/assay-development" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Assay Development</Link>
+                      <div>
+                        <Link href="/services/biomarker-sample-analysis" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Biomarker Sample Analysis</Link>
+                        <div className="pl-3 space-y-1">
+                          <Link href="/services/biomarker-sample-analysis/simoa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">SIMOA Assay Services</Link>
+                          <Link href="/services/biomarker-sample-analysis/smc" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">SMC Assay Services</Link>
+                          <Link href="/services/biomarker-sample-analysis/multiplex-elisa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Multiplex ELISA Assay Services</Link>
+                        </div>
                       </div>
+                      <Link href="/services/cell-based-services" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Cell-Based Services</Link>
                     </div>
-                    <Link href="/services/cell-based-services" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Cell-Based Services</Link>
                   </div>
-                </div>
-                <div>
-                  <p className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-2 pt-2">Additional Services</p>
-                  <div className="space-y-1.5">
-                    <Link href="/services/custom-production" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Custom Production</Link>
-                    <Link href="/services/antibody-characterization" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[11px] text-slate-600">Antibody Characterization Service</Link>
+                  <div>
+                    <p className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-2 pt-2">Additional Services</p>
+                    <div className="space-y-1.5">
+                      <Link href="/services/custom-production" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Custom Production</Link>
+                      <Link href="/services/antibody-characterization" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Antibody Characterization Service</Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            {/* Resources */}
-            <div>
-              <Link
-                href="/resources"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
-              >
-                RESOURCES
-              </Link>
-              <div className="pl-4 pt-2 space-y-2">
-                <Link href="/resources/technical-presentations" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Technical Presentations</Link>
-                <Link href="/resources/general-protocols" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">General Protocols</Link>
-                <Link href="/resources/scientific-articles" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Scientific Articles</Link>
+
+              {/* Resources */}
+              <div>
+                <Link
+                  href="/resources"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-3 text-lg font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+                >
+                  RESOURCES
+                </Link>
+                <div className="pl-4 pt-3 space-y-2">
+                  <Link href="/resources/technical-presentations" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Technical Presentations</Link>
+                  <Link href="/resources/general-protocols" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">General Protocols</Link>
+                  <Link href="/resources/scientific-articles" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Scientific Articles</Link>
+                </div>
               </div>
-            </div>
-            {/* Contact Us */}
-            <div>
-              <Link
-                href="/contact-us"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
-              >
-                CONTACT US
-              </Link>
-            </div>
-            <div className="pt-4">
+
+              {/* Contact Us */}
+              <div>
+                <Link
+                  href="/contact-us"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-3 text-lg font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+                >
+                  CONTACT US
+                </Link>
+              </div>
+            </nav>
+
+            {/* 3. Compact Bottom Action */}
+            <div className="p-6 bg-slate-50/50">
               <Link
                 href="/speak-to-a-scientist"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl text-center"
+                className="block w-full py-5 bg-[#002776] text-white rounded-2xl font-bold text-center shadow-xl shadow-blue-900/20"
               >
                 Request a Quote
               </Link>
             </div>
-          </nav>
+          </div>
         </div>
       )}
     </header>

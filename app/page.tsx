@@ -1,48 +1,96 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
 
 export default function Home() {
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (parallaxRef.current && window.innerWidth < 768) {
+        const scrolled = window.scrollY;
+        const parallaxSpeed = 0.5; // 50% of scroll speed
+        parallaxRef.current.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section - Height accounts for navbar */}
-      <section className="relative w-full flex items-center justify-start" style={{ height: 'calc(100dvh - 160px)', minHeight: '600px' }}>
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full flex items-center justify-start lg:items-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px]">
+        
+        {/* 1. DESKTOP/TABLET BACKGROUND (md+) */}
+        <div className="hidden md:block absolute inset-0 z-0">
           <Image
             src="/images/hero nice1.webp"
             alt="PBL Assay Science"
             fill
             className="object-cover object-center"
             priority
-            style={{ objectPosition: 'center center' }}
           />
+          <div className="absolute inset-0 bg-white/10"></div>
         </div>
 
+        {/* 2. MOBILE BACKGROUND (< md) - Parallax Effect */}
+        <div 
+          ref={parallaxRef}
+          className="block md:hidden absolute inset-0 z-0 will-change-transform" 
+          style={{
+            background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+          }}
+        ></div>
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full py-16 lg:py-20">
-          <div className="max-w-xl lg:max-w-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-10 leading-[1.1] text-[#002776]">
-              Fit-for-purpose assay&nbsp;development, <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">customization and execution.</span>
-            </h1>
-            <div className="flex flex-col sm:flex-row gap-6 mt-12">
-              <Link
-                href="/products"
-                className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all shadow-xl shadow-blue-900/20 hover:scale-105"
-              >
-                Go to Products
-              </Link>
-              <Link
-                href="/services"
-                className="px-10 py-5 rounded-full font-bold text-lg transition-all hover:scale-105"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.8)',
-                  backdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(226, 232, 240, 0.8)',
-                  color: '#002776'
-                }}
-              >
-                View Services
-              </Link>
+          <div className="flex flex-col items-start">
+            
+            {/* HERO TEXT */}
+            <div className="max-w-xl lg:max-w-2xl w-full">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-[#002776]">
+                Fit-for-purpose assay&nbsp;development, <br/>
+                <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">customization and execution.</span>
+              </h1>
+              
+              {/* 3. REFINED MOBILE HERO CONTAINER (Inserted between Heading and CTAs) */}
+              <div className="mt-10 w-full block md:hidden">
+                <div className="relative p-[1.5px] rounded-[2.5rem] bg-gradient-to-br from-cyan-400/40 via-emerald-400/20 to-[#002776]/30 shadow-[0_20px_50px_rgba(0,39,118,0.15)] overflow-hidden">
+                  {/* Glossy Overlay Tint */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-emerald-500/5 pointer-events-none"></div>
+                  
+                  <div className="bg-white/80 backdrop-blur-2xl rounded-[2.45rem] p-3">
+                    <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden shadow-inner border border-white/40">
+                      <Image
+                        src="/images/1.webp"
+                        alt="PBL Mobile Hero"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* HERO CTAs */}
+              <div className="flex flex-col sm:flex-row gap-6 mt-12">
+                <Link
+                  href="/products"
+                  className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all duration-200 shadow-xl shadow-blue-900/20 hover:scale-105 active:scale-95 text-center"
+                >
+                  Go to Products
+                </Link>
+                <Link
+                  href="/services"
+                  className="px-10 py-5 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 active:scale-95 bg-white/80 backdrop-blur-md border border-slate-200 text-[#002776] text-center"
+                >
+                  View Services
+                </Link>
+              </div>
             </div>
           </div>
         </div>
