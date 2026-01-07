@@ -62,10 +62,13 @@
 @layer base {
   html {
     font-family: var(--font-inter), "Open Sauce One", system-ui, sans-serif;
+    overflow-x: hidden;
   }
   
   body {
     @apply bg-background-white text-gray-900 font-body;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -52,7 +52,7 @@ export default async function ResourcesPage() {
               border: '1px solid rgba(226, 232, 240, 0.8)'
             }}>
               <div className="bg-white rounded-[2.2rem] p-8 h-full flex flex-col">
-                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner transition-all duration-700">
                   <Image
                     src="/images/Technical Presentations.webp"
                     alt="Technical Presentations"
@@ -98,7 +98,7 @@ export default async function ResourcesPage() {
               border: '1px solid rgba(226, 232, 240, 0.8)'
             }}>
               <div className="bg-white rounded-[2.2rem] p-8 h-full flex flex-col">
-                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner transition-all duration-700">
                   <Image
                     src="/images/General Protocols hero2.webp"
                     alt="General Protocols"
@@ -144,7 +144,7 @@ export default async function ResourcesPage() {
               border: '1px solid rgba(226, 232, 240, 0.8)'
             }}>
               <div className="bg-white rounded-[2.2rem] p-8 h-full flex flex-col">
-                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner transition-all duration-700">
                   <Image
                     src="/images/Scientific Articles.webp"
                     alt="Scientific Articles"

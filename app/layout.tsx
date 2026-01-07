@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="flex flex-col min-h-screen font-body">
+    <html lang="en" className={inter.variable} style={{ overflowX: 'hidden' }}>
+      <body className="flex flex-col min-h-screen font-body overflow-x-hidden">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

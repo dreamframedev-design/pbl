@@ -6,59 +6,43 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-32 overflow-hidden" style={{
-        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.1) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
-      }}>
-        {/* Decorative SVG - Behind everything */}
-        <div className="absolute top-0 right-0 w-2/3 h-full opacity-20 pointer-events-none z-0">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full scale-150">
-            <path fill="#00F0F3" d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,76.4,-44.7C83.6,-31.3,86.9,-15.7,85.5,-0.8C84.1,14C78,28,69.2,40.1,58.1,50.2C47,60.3,39.6,74.5,28.8,80.8C18,87.1,3.8,85.5,-10.1,81.4C-24,77.3,-37.6,70.7,-49.2,61.4C-60.8,52.1,-70.4,40.1,-76.5,26.6C-82.6,13.1,-85.2,-1.9,-82.1,-15.8C-79,-29.7,-70.2,-42.5,-59,-50C-47.8,-57.5,-34.2,-59.7,-21.8,-66.2C-9.4,-72.7,1.8,-83.5,16.5,-85.5C31.2,-87.5,31.3,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
-          </svg>
+      <section className="relative w-full min-h-screen flex items-center justify-start">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero nice1.webp"
+            alt="PBL Assay Science"
+            fill
+            className="object-cover object-center"
+            priority
+            style={{ objectPosition: 'center center' }}
+          />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
-            {/* Left Column - Text */}
-            <div className="relative z-20 max-w-xl lg:max-w-lg lg:pr-12">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-10 leading-[1.1] text-[#002776]">
-                Fit-for-purpose assay&nbsp;development, <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">customization and execution.</span>
-              </h1>
-              <div className="flex flex-col sm:flex-row gap-6 mt-12">
-                <Link
-                  href="/products"
-                  className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all shadow-xl shadow-blue-900/20 hover:scale-105"
-                >
-                  Go to Products
-                </Link>
-                <Link
-                  href="/services"
-                  className="px-10 py-5 rounded-full font-bold text-lg transition-all hover:scale-105"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.8)',
-                    backdropFilter: 'blur(16px)',
-                    border: '1px solid rgba(226, 232, 240, 0.8)',
-                    color: '#002776'
-                  }}
-                >
-                  View Services
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column - Image */}
-            <div className="relative z-20 lg:order-2 lg:pl-12">
-              <div className="relative group max-w-md mx-auto lg:max-w-full">
-                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-3xl opacity-10 group-hover:opacity-20 transition-opacity z-0"></div>
-                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl z-10">
-                  <Image
-                    src="/images/1.webp"
-                    alt="PBL Assay Science"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full py-16 lg:py-20">
+          <div className="max-w-xl lg:max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-10 leading-[1.1] text-[#002776]">
+              Fit-for-purpose assay&nbsp;development, <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">customization and execution.</span>
+            </h1>
+            <div className="flex flex-col sm:flex-row gap-6 mt-12">
+              <Link
+                href="/products"
+                className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all shadow-xl shadow-blue-900/20 hover:scale-105"
+              >
+                Go to Products
+              </Link>
+              <Link
+                href="/services"
+                className="px-10 py-5 rounded-full font-bold text-lg transition-all hover:scale-105"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(226, 232, 240, 0.8)',
+                  color: '#002776'
+                }}
+              >
+                View Services
+              </Link>
             </div>
           </div>
         </div>

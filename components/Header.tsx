@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { Search, ShoppingCart, User, Mail, ChevronDown } from 'lucide-react';
+import { Search, ShoppingCart, User, Mail, ChevronDown, Menu, X } from 'lucide-react';
 
 export default function Header() {
   const router = useRouter();
@@ -12,6 +12,7 @@ export default function Header() {
   const [searchCategory, setSearchCategory] = useState('All');
   const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Check if a path is active (for top nav)
   const isActive = (path: string) => {
@@ -61,13 +62,13 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-[100] glass-header">
+    <header className="sticky top-0 z-[100] glass-header overflow-x-hidden">
       {/* Main Header Bar */}
-      <div className="max-w-[1600px] mx-auto px-8 py-5 flex items-center gap-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-5 flex items-center gap-4 sm:gap-6 lg:gap-12">
         {/* Logo */}
-        <Link href="/" className="brand-link flex-shrink-0 flex flex-col items-start no-underline group">
+        <Link href="/" className="brand-link flex-shrink-0 flex flex-col items-start no-underline group z-10">
           <svg 
-            className="brand-logo h-10 w-auto" 
+            className="brand-logo h-8 sm:h-10 w-auto" 
             viewBox="0 0 5306.6733 1228.0721" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
@@ -95,9 +96,9 @@ export default function Header() {
           <div className="glow-line"></div>
         </Link>
 
-        {/* Search Bar */}
-        <div className="flex-1 max-w-3xl relative">
-          <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden">
+        {/* Search Bar - Hidden on mobile */}
+        <div className="hidden md:flex flex-1 max-w-3xl relative">
+          <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden w-full">
             {/* Category Dropdown */}
             <div className="relative h-full z-10">
               <button
@@ -163,16 +164,16 @@ export default function Header() {
           </form>
         </div>
 
-        {/* Request a Quote Button - Next to Search */}
+        {/* Request a Quote Button - Hidden on mobile */}
         <Link
           href="/speak-to-a-scientist"
-          className="bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-8 py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20 flex-shrink-0"
+          className="hidden lg:flex bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 lg:px-8 py-2 lg:py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20 flex-shrink-0"
         >
           Request a Quote
         </Link>
 
         {/* Icons - Far Right */}
-        <div className="flex items-center gap-4 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <Link
             href="/cart"
             className="relative p-2 text-gray-700 hover:text-primary-navy transition-colors"
@@ -195,10 +196,80 @@ export default function Header() {
             <User className="h-5 w-5" />
           </Link>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden p-2 text-gray-700 hover:text-primary-navy transition-colors"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
-      {/* Navigation Bar - Row Below with Dropdowns */}
-      <nav className="max-w-[1600px] mx-auto px-8 flex gap-10">
+      {/* Mobile Search Bar */}
+      <div className="md:hidden px-4 pb-4">
+        <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden">
+          <div className="relative h-full z-10">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setCategoryDropdownOpen(!categoryDropdownOpen);
+              }}
+              onBlur={() => setTimeout(() => setCategoryDropdownOpen(false), 200)}
+              className="bg-slate-200/50 px-3 h-full text-[10px] font-black text-[#002776] border-r border-slate-200 uppercase tracking-widest hover:bg-slate-200 transition-colors flex items-center gap-1"
+            >
+              {searchCategories.find(cat => cat.value === searchCategory)?.label || 'All'}
+              <ChevronDown className="w-3 h-3" />
+            </button>
+          </div>
+          {categoryDropdownOpen && (
+            <div className="absolute top-full left-4 right-4 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 z-[200] py-1">
+              {searchCategories.map((category) => (
+                <button
+                  key={category.value}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setSearchCategory(category.value);
+                    setCategoryDropdownOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${
+                    searchCategory === category.value
+                      ? 'bg-primary-navy/10 text-primary-navy font-medium'
+                      : 'text-gray-700'
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          )}
+          <div className="flex-1 relative h-full">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search..."
+              className="w-full bg-transparent pl-10 pr-3 text-sm outline-none h-full"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-[#058A9F] hover:bg-cyan-500 h-full px-4 text-white transition-colors flex items-center rounded-r-xl"
+            aria-label="Search"
+          >
+            <Search className="w-5 h-5" />
+          </button>
+        </form>
+      </div>
+
+      {/* Navigation Bar - Row Below with Dropdowns - Hidden on mobile */}
+      <nav className="hidden lg:flex max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 gap-6 lg:gap-10">
         <ul className="flex items-center gap-1 lg:gap-4 h-full">
               {/* Products Dropdown */}
               <li
@@ -214,7 +285,7 @@ export default function Header() {
                   <ChevronDown className="w-3 h-3" />
                 </Link>
                 {openDropdown === 'products' && (
-                  <div className="mega-menu absolute left-0 w-[1200px] bg-white rounded-2xl p-12 grid grid-cols-4 gap-12 border border-slate-100">
+                  <div className="mega-menu absolute left-0 w-[90vw] max-w-[1200px] bg-white rounded-2xl p-8 lg:p-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 border border-slate-100">
                     {/* Assay Kits Column */}
                     <div>
                       <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Assay Kits</h4>
@@ -787,7 +858,7 @@ export default function Header() {
                   <ChevronDown className="w-3 h-3" />
                 </Link>
                 {openDropdown === 'services' && (
-                  <div className="mega-menu absolute left-0 w-[600px] bg-white rounded-2xl p-10 grid grid-cols-2 gap-10 border border-slate-100">
+                  <div className="mega-menu absolute left-0 w-[90vw] max-w-[600px] bg-white rounded-2xl p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 border border-slate-100">
                     <div>
                       <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-4">Core Services</h4>
                       <div className="space-y-4">
@@ -908,7 +979,7 @@ export default function Header() {
                   <ChevronDown className="w-3 h-3" />
                 </Link>
                 {openDropdown === 'resources' && (
-                  <div className="mega-menu absolute left-0 w-[800px] bg-white rounded-2xl p-10 grid grid-cols-3 gap-10 border border-slate-100 max-h-[500px] overflow-y-auto">
+                  <div className="mega-menu absolute left-0 w-[90vw] max-w-[800px] bg-white rounded-2xl p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 border border-slate-100 max-h-[500px] overflow-y-auto">
                     <div>
                       <Link
                         href="/resources/general-protocols"
@@ -1122,6 +1193,69 @@ export default function Header() {
               </li>
             </ul>
       </nav>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-slate-200 max-h-[calc(100vh-200px)] overflow-y-auto">
+          <nav className="px-4 py-6 space-y-4">
+            <div>
+              <Link
+                href="/products"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+              >
+                PRODUCTS
+              </Link>
+              <div className="pl-4 pt-2 space-y-2">
+                <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Assay Kits</Link>
+                <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Proteins</Link>
+                <Link href="/products/antibodies" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Antibodies</Link>
+              </div>
+            </div>
+            <div>
+              <Link
+                href="/services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+              >
+                SERVICES
+              </Link>
+              <div className="pl-4 pt-2 space-y-2">
+                <Link href="/services/assay-development" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Assay Development</Link>
+                <Link href="/services/biomarker-sample-analysis" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Biomarker Sample Analysis</Link>
+                <Link href="/services/cell-based-services" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Cell-Based Services</Link>
+              </div>
+            </div>
+            <div>
+              <Link
+                href="/resources"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+              >
+                RESOURCES
+              </Link>
+            </div>
+            <div>
+              <Link
+                href="/contact-us"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-sm font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+              >
+                CONTACT US
+              </Link>
+            </div>
+            <div className="pt-4">
+              <Link
+                href="/speak-to-a-scientist"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl text-center"
+              >
+                Request a Quote
+              </Link>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

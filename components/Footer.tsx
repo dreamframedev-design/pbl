@@ -3,9 +3,9 @@ import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-slate-100 mt-32">
-      <div className="max-w-[1600px] mx-auto px-8 pt-24 pb-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
+    <footer className="bg-white border-t border-slate-100 mt-32 overflow-x-hidden">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-2 space-y-8">
             <Link href="/" className="brand-link flex flex-col items-start no-underline group">
@@ -138,9 +138,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black text-slate-300 tracking-widest uppercase italic">
+        <div className="pt-8 sm:pt-10 lg:pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black text-slate-300 tracking-widest uppercase italic">
           <p>© {new Date().getFullYear()} PBL ASSAY SCIENCE. PRECISION REAGENTS.</p>
-          <div className="flex gap-10 text-slate-400">
+          <div className="flex gap-6 sm:gap-8 lg:gap-10 text-slate-400">
             <Link href="/terms" className="hover:text-slate-600 transition-colors">Terms</Link>
             <Link href="/privacy" className="hover:text-slate-600 transition-colors">Privacy</Link>
           </div>

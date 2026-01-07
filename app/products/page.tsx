@@ -59,7 +59,7 @@ export default function ProductsPage() {
                     src="/images/15.webp"
                     alt="Assay Kits"
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    className="object-cover group-hover:scale-110 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#002776]/40 to-transparent"></div>
                 </div>
@@ -96,7 +96,7 @@ export default function ProductsPage() {
                     src="/images/16.webp"
                     alt="Proteins"
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    className="object-cover group-hover:scale-110 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#058A9F]/40 to-transparent"></div>
                 </div>
@@ -133,7 +133,7 @@ export default function ProductsPage() {
                     src="/images/14.webp"
                     alt="Antibodies"
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    className="object-cover group-hover:scale-110 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-400/40 to-transparent"></div>
                 </div>

@@ -102,9 +102,9 @@ export default function TestimonialsSlider() {
   }, [isDragging, controls, x]);
 
   return (
-    <div className="relative w-full py-4">
+    <div className="relative w-full py-4 overflow-x-hidden">
       {/* Padding wrapper to allow shadows to show - extra padding for shadow space */}
-      <div className="px-12 -mx-12">
+      <div className="px-4 sm:px-6 lg:px-12 -mx-4 sm:-mx-6 lg:-mx-12">
         {/* Slider Container */}
         <motion.div
           ref={sliderRef}
