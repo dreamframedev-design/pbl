@@ -60,11 +60,6 @@ export default async function DynamicServicePage({ params }: { params: Promise<{
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             <span className="text-[#002776]">{markdownData.title}</span>
           </h1>
-          {markdownData.description && (
-            <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-              {markdownData.description}
-            </p>
-          )}
         </div>
       </header>
 
