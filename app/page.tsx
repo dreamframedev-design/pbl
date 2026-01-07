@@ -5,8 +5,8 @@ import TestimonialsSlider from '@/components/TestimonialsSlider';
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-screen flex items-center justify-start">
+      {/* Hero Section - Height accounts for navbar */}
+      <section className="relative w-full flex items-center justify-start" style={{ height: 'calc(100dvh - 160px)', minHeight: '600px' }}>
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
