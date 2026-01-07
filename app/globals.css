@@ -343,3 +343,8 @@
   transform: translateY(-6px);
 }
 
+.badge-icon {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid rgba(0, 240, 243, 0.2);
+}
+

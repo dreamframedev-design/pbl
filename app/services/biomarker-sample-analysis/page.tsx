@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function BiomarkerSampleAnalysisPage() {
@@ -7,6 +8,18 @@ export default function BiomarkerSampleAnalysisPage() {
       <header className="relative pt-32 pb-24 overflow-hidden" style={{
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
       }}>
+        {/* Background Image with White Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/22.webp"
+            alt="Biomarker Sample Analysis"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* White gradient overlay - solid white on left, fades to transparent on right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 via-white/40 to-transparent"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
             <span>PBL</span> <span className="text-gray-300">/</span> <span>Services</span> <span className="text-gray-300">/</span> <span>Biomarker Sample Analysis</span>
