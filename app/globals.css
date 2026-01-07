@@ -82,22 +82,35 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: "Open Sauce One", system-ui, sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    max-width: 100%;
   }
 
   h1 {
     @apply text-display-1 font-bold;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   h2 {
     @apply text-display-2 font-bold;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   h3 {
     @apply text-heading-3 font-medium;
+    word-break: break-word;
   }
 
   p {
     @apply text-body font-light;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -114,6 +127,31 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Universal text overflow prevention */
+  .text-safe {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    max-width: 100%;
+  }
+
+  /* Prevent text cutoff on mobile */
+  .mobile-text-safe {
+    @media (max-width: 768px) {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      max-width: 100%;
+      font-size: clamp(2rem, 8vw, 4rem) !important;
+    }
   }
 
   /* Gradient Headlines */

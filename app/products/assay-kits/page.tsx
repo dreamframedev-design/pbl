@@ -26,12 +26,12 @@ export default function AssayKitsPage() {
               <Link href="/products" className="hover:text-cyan-700">Products</Link>
             </nav>
             
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 pb-2 drop-shadow-sm leading-tight">
-              <span className="text-[#002776]">High-performance</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight mb-6 pb-2 drop-shadow-sm leading-tight text-safe">
+              <span className="text-[#002776] whitespace-nowrap">High-performance</span>
               <br className="block" />
               <span className="text-[#002776]">IFN&nbsp;&amp;&nbsp;Cytokine</span>
               <br className="block" />
-              <span className="text-[#04849C]">ELISA&nbsp;Kits</span>
+              <span className="text-[#04849C] whitespace-nowrap">ELISA&nbsp;Kits</span>
             </h1>
             <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-[#002776] rounded-full mb-8"></div>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light">
