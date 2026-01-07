@@ -1,13 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import ProductCatalog from '@/components/ProductCatalog';
 import { Download, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 
 export default function InterferonDecoyReceptorPage() {
   const [selectedPackSize, setSelectedPackSize] = useState('12185-1');
-  const [quantity, setQuantity] = useState(1);
   const [expandedSections, setExpandedSections] = useState({
     productInfo: true,
     documentation: true,
@@ -40,22 +39,22 @@ export default function InterferonDecoyReceptorPage() {
     },
   ];
 
-  // Activity data for the graph (IU/mg) - matching screenshot values
+  // Activity data for the graph (IU/mg) - exact values from HTML template
   const activityData = [
-    { subtype: 'a1', activity: 1.2e7 },
-    { subtype: 'a2', activity: 8.5e6 },
-    { subtype: 'a4', activity: 6.3e6 },
-    { subtype: 'a5', activity: 4.2e6 },
-    { subtype: 'a6', activity: 3.1e6 },
-    { subtype: 'a7', activity: 2.8e6 },
-    { subtype: 'a8', activity: 2.5e6 },
-    { subtype: 'a9', activity: 2.1e6 },
-    { subtype: 'a10', activity: 1.9e6 },
-    { subtype: 'a11', activity: 1.6e6 },
-    { subtype: 'a12', activity: 1.4e6 },
-    { subtype: 'a13', activity: 1.2e6 },
-    { subtype: 'a14', activity: 1.0e6 },
-    { subtype: 'Limitin', activity: 8.5e5 },
+    { subtype: 'α1', activity: 1.2e7 },
+    { subtype: 'α2', activity: 8.5e6 },
+    { subtype: 'α4', activity: 6.3e6 },
+    { subtype: 'α5', activity: 4.2e6 },
+    { subtype: 'α6', activity: 3.1e6 },
+    { subtype: 'α7', activity: 2.8e6 },
+    { subtype: 'α8', activity: 2.5e6 },
+    { subtype: 'α9', activity: 2.1e6 },
+    { subtype: 'α10', activity: 1.9e6 },
+    { subtype: 'α11', activity: 1.6e6 },
+    { subtype: 'α12', activity: 1.4e6 },
+    { subtype: 'α13', activity: 1.2e6 },
+    { subtype: 'α14', activity: 1.0e6 },
+    { subtype: 'Lim', activity: 8.5e5 },
   ];
 
   const maxActivity = Math.max(...activityData.map(d => d.activity));
@@ -68,360 +67,238 @@ export default function InterferonDecoyReceptorPage() {
   const selectedProduct = catalogProducts.find(p => p.catalogNo === selectedPackSize) || catalogProducts[0];
 
   return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-start">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-background-lavender/20 via-white to-background-periwinkle/20"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full py-16 lg:py-20">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-headline-primary leading-normal mb-6 pb-2">
-              Mouse Interferon Alpha All-Subtype Neutralizing Viral Protein
-            </h1>
-            <div className="mb-4 flex items-center gap-4">
-              <span className="text-lg font-semibold text-primary-navy">Catalog Number: </span>
-              <span className="text-lg font-mono text-secondary-teal font-bold">12185</span>
-              <Link href="#" className="text-sm text-secondary-teal hover:text-accent-cyan underline">
-                1 Citations
-              </Link>
+    <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
+      {/* Hero Section with BannerHero */}
+      <header className="relative pt-40 pb-24 overflow-hidden" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+      }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <nav className="mb-10 flex items-center gap-2 text-[10px] font-black text-cyan-600 uppercase tracking-[0.4em]">
+            <Link href="/products" className="hover:text-cyan-700">Products</Link>
+            <span className="text-slate-300">/</span>
+            <Link href="/products/proteins" className="hover:text-cyan-700">Proteins</Link>
+            <span className="text-slate-300">/</span>
+            <span>Interferon Decoy Receptor</span>
+          </nav>
+          
+          <h1 className="text-6xl md:text-[90px] font-black tracking-tighter leading-[0.85] mb-12 max-w-6xl">
+            <span className="text-[#002776]">Mouse IFN Alpha</span><br/>
+            <span className="text-slate-300 italic font-light font-serif text-4xl md:text-7xl">Neutralizing Viral Protein</span>
+          </h1>
+
+          <div className="flex flex-wrap items-center gap-6">
+            <div className="flex items-center gap-3 bg-white/80 backdrop-blur-md px-6 py-3 rounded-2xl border border-slate-200 shadow-sm">
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Catalog No.</span>
+              <span className="text-lg font-mono font-bold text-[#002776]">12185</span>
             </div>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium mb-6">
-              C12R IFN Antagonist neutralizes All 14 Mouse IFN-Alpha subtypes, plus Mouse Limitin, Mouse IFN-Kappa, and Rat IFN-Alpha 1. Also suitable for Western Blot.
-            </p>
+            <div className="h-6 w-px bg-slate-200"></div>
+            <Link href="#" className="text-sm font-semibold text-cyan-600 underline decoration-cyan-200 underline-offset-8">
+              1 Peer-Reviewed Citations
+            </Link>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Product Purchase Section */}
-      <section className="section-padding bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Activity Graph */}
-            <div className="bg-white rounded-2xl border-2 border-gray-200/50 p-6 shadow-xl">
-              <h2 className="text-2xl font-bold text-primary-navy mb-6">Activity of C12R (IU/mg)</h2>
-              <div className="w-full">
-                <div className="relative h-80 mb-4 border-b-2 border-gray-300 flex items-end justify-between gap-1">
+            <div className="lg:col-span-7 group glass-card p-1 rounded-[3.5rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[3.3rem] p-10 h-full flex flex-col shadow-sm">
+                <div className="flex justify-between items-center mb-12">
+                  <h3 className="text-2xl font-bold text-[#002776] flex items-center gap-3">Activity Profile (IU/mg)</h3>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Validated Antagonism</span>
+                </div>
+                
+                <div className="relative h-80 mb-12 flex items-end justify-between gap-1.5 border-b-2 border-slate-100 pb-4">
                   {activityData.map((item, index) => {
-                    // Calculate height as percentage of max activity, ensuring minimum visibility
                     const heightPercent = (item.activity / maxActivity) * 100;
-                    const barHeight = Math.max(heightPercent, 8); // Minimum 8% height
+                    const barHeight = Math.max(heightPercent, 10); // Minimum 10% height
                     return (
-                      <div key={index} className="flex flex-col items-center flex-1 group relative h-full">
-                        <div className="flex-1 w-full flex items-end">
-                          <div
-                            className="w-full bg-gradient-to-t from-secondary-teal via-secondary-teal/90 to-accent-cyan rounded-t-lg transition-all duration-1000 ease-out hover:opacity-90 hover:scale-105 cursor-pointer shadow-md hover:shadow-lg"
-                            style={{
-                              height: `${barHeight}%`,
-                              minHeight: '12px',
-                              animation: `slideUp 0.8s ease-out ${index * 0.05}s both`,
-                            }}
-                            title={`${item.subtype}: ${item.activity.toExponential(2)} IU/mg`}
-                          >
-                            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary-navy text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
-                              {item.activity.toExponential(2)} IU/mg
-                            </div>
-                          </div>
-                        </div>
-                        <span className="text-xs text-gray-600 font-medium transform -rotate-45 origin-top-left whitespace-nowrap mt-2 h-8 flex items-start">
-                          {item.subtype}
-                        </span>
-                      </div>
+                      <div 
+                        key={index} 
+                        className={`flex-1 bg-gradient-to-t from-[#002776] ${index === 0 ? 'to-cyan-500' : 'to-cyan-400'} rounded-t-lg`}
+                        style={{ 
+                          height: `${barHeight}%`,
+                          filter: index === 0 ? 'drop-shadow(0 0 8px rgba(0, 240, 243, 0.4))' : 'none'
+                        }}
+                      ></div>
                     );
                   })}
+                  
+                  <div className="absolute -left-12 top-0 bottom-0 flex flex-col justify-between text-[9px] font-black text-slate-300">
+                    <span>1.2E+07</span>
+                    <span>1.0E+04</span>
+                  </div>
+                  
+                  <div className="absolute -bottom-10 left-0 right-0 flex justify-between text-[8px] font-black text-slate-400 uppercase tracking-widest px-1">
+                    {activityData.map((item, index) => (
+                      <span key={index}>{item.subtype}</span>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex justify-between text-xs text-gray-600 mb-2 px-2">
-                  <span>1.00E+04</span>
-                  <span>1.00E+08</span>
-                </div>
-                <p className="text-sm text-gray-600 italic mt-4 text-center">
-                  C12R Mouse IFN-Alpha Decoy Receptor Neutralizing Activities (IU/mg)
+                
+                <p className="text-sm text-slate-500 font-light mt-4 leading-relaxed">
+                  C12R IFN Antagonist neutralizes All 14 Mouse IFN-Alpha subtypes, plus Mouse Limitin, Mouse IFN-Kappa, and Rat IFN-Alpha 1.
                 </p>
               </div>
             </div>
 
-            {/* Purchase Options */}
-            <div className="bg-white rounded-2xl border-2 border-gray-200/50 p-6 shadow-xl">
-              <div className="mb-6">
-                <div className="text-3xl font-bold text-primary-navy mb-4">
-                  {selectedProduct.price}
-                </div>
-                
-                <div className="mb-6">
-                  <label className="block text-sm font-semibold text-primary-navy mb-3">Pack Size</label>
-                  <div className="flex gap-3">
-                    {catalogProducts.map((product) => (
-                      <button
-                        key={product.catalogNo}
-                        onClick={() => setSelectedPackSize(product.catalogNo)}
-                        className={`flex-1 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
-                          selectedPackSize === product.catalogNo
-                            ? 'border-secondary-teal bg-secondary-teal/5 text-secondary-teal font-semibold'
-                            : 'border-gray-200 bg-white text-gray-700 hover:border-secondary-teal/50'
-                        }`}
-                      >
-                        <div className="font-medium">{product.packSize}</div>
-                        <div className="text-xs mt-1 font-mono">{product.catalogNo}</div>
-                      </button>
-                    ))}
+            {/* Purchase Options - Dark Mode Portal */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="p-12 rounded-[3.5rem] bg-slate-900 text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(at_0%_0%,rgba(0,240,243,0.15)_0,transparent_50%)]"></div>
+                <div className="relative z-10">
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-cyan-400 mb-2">Available Now</div>
+                  <div className="text-6xl font-black mb-10">
+                    {selectedProduct.price} <span className="text-sm font-normal text-slate-400 ml-2">USD</span>
                   </div>
-                </div>
-
-                <div className="mb-6">
-                  <label className="block text-sm font-semibold text-primary-navy mb-3">Quantity</label>
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="px-3 py-2 border-2 border-gray-200 rounded-lg hover:border-secondary-teal transition-colors"
-                    >
-                      <ChevronDown className="h-4 w-4" />
-                    </button>
-                    <input
-                      type="number"
-                      min="1"
-                      value={quantity}
-                      onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                      className="w-20 px-3 py-2 text-center border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-teal/30 focus:border-secondary-teal"
-                    />
-                    <button
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="px-3 py-2 border-2 border-gray-200 rounded-lg hover:border-secondary-teal transition-colors"
-                    >
-                      <ChevronUp className="h-4 w-4" />
-                    </button>
+                  
+                  <div className="space-y-8 mb-12">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 block mb-4">Pack Size</label>
+                      <div className="grid grid-cols-2 gap-3">
+                        {catalogProducts.map((product) => (
+                          <button
+                            key={product.catalogNo}
+                            onClick={() => setSelectedPackSize(product.catalogNo)}
+                            className={`py-5 border-2 rounded-2xl text-xs font-bold transition-all ${
+                              selectedPackSize === product.catalogNo
+                                ? 'border-cyan-400 bg-cyan-400/10 text-white'
+                                : 'border-white/10 hover:border-white/30 text-slate-400'
+                            }`}
+                          >
+                            {product.packSize}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                <button className="w-full btn-primary text-lg py-4">
-                  ADD TO CART →
-                </button>
+                  <button className="w-full py-6 bg-[#00F0F3] text-[#002776] rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all shadow-xl shadow-cyan-400/30">
+                    Add to Inquiry Cart →
+                  </button>
+                </div>
+              </div>
+
+              <div className="p-10 rounded-[3rem] bg-slate-50 border border-slate-100 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-[9px] font-black uppercase text-slate-400 mb-1">Weight</p>
+                  <p className="text-base font-bold">32 KDa</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-black uppercase text-slate-400 mb-1">Purity</p>
+                  <p className="text-base font-bold">≥95%</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-black uppercase text-slate-400 mb-1">Endotoxin</p>
+                  <p className="text-base font-bold">&lt; 1 EU/µg</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Collapsible Sections */}
-      <section className="section-padding bg-gradient-to-br from-background-skyBlue/20 via-white to-background-lavender/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="space-y-4">
-            {/* Product Info */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden">
-              <button
-                onClick={() => toggleSection('productInfo')}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <h2 className="text-2xl font-bold text-primary-navy">Product Info</h2>
-                {expandedSections.productInfo ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                )}
-              </button>
-              {expandedSections.productInfo && (
-                <div className="px-6 pb-6">
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-lg font-semibold text-primary-navy mb-3">Tested Applications</h3>
-                      <ul className="list-disc list-inside space-y-1 text-gray-700">
-                        <li>Neutralization</li>
-                        <li>Western Blot (WB)</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-semibold text-primary-navy mb-3">Specificity</h3>
-                      <div className="space-y-3 text-gray-700">
-                        <div>
-                          <p className="font-medium mb-2">Neutralizes:</p>
-                          <ul className="list-disc list-inside space-y-1 ml-2">
-                            <li>All mouse and human IFN-Alpha subtypes</li>
-                            <li>Human IFN-Beta, IFN-Omega</li>
-                            <li>Rat IFN-Alpha 1</li>
-                            <li>Mouse limitin</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="font-medium mb-2">Does not neutralize the following when tested at ≥100X the typical neutralizing dose:</p>
-                          <ul className="list-disc list-inside space-y-1 ml-2">
-                            <li>Mouse IFN-Beta</li>
-                            <li>Human IFN-Gamma, IFN-Lambda 1, IFN-Lambda 2, IFN-Lambda 3</li>
-                            <li>Rat IFN-Alpha 14</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-semibold text-primary-navy mb-3">Activity (EC50)</h3>
-                      <p className="text-gray-700">0.3 - 11.5 ng/ml (varies by subtype)</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Documentation */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden">
-              <button
-                onClick={() => toggleSection('documentation')}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <h2 className="text-2xl font-bold text-primary-navy">Documentation</h2>
-                {expandedSections.documentation ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                )}
-              </button>
-              {expandedSections.documentation && (
-                <div className="px-6 pb-6">
-                  <h3 className="text-lg font-semibold text-primary-navy mb-4">Certificate of Analysis (CoA) and Safety Data Sheet (SDS)</h3>
-                  <div className="space-y-3">
-                    <a
-                      href="#"
-                      className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-secondary-teal/5 to-accent-cyan/5 hover:from-secondary-teal/10 hover:to-accent-cyan/10 border border-secondary-teal/20 hover:border-secondary-teal/40 rounded-lg transition-all duration-200 group"
-                    >
-                      <Download className="h-4 w-4 text-secondary-teal" />
-                      <span className="text-sm font-medium text-primary-navy group-hover:text-secondary-teal">
-                        12185-1 CoA (12185-1 Certificate of Analysis)
-                      </span>
-                    </a>
-                    <a
-                      href="#"
-                      className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-secondary-teal/5 to-accent-cyan/5 hover:from-secondary-teal/10 hover:to-accent-cyan/10 border border-secondary-teal/20 hover:border-secondary-teal/40 rounded-lg transition-all duration-200 group"
-                    >
-                      <Download className="h-4 w-4 text-secondary-teal" />
-                      <span className="text-sm font-medium text-primary-navy group-hover:text-secondary-teal">
-                        12185-2 CoA (12185-2 Certificate of Analysis)
-                      </span>
-                    </a>
-                    <a
-                      href="#"
-                      className="flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-secondary-teal/5 to-accent-cyan/5 hover:from-secondary-teal/10 hover:to-accent-cyan/10 border border-secondary-teal/20 hover:border-secondary-teal/40 rounded-lg transition-all duration-200 group"
-                    >
-                      <Download className="h-4 w-4 text-secondary-teal" />
-                      <span className="text-sm font-medium text-primary-navy group-hover:text-secondary-teal">
-                        12185 SDS (12185 Safety Data Sheet)
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Specifications */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden">
-              <button
-                onClick={() => toggleSection('specifications')}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <h2 className="text-2xl font-bold text-primary-navy">Specifications</h2>
-                {expandedSections.specifications ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                )}
-              </button>
-              {expandedSections.specifications && (
-                <div className="px-6 pb-6">
-                  <div className="space-y-4 text-gray-700">
-                    <div>
-                      <h3 className="font-semibold text-primary-navy mb-2">Formulation</h3>
-                      <p>Supplied frozen in phosphate-buffered saline (PBS) containing 0.1% Bovine Serum Albumin (BSA)</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-primary-navy mb-2">Molecular Weight</h3>
-                      <p>32 KDa</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-primary-navy mb-2">Purity</h3>
-                      <p>≥95% by SDS-PAGE stained by Coomassie Blue. Endotoxin level &lt; 1 EU/µg</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-primary-navy mb-2">Bioactivity</h3>
-                      <p>Measured by neutralization of interferon in a cytopathic effect inhibition assay</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-primary-navy mb-2">Storage</h3>
-                      <p>For retention of full activity store at -70°C or below and avoid repeated freeze/thaw cycles</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Tech Info & Data */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden">
-              <button
-                onClick={() => toggleSection('techInfo')}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <h2 className="text-2xl font-bold text-primary-navy">Tech Info & Data</h2>
-                {expandedSections.techInfo ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                )}
-              </button>
-              {expandedSections.techInfo && (
-                <div className="px-6 pb-6">
-                  <div className="space-y-4 text-gray-700">
-                    <div>
-                      <h3 className="font-semibold text-primary-navy mb-3">Background</h3>
-                      <p className="leading-relaxed mb-2">
-                        C12R is a secreted protein from Mousepox (Ectromelia) virus that functions as a decoy receptor for mouse IFN-Alpha. It binds to mouse IFN-Alpha with high affinity and blocks its biological activity, allowing the virus to evade the host immune response during viral infection.
-                      </p>
-                      <p className="leading-relaxed mb-2">
-                        This protein has been extensively characterized and is widely used in research to neutralize mouse IFN-Alpha activity in vitro and in vivo. It is particularly useful for studying the role of Type I interferons in immune responses and viral pathogenesis.
-                      </p>
-                      <p className="leading-relaxed text-sm text-gray-600 italic">
-                        References: Smith and Alcami, J.Vir. 2002; Xu et al. JEM 2008
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Citations */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden">
-              <button
-                onClick={() => toggleSection('citations')}
-                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-              >
-                <h2 className="text-2xl font-bold text-primary-navy">Citations</h2>
-                {expandedSections.citations ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500" />
-                )}
-              </button>
-              {expandedSections.citations && (
-                <div className="px-6 pb-6">
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-secondary-teal pl-4 py-2">
-                      <p className="text-gray-700 leading-relaxed">
-                        <strong>1.</strong> Lee, S. et al., (2019), "A Secreted Viral Nonstructural Protein Determines Intestinal Norovirus Pathogenesis," <em>Cell Host Microbe</em> 25(6):845, PMID: 31130511, DOI: 10.1016/j.chom.2019.04.005{' '}
-                        <a href="#" className="text-secondary-teal hover:text-accent-cyan underline inline-flex items-center gap-1">
-                          <ExternalLink className="h-3 w-3" />
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
+      {/* Informational Sections with Glass Cards */}
+      <section className="py-32 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 space-y-8">
+          
+          {/* Product Specificity */}
+          <div className="glass-card rounded-[3rem] p-12 glow-border transition-all duration-500 specular-glass">
+            <h2 className="text-3xl font-bold mb-10 text-[#002776] border-b border-slate-100 pb-6">Product Specificity</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h4 className="text-[10px] font-black uppercase tracking-widest text-cyan-600 mb-6">Neutralizes:</h4>
+                <ul className="space-y-4 text-[14px] text-slate-600 font-light">
+                  <li className="flex gap-4">✓ <span>All mouse and human IFN-Alpha subtypes</span></li>
+                  <li className="flex gap-4">✓ <span>Human IFN-Beta, IFN-Omega</span></li>
+                  <li className="flex gap-4">✓ <span>Rat IFN-Alpha 1</span></li>
+                  <li className="flex gap-4">✓ <span>Mouse limitin</span></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[10px] font-black uppercase tracking-widest text-red-400 mb-6">Does Not Neutralize (Tested ≥100X):</h4>
+                <ul className="space-y-4 text-[14px] text-slate-400 font-light">
+                  <li className="flex gap-4">✕ <span>Mouse IFN-Beta</span></li>
+                  <li className="flex gap-4">✕ <span>Human IFN-Gamma, IFN-Lambda 1, 2, 3</span></li>
+                  <li className="flex gap-4">✕ <span>Rat IFN-Alpha 14</span></li>
+                </ul>
+              </div>
             </div>
           </div>
+
+          {/* Technical Specifications */}
+          <div className="glass-card rounded-[3rem] p-12 glow-border transition-all duration-500 specular-glass">
+            <h2 className="text-3xl font-bold mb-10 text-[#002776] border-b border-slate-100 pb-6">Technical Specifications</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-sm text-slate-600 font-light">
+              <div className="space-y-6">
+                <div>
+                  <p className="font-bold text-[#002776] mb-1">Formulation</p>
+                  <p>Supplied frozen in phosphate-buffered saline (PBS) containing 0.1% Bovine Serum Albumin (BSA)</p>
+                </div>
+                <div>
+                  <p className="font-bold text-[#002776] mb-1">Purity</p>
+                  <p>≥95% by SDS-PAGE stained by Coomassie Blue.</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <p className="font-bold text-[#002776] mb-1">Storage</p>
+                  <p>Store at -70°C or below; avoid repeated freeze/thaw cycles.</p>
+                </div>
+                <div>
+                  <p className="font-bold text-[#002776] mb-1">Bioactivity</p>
+                  <p>Measured by neutralization of interferon in a cytopathic effect inhibition assay.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Technical Background */}
+          <div className="glass-card rounded-[3rem] p-12 glow-border transition-all duration-500 specular-glass">
+            <h2 className="text-3xl font-bold mb-10 text-[#002776] border-b border-slate-100 pb-6">Technical Background</h2>
+            <div className="prose prose-slate text-slate-600 font-light leading-relaxed space-y-6">
+              <p>C12R is a secreted protein from Mousepox (Ectromelia) virus that functions as a decoy receptor for mouse IFN-Alpha. It binds to mouse IFN-Alpha with high affinity and blocks its biological activity, allowing the virus to evade the host immune response during viral infection.</p>
+              <p>This protein has been extensively characterized and is widely used in research to neutralize mouse IFN-Alpha activity in vitro and in vivo. It is particularly useful for studying the role of Type I interferons in immune responses and viral pathogenesis.</p>
+              <p className="text-xs italic text-slate-400">References: Smith and Alcami, J.Vir. 2002; Xu et al. JEM 2008</p>
+            </div>
+          </div>
+
+          {/* Documentation and Citations Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="glass-card rounded-[3rem] p-10 glow-border transition-all duration-500 specular-glass">
+              <h3 className="font-bold mb-6 text-[#002776]">Documentation</h3>
+              <div className="space-y-4">
+                <div className="p-4 bg-slate-50 rounded-xl flex items-center justify-between text-xs font-bold text-slate-600">
+                  12185-1 Certificate of Analysis (CoA) <span className="text-cyan-500">Download ↓</span>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl flex items-center justify-between text-xs font-bold text-slate-600">
+                  12185 Safety Data Sheet (SDS) <span className="text-cyan-500">Download ↓</span>
+                </div>
+              </div>
+            </div>
+            <div className="glass-card rounded-[3rem] p-10 glow-border transition-all duration-500 specular-glass">
+              <h3 className="font-bold mb-6 text-[#002776]">Citations</h3>
+              <p className="text-xs text-slate-500 leading-relaxed mb-4">
+                <strong>1.</strong> Lee, S. et al., (2019), "A Secreted Viral Nonstructural Protein Determines Intestinal Norovirus Pathogenesis," <em>Cell Host Microbe</em> 25(6):845.
+              </p>
+              <Link href="#" className="text-[10px] font-black text-cyan-600 uppercase">View Publication →</Link>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* Product Catalog Table */}
       <ProductCatalog products={catalogProducts} />
 
-      {/* Bottom CTA Section */}
-      <section className="py-32 bg-white text-center">
+      {/* Final CTA Section */}
+      <section className="py-32 bg-slate-50 text-center border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
-          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
-          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>
+          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Scientific Consultation</span>
+          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Ready to start your study?</h2>
           <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
             Fit-for-purpose assay development, customization and execution.
           </p>
