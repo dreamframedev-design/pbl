@@ -117,8 +117,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
-      {/* Hero Section - Height accounts for navbar */}
-      <section className="relative w-full flex items-center justify-start lg:items-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px]" style={{
+      {/* Hero Section - Full viewport height accounting for navbar */}
+      <section className="relative w-full flex items-center justify-start lg:items-center h-[calc(100dvh-100px)] md:h-[calc(100vh-100px)]" style={{
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.03) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.04) 0, transparent 50%)'
       }}>
         
