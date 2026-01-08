@@ -125,10 +125,10 @@ export default function Home() {
           <div className="flex flex-col items-start">
             
             {/* HERO TEXT */}
-            <div className="max-w-xl lg:max-w-2xl w-full">
+            <div className="max-w-2xl lg:max-w-4xl w-full">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-[#002776]">
-                Fit-for-purpose assay&nbsp;development, <br/>
-                <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">customization and execution.</span>
+                Fit-for-purpose <span className="whitespace-nowrap">assay development,</span><br className="hidden md:block" />
+                <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent"><span className="whitespace-nowrap">customization and</span><br className="md:block lg:hidden" /> execution.</span>
               </h1>
               
               {/* 3. REFINED MOBILE HERO CONTAINER (Inserted between Heading and CTAs) */}
