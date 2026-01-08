@@ -218,12 +218,12 @@ export default function Header() {
             <Search className="h-5 w-5" />
           </button>
 
-          {/* Request a Quote Button - Mobile: More compact */}
+          {/* Request a Quote Button - Tablet: Teal gradient */}
           <Link
             href="/speak-to-a-scientist"
-            className="hidden sm:flex bg-[#002776] text-white text-[10px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full hover:scale-105 transition-all"
+            className="hidden sm:flex lg:hidden bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-4 py-2.5 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20"
           >
-            Speak to a Scientist
+            Request a Quote
           </Link>
 
           {/* Mobile Menu Button: Explicitly last in the flex row */}
@@ -235,8 +235,14 @@ export default function Header() {
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
 
-          {/* Desktop Logic: Remains unchanged for large screens */}
+          {/* Desktop Logic: Request a Quote CTA, icons on far right */}
           <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href="/speak-to-a-scientist"
+              className="bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20"
+            >
+              Request a Quote
+            </Link>
             <Link
               href="/cart"
               className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
@@ -257,12 +263,6 @@ export default function Header() {
               aria-label="Account"
             >
               <User className="h-5 w-5" />
-            </Link>
-            <Link
-              href="/speak-to-a-scientist"
-              className="bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20 ml-4"
-            >
-              Request a Quote
             </Link>
           </div>
         </div>
@@ -370,14 +370,15 @@ export default function Header() {
                 <Link
                   href="/products"
                   onClick={handleLinkClick}
-                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
+                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
                 >
                   PRODUCTS
                   <ChevronDown className="w-3 h-3 flex-shrink-0" />
+                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/products') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
                 {openDropdown === 'products' && (
                   <div 
-                    className="mega-menu w-[90vw] max-w-[1200px] bg-white rounded-2xl px-8 lg:px-12 pb-8 lg:pb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 border border-slate-100"
+                    className="mega-menu w-[90vw] max-w-[1200px] bg-white rounded-2xl px-8 lg:px-12 pb-8 lg:pb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
                     onMouseEnter={() => setOpenDropdown('products')}
                     onMouseLeave={() => setOpenDropdown(null)}
                     style={{ marginTop: '-8px', paddingTop: '48px' }}
@@ -973,14 +974,15 @@ export default function Header() {
                 <Link
                   href="/services"
                   onClick={handleLinkClick}
-                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
+                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
                 >
                   SERVICES
                   <ChevronDown className="w-3 h-3 flex-shrink-0" />
+                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/services') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
                 {openDropdown === 'services' && (
                   <div 
-                    className="mega-menu w-[90vw] max-w-[600px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 border border-slate-100"
+                    className="mega-menu w-[90vw] max-w-[600px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
                     onMouseEnter={() => setOpenDropdown('services')}
                     onMouseLeave={() => setOpenDropdown(null)}
                     style={{ marginTop: '-8px', paddingTop: '48px' }}
@@ -1106,14 +1108,15 @@ export default function Header() {
                 <Link
                   href="/resources"
                   onClick={handleLinkClick}
-                  className="flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
+                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
                 >
                   RESOURCES
                   <ChevronDown className="w-3 h-3 flex-shrink-0" />
+                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/resources') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
                 {openDropdown === 'resources' && (
                   <div 
-                    className="mega-menu w-[90vw] max-w-[800px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 border border-slate-100 max-h-[500px] overflow-y-auto"
+                    className="mega-menu w-[90vw] max-w-[800px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 border border-slate-100 max-h-[500px] overflow-y-auto shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
                     onMouseEnter={() => setOpenDropdown('resources')}
                     onMouseLeave={() => setOpenDropdown(null)}
                     style={{ marginTop: '-8px', paddingTop: '48px' }}
@@ -1324,9 +1327,10 @@ export default function Header() {
               <li className="py-4">
                 <Link
                   href="/contact-us"
-                  className="text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap"
+                  className="relative text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav inline-block"
                 >
                   CONTACT US
+                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/contact-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
               </li>
             </ul>
@@ -1537,7 +1541,7 @@ export default function Header() {
               <Link
                 href="/speak-to-a-scientist"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full py-5 bg-[#002776] text-white rounded-2xl font-bold text-center shadow-xl shadow-blue-900/20"
+                className="block w-full py-5 bg-gradient-to-r from-[#058A9F] to-[#00B8C0] text-white rounded-2xl font-bold text-center shadow-xl shadow-cyan-500/20 hover:scale-[1.02] transition-all"
               >
                 Request a Quote
               </Link>

@@ -1,12 +1,17 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
+import CountingBadge from '@/components/CountingBadge';
 
 export default function Home() {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const statsSectionRef = useRef<HTMLDivElement>(null);
+  const [shouldAnimateStats, setShouldAnimateStats] = useState(false);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [visibleSections, setVisibleSections] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +24,75 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Intersection Observer for Stats Bar animation
+  useEffect(() => {
+    if (!statsSectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !shouldAnimateStats) {
+            setShouldAnimateStats(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(statsSectionRef.current);
+    return () => observer.disconnect();
+  }, [shouldAnimateStats]);
+
+  // Intersection Observer for Section Reveals
+  useEffect(() => {
+    // First pass: check which sections are already visible on mount
+    const checkInitialVisibility = () => {
+      const initialVisible = new Set<number>();
+      sectionRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight + 100 && rect.bottom > -100;
+          if (isVisible) {
+            initialVisible.add(index);
+          }
+        }
+      });
+      if (initialVisible.size > 0) {
+        setVisibleSections(initialVisible);
+      }
+    };
+
+    // Small delay to ensure DOM is ready
+    const initTimeout = setTimeout(checkInitialVisibility, 50);
+
+    // Set up Intersection Observer for sections not yet visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionRefs.current.findIndex((ref) => ref === entry.target);
+            if (index !== -1) {
+              setVisibleSections((prev) => new Set([...prev, index]));
+            }
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: '100px' }
+    );
+
+    const observeTimeout = setTimeout(() => {
+      sectionRefs.current.forEach((ref) => {
+        if (ref) observer.observe(ref);
+      });
+    }, 150);
+
+    return () => {
+      clearTimeout(initTimeout);
+      clearTimeout(observeTimeout);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -97,7 +171,10 @@ export default function Home() {
       </section>
 
       {/* Section 2: Tailored Services */}
-      <section className="py-32 bg-white">
+      <section 
+        ref={(el) => (sectionRefs.current[0] = el)}
+        className={`py-32 bg-white transition-all duration-1000 ease-out ${visibleSections.has(0) ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Column - Image */}
@@ -127,35 +204,32 @@ export default function Home() {
                 pricing.
               </p>
 
-              {/* Stats Bar */}
-              <div className="grid grid-cols-3 gap-8 p-8 rounded-3xl mb-8" style={{
-                background: 'rgba(255, 255, 255, 0.8)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(226, 232, 240, 0.8)'
-              }}>
-                <div>
-                  <div className="text-4xl font-bold text-cyan-500 mb-1">
-                    X
+              {/* Elite Animated Stats Bar */}
+              <div 
+                ref={statsSectionRef}
+                className="grid grid-cols-1 md:grid-cols-3 gap-8 p-10 rounded-[3rem] mb-12 relative overflow-hidden bg-white shadow-[0_20px_50px_rgba(0,39,118,0.05)] border border-slate-100"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent pointer-events-none"></div>
+                
+                <div className="relative z-10 flex flex-col items-center md:items-start border-b md:border-b-0 md:border-r border-slate-100 pb-8 md:pb-0">
+                  <div className="text-5xl font-black text-[#002776] mb-2 tracking-tighter italic">
+                    {shouldAnimateStats ? <CountingBadge targetValue={10} suffix="" /> : <span>10</span>}
                   </div>
-                  <div className="text-[10px] uppercase tracking-widest font-bold text-gray-400">
-                    days to study start
-                  </div>
+                  <div className="text-[10px] uppercase tracking-[0.4em] font-black text-slate-400">days to study start</div>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-cyan-500 mb-1">
-                    X%
+
+                <div className="relative z-10 flex flex-col items-center md:items-start border-b md:border-b-0 md:border-r border-slate-100 py-8 md:py-0 md:px-8">
+                  <div className="text-5xl font-black text-cyan-500 mb-2 tracking-tighter italic">
+                    {shouldAnimateStats ? <CountingBadge targetValue={95} suffix="%" /> : <span>95%</span>}
                   </div>
-                  <div className="text-[10px] uppercase tracking-widest font-bold text-gray-400">
-                    client retention rate
-                  </div>
+                  <div className="text-[10px] uppercase tracking-[0.4em] font-black text-slate-400">client retention rate</div>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-cyan-500 mb-1">
-                    X
+
+                <div className="relative z-10 flex flex-col items-center md:items-start pt-8 md:pt-0 md:pl-8">
+                  <div className="text-5xl font-black text-[#002776] mb-2 tracking-tighter italic">
+                    {shouldAnimateStats ? <CountingBadge targetValue={500} suffix="+" /> : <span>500+</span>}
                   </div>
-                  <div className="text-[10px] uppercase tracking-widest font-bold text-gray-400">
-                    projects completed
-                  </div>
+                  <div className="text-[10px] uppercase tracking-[0.4em] font-black text-slate-400">projects completed</div>
                 </div>
               </div>
 
@@ -172,7 +246,10 @@ export default function Home() {
       </section>
 
       {/* Section 3: Products that Won't Let You Down */}
-      <section className="py-32 bg-white">
+      <section 
+        ref={(el) => (sectionRefs.current[1] = el)}
+        className={`py-32 bg-white transition-all duration-1000 ease-out ${visibleSections.has(1) ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             {/* Left Column - Image */}
@@ -244,7 +321,10 @@ export default function Home() {
       </section>
 
       {/* Section 4: Let Us Do It For You */}
-      <section className="py-32 bg-[#F4F4F9]/30">
+      <section 
+        ref={(el) => (sectionRefs.current[2] = el)}
+        className={`py-32 bg-[#F4F4F9]/30 transition-all duration-1000 ease-out ${visibleSections.has(2) ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-5xl font-bold text-center mb-20 text-[#002776]">
             Let Us Do It For You
@@ -311,7 +391,11 @@ export default function Home() {
       </section>
 
       {/* Section 5: Quality Products */}
-      <section className="py-32 bg-white overflow-x-hidden" style={{ overflowY: 'visible' }}>
+      <section 
+        ref={(el) => (sectionRefs.current[3] = el)}
+        className="py-32 bg-white overflow-x-hidden transition-all duration-1000 ease-out opacity-100 translate-y-0"
+        style={{ overflowY: 'visible' }}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-5xl font-bold text-center mb-20 bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">
             Quality Products You Won't Find Anywhere Else
@@ -453,17 +537,11 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Testimonials Section */}
-          <div className="mt-32 pt-8">
-            <h2 className="text-5xl font-bold mb-16 tracking-tight text-center text-[#002776]">
-              Don't Take Our Word For It
-            </h2>
-          </div>
         </div>
       </section>
 
-      {/* Testimonials Slider - Full Width Section */}
-      <section className="py-8 bg-white overflow-x-hidden" style={{ overflowY: 'visible', paddingBottom: '48px' }}>
+      {/* Testimonials Slider - Stripe-Style Section (Header now inside component) */}
+      <section className="bg-white overflow-x-hidden" style={{ overflowY: 'visible' }}>
         <TestimonialsSlider />
       </section>
 

@@ -5,6 +5,24 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-slate-100 mt-32 overflow-x-hidden">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12">
+        {/* Authority Bar */}
+        <div className="bg-slate-50/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-8 mb-12 sm:mb-16 lg:mb-20 border-y border-slate-100">
+          <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
+            <div className="text-center">
+              <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Certified Quality</div>
+              <div className="text-sm font-bold text-[#002776]">ISO 9001:2015</div>
+            </div>
+            <div className="text-center">
+              <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Global Reach</div>
+              <div className="text-sm font-bold text-[#002776]">Worldwide Distribution</div>
+            </div>
+            <div className="text-center">
+              <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Research Impact</div>
+              <div className="text-sm font-bold text-[#002776]">Cited in 50+ Journals</div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-2 space-y-8">
@@ -47,25 +65,25 @@ export default function Footer() {
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Products</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-light">
               <li>
-                <Link href="/products/assay-kits" className="hover:text-cyan-600 transition-colors">Assay Kits</Link>
+                <Link href="/products/assay-kits" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Assay Kits</Link>
               </li>
               <li>
-                <Link href="/products/proteins" className="hover:text-cyan-600 transition-colors">Proteins</Link>
+                <Link href="/products/proteins" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Proteins</Link>
               </li>
               <li>
-                <Link href="/products/antibodies" className="hover:text-cyan-600 transition-colors">Antibodies</Link>
+                <Link href="/products/antibodies" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Antibodies</Link>
               </li>
               <li>
-                <Link href="/products/antibodies/monoclonal" className="hover:text-cyan-600 transition-colors">Monoclonal (MAbs)</Link>
+                <Link href="/products/antibodies/monoclonal" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Monoclonal (MAbs)</Link>
               </li>
               <li>
-                <Link href="/products/antibodies/polyclonal" className="hover:text-cyan-600 transition-colors">Polyclonal (PAbs)</Link>
+                <Link href="/products/antibodies/polyclonal" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Polyclonal (PAbs)</Link>
               </li>
               <li>
-                <Link href="/products/proteins/interferons" className="hover:text-cyan-600 transition-colors">Interferons</Link>
+                <Link href="/products/proteins/interferons" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Interferons</Link>
               </li>
               <li>
-                <Link href="/products/proteins/interferon-decoy-receptor" className="hover:text-cyan-600 transition-colors">Decoy Receptors</Link>
+                <Link href="/products/proteins/interferon-decoy-receptor" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Decoy Receptors</Link>
               </li>
             </ul>
           </div>
@@ -75,22 +93,22 @@ export default function Footer() {
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Services</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-light">
               <li>
-                <Link href="/services/assay-development" className="hover:text-cyan-600 transition-colors">Assay Development</Link>
+                <Link href="/services/assay-development" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Assay Development</Link>
               </li>
               <li>
-                <Link href="/services/biomarker-sample-analysis" className="hover:text-cyan-600 transition-colors">Biomarker Analysis</Link>
+                <Link href="/services/biomarker-sample-analysis" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Biomarker Analysis</Link>
               </li>
               <li>
-                <Link href="/services/biomarker-sample-analysis/simoa" className="hover:text-cyan-600 transition-colors">SIMOA Services</Link>
+                <Link href="/services/biomarker-sample-analysis/simoa" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">SIMOA Services</Link>
               </li>
               <li>
-                <Link href="/services/biomarker-sample-analysis/smc" className="hover:text-cyan-600 transition-colors">SMC Services</Link>
+                <Link href="/services/biomarker-sample-analysis/smc" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">SMC Services</Link>
               </li>
               <li>
-                <Link href="/services/cell-based-services" className="hover:text-cyan-600 transition-colors">Cell-Based Services</Link>
+                <Link href="/services/cell-based-services" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Cell-Based Services</Link>
               </li>
               <li>
-                <Link href="/services/custom-production" className="hover:text-cyan-600 transition-colors">Custom Production</Link>
+                <Link href="/services/custom-production" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Custom Production</Link>
               </li>
             </ul>
           </div>
@@ -100,19 +118,19 @@ export default function Footer() {
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Support</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-light">
               <li>
-                <Link href="/shipping" className="hover:text-cyan-600 transition-colors">Shipping Info</Link>
+                <Link href="/shipping" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Shipping Info</Link>
               </li>
               <li>
-                <Link href="/distributors" className="hover:text-cyan-600 transition-colors">Distributors</Link>
+                <Link href="/distributors" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Distributors</Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-cyan-600 transition-colors">Technical Blog</Link>
+                <Link href="/blog" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Technical Blog</Link>
               </li>
               <li>
-                <Link href="/contact-us" className="hover:text-cyan-600 transition-colors">Contact us</Link>
+                <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Contact us</Link>
               </li>
               <li>
-                <Link href="/resources" className="hover:text-cyan-600 transition-colors">Resources</Link>
+                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Resources</Link>
               </li>
             </ul>
           </div>
@@ -122,16 +140,16 @@ export default function Footer() {
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Company</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-light">
               <li>
-                <Link href="/history" className="hover:text-cyan-600 transition-colors">Our History</Link>
+                <Link href="/history" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Our History</Link>
               </li>
               <li>
-                <Link href="/pbl-team" className="hover:text-cyan-600 transition-colors">PBL Team</Link>
+                <Link href="/pbl-team" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">PBL Team</Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-cyan-600 transition-colors">Careers</Link>
+                <Link href="/careers" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Careers</Link>
               </li>
               <li>
-                <Link href="/values" className="hover:text-cyan-600 transition-colors">Values</Link>
+                <Link href="/values" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Values</Link>
               </li>
             </ul>
           </div>

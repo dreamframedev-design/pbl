@@ -20,14 +20,14 @@ export default async function InterleukinElisasPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-start">
+      <section className="relative w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-start overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/ELISAs Kits Hero.webp"
             alt="Interleukin ELISA Kits header background"
             fill
-            className="object-cover image-shadow-lg"
+            className="object-cover"
             priority
           />
         </div>

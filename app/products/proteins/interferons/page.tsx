@@ -41,15 +41,15 @@ export default function InterferonsPage() {
       {/* Sub-Categories Grid - Internal Navigation */}
       <section className="py-24 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Human IFN Proteins Card */}
             <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
-              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">H</div>
                 </div>
                 <Link href="/products/proteins/interferons/human" className="block mb-2 group-hover:text-cyan-600 transition-colors">
-                  <h2 className="text-2xl font-bold text-[#002776]">
+                  <h2 className="text-3xl font-bold text-[#002776]">
                     Human IFN Proteins
                   </h2>
                 </Link>
@@ -84,12 +84,12 @@ export default function InterferonsPage() {
 
             {/* Mouse IFN Proteins Card */}
             <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
-              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all font-black text-lg italic">M</div>
                 </div>
                 <Link href="/products/proteins/interferons/mouse" className="block mb-2 group-hover:text-[#2563EB] transition-colors">
-                  <h2 className="text-2xl font-bold text-[#002776]">
+                  <h2 className="text-3xl font-bold text-[#002776]">
                     Mouse IFN Proteins
                   </h2>
                 </Link>
@@ -124,12 +124,13 @@ export default function InterferonsPage() {
 
             {/* Mammalian IFN Proteins Card */}
             <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
-              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
-                <div className="mb-6">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
+                <div className="mb-6 flex justify-between items-start">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">M</div>
+                  <span className="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-[9px] font-black uppercase tracking-widest h-fit">Cross-Species</span>
                 </div>
                 <Link href="/products/proteins/interferons/mammalian" className="block mb-2 group-hover:text-cyan-600 transition-colors">
-                  <h2 className="text-2xl font-bold text-[#002776]">
+                  <h2 className="text-3xl font-bold text-[#002776]">
                     Mammalian IFN Proteins <br/>(Non-Human, Non-Mouse)
                   </h2>
                 </Link>
@@ -151,7 +152,7 @@ export default function InterferonsPage() {
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg italic">R</div>
                 </div>
                 <Link href="/products/proteins/interferons/rat" className="block mb-2 group-hover:text-cyan-500 transition-colors">
-                  <h2 className="text-2xl font-bold text-[#002776]">
+                  <h2 className="text-3xl font-bold text-[#002776]">
                     Rat IFN Proteins
                   </h2>
                 </Link>
@@ -170,7 +171,7 @@ export default function InterferonsPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-32 bg-white text-center">
+      <footer className="py-32 bg-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
           <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>
@@ -184,7 +185,7 @@ export default function InterferonsPage() {
             Talk to a Scientist
           </Link>
         </div>
-      </section>
+      </footer>
     </main>
   );
 }
