@@ -172,7 +172,7 @@ export default function Home() {
 
       {/* Section 2: Tailored Services */}
       <section 
-        ref={(el) => (sectionRefs.current[0] = el)}
+        ref={(el) => { sectionRefs.current[0] = el; }}
         className={`py-32 bg-white transition-all duration-1000 ease-out ${visibleSections.has(0) ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -247,7 +247,7 @@ export default function Home() {
 
       {/* Section 3: Products that Won't Let You Down */}
       <section 
-        ref={(el) => (sectionRefs.current[1] = el)}
+        ref={(el) => { sectionRefs.current[1] = el; }}
         className={`py-32 bg-white transition-all duration-1000 ease-out ${visibleSections.has(1) ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -322,7 +322,7 @@ export default function Home() {
 
       {/* Section 4: Let Us Do It For You */}
       <section 
-        ref={(el) => (sectionRefs.current[2] = el)}
+        ref={(el) => { sectionRefs.current[2] = el; }}
         className={`py-32 bg-[#F4F4F9]/30 transition-all duration-1000 ease-out ${visibleSections.has(2) ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -392,7 +392,7 @@ export default function Home() {
 
       {/* Section 5: Quality Products */}
       <section 
-        ref={(el) => (sectionRefs.current[3] = el)}
+        ref={(el) => { sectionRefs.current[3] = el; }}
         className="py-32 bg-white overflow-x-hidden transition-all duration-1000 ease-out opacity-100 translate-y-0"
         style={{ overflowY: 'visible' }}
       >
