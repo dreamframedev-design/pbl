@@ -9,6 +9,7 @@ import CountingBadge from '@/components/CountingBadge';
 export default function Home() {
   const parallaxRef = useRef<HTMLDivElement>(null);
   const statsSectionRef = useRef<HTMLDivElement>(null);
+  const macromoleculeRef = useRef<HTMLDivElement>(null);
   const [shouldAnimateStats, setShouldAnimateStats] = useState(false);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
   const [visibleSections, setVisibleSections] = useState<Set<number>>(new Set());
@@ -19,6 +20,25 @@ export default function Home() {
         const scrolled = window.scrollY;
         const parallaxSpeed = 0.5; // 50% of scroll speed
         parallaxRef.current.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Macromolecule scale animation on load and parallax scroll
+  useEffect(() => {
+    if (macromoleculeRef.current) {
+      macromoleculeRef.current.style.transform = 'scale(1.05)';
+      macromoleculeRef.current.style.transition = 'transform 2s ease-out';
+    }
+
+    const handleScroll = () => {
+      if (macromoleculeRef.current && window.innerWidth >= 768) {
+        const scrolled = window.scrollY;
+        const parallaxSpeed = 0.3; // 30% scroll speed
+        macromoleculeRef.current.style.transform = `translateY(${scrolled * parallaxSpeed}px) scale(1.05)`;
       }
     };
 
@@ -98,17 +118,29 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section - Height accounts for navbar */}
-      <section className="relative w-full flex items-center justify-start lg:items-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px]">
+      <section className="relative w-full flex items-center justify-start lg:items-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px]" style={{
+        background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.03) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.04) 0, transparent 50%)'
+      }}>
         
-        {/* 1. DESKTOP/TABLET BACKGROUND (md+) */}
-        <div className="hidden md:block absolute inset-0 z-0">
-          <Image
-            src="/images/hero nice1.webp"
-            alt="PBL Assay Science"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+        {/* 1. DESKTOP/TABLET BACKGROUND (md+) - Macromolecule with Animation & Parallax */}
+        <div className="hidden md:block absolute inset-0 z-0 overflow-hidden">
+          <div 
+            ref={macromoleculeRef}
+            className="absolute inset-0 will-change-transform"
+            style={{
+              animation: 'float 6s ease-in-out infinite',
+              filter: 'drop-shadow(0 80px 100px rgba(0, 39, 118, 0.12))',
+              transform: 'scale(1)',
+            }}
+          >
+            <Image
+              src="/images/hero nice1.webp"
+              alt="PBL Assay Science"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
           <div className="absolute inset-0 bg-white/10"></div>
         </div>
 
@@ -125,26 +157,48 @@ export default function Home() {
           <div className="flex flex-col items-start">
             
             {/* HERO TEXT */}
-            <div className="max-w-2xl lg:max-w-4xl w-full">
+            <div className="max-w-2xl lg:max-w-4xl w-full relative z-10">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-[#002776]">
-                Fit-for-purpose <span className="whitespace-nowrap">assay development,</span><br className="hidden md:block" />
-                <span className="bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent"><span className="whitespace-nowrap">customization and</span><br className="md:block lg:hidden" /> execution.</span>
+                Fit-for-purpose <span className="whitespace-nowrap font-serif italic font-light">assay development,</span><br className="hidden md:block" />
+                <span className="bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] bg-clip-text text-transparent"><span className="whitespace-nowrap">customization and</span><br className="md:block lg:hidden" /> execution.</span>
               </h1>
               
-              {/* 3. REFINED MOBILE HERO CONTAINER (Inserted between Heading and CTAs) */}
-              <div className="mt-10 w-full block md:hidden">
-                <div className="relative p-[1.5px] rounded-[2.5rem] bg-gradient-to-br from-cyan-400/40 via-emerald-400/20 to-[#002776]/30 shadow-[0_20px_50px_rgba(0,39,118,0.15)] overflow-hidden">
-                  {/* Glossy Overlay Tint */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-emerald-500/5 pointer-events-none"></div>
+              {/* 3. THE REFINED ATMOSPHERIC PORTAL (Mobile Only) */}
+              <div className="mt-6 mb-8 w-full block md:hidden relative z-0">
+                {/* Specimen Glow - Now matches the rectangular profile */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] bg-cyan-400/10 blur-[100px] rounded-[3rem]"></div>
+
+                <div className="relative mx-auto w-[90%] aspect-square p-[1px] rounded-[3rem] bg-gradient-to-br from-white/30 via-white/5 to-white/10 shadow-[0_20px_40px_rgba(0,39,118,0.1)] overflow-hidden">
                   
-                  <div className="bg-white/80 backdrop-blur-2xl rounded-[2.45rem] p-3">
-                    <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden shadow-inner border border-white/40">
-                      <Image
-                        src="/images/1.webp"
-                        alt="PBL Mobile Hero"
-                        fill
-                        className="object-cover"
-                      />
+                  <div className="h-full w-full bg-white/5 backdrop-blur-2xl rounded-[2.9rem] overflow-hidden">
+                    <div 
+                      className="relative w-full h-full"
+                      style={{
+                        /* RECTANGULAR FUZZY MASK: 
+                           This fades all 4 edges (top, bottom, left, right) 
+                           into transparency so there are NO sharp borders.
+                        */
+                        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+                        WebkitMaskComposite: 'destination-in',
+                        maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)',
+                        maskComposite: 'intersect',
+                      }}
+                    >
+                      <div
+                        className="absolute inset-0 will-change-transform"
+                        style={{
+                          animation: 'float 8s ease-in-out infinite',
+                          transform: 'scale(1.2)',
+                          transformOrigin: 'center center',
+                        }}
+                      >
+                        <Image
+                          src="/images/1.webp"
+                          alt="PBL Specimen"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -160,8 +214,12 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/services"
-                  className="px-10 py-5 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 active:scale-95 bg-white/80 backdrop-blur-md border border-slate-200 text-[#002776] text-center"
+                  className="relative px-10 py-5 rounded-full font-bold text-lg transition-all duration-200 hover:scale-105 active:scale-95 bg-white/80 backdrop-blur-md border border-slate-200 text-[#002776] text-center overflow-hidden"
+                  style={{
+                    borderTop: '1px solid rgba(255, 255, 255, 0.5)',
+                  }}
                 >
+                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50"></div>
                   View Services
                 </Link>
               </div>

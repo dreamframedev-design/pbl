@@ -434,6 +434,15 @@
   animation: sectionReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
 @keyframes slideSheet {
   from {
     transform: translateX(100%);
