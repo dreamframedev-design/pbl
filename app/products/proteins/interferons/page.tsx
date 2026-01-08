@@ -39,144 +39,128 @@ export default function InterferonsPage() {
       </section>
 
       {/* Sub-Categories Grid - Internal Navigation */}
-      <section className="py-24 bg-[#F9F9FC] border-y border-slate-100">
+      <section className="py-24 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Human IFN Proteins Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-all font-bold">H</div>
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">H</div>
                 </div>
-                <Link href="/products/proteins/interferons/human" className="block cursor-pointer mb-2">
-                  <h2 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-cyan-600 transition-colors">
+                <Link href="/products/proteins/interferons/human" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h2 className="text-2xl font-bold text-[#002776]">
                     Human IFN Proteins
                   </h2>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Human Interferon proteins for Type I, II and III.
                 </p>
-                <div className="mt-auto space-y-2">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
                     href="/products/proteins/interferons/human/ifn-alpha"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-cyan-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Human IFN-Alpha</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-cyan-500">→</span>
+                    Human IFN-Alpha
                   </Link>
                   <Link
                     href="/products/proteins/interferons/human/ifn-beta"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-cyan-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Human IFN-Beta</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-cyan-500">→</span>
+                    Human IFN-Beta
                   </Link>
                   <Link
                     href="/products/proteins/interferons/human/other"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-cyan-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Other Human IFNs</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-cyan-500">→</span>
+                    Other Human IFNs
                   </Link>
                 </div>
+                <Link href="/products/proteins/interferons/human" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  View Products
+                </Link>
               </div>
             </div>
 
             {/* Mouse IFN Proteins Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all font-bold italic">M</div>
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all font-black text-lg italic">M</div>
                 </div>
-                <Link href="/products/proteins/interferons/mouse" className="block cursor-pointer mb-2">
-                  <h2 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-[#2563EB] transition-colors">
+                <Link href="/products/proteins/interferons/mouse" className="block mb-2 group-hover:text-[#2563EB] transition-colors">
+                  <h2 className="text-2xl font-bold text-[#002776]">
                     Mouse IFN Proteins
                   </h2>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Mouse Interferon Alpha, Beta, and Lambda proteins.
                 </p>
-                <div className="mt-auto space-y-2">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
                     href="/products/proteins/interferons/mouse/ifn-alpha"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-blue-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#2563EB] hover:pl-3 hover:text-[#2563EB] hover:bg-[rgba(37,99,235,0.04)]"
                   >
-                    <span>Mouse IFN-Alpha</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-[#2563EB]">→</span>
+                    Mouse IFN-Alpha
                   </Link>
                   <Link
                     href="/products/proteins/interferons/mouse/ifn-beta"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-blue-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#2563EB] hover:pl-3 hover:text-[#2563EB] hover:bg-[rgba(37,99,235,0.04)]"
                   >
-                    <span>Mouse IFN-Beta</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-[#2563EB]">→</span>
+                    Mouse IFN-Beta
                   </Link>
                   <Link
                     href="/products/proteins/interferons/mouse/ifn-lambda"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-blue-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#2563EB] hover:pl-3 hover:text-[#2563EB] hover:bg-[rgba(37,99,235,0.04)]"
                   >
-                    <span>Mouse IFN-Lambda</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-[#2563EB]">→</span>
+                    Mouse IFN-Lambda
                   </Link>
                 </div>
+                <Link href="/products/proteins/interferons/mouse" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  View Products
+                </Link>
               </div>
             </div>
 
             {/* Mammalian IFN Proteins Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-all font-bold">M</div>
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">M</div>
                 </div>
-                <Link href="/products/proteins/interferons/mammalian" className="block cursor-pointer mb-2">
-                  <h2 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-cyan-600 transition-colors">
+                <Link href="/products/proteins/interferons/mammalian" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h2 className="text-2xl font-bold text-[#002776]">
                     Mammalian IFN Proteins <br/>(Non-Human, Non-Mouse)
                   </h2>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Cynomolgus, Rhesus, Feline, Porcine, and Bovine Interferon proteins.
                 </p>
                 <div className="mt-auto">
-                  <Link href="/products/proteins/interferons/mammalian" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Products <span>→</span>
+                  <Link href="/products/proteins/interferons/mammalian" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                    View Products
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Rat IFN Proteins Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            {/* Rat IFN Proteins Card (Featured) */}
+            <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#06B6D4] group-hover:bg-[#06B6D4] group-hover:text-white transition-all font-bold italic">R</div>
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg italic">R</div>
                 </div>
-                <Link href="/products/proteins/interferons/rat" className="block cursor-pointer mb-2">
-                  <h2 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-[#06B6D4] transition-colors">
+                <Link href="/products/proteins/interferons/rat" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                  <h2 className="text-2xl font-bold text-[#002776]">
                     Rat IFN Proteins
                   </h2>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Type I and II rat interferon proteins for life science research.
                 </p>
                 <div className="mt-auto">
-                  <Link href="/products/proteins/interferons/rat" className="text-sm font-bold text-[#06B6D4] flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Products <span>→</span>
+                  <Link href="/products/proteins/interferons/rat" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                    View Products
                   </Link>
                 </div>
               </div>

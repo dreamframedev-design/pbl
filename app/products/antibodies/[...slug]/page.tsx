@@ -71,42 +71,51 @@ export default async function DynamicAntibodyPage({ params }: { params: Promise<
 
       {/* Sub-Categories Grid - Internal Navigation (Always at Top) */}
       {subCategories.length > 0 && (
-        <section className="py-24 bg-[#F9F9FC] border-y border-slate-100">
+        <section className="py-24 bg-slate-50 border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {subCategories.map((subCategory) => (
+              {subCategories.map((subCategory, index) => (
                 <div
                   key={subCategory.slug}
-                  className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]"
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.7)',
-                    backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(255, 255, 255, 0.3)'
-                  }}
+                  className={`group rounded-[3rem] transition-all duration-500 flex flex-col ${
+                    index === subCategories.length - 1
+                      ? 'p-[2.5px] bg-gradient-to-br from-cyan-400 to-[#002776] hover:scale-[1.02] shadow-xl'
+                      : 'glass-card p-1 glow-border'
+                  }`}
                 >
-                  <Link
-                    href={`${currentPath}/${subCategory.slug}`}
-                    className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent block"
-                  >
+                  <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                     <div className="mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-all font-bold">
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all font-black text-lg ${
+                        index === subCategories.length - 1
+                          ? 'bg-slate-50 text-slate-400 group-hover:bg-[#002776] group-hover:text-white'
+                          : 'bg-cyan-50 text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776]'
+                      }`}>
                         {subCategory.name.charAt(0)}
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-cyan-600 transition-colors">
-                      {subCategory.name}
-                    </h3>
+                    <Link href={`${currentPath}/${subCategory.slug}`} className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                      <h3 className="text-2xl font-bold text-[#002776]">
+                        {subCategory.name}
+                      </h3>
+                    </Link>
                     {subCategory.description && (
-                      <p className="text-gray-500 text-sm font-light mb-8">
+                      <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                         {subCategory.description}
                       </p>
                     )}
                     <div className="mt-auto">
-                      <span className="text-sm font-bold text-cyan-500 flex items-center gap-2 group-hover:gap-4 transition-all">
-                        View Products <span>→</span>
-                      </span>
+                      <Link
+                        href={`${currentPath}/${subCategory.slug}`}
+                        className={`w-full py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm ${
+                          index === subCategories.length - 1
+                            ? 'bg-[#002776] text-white hover:bg-cyan-600'
+                            : 'bg-slate-50 group-hover:bg-[#002776] group-hover:text-white'
+                        }`}
+                      >
+                        View Products
+                      </Link>
                     </div>
-                  </Link>
+                  </div>
                 </div>
               ))}
             </div>

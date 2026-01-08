@@ -57,115 +57,99 @@ export default function MonoclonalAntibodiesPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Anti-Human IFN MAbs Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
-                <div className="mb-6 flex justify-between items-start">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.644.322a6 6 0 01-3.86.517l-2.387-.477a2 2 0 00-1.022.547l1.166 3.497a2 2 0 001.898 1.368h10.23a2 2 0 001.898-1.368l1.166-3.497z" />
-                    </svg>
-                  </div>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">H</div>
                 </div>
-                
-                <Link href="/products/antibodies/monoclonal/anti-human-ifn" className="block cursor-pointer">
-                  <h3 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-cyan-600 transition-colors">
+                <Link href="/products/antibodies/monoclonal/anti-human-ifn" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">
                     Anti-Human <br/>IFN MAbs
                   </h3>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">Anti-Human Interferon Monoclonal Antibodies</p>
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Anti-Human Interferon Monoclonal Antibodies</p>
                 
-                <div className="mt-auto space-y-2">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
                     href="/products/antibodies/monoclonal/anti-human-ifn/anti-human-ifn-alpha"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-cyan-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Anti-Human IFN-Alpha MAbs</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-cyan-500">→</span>
+                    Anti-Human IFN-Alpha MAbs
                   </Link>
                   <Link
                     href="/products/antibodies/monoclonal/anti-human-ifn/anti-human-ifn-beta"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-cyan-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Anti-Human IFN-Beta MAbs</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-cyan-500">→</span>
+                    Anti-Human IFN-Beta MAbs
                   </Link>
                   <Link
                     href="/products/antibodies/monoclonal/anti-human-ifn/anti-human-ifn-receptor"
-                    className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-cyan-50 text-sm font-semibold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Anti-Human IFN Receptor MAbs</span>
-                    <span className="opacity-0 group-hover/link:opacity-100 transition-opacity text-cyan-500">→</span>
+                    Anti-Human IFN Receptor MAbs
                   </Link>
                 </div>
+                <Link href="/products/antibodies/monoclonal/anti-human-ifn" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  Explore Products
+                </Link>
               </div>
             </div>
 
             {/* Anti-Mouse IFN MAbs Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all font-bold italic">M</div>
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover:bg-blue-600 group-hover:text-white transition-all font-black italic text-lg">M</div>
                 </div>
-                <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" className="block cursor-pointer">
-                  <h3 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-[#2563EB] transition-colors">
+                <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" className="block mb-2 group-hover:text-[#2563EB] transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">
                     Anti-Mouse <br/>IFN MAbs
                   </h3>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">Anti-Mouse Interferon Monoclonal Antibodies</p>
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Anti-Mouse Interferon Monoclonal Antibodies</p>
                 <div className="mt-auto">
-                  <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" className="text-sm font-bold text-[#2563EB] flex items-center gap-2 group-hover:gap-4 transition-all">
-                    Explore Clones <span>→</span>
+                  <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                    Explore Clones
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Anti-Porcine IFN MAbs Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#06B6D4] group-hover:bg-[#06B6D4] group-hover:text-white transition-all font-bold italic">P</div>
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-[#06B6D4] group-hover:bg-[#06B6D4] group-hover:text-white transition-all font-black italic text-lg">P</div>
                 </div>
-                <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" className="block cursor-pointer">
-                  <h3 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-[#06B6D4] transition-colors">
+                <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" className="block mb-2 group-hover:text-[#06B6D4] transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">
                     Anti-Porcine <br/>IFN MAbs
                   </h3>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">Anti-Porcine Interferon Monoclonal Antibodies</p>
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Anti-Porcine Interferon Monoclonal Antibodies</p>
                 <div className="mt-auto">
-                  <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" className="text-sm font-bold text-[#06B6D4] flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Specifications <span>→</span>
+                  <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                    View Specifications
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Labeled Anti-IFN MAbs Card */}
-            <div className="group p-[2px] rounded-3xl bg-gradient-to-br from-cyan-400 to-blue-600 transition-all duration-500 hover:scale-[1.02]">
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300">
-                <div className="mb-6 flex justify-between">
-                  <span className="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-[10px] font-bold uppercase tracking-tighter">New Formats</span>
+            {/* Labeled Anti-IFN MAbs Card (Featured) */}
+            <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6 flex justify-between items-start">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg">L</div>
+                  <span className="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-[9px] font-black uppercase tracking-widest h-fit">New Formats</span>
                 </div>
-                <Link href="/products/antibodies/monoclonal/labeled" className="block cursor-pointer">
-                  <h3 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-[#06B6D4] transition-colors">
+                <Link href="/products/antibodies/monoclonal/labeled" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">
                     Labeled <br/>Anti-IFN MAbs <span className="text-lg">(Human, Mouse)</span>
                   </h3>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">Labeled Monoclonal Antibodies</p>
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Labeled Monoclonal Antibodies</p>
                 <div className="mt-auto">
-                  <Link href="/products/antibodies/monoclonal/labeled" className="w-full py-3 bg-[#002776] hover:bg-cyan-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-blue-900/20 text-center block">
+                  <Link href="/products/antibodies/monoclonal/labeled" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                     View All Conjugates
                   </Link>
                 </div>

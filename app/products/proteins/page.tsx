@@ -90,107 +90,105 @@ export default function ProteinsPage() {
           <h2 className="text-4xl font-bold text-[#002776] mb-16 tracking-tight text-center">Protein Categories</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Cytokines and Growth Factors Card */}
-            <div className="group p-1 rounded-[3rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-500 mb-8 group-hover:bg-[#00F0F3] group-hover:text-white transition-all font-black text-xs">CGF</div>
-                <Link href="/products/proteins/cytokines-growth-factors" className="block cursor-pointer mb-2">
-                  <h3 className="text-2xl font-bold mb-4 text-[#002776]">Cytokines and Growth Factors</h3>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">CGF</div>
+                </div>
+                <Link href="/products/proteins/cytokines-growth-factors" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">Cytokines and Growth Factors</h3>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
                   PBL offers a comprehensive range of recombinant cytokines and
                   growth factors for life science research applications.
                 </p>
-                <div className="space-y-4 mb-10 flex-grow">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
                     href="/products/proteins/cytokines-growth-factors/ecoli-cho-expressed"
-                    className="block py-3 text-[11px] font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     E.coli & CHO Expressed Cytokine & Growth Factor
                   </Link>
                   <Link
                     href="/products/proteins/cytokines-growth-factors/human-cell-expressed"
-                    className="block py-3 text-[11px] font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Human Cell-Expressed Cytokines
                   </Link>
                 </div>
-                <Link href="/products/proteins/cytokines-growth-factors" className="text-sm font-black text-cyan-500 flex items-center gap-2 group-hover:translate-x-2 transition-all">
-                  Explore Categories →
+                <Link href="/products/proteins/cytokines-growth-factors" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  Explore Categories
                 </Link>
               </div>
             </div>
 
             {/* Interferon Decoy Receptor Card */}
-            <div className="group p-1 rounded-[3rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-500 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all font-black text-xs">IDR</div>
-                <Link href="/products/proteins/interferon-decoy-receptor" className="block cursor-pointer mb-2">
-                  <h3 className="text-2xl font-bold mb-4 text-[#002776]">Interferon Decoy Receptor</h3>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all font-black text-lg">IDR</div>
+                </div>
+                <Link href="/products/proteins/interferon-decoy-receptor" className="block mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">Interferon Decoy Receptor</h3>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
                   Specialized proteins for interferon research and neutralization
                   applications.
                 </p>
-                <div className="space-y-4 mb-10 flex-grow">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
                     href="/products/proteins/interferon-decoy-receptor"
-                    className="block py-3 text-[11px] font-bold text-slate-600 leading-tight transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                    className="block py-3 text-xs font-bold text-slate-600 leading-tight transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Mouse Interferon Alpha All-Subtype Neutralizing Viral Protein
                   </Link>
                 </div>
-                <Link href="/products/proteins/interferon-decoy-receptor" className="text-sm font-black text-blue-600 flex items-center gap-2 group-hover:translate-x-2 transition-all">
-                  View Details →
+                <Link href="/products/proteins/interferon-decoy-receptor" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  View Details
                 </Link>
               </div>
             </div>
 
-            {/* Interferon Card */}
+            {/* Interferon Card (Featured) */}
             <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 mb-8 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-xs">IFN</div>
-                <Link href="/products/proteins/interferons" className="block cursor-pointer mb-2">
-                  <h3 className="text-2xl font-bold mb-4 text-[#002776]">Interferon</h3>
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg">IFN</div>
+                </div>
+                <Link href="/products/proteins/interferons" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">Interferon</h3>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
                   Comprehensive collection of interferon proteins across multiple
                   species for research applications.
                 </p>
-                <div className="space-y-3 mb-10 flex-grow">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
                     href="/products/proteins/interferons"
-                    className="block py-2.5 text-[11px] font-bold text-[#002776] transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Human IFN Proteins
                   </Link>
                   <Link
                     href="/products/proteins/interferons"
-                    className="block py-2.5 text-[11px] font-bold text-[#002776] transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Rat IFN Proteins
                   </Link>
                   <Link
                     href="/products/proteins/interferons"
-                    className="block py-2.5 text-[11px] font-bold text-[#002776] transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Mouse IFN Proteins
                   </Link>
                   <Link
                     href="/products/proteins/interferons"
-                    className="block py-2.5 text-[11px] font-bold text-[#002776] leading-tight transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                    className="block py-3 text-xs font-bold text-slate-600 leading-tight transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Mammalian IFN Proteins (Non-Human, Non-Mouse)
                   </Link>
                 </div>
-                <Link href="/products/proteins/interferons" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block shadow-lg hover:bg-cyan-600 transition-colors">
+                <Link href="/products/proteins/interferons" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                   View Full Catalog
                 </Link>
               </div>

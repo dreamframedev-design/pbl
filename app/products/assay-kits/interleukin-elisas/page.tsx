@@ -56,58 +56,46 @@ export default async function InterleukinElisasPage() {
       </section>
 
       {/* Sub-Categories Grid - Internal Navigation */}
-      <section className="py-24 bg-[#F9F9FC] border-y border-slate-100">
+      <section className="py-24 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Human IL-15 ELISA Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-all font-bold">IL15</div>
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">IL15</div>
                 </div>
-                <Link href="/products/assay-kits/interleukin-elisas/human-il-15" className="block cursor-pointer mb-2">
-                  <h2 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-cyan-600 transition-colors">
+                <Link href="/products/assay-kits/interleukin-elisas/human-il-15" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h2 className="text-2xl font-bold text-[#002776]">
                     Human IL-15 ELISA
                   </h2>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   This ELISA measures endogenous human IL-15 at or near basal levels with LLOQ of 0.51 pg/ml in serum, plasma, and tissue culture media.
                 </p>
-                <div className="mt-auto">
-                  <Link href="/products/assay-kits/interleukin-elisas/human-il-15" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Products <span>→</span>
-                  </Link>
-                </div>
+                <Link href="/products/assay-kits/interleukin-elisas/human-il-15" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  View Products
+                </Link>
               </div>
             </div>
 
-            {/* Human IL-22 ELISA Card */}
-            <div className="group p-1 rounded-3xl transition-all duration-500 hover:scale-[1.02]" style={{
-              background: 'rgba(255, 255, 255, 0.7)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255, 255, 255, 0.3)'
-            }}>
-              <div className="bg-white rounded-[22px] p-8 h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,243,0.2)] hover:border-cyan-400/40 border border-transparent">
+            {/* Human IL-22 ELISA Card (Featured) */}
+            <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-white transition-all font-bold">IL22</div>
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg">IL22</div>
                 </div>
-                <Link href="/products/assay-kits/interleukin-elisas/human-il-22" className="block cursor-pointer mb-2">
-                  <h2 className="text-2xl font-bold mb-2 text-[#002776] group-hover:text-cyan-600 transition-colors">
+                <Link href="/products/assay-kits/interleukin-elisas/human-il-22" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                  <h2 className="text-2xl font-bold text-[#002776]">
                     Human IL-22 ELISA
                   </h2>
                 </Link>
-                <p className="text-gray-500 text-sm font-light mb-8">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   This ELISA is designed for accurate low-level quantitation of endogenous human IL-22 in healthy & disease sera/plasma, and tissue culture media (TCM) samples with an LLOQ of 0.78 pg/ml.
                 </p>
-                <div className="mt-auto">
-                  <Link href="/products/assay-kits/interleukin-elisas/human-il-22" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Products <span>→</span>
-                  </Link>
-                </div>
+                <Link href="/products/assay-kits/interleukin-elisas/human-il-22" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                  View Products
+                </Link>
               </div>
             </div>
           </div>

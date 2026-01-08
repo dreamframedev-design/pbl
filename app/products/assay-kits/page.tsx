@@ -63,113 +63,98 @@ export default function AssayKitsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
             {/* Cell-Based Assays Card */}
-            <div className="group p-1 rounded-[3rem] transition-all duration-500 glow-border" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-cyan-500 mb-8 font-black text-xs group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all" style={{
-                  background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                  border: '1px solid rgba(0, 240, 243, 0.2)'
-                }}>C</div>
-                <Link href="/products/assay-kits/cell-based-assays" className="block cursor-pointer mb-2">
-                  <h3 className="text-2xl font-bold mb-4 text-[#002776]">Cell-Based Assays</h3>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">C</div>
+                </div>
+                <Link href="/products/assay-kits/cell-based-assays" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">Cell-Based Assays</h3>
                 </Link>
-                <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 flex-grow">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Reporter gene cells for measuring interferon bioactivity and neutralizing antibodies in research applications.
                 </p>
-                <div className="space-y-3 mb-10">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
                     href="/products/assay-kits/cell-based-assays"
-                    className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 hover:bg-cyan-50 text-[11px] font-bold transition-all group/link"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>iLite Human Type I IFN Responsive Cells for bioactivity measurement</span>
-                    <span className="text-cyan-500 opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                    iLite Human Type I IFN Responsive Cells for bioactivity measurement
                   </Link>
                 </div>
-                <div className="mt-auto">
-                  <Link href="/products/assay-kits/cell-based-assays" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest flex items-center gap-2">
-                    Explore Bioassays <span>→</span>
-                  </Link>
-                </div>
+                <Link href="/products/assay-kits/cell-based-assays" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  Explore Bioassays
+                </Link>
               </div>
             </div>
 
             {/* Interferon (IFN) ELISAs Card */}
-            <div className="group p-1 rounded-[3rem] transition-all duration-500 glow-border" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-cyan-500 mb-8 font-black text-xs group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all" style={{
-                  background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                  border: '1px solid rgba(0, 240, 243, 0.2)'
-                }}>IFN</div>
-                <Link href="/products/assay-kits/interferon-elisas" className="block cursor-pointer mb-2">
-                  <h3 className="text-2xl font-bold mb-4 text-[#002776]">Interferon (IFN) ELISAs</h3>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">IFN</div>
+                </div>
+                <Link href="/products/assay-kits/interferon-elisas" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">Interferon (IFN) ELISAs</h3>
                 </Link>
-                <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 flex-grow">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Immunoassays for the detection and quantification of Type I and III IFN in various species.
                 </p>
-                <div className="space-y-2 mb-10">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
-                    href="/products/assay-kits/interferon-elisas"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-[11px] font-bold transition-all group/link"
+                    href="/products/assay-kits/interferon-elisas/human"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Human Interferon ELISAs</span>
-                    <span className="text-cyan-500 opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                    Human Interferon ELISAs
                   </Link>
                   <Link
-                    href="/products/assay-kits/interferon-elisas"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-[11px] font-bold transition-all group/link"
+                    href="/products/assay-kits/interferon-elisas/mouse"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Mouse Interferon ELISAs</span>
-                    <span className="text-cyan-500 opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                    Mouse Interferon ELISAs
                   </Link>
                   <Link
-                    href="/products/assay-kits/interferon-elisas"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-[11px] font-bold transition-all group/link"
+                    href="/products/assay-kits/interferon-elisas/non-human"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Non-Human Interferon ELISAs</span>
-                    <span className="text-cyan-500 opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                    Non-Human Interferon ELISAs
                   </Link>
                 </div>
+                <Link href="/products/assay-kits/interferon-elisas" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  Explore ELISAs
+                </Link>
               </div>
             </div>
 
-            {/* Interleukin (IL) ELISAs Card */}
+            {/* Interleukin (IL) ELISAs Card (Featured) */}
             <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 mb-8 font-black text-xs group-hover:bg-[#002776] group-hover:text-white transition-all">IL</div>
-                <Link href="/products/assay-kits/interleukin-elisas" className="block cursor-pointer mb-2">
-                  <h3 className="text-2xl font-bold mb-4 text-[#002776]">Interleukin (IL) ELISAs</h3>
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg">IL</div>
+                </div>
+                <Link href="/products/assay-kits/interleukin-elisas" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                  <h3 className="text-2xl font-bold text-[#002776]">Interleukin (IL) ELISAs</h3>
                 </Link>
-                <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 flex-grow">
+                <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   High-sensitivity ELISA kits for accurate quantification of interleukins in serum, plasma, and tissue culture media.
                 </p>
-                <div className="space-y-2 mb-10">
+                <div className="mt-auto space-y-3 mb-10">
                   <Link
-                    href="/products/assay-kits/interleukin-elisas"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-[#002776]/5 text-[11px] font-bold transition-all group/link"
+                    href="/products/assay-kits/interleukin-elisas/human-il-15"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Human IL-15 ELISA</span>
-                    <span className="text-[#002776] opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                    Human IL-15 ELISA
                   </Link>
                   <Link
-                    href="/products/assay-kits/interleukin-elisas"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-[#002776]/5 text-[11px] font-bold transition-all group/link"
+                    href="/products/assay-kits/interleukin-elisas/human-il-22"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
-                    <span>Human IL-22 ELISA</span>
-                    <span className="text-[#002776] opacity-0 group-hover/link:opacity-100 transition-opacity">→</span>
+                    Human IL-22 ELISA
                   </Link>
                 </div>
-                <div className="mt-auto">
-                  <Link href="/products/assay-kits/interleukin-elisas" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block shadow-lg hover:bg-cyan-600 transition-colors">
-                    View Performance Data
-                  </Link>
-                </div>
+                <Link href="/products/assay-kits/interleukin-elisas" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                  View Performance Data
+                </Link>
               </div>
             </div>
 

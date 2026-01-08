@@ -48,12 +48,8 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             
             {/* Assay Kits Card */}
-            <div className="group p-1 rounded-[3rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                   <Image
                     src="/images/15.webp"
@@ -66,14 +62,14 @@ export default function ProductsPage() {
                 <h2 className="text-3xl font-bold mb-2 text-[#002776]">Assay Kits</h2>
                 <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8">Immunoassay Solutions</p>
                 
-                <div className="space-y-4 mb-10 flex-grow">
-                  <Link href="/products/assay-kits/interferon-elisas" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                <div className="space-y-3 mb-10 flex-grow">
+                  <Link href="/products/assay-kits/interferon-elisas" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Interferon (IFN) ELISA Kits
                   </Link>
-                  <Link href="/products/assay-kits/interleukin-elisas" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                  <Link href="/products/assay-kits/interleukin-elisas" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Interleukin (IL) ELISA Kits
                   </Link>
-                  <Link href="/products/assay-kits/cell-based-assays" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                  <Link href="/products/assay-kits/cell-based-assays" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Cell-Based Assays
                   </Link>
                 </div>
@@ -85,12 +81,8 @@ export default function ProductsPage() {
             </div>
 
             {/* Proteins Card */}
-            <div className="group p-1 rounded-[3rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(5,138,159,0.2)] hover:border-[#058A9F] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                   <Image
                     src="/images/16.webp"
@@ -103,31 +95,27 @@ export default function ProductsPage() {
                 <h2 className="text-3xl font-bold mb-2 text-[#002776]">Proteins</h2>
                 <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8">High-Purity Reagents</p>
                 
-                <div className="space-y-4 mb-10 flex-grow">
-                  <Link href="/products/proteins/interferons" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                <div className="space-y-3 mb-10 flex-grow">
+                  <Link href="/products/proteins/interferons" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Interferons
                   </Link>
-                  <Link href="/products/proteins/cytokines-growth-factors" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                  <Link href="/products/proteins/cytokines-growth-factors" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Cytokines and Growth Factors
                   </Link>
-                  <Link href="/products/proteins/interferon-decoy-receptor" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                  <Link href="/products/proteins/interferon-decoy-receptor" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Interferon Decoy Receptor
                   </Link>
                 </div>
                 
-                <Link href="/products/proteins" className="w-full py-4 bg-slate-50 group-hover:bg-[#058A9F] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                <Link href="/products/proteins" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                   Browse Proteins
                 </Link>
               </div>
             </div>
 
-            {/* Antibodies Card */}
-            <div className="group p-1 rounded-[3rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)] hover:border-cyan-400 hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
+            {/* Antibodies Card (Featured) */}
+            <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                   <Image
                     src="/images/14.webp"
@@ -140,16 +128,16 @@ export default function ProductsPage() {
                 <h2 className="text-3xl font-bold mb-2 text-[#002776]">Antibodies</h2>
                 <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8">MAbs & PAbs</p>
                 
-                <div className="space-y-4 mb-10 flex-grow">
-                  <Link href="/products/antibodies/monoclonal" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                <div className="space-y-3 mb-10 flex-grow">
+                  <Link href="/products/antibodies/monoclonal" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Monoclonal (MAbs)
                   </Link>
-                  <Link href="/products/antibodies/polyclonal" className="block py-2 text-sm font-semibold text-slate-600 hover:border-l-[2.5px] hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)] transition-all border-l-[2.5px] border-transparent">
+                  <Link href="/products/antibodies/polyclonal" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
                     Polyclonal (PAbs)
                   </Link>
                 </div>
                 
-                <Link href="/products/antibodies" className="w-full py-4 bg-slate-50 group-hover:bg-cyan-500 group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                <Link href="/products/antibodies" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                   View Catalog
                 </Link>
               </div>

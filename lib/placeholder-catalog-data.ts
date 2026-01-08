@@ -115,6 +115,19 @@ export function getPlaceholderCatalogData(pagePath: string): CatalogProduct[] | 
       },
     ],
 
+    // Cell-Based Assays
+    'cell-based-assays': [
+      {
+        catalogNo: '51100-7',
+        description: 'iLite Human Type I IFN Responsive Cells',
+        packSize: '1 vial',
+        documents: [
+          { label: '51100-7 CoA' },
+        ],
+        price: '$1,875.00',
+      },
+    ],
+
     // Interleukin (IL) ELISA Kits
     'interleukin-elisas': [
       {
