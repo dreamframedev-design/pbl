@@ -945,8 +945,8 @@ export default function Header() {
                             </Link>
                           </div>
                         </div>
-                      </div>
                     </div>
+                  </div>
 
                     {/* Featured Content Column */}
                     <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
@@ -1319,6 +1319,28 @@ export default function Header() {
                         </Link>
                       </div>
                     </div>
+                    <div>
+                      <Link
+                        href="/blog"
+                        onClick={handleLinkClick}
+                        className="block mb-4"
+                      >
+                        <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] hover:text-[#058A9F] transition-colors">Knowledge Hub</h4>
+                      </Link>
+                      <div className="space-y-3">
+                        <Link 
+                          href="/blog" 
+                          onClick={handleLinkClick}
+                          className={`block text-[11px] text-slate-500 ${
+                            isDropdownActive('/blog')
+                              ? 'text-cyan-500'
+                              : 'hover:text-cyan-500'
+                          }`}
+                        >
+                          Scientific Insights Blog
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 )}
               </li>
@@ -1517,6 +1539,7 @@ export default function Header() {
                   RESOURCES
                 </Link>
                 <div className="pl-4 pt-3 space-y-2">
+                  <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Scientific Insights Blog</Link>
                   <Link href="/resources/technical-presentations" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Technical Presentations</Link>
                   <Link href="/resources/general-protocols" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">General Protocols</Link>
                   <Link href="/resources/scientific-articles" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-xs text-slate-600">Scientific Articles</Link>

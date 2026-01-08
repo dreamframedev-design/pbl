@@ -113,6 +113,28 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Resources */}
+          <div>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Resources</h4>
+            <ul className="space-y-4 text-xs text-slate-500 font-light">
+              <li>
+                <Link href="/blog" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Scientific Insights Blog</Link>
+              </li>
+              <li>
+                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">All Resources</Link>
+              </li>
+              <li>
+                <Link href="/resources/general-protocols" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">General Protocols</Link>
+              </li>
+              <li>
+                <Link href="/resources/scientific-articles" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Scientific Articles</Link>
+              </li>
+              <li>
+                <Link href="/resources/technical-presentations" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Technical Presentations</Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Support */}
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Support</h4>
@@ -124,13 +146,7 @@ export default function Footer() {
                 <Link href="/distributors" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Distributors</Link>
               </li>
               <li>
-                <Link href="/blog" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Technical Blog</Link>
-              </li>
-              <li>
                 <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Contact us</Link>
-              </li>
-              <li>
-                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Resources</Link>
               </li>
             </ul>
           </div>

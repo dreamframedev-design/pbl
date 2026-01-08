@@ -41,125 +41,107 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
             {/* Assay Development */}
-            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-cyan-500 mb-8 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all" style={{
-                  background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                  border: '1px solid rgba(0, 240, 243, 0.2)'
-                }}>
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.644.322a6 6 0 01-3.86.517l-2.387-.477a2 2 0 00-1.022.547l1.166 3.497a2 2 0 001.898 1.368h10.23a2 2 0 001.898-1.368l1.166-3.497z"/></svg>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.644.322a6 6 0 01-3.86.517l-2.387-.477a2 2 0 00-1.022.547l1.166 3.497a2 2 0 001.898 1.368h10.23a2 2 0 001.898-1.368l1.166-3.497z"/></svg>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-[#002776]">Assay Development</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Discovery to Validation</p>
-                <p className="text-gray-500 text-sm font-light leading-relaxed mb-10 flex-grow">
+                <Link href="/services/assay-development" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-3xl font-bold text-[#002776]">Assay Development</h3>
+                </Link>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Discovery to Validation</p>
+                <p className="text-slate-500 text-sm font-light leading-relaxed mb-10 flex-grow">
                   Immunoassay Design & Development from Antibody Screening & Proof-of-Concept Feasibility to Validation & Characterization.
                 </p>
-                <div className="mt-auto">
-                  <Link href="/services/assay-development" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group/link transition-all hover:gap-4">
-                    View Solutions <span>→</span>
-                  </Link>
-                </div>
+                <Link href="/services/assay-development" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  View Solutions
+                </Link>
               </div>
             </div>
 
             {/* Biomarker Sample Analysis */}
-            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-cyan-500 mb-8 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all" style={{
-                  background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                  border: '1px solid rgba(0, 240, 243, 0.2)'
-                }}>
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-[#002776]">Biomarker Sample Analysis</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Simoa, SMC, MSD</p>
-                <p className="text-gray-500 text-sm font-light leading-relaxed mb-10 flex-grow">
+                <Link href="/services/biomarker-sample-analysis" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-3xl font-bold text-[#002776]">Biomarker Sample Analysis</h3>
+                </Link>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Simoa, SMC, MSD</p>
+                <p className="text-slate-500 text-sm font-light leading-relaxed mb-10 flex-grow">
                   Sensitive biomarker detection on a variety of singleplex and multiplex assay platforms (MSD, Simoa®, Erenna®, SMCxPRO®, ELISA), from one sample to thousands.
                 </p>
-                <div className="mt-auto">
-                  <Link href="/services/biomarker-sample-analysis" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group/link transition-all hover:gap-4">
-                    View Services <span>→</span>
-                  </Link>
-                </div>
+                <Link href="/services/biomarker-sample-analysis" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  View Services
+                </Link>
               </div>
             </div>
 
             {/* Cell-Based Services */}
-            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-cyan-500 mb-8 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all" style={{
-                  background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                  border: '1px solid rgba(0, 240, 243, 0.2)'
-                }}>
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-[#002776]">Cell-Based Services</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">NAb & Bioactivity</p>
-                <p className="text-gray-500 text-sm font-light leading-relaxed mb-10 flex-grow">
+                <Link href="/services/cell-based-services" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-3xl font-bold text-[#002776]">Cell-Based Services</h3>
+                </Link>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">NAb & Bioactivity</p>
+                <p className="text-slate-500 text-sm font-light leading-relaxed mb-10 flex-grow">
                   Assays measuring Cytokine & Chemokine Bioactivity, Cytokine Release, NAb Activity, Proliferation & Anti-Proliferation, Antiviral Activity including CPE inhibition assays.
                 </p>
-                <div className="mt-auto">
-                  <Link href="/services/cell-based-services" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group/link transition-all hover:gap-4">
-                    Explore Bioassays <span>→</span>
-                  </Link>
-                </div>
+                <Link href="/services/cell-based-services" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  Explore Bioassays
+                </Link>
               </div>
             </div>
 
             {/* Custom Production */}
-            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-1.5" style={{
-              background: 'rgba(255, 255, 255, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(226, 232, 240, 0.8)'
-            }}>
-              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-cyan-500 mb-8 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all" style={{
-                  background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-                  border: '1px solid rgba(0, 240, 243, 0.2)'
-                }}>
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col transition-all duration-300">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-[#002776]">Custom Production</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Purification & Labeling</p>
-                <p className="text-gray-500 text-sm font-light leading-relaxed mb-10 flex-grow">
+                <Link href="/services/custom-production" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                  <h3 className="text-3xl font-bold text-[#002776]">Custom Production</h3>
+                </Link>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Purification & Labeling</p>
+                <p className="text-slate-500 text-sm font-light leading-relaxed mb-10 flex-grow">
                   Expression, Purification & Characterization of Proteins & Monoclonals; Antibody & Protein Labeling; Immunoassay (ELISA) Manufacturing.
                 </p>
-                <div className="mt-auto">
-                  <Link href="/services/custom-production" className="text-sm font-bold text-cyan-500 flex items-center gap-2 group/link transition-all hover:gap-4">
-                    Get a Quote <span>→</span>
-                  </Link>
-                </div>
+                <Link href="/services/custom-production" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  Get a Quote
+                </Link>
               </div>
             </div>
 
             {/* Antibody Characterization Service */}
-            <div className="group p-[2.5px] rounded-[2.5rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
-              <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 mb-8 group-hover:bg-[#002776] group-hover:text-white transition-all">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
+              <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-[#002776]">Antibody Characterization</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Real-Time BLI Biophysics</p>
-                <p className="text-gray-500 text-sm font-light leading-relaxed mb-10 flex-grow">
+                <Link href="/services/antibody-characterization" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                  <h3 className="text-3xl font-bold text-[#002776]">Antibody Characterization</h3>
+                </Link>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Real-Time BLI Biophysics</p>
+                <p className="text-slate-500 text-sm font-light leading-relaxed mb-10 flex-grow">
                   Real-time BLI-based biophysical characterization of antibody affinities, association/dissociation rates, epitope binning, and antibody screening.
                 </p>
-                <div className="mt-auto">
-                  <Link href="/services/antibody-characterization" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-lg">
-                    View Full Service
-                  </Link>
-                </div>
+                <Link href="/services/antibody-characterization" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                  View Full Service
+                </Link>
               </div>
             </div>
 

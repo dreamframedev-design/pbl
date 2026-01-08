@@ -31,7 +31,7 @@ export default function PolyclonalAntibodiesPage() {
       </section>
 
       {/* Subtitle and Sub-Categories Grid */}
-      <section className="py-24 bg-[#F9F9FC] border-y border-slate-100">
+      <section className="py-24 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-[#002776] mb-16 tracking-tight">Polyclonal Antibodies to Interferon Species and Subtypes</h2>
           
