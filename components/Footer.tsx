@@ -23,9 +23,10 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Footer Content - All columns in one row */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
           {/* Company Info */}
-          <div className="col-span-2 lg:col-span-2 space-y-8">
+          <div className="col-span-2 lg:col-span-2 space-y-6">
             <Link href="/" className="brand-link flex flex-col items-start no-underline group">
               <svg 
                 className="brand-logo h-12 w-auto mb-4" 
