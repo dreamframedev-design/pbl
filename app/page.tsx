@@ -133,13 +133,13 @@ export default function Home() {
               transform: 'scale(1)',
             }}
           >
-            <Image
-              src="/images/hero nice1.webp"
-              alt="PBL Assay Science"
-              fill
-              className="object-cover object-center"
-              priority
-            />
+          <Image
+            src="/images/hero nice1.webp"
+            alt="PBL Assay Science"
+            fill
+            className="object-cover object-center"
+            priority
+          />
           </div>
           <div className="absolute inset-0 bg-white/10"></div>
         </div>
@@ -149,7 +149,7 @@ export default function Home() {
           ref={parallaxRef}
           className="block md:hidden absolute inset-0 z-0 will-change-transform" 
           style={{
-            background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
+          background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
           }}
         ></div>
 
@@ -192,12 +192,12 @@ export default function Home() {
                           transformOrigin: 'center center',
                         }}
                       >
-                        <Image
-                          src="/images/1.webp"
+                      <Image
+                        src="/images/1.webp"
                           alt="PBL Specimen"
-                          fill
-                          className="object-cover"
-                        />
+                        fill
+                        className="object-cover"
+                      />
                       </div>
                     </div>
                   </div>
