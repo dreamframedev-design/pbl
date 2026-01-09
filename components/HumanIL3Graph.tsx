@@ -80,10 +80,10 @@ export default function HumanIL3Graph() {
             <Tooltip 
               cursor={{ strokeDasharray: '3 3' }} 
               contentStyle={{ borderRadius: '1rem', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', fontSize: '12px', fontWeight: 'bold' }}
-              formatter={(value: any, name: string) => {
+              formatter={(value: any, name?: string) => {
                 if (name === 'Concentration') return [`${value} pg/ml`, 'IL-3 Concentration'];
                 if (name === 'Pixel Intensity') return [value, 'Pixel Intensity'];
-                return [value, name];
+                return [value, name || 'Value'];
               }}
             />
 
