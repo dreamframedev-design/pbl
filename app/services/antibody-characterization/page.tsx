@@ -142,7 +142,7 @@ export default function AntibodyCharacterizationPage() {
       </section>
 
       {/* Bottom CTA Section */}
-      <section className="py-32 bg-white text-center">
+      <section className="pt-32 pb-12 bg-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
           <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>

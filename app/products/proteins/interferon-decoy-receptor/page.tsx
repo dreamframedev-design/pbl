@@ -295,7 +295,7 @@ export default function InterferonDecoyReceptorPage() {
       <ProductCatalog products={catalogProducts} />
 
       {/* Final CTA Section */}
-      <section className="py-32 bg-slate-50 text-center border-t border-slate-100">
+      <section className="pt-32 pb-12 bg-slate-50 text-center border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Scientific Consultation</span>
           <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Ready to start your study?</h2>
