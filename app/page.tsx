@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section - Full viewport height accounting for navbar */}
-      <section className="relative w-full flex items-center justify-start lg:items-center min-h-[calc(100dvh-100px)] md:min-h-[calc(100vh-100px)] pt-24 md:pt-32" style={{
+      <section className="relative w-full flex items-center justify-start lg:items-center min-h-[calc(100dvh-100px)] md:min-h-[calc(100vh-100px)] pt-16 md:pt-32" style={{
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.03) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.04) 0, transparent 50%)'
       }}>
         
@@ -158,9 +158,9 @@ export default function Home() {
             
             {/* HERO TEXT */}
             <div className="max-w-2xl lg:max-w-4xl w-full relative z-10">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-[#002776]">
-                Fit-for-purpose <span className="whitespace-nowrap font-serif italic font-light">assay development,</span><br className="hidden md:block" />
-                <span className="bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] bg-clip-text text-transparent"><span className="whitespace-nowrap">customization and</span><br className="md:block lg:hidden" /> execution.</span>
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-[#002776]">
+                <span className="block md:inline">Fit-for-purpose</span> <span className="block md:inline font-serif italic font-light">assay development,</span>
+                <span className="block md:inline bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] bg-clip-text text-transparent">customization<span className="hidden md:inline"> </span><span className="block md:inline">and</span> <span className="block md:inline">execution.</span></span>
               </h1>
               
               {/* 3. THE REFINED ATMOSPHERIC PORTAL (Mobile Only) */}

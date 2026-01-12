@@ -30,10 +30,9 @@ export default function ProteinsPage() {
               <span>Proteins</span>
             </nav>
             
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-tight text-safe">
-              <span className="text-[#002776]">Recombinant</span>
-              <br className="block" />
-              <span className="font-light text-gray-400 font-serif italic">Proteins</span>
+            <h1 className="text-4xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
+              <span className="block text-[#002776]">Recombinant</span>
+              <span className="block font-light text-gray-400 font-serif italic">Proteins</span>
             </h1>
 
             <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">

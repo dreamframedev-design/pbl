@@ -25,8 +25,9 @@ export default function AntibodyCharacterizationPage() {
           <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
             <span>PBL</span> <span className="text-gray-300">/</span> <span>Services</span> <span className="text-gray-300">/</span> <span>Antibody Characterization</span>
           </nav>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
-            <span className="text-[#002776]">Antibody</span> <br/> <span className="font-light text-gray-400 font-serif italic">Characterization</span>
+          <h1 className="text-4xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
+            <span className="block text-[#002776]">Antibody</span>
+            <span className="block font-light text-gray-400 font-serif italic">Characterization</span>
           </h1>
           <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
             Real-time BLI-based biophysical characterization of antibody affinities, association/dissociation rates, epitope binning, and antibody screening.
