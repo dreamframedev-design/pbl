@@ -189,7 +189,7 @@ export default function Header() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search 60+ technical products, proteins, and services..."
-                className="w-full bg-transparent pl-10 pr-5 text-sm outline-none h-full"
+                className="w-full bg-transparent pl-10 pr-5 text-base md:text-sm outline-none h-full"
               />
             </div>
 
@@ -336,7 +336,7 @@ export default function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search 60+ technical products, proteins, and services..."
-              className="w-full bg-transparent pl-10 pr-3 text-sm outline-none h-full"
+              className="w-full bg-transparent pl-10 pr-3 text-base md:text-sm outline-none h-full"
                   autoFocus
             />
           </div>

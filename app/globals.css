@@ -59,6 +59,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent pinch zoom on mobile */
+@layer base {
+  html {
+    touch-action: pan-x pan-y;
+  }
+  
+  body {
+    touch-action: pan-x pan-y;
+  }
+}
+
 @layer base {
   html {
     font-family: var(--font-inter), "Open Sauce One", system-ui, sans-serif;
