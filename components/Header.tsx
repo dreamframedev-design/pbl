@@ -1396,6 +1396,16 @@ export default function Header() {
             {/* Scrollable Content Area */}
             <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain px-6 py-8">
               <nav className="space-y-6 pb-20">
+            {/* Home Link */}
+            <div>
+              <Link 
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-lg font-black text-[#002776] uppercase tracking-[0.2em] border-b border-slate-100"
+              >
+                HOME
+              </Link>
+            </div>
             {/* Mobile Icons - Shopping Cart, Mail, User */}
               <div className="flex items-center gap-2 pb-4 border-b border-slate-200">
               <Link
