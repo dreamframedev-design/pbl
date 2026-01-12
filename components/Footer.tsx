@@ -3,7 +3,7 @@ import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-slate-100 mt-32 overflow-x-hidden">
+    <footer className="bg-white border-t border-slate-100 mt-8 overflow-x-hidden">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12">
         {/* Authority Bar */}
         <div className="bg-slate-50/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-8 mb-12 sm:mb-16 lg:mb-20 border-y border-slate-100">
