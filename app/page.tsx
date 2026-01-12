@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section - Full viewport height accounting for navbar */}
-      <section className="relative w-full flex items-start md:items-center justify-start md:min-h-[calc(100vh-100px)] pt-0 md:pt-32" style={{
+      <section className="relative w-full flex items-start justify-start md:min-h-[calc(100vh-100px)] pt-0 md:pt-16" style={{
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.03) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.04) 0, transparent 50%)'
       }}>
         
@@ -153,7 +153,7 @@ export default function Home() {
           }}
         ></div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full pt-6 pb-12 md:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full pt-6 pb-12 md:pt-8 md:pb-16 lg:pb-20">
           <div className="flex flex-col items-start">
             
             {/* HERO TEXT */}
