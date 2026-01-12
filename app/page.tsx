@@ -161,7 +161,7 @@ export default function Home() {
               <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-[#002776]">
                 <span className="block">Fit-for-purpose</span>
                 <span className="block font-serif italic font-light">assay development,</span>
-                <span className="block bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] bg-clip-text text-transparent"><span className="block md:inline">customization and</span> <span className="block md:inline">execution.</span></span>
+                <span className="block bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] bg-clip-text text-transparent"><span className="block lg:inline">customization and</span> <span className="block lg:inline">execution.</span></span>
               </h1>
               
               {/* 3. THE REFINED ATMOSPHERIC PORTAL (Mobile Only) */}
