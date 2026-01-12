@@ -29,6 +29,7 @@ export function generatePageTitleFromSlug(
     'interferon-elisas': 'Interferon (IFN) ELISA Kits',
     'interleukin-elisas': 'Interleukin (IL) ELISAs',
     'cell-based-assays': 'Cell-Based Assays',
+    'non-human': 'Non-Human Interferon ELISAs',
     // Proteins
     'cytokines-growth-factors': 'Cytokines and Growth Factors',
     'interferon-decoy-receptor': 'Interferon Decoy Receptor',
@@ -44,9 +45,11 @@ export function generatePageTitleFromSlug(
   const fullSlug = slug.join('/');
 
   // Check for compound mappings first (e.g., "anti-human-ifn/anti-human-ifn-alpha")
-  for (const [key, title] of Object.entries(titleMappings)) {
+  // Sort keys by length (longest first) to match longer patterns before shorter ones
+  const sortedKeys = Object.keys(titleMappings).sort((a, b) => b.length - a.length);
+  for (const key of sortedKeys) {
     if (fullSlug.endsWith(key) || lastSegment === key) {
-      return title;
+      return titleMappings[key];
     }
   }
 
