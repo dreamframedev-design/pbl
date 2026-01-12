@@ -26,8 +26,7 @@ export default function AssayKitsPage() {
             <span>Assay Kits</span>
           </nav>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
-            <span className="block">IFN &</span>
-            <span className="block">Cytokine</span>
+            <span className="block">IFN & Cytokine</span>
             <span className="block font-light text-gray-400 font-serif italic">ELISA Kits</span>
           </h1>
           <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
