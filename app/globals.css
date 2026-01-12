@@ -84,22 +84,22 @@
     font-family: "Open Sauce One", system-ui, sans-serif;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
     max-width: 100%;
   }
 
   h1 {
     @apply text-display-1 font-bold;
-    word-break: break-word;
-    overflow-wrap: anywhere;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   h2 {
     @apply text-display-2 font-bold;
-    word-break: break-word;
-    overflow-wrap: anywhere;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   h3 {

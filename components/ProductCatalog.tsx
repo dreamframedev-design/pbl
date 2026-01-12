@@ -163,7 +163,7 @@ export default function ProductCatalog({ title, products }: ProductCatalogProps)
               <h4 className="text-2xl font-bold text-white mb-2 tracking-tight text-balance">Request a custom study evaluation</h4>
               <p className="text-blue-200 font-light text-sm max-w-md">Our scientists provide fit-for-purpose assay development tailored to your specific research parameters.</p>
            </div>
-           <Link href="/speak-to-a-scientist" className="relative z-10 px-10 py-5 bg-[#00F0F3] text-[#002776] rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-cyan-400/20 hover:scale-105 hover:bg-white transition-all">
+           <Link href="/speak-to-a-scientist" className="relative z-10 px-6 md:px-10 py-4 md:py-5 bg-[#00F0F3] text-[#002776] rounded-2xl font-black text-xs md:text-xs uppercase tracking-[0.2em] shadow-xl shadow-cyan-400/20 hover:scale-105 hover:bg-white transition-all whitespace-nowrap">
               Consult a Scientist →
            </Link>
         </div>

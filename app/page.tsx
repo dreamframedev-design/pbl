@@ -118,7 +118,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#FBFBFE] text-[#002776]">
       {/* Hero Section - Full viewport height accounting for navbar */}
-      <section className="relative w-full flex items-center justify-start lg:items-center h-[calc(100dvh-100px)] md:h-[calc(100vh-100px)]" style={{
+      <section className="relative w-full flex items-center justify-start lg:items-center min-h-[calc(100dvh-100px)] md:min-h-[calc(100vh-100px)] pt-24 md:pt-32" style={{
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.03) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.04) 0, transparent 50%)'
       }}>
         
@@ -455,8 +455,8 @@ export default function Home() {
         style={{ overflowY: 'visible' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center mb-20 bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent">
-            Quality Products You Won't Find Anywhere Else
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-[#002776] to-[#058A9F] bg-clip-text text-transparent leading-tight">
+            <span className="block md:inline">Quality Products</span> <span className="block md:inline">You Won't Find</span> <span className="block md:inline">Anywhere Else</span>
           </h2>
 
           {/* Product Grid */}
