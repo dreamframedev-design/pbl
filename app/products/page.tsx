@@ -12,15 +12,17 @@ export default function ProductsPage() {
       }}>
         {/* Background Image with White Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/products hero.webp"
-            alt="Products"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* White gradient overlay - solid white on left, fades to transparent on right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 via-white/40 to-transparent"></div>
+          <div className="absolute inset-0 md:left-1/4 lg:left-0">
+            <Image
+              src="/images/products hero.webp"
+              alt="Products"
+              fill
+              className="object-cover object-left md:object-center"
+              priority
+            />
+          </div>
+          {/* White gradient overlay - solid white on left, fades to transparent on right - stronger on mobile/tablet */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 md:via-white/80 via-white/50 md:via-white/40 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
