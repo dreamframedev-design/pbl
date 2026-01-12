@@ -12,7 +12,7 @@ export default function ProductsPage() {
       }}>
         {/* Background Image with White Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 left-1/3 md:left-1/4 lg:left-0">
+          <div className="absolute inset-0 left-1/5 md:left-1/6 lg:left-0">
             <Image
               src="/images/products hero.webp"
               alt="Products"
@@ -22,7 +22,7 @@ export default function ProductsPage() {
             />
           </div>
           {/* White gradient overlay - solid white on left, fades to transparent on right - stronger on mobile/tablet */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 md:via-white/85 via-white/60 md:via-white/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 md:via-white/80 via-white/50 md:via-white/40 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
