@@ -12,7 +12,7 @@ export default function ProductsPage() {
       }}>
         {/* Background Image with White Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 left-1/5 md:left-1/6 lg:left-0">
+          <div className="absolute inset-0 left-1/6 md:left-1/8 lg:left-0">
             <Image
               src="/images/products hero.webp"
               alt="Products"
@@ -31,7 +31,7 @@ export default function ProductsPage() {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             <span className="text-[#002776]">Products</span> <br/> <span className="font-light text-gray-400 font-serif italic">That Won't</span> <br/> <span className="font-light text-gray-400 font-serif italic">Let You Down</span>
           </h1>
-          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+          <p className="max-w-xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
             We offer a range of high-quality interferon and interleukin
             immunoassay kits, cytokines and interferons, and monoclonal and
             polyclonal antibodies for life science researchers. Our products
