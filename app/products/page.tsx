@@ -12,17 +12,18 @@ export default function ProductsPage() {
       }}>
         {/* Background Image with White Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 left-1/6 md:left-1/8 lg:left-0">
+          <div className="absolute inset-0 right-[-80%] md:right-[-60%] lg:right-0">
             <Image
               src="/images/products hero.webp"
               alt="Products"
               fill
-              className="object-cover object-left md:object-center"
+              className="object-cover"
+              style={{ objectPosition: '60% center' }}
               priority
             />
           </div>
-          {/* White gradient overlay - solid white on left, fades to transparent on right - stronger on mobile/tablet */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 md:via-white/80 via-white/50 md:via-white/40 to-transparent"></div>
+          {/* White gradient overlay - solid white on left, fades to transparent on right - lighter on mobile/tablet to show more image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 md:via-white/70 via-white/30 md:via-white/25 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
@@ -31,7 +32,7 @@ export default function ProductsPage() {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             <span className="text-[#002776]">Products</span> <br/> <span className="font-light text-gray-400 font-serif italic">That Won't</span> <br/> <span className="font-light text-gray-400 font-serif italic">Let You Down</span>
           </h1>
-          <p className="max-w-xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
+          <p className="max-w-md md:max-w-lg lg:max-w-xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
             We offer a range of high-quality interferon and interleukin
             immunoassay kits, cytokines and interferons, and monoclonal and
             polyclonal antibodies for life science researchers. Our products
@@ -57,12 +58,12 @@ export default function ProductsPage() {
                     src="/images/15.webp"
                     alt="Assay Kits"
                     fill
-                    className="object-cover group-hover:scale-110 transition-all duration-700"
+                    className="object-cover md:scale-150 lg:scale-100 group-hover:scale-110 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#002776]/40 to-transparent"></div>
                 </div>
-                <h2 className="text-3xl font-bold mb-2 text-[#002776]">Assay Kits</h2>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8">Immunoassay Solutions</p>
+                <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap text-center">Assay Kits</h2>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 text-center">Immunoassay Solutions</p>
                 
                 <div className="space-y-3 mb-10 flex-grow">
                   <Link href="/products/assay-kits/interferon-elisas" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
@@ -90,12 +91,12 @@ export default function ProductsPage() {
                     src="/images/16.webp"
                     alt="Proteins"
                     fill
-                    className="object-cover group-hover:scale-110 transition-all duration-700"
+                    className="object-cover md:scale-150 lg:scale-100 group-hover:scale-110 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#058A9F]/40 to-transparent"></div>
                 </div>
-                <h2 className="text-3xl font-bold mb-2 text-[#002776]">Proteins</h2>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8">High-Purity Reagents</p>
+                <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap text-center">Proteins</h2>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 text-center">High-Purity Reagents</p>
                 
                 <div className="space-y-3 mb-10 flex-grow">
                   <Link href="/products/proteins/interferons" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
@@ -123,12 +124,12 @@ export default function ProductsPage() {
                     src="/images/14.webp"
                     alt="Antibodies"
                     fill
-                    className="object-cover group-hover:scale-110 transition-all duration-700"
+                    className="object-cover md:scale-150 lg:scale-100 group-hover:scale-110 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-400/40 to-transparent"></div>
                 </div>
-                <h2 className="text-3xl font-bold mb-2 text-[#002776]">Antibodies</h2>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8">MAbs & PAbs</p>
+                <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap text-center">Antibodies</h2>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 text-center">MAbs & PAbs</p>
                 
                 <div className="space-y-3 mb-10 flex-grow">
                   <Link href="/products/antibodies/monoclonal" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">

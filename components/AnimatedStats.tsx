@@ -163,7 +163,7 @@ function AnimatedISO() {
   return (
     <div 
       id="animated-iso"
-      className="text-cyan-500 font-bold text-2xl mb-1 flex items-center gap-2"
+      className="text-cyan-500 font-bold text-2xl mb-1 flex items-center justify-center md:justify-start gap-2"
     >
       <span className={`transition-all duration-500 ${
         isVisible ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'
@@ -207,7 +207,7 @@ export default function AnimatedStats() {
           <AnimatedGlobal />
           <div className="text-[9px] font-black uppercase tracking-widest text-slate-400">Logistics Network</div>
         </div>
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <AnimatedISO />
           <div className="text-[9px] font-black uppercase tracking-widest text-slate-400">Quality Certified</div>
         </div>
