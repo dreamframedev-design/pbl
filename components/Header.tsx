@@ -355,6 +355,17 @@ export default function Header() {
       {/* Navigation Bar - Row Below with Dropdowns - Hidden on mobile */}
       <nav className="hidden lg:flex max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 gap-6 lg:gap-10 relative" style={{ overflow: 'visible', height: 'auto', maxHeight: 'none' }}>
         <ul className="flex items-center gap-1 lg:gap-4 relative" style={{ overflow: 'visible', height: 'auto' }}>
+              {/* Home Link */}
+              <li className="nav-item py-4">
+                <Link
+                  href="/"
+                  onClick={handleLinkClick}
+                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
+                >
+                  HOME
+                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
+                </Link>
+              </li>
               {/* Products Dropdown */}
               <li
                 className="nav-item py-4"
