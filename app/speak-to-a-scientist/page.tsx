@@ -253,7 +253,7 @@ export default function SpeakToAScientistPage() {
         <div className="absolute inset-0 skew-y-3 bg-[#002776] transform translate-y-2/3 origin-right opacity-5"></div>
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 bg-white p-12 md:p-20 rounded-[4rem] shadow-xl border border-slate-100">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 bg-white p-12 md:p-20 rounded-[4rem] shadow-xl border border-slate-100">
             <div className="max-w-xl text-center md:text-left">
               <span className="px-4 py-1.5 bg-red-50 text-red-500 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block ring-1 ring-red-100">Urgent Support</span>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#002776] mb-6">Need Immediate Scientific Assistance?</h2>
@@ -262,13 +262,13 @@ export default function SpeakToAScientistPage() {
               </p>
             </div>
             
-            <div className="flex flex-col gap-4 w-full md:w-auto">
-              <a href="tel:+17327779123" className="px-10 py-6 bg-[#002776] text-white rounded-full font-bold text-center hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30">
+            <div className="flex flex-col gap-4 w-full lg:w-auto lg:flex-shrink-0">
+              <a href="tel:+17327779123" className="px-10 py-6 bg-[#002776] text-white rounded-full font-bold text-center hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30 whitespace-nowrap">
                 Call +1 732-777-9123
               </a>
-              <div className="p-6 bg-slate-50 rounded-3xl border border-slate-100 flex flex-col items-center">
-                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Live Chat Standing By</span>
-                <span className="flex items-center gap-2 text-[#058A9F] font-bold">
+              <div className="p-6 bg-slate-50 rounded-3xl border border-slate-100 flex flex-col items-center min-w-[200px]">
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1 text-center">Live Chat Standing By</span>
+                <span className="flex items-center gap-2 text-[#058A9F] font-bold whitespace-nowrap">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                   9:00 AM – 5:00 PM EST
                 </span>
