@@ -159,8 +159,9 @@ export default function Home() {
             {/* HERO TEXT */}
             <div className="max-w-2xl lg:max-w-4xl w-full relative z-10">
               <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-[#002776]">
-                <span className="block md:inline">Fit-for-purpose</span> <span className="block md:inline font-serif italic font-light">assay development,</span>
-                <span className="block md:inline bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] bg-clip-text text-transparent"><span className="block md:inline">customization and</span> <span className="block md:inline">execution.</span></span>
+                <span className="block">Fit-for-purpose</span>
+                <span className="block font-serif italic font-light">assay development,</span>
+                <span className="block bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] bg-clip-text text-transparent">customization and execution.</span>
               </h1>
               
               {/* 3. THE REFINED ATMOSPHERIC PORTAL (Mobile Only) */}
