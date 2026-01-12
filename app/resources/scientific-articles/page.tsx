@@ -24,8 +24,8 @@ export default async function ScientificArticlesPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 via-white/40 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
-            <span>PBL</span> <span className="text-gray-300">/</span> <span>Technical Resources</span> <span className="text-gray-300">/</span> <span>Scientific Articles</span>
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em] flex-wrap">
+            <span>PBL</span> <span className="text-gray-300">/</span> <span>Technical Resources</span> <span className="text-gray-300">/</span> <span className="break-words">Scientific Articles</span>
           </nav>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             <span className="text-[#002776]">Scientific</span> <br/> <span className="font-light text-gray-400 font-serif italic">Articles</span>

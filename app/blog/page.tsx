@@ -31,8 +31,8 @@ export default function BlogPage() {
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
       }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
-            <span>PBL</span> <span className="text-gray-300">/</span> <span>Resources</span> <span className="text-gray-300">/</span> <span>Knowledge Hub</span>
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em] flex-wrap">
+            <span>PBL</span> <span className="text-gray-300">/</span> <span>Resources</span> <span className="text-gray-300">/</span> <span className="break-words">Knowledge Hub</span>
           </nav>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             Scientific <br/> <span className="font-light text-gray-400 font-serif italic">Insights</span>

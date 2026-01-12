@@ -31,9 +31,8 @@ export default function InterferonElisasPage() {
             </nav>
             
             <h1 className="text-4xl md:text-8xl font-bold tracking-tight mb-6 pb-2 leading-tight">
-              <span className="block text-[#002776]">Interferon</span>
-              <span className="block text-[#002776] font-light text-gray-400 font-serif italic">(IFN)</span>
-              <span className="block text-[#04849C]">ELISA Kits</span>
+              <span className="block md:inline text-[#002776]">Interferon <span className="font-light text-gray-400 font-serif italic">(IFN)</span></span>
+              <span className="block md:inline text-[#04849C]"> ELISA Kits</span>
             </h1>
             <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-[#002776] rounded-full mb-8"></div>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-xl">

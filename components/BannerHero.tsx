@@ -34,14 +34,14 @@ export default function BannerHero({
     }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em] flex-wrap">
             {breadcrumbs.map((crumb, index) => (
               <React.Fragment key={index}>
                 {index > 0 && <span className="text-gray-300">/</span>}
                 {crumb.href ? (
-                  <Link href={crumb.href} className="hover:text-cyan-700">{crumb.label}</Link>
+                  <Link href={crumb.href} className="hover:text-cyan-700 break-words">{crumb.label}</Link>
                 ) : (
-                  <span>{crumb.label}</span>
+                  <span className="break-words">{crumb.label}</span>
                 )}
               </React.Fragment>
             ))}

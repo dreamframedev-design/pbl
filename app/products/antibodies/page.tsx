@@ -30,12 +30,10 @@ export default function AntibodiesPage() {
               <span>Antibodies</span>
             </nav>
             
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-tight text-safe">
-              <span className="text-[#002776]">Monoclonal &</span>
-              <br className="block" />
-              <span className="font-light text-gray-400 font-serif italic">Polyclonal</span>
-              <br className="block" />
-              <span className="text-3xl md:text-5xl font-light text-slate-400 block mt-2">Antibodies</span>
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
+              <span className="block text-[#002776]">Monoclonal</span>
+              <span className="block text-[#002776]">& <span className="font-light text-gray-400 font-serif italic">Polyclonal</span></span>
+              <span className="block text-3xl md:text-5xl font-light text-slate-400 mt-2">Antibodies</span>
             </h1>
 
             <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">

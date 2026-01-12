@@ -49,8 +49,8 @@ export default function SpeakToAScientistPage() {
       <header className="relative pt-32 pb-24 overflow-hidden" style={{
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
       }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center md:text-left">
-          <nav className="mb-8 flex justify-center md:justify-start items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-left">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
             <span>Expertise</span> <span className="text-gray-300">/</span> <span>Consultation</span>
           </nav>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">

@@ -22,13 +22,14 @@ export default function BiomarkerSampleAnalysisPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 via-white/40 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+          <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em] flex-wrap">
             <Link href="/services" className="hover:text-cyan-700">Services</Link>
             <span className="text-gray-300">/</span>
-            <span>Biomarker Sample Analysis</span>
+            <span className="break-words">Biomarker Sample Analysis</span>
           </nav>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
-            Biomarker <br/> <span className="font-light text-gray-400 font-serif italic">Sample Analysis</span>
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
+            <span className="block text-[#002776]">Biomarker</span>
+            <span className="block font-light text-gray-400 font-serif italic">Sample Analysis</span>
           </h1>
           <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
             Sensitive biomarker detection on a variety of singleplex and multiplex assay platforms (MSD, Simoa®, Erenna®, SMCxPRO®, ELISA), from one sample to thousands.
