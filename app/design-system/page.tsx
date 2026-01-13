@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { 
   Search, 
   ChevronDown, 
@@ -35,7 +36,9 @@ import {
   AlertCircle,
   Bell,
   Settings,
-  CreditCard
+  CreditCard,
+  Quote,
+  Building2
 } from 'lucide-react';
 
 // Reusable Section Component for the Style Guide
@@ -62,7 +65,7 @@ const Subsection = ({ title, children }: { title: string; children: React.ReactN
 );
 
 export default function DesignSystem() {
-  const [isHovered, setIsHovered] = useState<string | null>(null);
+  const [glowHover, setGlowHover] = useState(false);
 
   return (
     <div className="min-h-screen bg-white pb-24 font-sans selection:bg-cyan-100">
@@ -70,7 +73,7 @@ export default function DesignSystem() {
       <div className="bg-gradient-to-br from-primary-navy to-[#001a4d] py-20 mb-16">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-4">
-            Version 1.0 • January 2026
+            Version 1.1 • January 2026
           </p>
           <h1 className="text-5xl font-black text-white mb-6 tracking-tight">
             Master Design System
@@ -149,12 +152,84 @@ export default function DesignSystem() {
               </div>
             </Subsection>
 
+            {/* Extended Palette - NEW */}
+            <Subsection title="Extended Palette">
+              <div className="grid grid-cols-4 gap-4">
+                <div className="space-y-3">
+                  <div className="h-16 w-full bg-neutral-steel rounded-xl flex items-end p-2">
+                    <span className="text-white/60 text-[8px] font-mono">neutral-steel</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">Steel</p>
+                    <p className="text-[10px] font-mono text-slate-500">#4C6692</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-16 w-full bg-charcoal rounded-xl flex items-end p-2">
+                    <span className="text-white/60 text-[8px] font-mono">charcoal</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">Charcoal</p>
+                    <p className="text-[10px] font-mono text-slate-500">#2A3C4C</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-16 w-full bg-background-offwhite rounded-xl border border-slate-200 flex items-end p-2">
+                    <span className="text-slate-500 text-[8px] font-mono">offwhite</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">Off White</p>
+                    <p className="text-[10px] font-mono text-slate-500">#F4F4F9</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-16 w-full bg-purple-deep rounded-xl flex items-end p-2">
+                    <span className="text-white/60 text-[8px] font-mono">purple-deep</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-900">Purple Deep</p>
+                    <p className="text-[10px] font-mono text-slate-500">#7C3AED</p>
+                  </div>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* Purple Palette - NEW */}
+            <Subsection title="Purple Palette (Secondary)">
+              <div className="grid grid-cols-4 gap-4">
+                <div className="space-y-2">
+                  <div className="h-14 w-full bg-purple-deep rounded-lg flex items-end p-2">
+                    <span className="text-white/60 text-[8px] font-mono">deep</span>
+                  </div>
+                  <p className="text-[10px] font-mono text-slate-500">#7C3AED</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-14 w-full bg-purple-professional rounded-lg flex items-end p-2">
+                    <span className="text-white/60 text-[8px] font-mono">professional</span>
+                  </div>
+                  <p className="text-[10px] font-mono text-slate-500">#6D28D9</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-14 w-full bg-purple-lavender rounded-lg border border-purple-200 flex items-end p-2">
+                    <span className="text-purple-600/60 text-[8px] font-mono">lavender</span>
+                  </div>
+                  <p className="text-[10px] font-mono text-slate-500">#EDE6FF</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-14 w-full bg-purple-periwinkle rounded-lg flex items-end p-2">
+                    <span className="text-purple-800/60 text-[8px] font-mono">periwinkle</span>
+                  </div>
+                  <p className="text-[10px] font-mono text-slate-500">#B7C3F3</p>
+                </div>
+              </div>
+            </Subsection>
+
             {/* Gradients */}
             <Subsection title="Gradients">
               <div className="space-y-6">
                 <div className="space-y-3">
                   <div className="h-20 w-full bg-gradient-to-r from-secondary-teal via-secondary-teal to-accent-cyan rounded-xl shadow-lg shadow-teal-500/20 flex items-center justify-center">
-                    <span className="text-white text-xs font-bold uppercase tracking-widest">CTA Gradient</span>
+                    <span className="text-white text-xs font-bold uppercase tracking-widest">CTA Gradient (btn-primary)</span>
                   </div>
                   <p className="text-xs font-mono text-slate-500">from-secondary-teal via-secondary-teal to-accent-cyan</p>
                 </div>
@@ -162,13 +237,19 @@ export default function DesignSystem() {
                   <div className="h-20 w-full bg-gradient-to-r from-primary-navy via-secondary-teal to-accent-cyan rounded-xl shadow-lg flex items-center justify-center">
                     <span className="text-white text-xs font-bold uppercase tracking-widest">Headline Gradient</span>
                   </div>
-                  <p className="text-xs font-mono text-slate-500">from-primary-navy via-secondary-teal to-accent-cyan</p>
+                  <p className="text-xs font-mono text-slate-500">from-primary-navy via-secondary-teal to-accent-cyan • .gradient-headline-primary</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-20 w-full bg-gradient-to-r from-secondary-teal via-accent-cyan to-accent-skyBlue rounded-xl shadow-lg flex items-center justify-center">
+                    <span className="text-white text-xs font-bold uppercase tracking-widest">Secondary Headline</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">from-secondary-teal via-accent-cyan to-accent-skyBlue • .gradient-headline-secondary</p>
                 </div>
               </div>
             </Subsection>
 
             {/* Neutral Colors */}
-            <Subsection title="Neutral Palette">
+            <Subsection title="Neutral Palette (Slate)">
               <div className="flex gap-2">
                 {[
                   { name: 'slate-50', color: 'bg-slate-50', text: 'text-slate-900' },
@@ -198,11 +279,28 @@ export default function DesignSystem() {
         {/* ============================================= */}
         <StyleSection 
           title="02 — Typography" 
-          description="Type hierarchy using Open Sauce One for display and Inter for body. Consistent sizing ensures readability across all contexts."
+          description="Dual font system: Open Sauce One (display/headings) + Inter (body/UI). This pairing balances scientific authority with modern readability."
         >
+          {/* Font Pairing Info - NEW */}
+          <div className="mb-12 p-6 bg-slate-50 rounded-2xl border border-slate-100">
+            <h4 className="text-sm font-bold text-slate-900 mb-4">Font Stack</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-widest text-cyan-600 mb-2">Display / Headings</p>
+                <p className="text-2xl font-bold text-primary-navy" style={{ fontFamily: '"Open Sauce One", system-ui, sans-serif' }}>Open Sauce One</p>
+                <p className="text-xs text-slate-500 mt-1 font-mono">font-display • Weights: 300-900</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-widest text-cyan-600 mb-2">Body / UI Text</p>
+                <p className="text-2xl font-light text-primary-navy" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Inter Variable</p>
+                <p className="text-xs text-slate-500 mt-1 font-mono">font-body • Weights: 300-700</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Display & Headings */}
-            <Subsection title="Display & Headings">
+            <Subsection title="Display & Headings (Open Sauce One)">
               <div className="space-y-8">
                 <div className="border-b border-slate-100 pb-6">
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-mono">Display 1 • 4rem/64px • Bold 700</p>
@@ -228,7 +326,7 @@ export default function DesignSystem() {
             </Subsection>
 
             {/* Body & Labels */}
-            <Subsection title="Body & Labels">
+            <Subsection title="Body & Labels (Inter)">
               <div className="space-y-8">
                 <div className="border-b border-slate-100 pb-6">
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-mono">Body • 1rem/16px • Light 300</p>
@@ -244,6 +342,10 @@ export default function DesignSystem() {
                 <div className="border-b border-slate-100 pb-6">
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-mono">Section Label • 10px • Black 900 • Cyan</p>
                   <p className="text-[10px] font-black text-cyan-600 uppercase tracking-[0.3em]">Featured Products</p>
+                </div>
+                <div className="border-b border-slate-100 pb-6">
+                  <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-mono">Gradient Headline Text</p>
+                  <p className="text-2xl font-bold gradient-headline-primary">Gradient Text Example</p>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-mono">Meta Text • 9px • Uppercase • Slate-400</p>
@@ -262,8 +364,8 @@ export default function DesignSystem() {
           description="Consistent shadows and border radii create visual hierarchy and maintain the premium, scientific aesthetic."
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Shadows */}
-            <Subsection title="Box Shadows">
+            {/* Box Shadows */}
+            <Subsection title="Box Shadows (Standard)">
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-3">
                   <div className="h-24 w-full bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
@@ -288,6 +390,30 @@ export default function DesignSystem() {
                     <span className="text-xs text-slate-400">shadow-2xl</span>
                   </div>
                   <p className="text-xs font-mono text-slate-500">Modal/overlay</p>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* Custom Shadows - NEW */}
+            <Subsection title="Custom Shadows (tailwind.config.ts)">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="h-20 w-full bg-white rounded-2xl shadow-cta flex items-center justify-center">
+                    <span className="text-xs text-slate-500">shadow-cta</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">CTA buttons • teal/cyan glow</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-20 w-full bg-white rounded-2xl shadow-cta-hover flex items-center justify-center">
+                    <span className="text-xs text-slate-500">shadow-cta-hover</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">CTA hover state • enhanced glow</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-20 w-full bg-white rounded-2xl shadow-image flex items-center justify-center">
+                    <span className="text-xs text-slate-500">shadow-image</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">Product images • navy/teal tint</p>
                 </div>
               </div>
             </Subsection>
@@ -327,6 +453,24 @@ export default function DesignSystem() {
                 </div>
               </div>
             </Subsection>
+
+            {/* Glass Effects - NEW */}
+            <Subsection title="Glass & Blur Effects">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="h-20 w-full glass-header rounded-2xl flex items-center justify-center">
+                    <span className="text-xs text-slate-500">.glass-header</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">backdrop-blur(20px) • 98% white • Used for scrolled header</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-20 w-full glass-card rounded-2xl flex items-center justify-center">
+                    <span className="text-xs text-slate-500">.glass-card</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">backdrop-blur(20px) • 95% white • Floating cards</p>
+                </div>
+              </div>
+            </Subsection>
           </div>
         </StyleSection>
 
@@ -338,8 +482,26 @@ export default function DesignSystem() {
           description="Interactive elements with clear visual hierarchy. Primary actions use the gradient, secondary actions use outline styling."
         >
           <div className="space-y-12">
+            {/* Utility Class Buttons - NEW */}
+            <Subsection title="CSS Utility Classes (globals.css)">
+              <div className="flex flex-wrap items-center gap-6">
+                <div className="space-y-3 text-center">
+                  <button className="btn-primary">
+                    Request a Quote
+                  </button>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-widest">.btn-primary</p>
+                </div>
+                <div className="space-y-3 text-center">
+                  <button className="btn-secondary">
+                    Learn More
+                  </button>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-widest">.btn-secondary</p>
+                </div>
+              </div>
+            </Subsection>
+
             {/* Primary Buttons */}
-            <Subsection title="Primary Buttons">
+            <Subsection title="Primary Button States">
               <div className="flex flex-wrap items-center gap-6">
                 <div className="space-y-3 text-center">
                   <button className="px-8 py-4 bg-gradient-to-r from-secondary-teal via-secondary-teal to-accent-cyan text-white text-xs font-black uppercase tracking-[0.15em] rounded-xl shadow-cta">
@@ -348,10 +510,10 @@ export default function DesignSystem() {
                   <p className="text-[10px] text-slate-400 uppercase tracking-widest">Default</p>
                 </div>
                 <div className="space-y-3 text-center">
-                  <button className="px-8 py-4 bg-gradient-to-r from-secondary-teal via-secondary-teal to-accent-cyan text-white text-xs font-black uppercase tracking-[0.15em] rounded-xl shadow-cta-hover scale-105">
+                  <button className="px-8 py-4 bg-gradient-to-r from-secondary-teal via-secondary-teal to-accent-cyan text-white text-xs font-black uppercase tracking-[0.15em] rounded-xl shadow-cta-hover scale-105 -translate-y-0.5">
                     Request a Quote
                   </button>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-widest">Hover</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-widest">Hover (scale + translate)</p>
                 </div>
                 <div className="space-y-3 text-center">
                   <button className="px-8 py-4 bg-primary-navy text-white text-xs font-black uppercase tracking-[0.15em] rounded-xl shadow-lg shadow-blue-900/20">
@@ -383,6 +545,21 @@ export default function DesignSystem() {
                   </button>
                   <p className="text-[10px] text-slate-400 uppercase tracking-widest">Text Link</p>
                 </div>
+              </div>
+            </Subsection>
+
+            {/* Floating CTA - NEW */}
+            <Subsection title="Floating CTA (Fixed Position)">
+              <div className="relative h-24 bg-slate-50 rounded-2xl overflow-hidden">
+                <div className="absolute top-4 right-4">
+                  <Link
+                    href="#"
+                    className="group inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-secondary-teal via-secondary-teal to-accent-cyan text-white font-semibold rounded-lg shadow-cta hover:shadow-cta-hover hover:-translate-y-1 transition-all duration-300 ease-out whitespace-nowrap text-sm"
+                  >
+                    <span>REQUEST A QUOTE</span>
+                  </Link>
+                </div>
+                <p className="absolute bottom-4 left-4 text-xs text-slate-400">FloatingCTA component • fixed top-24 right-4</p>
               </div>
             </Subsection>
 
@@ -466,7 +643,7 @@ export default function DesignSystem() {
             {/* Scrolled Header State */}
             <Subsection title="Header States">
               <div className="space-y-6">
-                <div className="p-4 bg-white/95 backdrop-blur-xl border border-slate-100 rounded-2xl shadow-lg">
+                <div className="p-4 glass-header rounded-2xl shadow-lg">
                   <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-primary-navy tracking-tighter">PBL<span className="font-light text-slate-400 ml-1">Assay Science</span></span>
                     <div className="flex items-center gap-6">
@@ -475,8 +652,18 @@ export default function DesignSystem() {
                       <span className="text-[13px] font-medium text-black">Resources</span>
                     </div>
                   </div>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-3">Scrolled State (backdrop-blur, shadow)</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-3">.glass-header (isScrolled state)</p>
                 </div>
+              </div>
+            </Subsection>
+
+            {/* Phosphor Link - NEW */}
+            <Subsection title="Footer Links (.phosphor-link)">
+              <div className="max-w-xs space-y-2 bg-white p-4 rounded-2xl border border-slate-100">
+                <a href="#" className="phosphor-link text-sm text-slate-500 hover:text-secondary-teal">Assay Kits</a>
+                <a href="#" className="phosphor-link text-sm text-slate-500 hover:text-secondary-teal">Proteins</a>
+                <a href="#" className="phosphor-link text-sm text-slate-500 hover:text-secondary-teal">Antibodies</a>
+                <p className="text-[10px] text-slate-400 mt-4">Left border + bg tint on hover</p>
               </div>
             </Subsection>
 
@@ -624,6 +811,29 @@ export default function DesignSystem() {
               </div>
             </Subsection>
 
+            {/* Glow Badge - NEW */}
+            <Subsection title="Glow Badge (.glow-badge)">
+              <div className="flex flex-wrap gap-4">
+                <div 
+                  className="glow-badge p-4 rounded-xl cursor-pointer"
+                  onMouseEnter={() => setGlowHover(true)}
+                  onMouseLeave={() => setGlowHover(false)}
+                >
+                  <p className="text-sm font-bold text-primary-navy">Navigation Card</p>
+                  <p className="text-xs text-slate-400">Hover for glow effect</p>
+                </div>
+                <p className="self-center text-xs text-slate-400">Used in mega menu nav cards • cyan glow + translateY(-2px)</p>
+              </div>
+            </Subsection>
+
+            {/* Hover Glow - NEW */}
+            <Subsection title="Hover Glow (.hover-glow)">
+              <div className="max-w-sm p-6 rounded-2xl border border-slate-200 hover-glow cursor-pointer">
+                <p className="text-sm font-bold text-primary-navy mb-2">Service Card</p>
+                <p className="text-xs text-slate-400">Hover for glow + lift effect (translateY -4px)</p>
+              </div>
+            </Subsection>
+
             {/* Product Meta Tags */}
             <Subsection title="Product Meta Tags">
               <div className="flex flex-wrap gap-3">
@@ -663,6 +873,69 @@ export default function DesignSystem() {
           title="08 — Cards & Containers" 
           description="Reusable container patterns including the signature 60/40 Science Card layout."
         >
+          {/* Banner Hero - NEW */}
+          <Subsection title="Banner Hero (Page Headers)">
+            <div className="relative rounded-2xl overflow-hidden" style={{
+              background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), #FBFBFE'
+            }}>
+              <div className="p-8 lg:p-12">
+                <nav className="mb-6 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
+                  <span>Products</span>
+                  <span className="text-gray-300">/</span>
+                  <span>Assay Kits</span>
+                </nav>
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+                  <span className="text-primary-navy">Interferon</span> <span className="text-secondary-teal">ELISAs</span>
+                </h2>
+                <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-primary-navy rounded-full mb-6"></div>
+                <p className="max-w-xl text-lg text-gray-600 font-light leading-relaxed">
+                  High-sensitivity detection for research applications.
+                </p>
+              </div>
+              <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-cyan-50/50 to-transparent -skew-x-12 transform translate-x-1/4"></div>
+            </div>
+            <p className="text-xs text-slate-400 mt-4">BannerHero.tsx • Radial gradients + skewed accent shape</p>
+          </Subsection>
+
+          {/* Testimonial Card - NEW */}
+          <Subsection title="Testimonial Card">
+            <div className="max-w-2xl p-8 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-200/50">
+              <Quote className="w-8 h-8 text-cyan-500/30 mb-4" />
+              <p className="text-lg text-slate-600 font-light leading-relaxed mb-6 italic">
+                &ldquo;Reliable quantification of IFN subtypes revolutionized our donor screening. PBL&apos;s high-sensitivity ELISAs allowed our team to detect baseline levels previously lost in the noise.&rdquo;
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-navy to-secondary-teal flex items-center justify-center">
+                  <User className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-primary-navy">Senior Scientist</p>
+                  <p className="text-xs text-slate-400">Large U.S. Pharma</p>
+                </div>
+              </div>
+            </div>
+          </Subsection>
+
+          {/* Authority Bar - NEW */}
+          <Subsection title="Footer Authority Bar">
+            <div className="bg-slate-50/50 p-6 rounded-2xl border-y border-slate-100">
+              <div className="flex flex-wrap items-center justify-center gap-12">
+                <div className="text-center">
+                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Certified Quality</div>
+                  <div className="text-sm font-bold text-primary-navy">ISO 9001:2015</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Global Reach</div>
+                  <div className="text-sm font-bold text-primary-navy">Worldwide Distribution</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Research Impact</div>
+                  <div className="text-sm font-bold text-primary-navy">Cited in 50+ Journals</div>
+                </div>
+              </div>
+            </div>
+          </Subsection>
+
           {/* 60/40 Science Card */}
           <Subsection title="60/40 Science Card (Featured Product)">
             <div className="max-w-5xl bg-white border border-slate-100 rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden flex flex-col lg:flex-row">
@@ -793,11 +1066,91 @@ export default function DesignSystem() {
         </StyleSection>
 
         {/* ============================================= */}
-        {/* 09 - ICONS */}
+        {/* 09 - ANIMATIONS */}
         {/* ============================================= */}
         <StyleSection 
-          title="09 — Icon Library" 
-          description="Lucide React icons used throughout the interface at consistent sizes."
+          title="09 — Animations & Transitions" 
+          description="Keyframe animations and transition timing functions used throughout the interface."
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Keyframes */}
+            <Subsection title="Keyframe Animations (globals.css)">
+              <div className="space-y-6">
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-2">@keyframes fade-in</p>
+                  <p className="text-[10px] text-slate-400">opacity: 0 → 1, translateY(-10px) → 0</p>
+                  <p className="text-[10px] text-slate-400 mt-1">Class: .animate-fade-in</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-2">@keyframes sectionReveal</p>
+                  <p className="text-[10px] text-slate-400">opacity: 0 → 1, translateY(30px) + scale(0.98) → normal</p>
+                  <p className="text-[10px] text-slate-400 mt-1">Class: .god-tier-reveal</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-2">@keyframes float</p>
+                  <p className="text-[10px] text-slate-400">translateY(0px) → translateY(-10px) → translateY(0px)</p>
+                  <p className="text-[10px] text-slate-400 mt-1">Infinite floating effect</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-2">@keyframes underline-expand</p>
+                  <p className="text-[10px] text-slate-400">width: 0 → 100%</p>
+                  <p className="text-[10px] text-slate-400 mt-1">Class: .animated-underline::after</p>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* Timing Functions */}
+            <Subsection title="Cubic Bezier Timing Functions">
+              <div className="space-y-4">
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-1">cubic-bezier(0.16, 1, 0.3, 1)</p>
+                  <p className="text-[10px] text-slate-400">iOS-standard swift curve • sectionReveal, brand-logo</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-1">cubic-bezier(0.34, 1.56, 0.64, 1)</p>
+                  <p className="text-[10px] text-slate-400">Bounce curve • glyph-group hover</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-1">cubic-bezier(0.22, 1, 0.36, 1)</p>
+                  <p className="text-[10px] text-slate-400">Smooth ease-out • glow-line underline</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-mono text-slate-600 mb-1">cubic-bezier(0.4, 0, 0.2, 1)</p>
+                  <p className="text-[10px] text-slate-400">Material Design standard • glow-badge, hover-glow</p>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* Transition Durations */}
+            <Subsection title="Standard Durations">
+              <div className="flex flex-wrap gap-4">
+                <div className="px-4 py-2 bg-slate-50 rounded-lg">
+                  <p className="text-xs font-mono text-slate-600">150ms</p>
+                  <p className="text-[10px] text-slate-400">Quick micro-interactions</p>
+                </div>
+                <div className="px-4 py-2 bg-slate-50 rounded-lg">
+                  <p className="text-xs font-mono text-slate-600">300ms</p>
+                  <p className="text-[10px] text-slate-400">Standard transitions</p>
+                </div>
+                <div className="px-4 py-2 bg-slate-50 rounded-lg">
+                  <p className="text-xs font-mono text-slate-600">500ms</p>
+                  <p className="text-[10px] text-slate-400">Hover glow, cart items</p>
+                </div>
+                <div className="px-4 py-2 bg-slate-50 rounded-lg">
+                  <p className="text-xs font-mono text-slate-600">800ms</p>
+                  <p className="text-[10px] text-slate-400">Section reveals</p>
+                </div>
+              </div>
+            </Subsection>
+          </div>
+        </StyleSection>
+
+        {/* ============================================= */}
+        {/* 10 - ICONS */}
+        {/* ============================================= */}
+        <StyleSection 
+          title="10 — Icon Library" 
+          description="Lucide React icons used throughout the interface at consistent sizes (16-24px)."
         >
           <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4">
             {[
@@ -835,6 +1188,8 @@ export default function DesignSystem() {
               { icon: Bell, name: 'Bell' },
               { icon: Settings, name: 'Settings' },
               { icon: CreditCard, name: 'Card' },
+              { icon: Quote, name: 'Quote' },
+              { icon: Building2, name: 'Building' },
             ].map((item) => (
               <div key={item.name} className="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-slate-50 transition-colors">
                 <item.icon className="w-5 h-5 text-slate-600" />
@@ -845,10 +1200,10 @@ export default function DesignSystem() {
         </StyleSection>
 
         {/* ============================================= */}
-        {/* 10 - TRUST ELEMENTS */}
+        {/* 11 - TRUST ELEMENTS */}
         {/* ============================================= */}
         <StyleSection 
-          title="10 — Trust & Security Elements" 
+          title="11 — Trust & Security Elements" 
           description="Visual elements that build user confidence for a scientific e-commerce platform."
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -872,7 +1227,10 @@ export default function DesignSystem() {
         {/* ============================================= */}
         <div className="mt-24 pt-12 border-t border-slate-100 text-center">
           <p className="text-[10px] text-slate-400 uppercase tracking-widest">
-            PBL Assay Science Design System • Version 1.0 • Generated January 2026
+            PBL Assay Science Design System • Version 1.1 • Updated January 2026
+          </p>
+          <p className="text-[9px] text-slate-300 mt-2">
+            Fonts: Open Sauce One + Inter • Icons: Lucide React • Styling: Tailwind CSS
           </p>
         </div>
 
