@@ -11,19 +11,18 @@ export default function ProductsPage() {
         background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%)'
       }}>
         {/* Background Image with White Gradient Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 right-[-80%] md:right-[-60%] lg:right-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0">
             <Image
               src="/images/products hero.webp"
               alt="Products"
               fill
-              className="object-cover"
-              style={{ objectPosition: '60% center' }}
+              className="object-cover object-[25%_center] md:object-[30%_center] lg:object-[75%_center]"
               priority
             />
           </div>
-          {/* White gradient overlay - solid white on left, fades to transparent on right - lighter on mobile/tablet to show more image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 md:via-white/70 via-white/30 md:via-white/25 to-transparent"></div>
+          {/* White gradient overlay - solid white on left, fades to transparent on right - stronger on mobile/tablet for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white md:via-white/90 lg:via-white/75 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em]">
@@ -48,12 +47,12 @@ export default function ProductsPage() {
       {/* Product Categories Grid */}
       <section className="py-32 bg-[#F4F4F9]/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
             
             {/* Assay Kits Card */}
             <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
               <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
+                <div className="relative aspect-[16/9] rounded-3xl overflow-hidden mb-6 md:mb-8 lg:mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                   <Image
                     src="/images/15.webp"
                     alt="Assay Kits"
@@ -62,8 +61,12 @@ export default function ProductsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#002776]/40 to-transparent"></div>
                 </div>
-                <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap text-center">Assay Kits</h2>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 text-center">Immunoassay Solutions</p>
+                <div className="w-full flex flex-col items-center justify-center text-center">
+                  <div className="flex flex-col items-center min-w-fit max-w-full">
+                    <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap overflow-visible">Assay Kits</h2>
+                    <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 whitespace-nowrap">Immunoassay Solutions</p>
+                  </div>
+                </div>
                 
                 <div className="space-y-3 mb-10 flex-grow">
                   <Link href="/products/assay-kits/interferon-elisas" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
@@ -77,7 +80,7 @@ export default function ProductsPage() {
                   </Link>
                 </div>
                 
-                <Link href="/products/assay-kits" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                <Link href="/products/assay-kits" className="w-full py-4 px-6 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center flex items-center justify-center transition-all shadow-sm whitespace-nowrap overflow-hidden">
                   Explore All Kits
                 </Link>
               </div>
@@ -86,7 +89,7 @@ export default function ProductsPage() {
             {/* Proteins Card */}
             <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
               <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
+                <div className="relative aspect-[16/9] rounded-3xl overflow-hidden mb-6 md:mb-8 lg:mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                   <Image
                     src="/images/16.webp"
                     alt="Proteins"
@@ -95,8 +98,12 @@ export default function ProductsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#058A9F]/40 to-transparent"></div>
                 </div>
-                <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap text-center">Proteins</h2>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 text-center">High-Purity Reagents</p>
+                <div className="w-full flex flex-col items-center justify-center text-center">
+                  <div className="flex flex-col items-center min-w-fit max-w-full">
+                    <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap overflow-visible">Proteins</h2>
+                    <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 whitespace-nowrap">High-Purity Reagents</p>
+                  </div>
+                </div>
                 
                 <div className="space-y-3 mb-10 flex-grow">
                   <Link href="/products/proteins/interferons" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
@@ -110,7 +117,7 @@ export default function ProductsPage() {
                   </Link>
                 </div>
                 
-                <Link href="/products/proteins" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                <Link href="/products/proteins" className="w-full py-4 px-6 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center flex items-center justify-center transition-all shadow-sm whitespace-nowrap overflow-hidden">
                   Browse Proteins
                 </Link>
               </div>
@@ -119,7 +126,7 @@ export default function ProductsPage() {
             {/* Antibodies Card (Featured) */}
             <div className="group p-[2.5px] rounded-[3rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02] flex flex-col shadow-xl">
               <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
+                <div className="relative aspect-[16/9] rounded-3xl overflow-hidden mb-6 md:mb-8 lg:mb-10 shadow-lg group-hover:shadow-2xl transition-all duration-700">
                   <Image
                     src="/images/14.webp"
                     alt="Antibodies"
@@ -128,8 +135,12 @@ export default function ProductsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-400/40 to-transparent"></div>
                 </div>
-                <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap text-center">Antibodies</h2>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 text-center">MAbs & PAbs</p>
+                <div className="w-full flex flex-col items-center justify-center text-center">
+                  <div className="flex flex-col items-center min-w-fit max-w-full">
+                    <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap overflow-visible">Antibodies</h2>
+                    <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 whitespace-nowrap">MAbs & PAbs</p>
+                  </div>
+                </div>
                 
                 <div className="space-y-3 mb-10 flex-grow">
                   <Link href="/products/antibodies/monoclonal" className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]">
@@ -140,7 +151,7 @@ export default function ProductsPage() {
                   </Link>
                 </div>
                 
-                <Link href="/products/antibodies" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                <Link href="/products/antibodies" className="w-full py-4 px-6 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center flex items-center justify-center transition-all shadow-sm hover:bg-cyan-600 whitespace-nowrap overflow-hidden">
                   View Catalog
                 </Link>
               </div>
