@@ -40,7 +40,7 @@ export default function BiomarkerSampleAnalysisPage() {
       {/* 2. GOLD STANDARD NAVIGATION CARDS */}
       <section className="py-24 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
             
             {/* SIMOA CARD */}
             <div className="group glass-card p-1 rounded-[3rem] transition-all duration-500 glow-border">
