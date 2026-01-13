@@ -294,7 +294,7 @@ export default function Header() {
           {/* Request a Quote Button - Tablet: Teal gradient */}
           <Link
             href="/speak-to-a-scientist"
-            className="hidden sm:flex lg:hidden bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-4 py-2.5 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20"
+            className="hidden sm:flex lg:hidden bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-4 py-2.5 text-white text-[12px] font-medium rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20"
           >
             Request a Quote
           </Link>
@@ -315,7 +315,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-x-3 ml-auto">
             <Link
               href="/speak-to-a-scientist"
-              className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-[#058A9F] to-[#00B8C0] text-white rounded-xl text-[13px] font-semibold whitespace-nowrap transition-all shadow-md hover:scale-105 hover:shadow-xl shadow-cyan-500/20"
+              className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-[#058A9F] to-[#00B8C0] text-white rounded-xl text-[13px] font-medium whitespace-nowrap transition-all shadow-md hover:scale-105 hover:shadow-xl shadow-cyan-500/20"
             >
               Request a Quote
             </Link>
@@ -435,7 +435,7 @@ export default function Header() {
                 <Link
                   href="/"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
+                  className="relative flex items-center gap-2 text-[13px] font-medium text-black whitespace-nowrap group/nav pt-[20px] pb-[12px]"
                 >
                   Home
                   <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
@@ -449,7 +449,7 @@ export default function Header() {
                 <Link
                   href="/products"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
+                  className="relative flex items-center gap-2 text-[13px] font-medium text-black whitespace-nowrap group/nav pt-[20px] pb-[12px]"
                 >
                   Products
                   <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'products' ? 'rotate-180' : ''}`} />
@@ -1055,7 +1055,7 @@ export default function Header() {
                 <Link
                   href="/services"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
+                  className="relative flex items-center gap-2 text-[13px] font-medium text-black whitespace-nowrap group/nav pt-[20px] pb-[12px]"
                 >
                   Services
                   <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'services' ? 'rotate-180' : ''}`} />
@@ -1193,7 +1193,7 @@ export default function Header() {
                 <Link
                   href="/resources"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
+                  className="relative flex items-center gap-2 text-[13px] font-medium text-black whitespace-nowrap group/nav pt-[20px] pb-[12px]"
                 >
                   Resources
                   <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'resources' ? 'rotate-180' : ''}`} />
@@ -1443,7 +1443,7 @@ export default function Header() {
               <li className="nav-item" onMouseEnter={() => setOpenDropdown(null)}>
                 <Link
                   href="/contact-us"
-                  className="relative text-[13px] font-semibold text-black whitespace-nowrap group/nav inline-block py-4"
+                  className="relative text-[13px] font-medium text-black whitespace-nowrap group/nav inline-block pt-[20px] pb-[12px]"
                 >
                   Contact Us
                   <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/contact-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
