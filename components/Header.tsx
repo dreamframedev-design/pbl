@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, FormEvent, useEffect, useRef, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Search, ShoppingCart, User, Mail, ChevronDown, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const router = useRouter();
@@ -15,6 +16,40 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const [navHeight, setNavHeight] = useState(0);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Unified timeout clearing - the "claim" mechanic
+  const clearCloseTimeout = useCallback(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  }, []);
+
+  // Global header leave - small grace period when leaving header entirely
+  const handleHeaderLeave = useCallback(() => {
+    clearCloseTimeout();
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+      setCategoryDropdownOpen(false);
+    }, 100);
+  }, [clearCloseTimeout]);
+
+  // Menu entry - immediate switch, cancel any pending close
+  const handleMenuEnter = useCallback((menu: string) => {
+    clearCloseTimeout();
+    setOpenDropdown(menu);
+  }, [clearCloseTimeout]);
+
+  // Menu leave - short grace period to move to dropdown
+  const handleMenuLeave = useCallback(() => {
+    clearCloseTimeout();
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150);
+  }, [clearCloseTimeout]);
 
   // Check if a path is active (for top nav)
   const isActive = (path: string) => {
@@ -64,6 +99,23 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Pixel-perfect dropdown positioning - uses header bottom
+  useEffect(() => {
+    const updateHeight = () => {
+      if (headerRef.current) {
+        const rect = headerRef.current.getBoundingClientRect();
+        setNavHeight(rect.bottom);
+      }
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    window.addEventListener('scroll', updateHeight);
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+      window.removeEventListener('scroll', updateHeight);
+    };
+  }, [isScrolled]); // Recalculate if header changes on scroll
+
   // Body scroll lock when overlays are open
   useEffect(() => {
     if (mobileMenuOpen || isSearchOpen) {
@@ -89,12 +141,14 @@ export default function Header() {
   ];
 
   return (
-    <header 
-      className={`sticky top-0 z-[100] transition-all duration-300 w-full ${
-        // FORCE solid white background if scrolled, menu is open, OR search is open
-        isScrolled || mobileMenuOpen || isSearchOpen
-          ? "bg-white border-b border-slate-200/50 shadow-sm py-2" 
-          : "bg-transparent py-4"
+    <header
+      ref={headerRef}
+      onMouseLeave={handleHeaderLeave}
+      className={`sticky top-0 z-[100] transition-colors duration-300 w-full py-3 ${
+        // FORCE solid white background if scrolled, menu is open, dropdown is open, OR search is open
+        isScrolled || mobileMenuOpen || isSearchOpen || openDropdown
+          ? "bg-white border-b border-slate-200/50 shadow-sm"
+          : "bg-transparent"
       }`}
       style={{ overflow: 'visible' }}
     >
@@ -107,8 +161,8 @@ export default function Header() {
             isScrolled ? "scale-90" : "scale-100"
           }`}
         >
-          <svg 
-            className="brand-logo h-8 sm:h-10 w-auto" 
+          <svg
+            className="brand-logo h-8 sm:h-9 w-auto"
             viewBox="0 0 5306.6733 1228.0721" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
@@ -137,8 +191,8 @@ export default function Header() {
         </Link>
 
         {/* Search Bar - Hidden on mobile */}
-        <div className="hidden md:flex flex-1 max-w-3xl relative">
-          <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden w-full">
+        <div className="hidden md:flex md:flex-grow lg:max-w-2xl relative">
+          <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-10 overflow-hidden w-full">
             {/* Category Dropdown */}
             <div className="relative h-full z-10">
               <button
@@ -196,10 +250,10 @@ export default function Header() {
             {/* Search Button */}
             <button
               type="submit"
-              className="bg-[#058A9F] hover:bg-cyan-500 h-full px-6 text-white transition-colors flex items-center rounded-r-xl"
+              className="bg-[#058A9F] hover:bg-cyan-500 h-full px-4 text-white transition-colors flex items-center rounded-r-xl"
               aria-label="Search"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-4 h-4" />
             </button>
           </form>
         </div>
@@ -236,33 +290,33 @@ export default function Header() {
           </button>
 
           {/* Desktop Logic: Request a Quote CTA, icons on far right */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-x-3 ml-auto">
             <Link
               href="/speak-to-a-scientist"
-              className="bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-6 py-3 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20"
+              className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-[#058A9F] to-[#00B8C0] text-white rounded-xl text-[13px] font-semibold whitespace-nowrap transition-all shadow-md hover:scale-105 hover:shadow-xl shadow-cyan-500/20"
             >
               Request a Quote
             </Link>
             <Link
               href="/cart"
-              className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
+              className="p-1.5 text-gray-700 hover:text-primary-navy transition-colors"
               aria-label="Shopping cart"
             >
-              <ShoppingCart className="h-5 w-5" />
+              <ShoppingCart className="h-4 w-4" />
             </Link>
             <Link
               href="/contact-us"
-              className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
+              className="p-1.5 text-gray-700 hover:text-primary-navy transition-colors"
               aria-label="Contact us"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="h-4 w-4" />
             </Link>
             <Link
               href="/user/login"
-              className="p-2 text-gray-700 hover:text-primary-navy transition-colors"
+              className="p-1.5 text-gray-700 hover:text-primary-navy transition-colors"
               aria-label="Account"
             >
-              <User className="h-5 w-5" />
+              <User className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -353,47 +407,46 @@ export default function Header() {
       )}
 
       {/* Navigation Bar - Row Below with Dropdowns - Hidden on mobile */}
-      <nav className="hidden lg:flex max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 gap-6 lg:gap-10 relative" style={{ overflow: 'visible', height: 'auto', maxHeight: 'none' }}>
-        <ul className="flex items-center gap-1 lg:gap-4 relative" style={{ overflow: 'visible', height: 'auto' }}>
+      <nav className="hidden lg:flex items-center h-12 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative" style={{ overflow: 'visible' }}>
+        <ul className="flex items-center gap-12 flex-nowrap" style={{ overflow: 'visible' }} onMouseEnter={clearCloseTimeout}>
               {/* Home Link */}
-              <li className="nav-item py-4">
+              <li className="nav-item" onMouseEnter={() => setOpenDropdown(null)}>
                 <Link
                   href="/"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
+                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
                 >
-                  HOME
-                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
+                  Home
+                  <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
               </li>
               {/* Products Dropdown */}
               <li
-                className="nav-item py-4"
-                onMouseEnter={() => setOpenDropdown('products')}
-                onMouseLeave={(e) => {
-                  // Only close if mouse is not moving to the dropdown
-                  const relatedTarget = e.relatedTarget as HTMLElement;
-                  if (!relatedTarget || !relatedTarget.closest('.mega-menu')) {
-                    setOpenDropdown(null);
-                  }
-                }}
+                className="nav-item relative"
+                onMouseEnter={() => handleMenuEnter('products')}
               >
                 <Link
                   href="/products"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
+                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
                 >
-                  PRODUCTS
-                  <ChevronDown className="w-3 h-3 flex-shrink-0" />
-                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/products') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
+                  Products
+                  <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'products' ? 'rotate-180' : ''}`} />
+                  <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/products') || openDropdown === 'products' ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
-                {openDropdown === 'products' && (
-                  <div 
-                    className="mega-menu w-[90vw] max-w-[1200px] bg-white rounded-2xl px-8 lg:px-12 pb-8 lg:pb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
-                    onMouseEnter={() => setOpenDropdown('products')}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                    style={{ marginTop: '-8px', paddingTop: '48px' }}
-                  >
+                <AnimatePresence mode="wait">
+                  {openDropdown === 'products' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                      className="mega-menu fixed left-0 right-0 w-full z-[110]"
+                      style={{ top: `${navHeight}px` }}
+                      onMouseEnter={clearCloseTimeout}
+                    >
+                      <div className="bg-white border-b border-slate-100 shadow-2xl">
+                        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-4 gap-8 lg:gap-12">
                     {/* Assay Kits Column */}
                     <div style={{ marginTop: '0' }}>
                       <Link 
@@ -966,38 +1019,41 @@ export default function Header() {
                       <p className="text-[11px] text-slate-500 font-light leading-relaxed mb-4">View our performance data for IL-15 and IL-22 quantification.</p>
                       <Link href="/resources" onClick={handleLinkClick} className="text-[10px] font-black text-[#058A9F] uppercase tracking-widest">Learn More →</Link>
                     </div>
-                  </div>
-                )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </li>
 
               {/* Services Dropdown */}
               <li
-                className="nav-item py-4"
-                onMouseEnter={() => setOpenDropdown('services')}
-                onMouseLeave={(e) => {
-                  // Check if mouse is moving to the dropdown
-                  const relatedTarget = e.relatedTarget as HTMLElement;
-                  if (!relatedTarget || !relatedTarget.closest('.mega-menu')) {
-                    setOpenDropdown(null);
-                  }
-                }}
+                className="nav-item relative"
+                onMouseEnter={() => handleMenuEnter('services')}
               >
                 <Link
                   href="/services"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
+                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
                 >
-                  SERVICES
-                  <ChevronDown className="w-3 h-3 flex-shrink-0" />
-                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/services') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
+                  Services
+                  <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'services' ? 'rotate-180' : ''}`} />
+                  <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/services') || openDropdown === 'services' ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
-                {openDropdown === 'services' && (
-                  <div 
-                    className="mega-menu w-[90vw] max-w-[600px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
-                    onMouseEnter={() => setOpenDropdown('services')}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                    style={{ marginTop: '-8px', paddingTop: '48px' }}
-                  >
+                <AnimatePresence mode="wait">
+                  {openDropdown === 'services' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                      className="mega-menu fixed left-0 right-0 w-full z-[110]"
+                      style={{ top: `${navHeight}px` }}
+                      onMouseEnter={clearCloseTimeout}
+                    >
+                      <div className="bg-white border-b border-slate-100 shadow-2xl">
+                        <div className="max-w-7xl mx-auto px-6 py-10">
+                          <div className="max-w-[600px] grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
                     <div>
                       <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-4">Core Services</h4>
                       <div className="space-y-4">
@@ -1100,38 +1156,41 @@ export default function Header() {
                         </Link>
                       </div>
                     </div>
-                  </div>
-                )}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </li>
 
               {/* Resources Dropdown */}
               <li
-                className="nav-item py-4"
-                onMouseEnter={() => setOpenDropdown('resources')}
-                onMouseLeave={(e) => {
-                  // Check if mouse is moving to the dropdown
-                  const relatedTarget = e.relatedTarget as HTMLElement;
-                  if (!relatedTarget || !relatedTarget.closest('.mega-menu')) {
-                    setOpenDropdown(null);
-                  }
-                }}
+                className="nav-item relative"
+                onMouseEnter={() => handleMenuEnter('resources')}
               >
                 <Link
                   href="/resources"
                   onClick={handleLinkClick}
-                  className="relative flex items-center gap-2 text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav"
+                  className="relative flex items-center gap-2 text-[13px] font-semibold text-black whitespace-nowrap group/nav py-4"
                 >
-                  RESOURCES
-                  <ChevronDown className="w-3 h-3 flex-shrink-0" />
-                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/resources') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
+                  Resources
+                  <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'resources' ? 'rotate-180' : ''}`} />
+                  <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/resources') || openDropdown === 'resources' ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
-                {openDropdown === 'resources' && (
-                  <div 
-                    className="mega-menu w-[90vw] max-w-[800px] bg-white rounded-2xl px-6 lg:px-10 pb-6 lg:pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 border border-slate-100 max-h-[500px] overflow-y-auto shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
-                    onMouseEnter={() => setOpenDropdown('resources')}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                    style={{ marginTop: '-8px', paddingTop: '48px' }}
-                  >
+                <AnimatePresence mode="wait">
+                  {openDropdown === 'resources' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                      className="mega-menu fixed left-0 right-0 w-full z-[110]"
+                      style={{ top: `${navHeight}px` }}
+                      onMouseEnter={clearCloseTimeout}
+                    >
+                      <div className="bg-white border-b border-slate-100 shadow-2xl">
+                        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-4 gap-6 lg:gap-10 max-h-[70vh] overflow-y-auto">
                     <div>
                       <Link
                         href="/resources/general-protocols"
@@ -1352,18 +1411,21 @@ export default function Header() {
                         </Link>
                       </div>
                     </div>
-                  </div>
-                )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </li>
 
               {/* Contact Us - No Dropdown */}
-              <li className="py-4">
+              <li className="nav-item" onMouseEnter={() => setOpenDropdown(null)}>
                 <Link
                   href="/contact-us"
-                  className="relative text-xs font-black text-[#002776] uppercase tracking-[0.2em] whitespace-nowrap group/nav inline-block"
+                  className="relative text-[13px] font-semibold text-black whitespace-nowrap group/nav inline-block py-4"
                 >
-                  CONTACT US
-                  <span className={`absolute bottom-0 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/contact-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
+                  Contact Us
+                  <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/contact-us') ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
               </li>
             </ul>

@@ -292,20 +292,22 @@
   position: relative;
 }
 
+/* Invisible bridge to prevent flicker when approaching from below */
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: transparent;
+  pointer-events: auto;
+  z-index: -1;
+}
+
+/* Ensure mega-menu sits flush against header bottom */
 .mega-menu {
-  display: grid !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) !important;
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-  box-shadow: 0 40px 80px -15px rgba(0, 39, 118, 0.3);
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  z-index: 99999 !important;
-  pointer-events: auto !important;
-  overflow: visible !important;
-  margin-top: 0 !important;
+  margin-top: -1px;
 }
 
 /* Phosphor Link Hover Effect */
