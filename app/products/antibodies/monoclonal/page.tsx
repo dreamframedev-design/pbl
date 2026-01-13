@@ -35,7 +35,7 @@ export default function MonoclonalAntibodiesPage() {
             </p>
           </div>
           
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 group hover:border-cyan-400 transition-all duration-500 shadow-sm hover:shadow-md">
               <div className="text-cyan-500 font-bold text-5xl mb-2 group-hover:scale-110 transition-transform">
                 <CountingBadge targetValue={99} suffix="%" />
