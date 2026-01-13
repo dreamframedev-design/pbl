@@ -17,8 +17,9 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const categoryDropdownRef = useRef<HTMLDivElement>(null);
   const [navHeight, setNavHeight] = useState(0);
-  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Unified timeout clearing - the "claim" mechanic
   const clearCloseTimeout = useCallback(() => {
@@ -131,6 +132,23 @@ export default function Header() {
     };
   }, [mobileMenuOpen, isSearchOpen]);
 
+  // Click-outside handler for category dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (categoryDropdownRef.current && !categoryDropdownRef.current.contains(event.target as Node)) {
+        setCategoryDropdownOpen(false);
+      }
+    };
+
+    if (categoryDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [categoryDropdownOpen]);
+
   const searchCategories = [
     { value: 'All', label: 'All' },
     { value: 'Assay Kits', label: 'Assay Kits' },
@@ -150,7 +168,6 @@ export default function Header() {
           ? "bg-white border-b border-slate-200/50 shadow-sm"
           : "bg-transparent"
       }`}
-      style={{ overflow: 'visible' }}
     >
       {/* Main Header Bar */}
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 sm:gap-6 lg:gap-12">
@@ -191,7 +208,7 @@ export default function Header() {
         </Link>
 
         {/* Search Bar - Hidden on mobile */}
-        <div className="hidden md:flex md:flex-grow lg:max-w-2xl relative">
+        <div ref={categoryDropdownRef} className="hidden md:flex md:flex-grow lg:max-w-2xl relative">
           <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-10 overflow-hidden w-full">
             {/* Category Dropdown */}
             <div className="relative h-full z-10">
@@ -202,7 +219,6 @@ export default function Header() {
                   e.stopPropagation();
                   setCategoryDropdownOpen(!categoryDropdownOpen);
                 }}
-                onBlur={() => setTimeout(() => setCategoryDropdownOpen(false), 200)}
                 className="bg-slate-200/50 px-5 h-full text-[10px] font-black text-[#002776] border-r border-slate-200 uppercase tracking-widest hover:bg-slate-200 transition-colors flex items-center gap-2"
               >
                 {searchCategories.find(cat => cat.value === searchCategory)?.label || 'All'}
@@ -265,7 +281,10 @@ export default function Header() {
         <div className="flex items-center justify-end gap-3 sm:gap-4 flex-shrink-0">
           {/* Search Icon Toggle - Mobile */}
           <button 
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            onClick={() => {
+              setIsSearchOpen(!isSearchOpen);
+              setMobileMenuOpen(false);
+            }}
             className="p-2 text-[#002776] md:hidden"
             aria-label="Toggle search"
           >
@@ -282,7 +301,10 @@ export default function Header() {
 
           {/* Mobile Menu Button: Explicitly last in the flex row */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+              setIsSearchOpen(false);
+            }}
             className="lg:hidden p-2 text-[#002776] hover:text-primary-navy transition-colors"
             aria-label="Toggle menu"
           >
@@ -344,7 +366,7 @@ export default function Header() {
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Search</span>
             </div>
             
-        <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden">
+        <form onSubmit={handleSearch} className="flex items-center rounded-xl border border-slate-200 bg-slate-50/50 h-12 overflow-hidden relative">
           <div className="relative h-full z-10">
             <button
               type="button"
@@ -353,7 +375,6 @@ export default function Header() {
                 e.stopPropagation();
                 setCategoryDropdownOpen(!categoryDropdownOpen);
               }}
-              onBlur={() => setTimeout(() => setCategoryDropdownOpen(false), 200)}
               className="bg-slate-200/50 px-3 h-full text-[10px] font-black text-[#002776] border-r border-slate-200 uppercase tracking-widest hover:bg-slate-200 transition-colors flex items-center gap-1"
             >
               {searchCategories.find(cat => cat.value === searchCategory)?.label || 'All'}
@@ -407,8 +428,8 @@ export default function Header() {
       )}
 
       {/* Navigation Bar - Row Below with Dropdowns - Hidden on mobile */}
-      <nav className="hidden lg:flex items-center h-12 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative" style={{ overflow: 'visible' }}>
-        <ul className="flex items-center gap-12 flex-nowrap" style={{ overflow: 'visible' }} onMouseEnter={clearCloseTimeout}>
+      <nav className="hidden lg:flex items-center h-12 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <ul className="flex items-center gap-12 flex-nowrap" onMouseEnter={clearCloseTimeout}>
               {/* Home Link */}
               <li className="nav-item" onMouseEnter={() => setOpenDropdown(null)}>
                 <Link
@@ -434,7 +455,7 @@ export default function Header() {
                   <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'products' ? 'rotate-180' : ''}`} />
                   <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/products') || openDropdown === 'products' ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   {openDropdown === 'products' && (
                     <motion.div
                       initial={{ opacity: 0, y: 8 }}
@@ -1040,7 +1061,7 @@ export default function Header() {
                   <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'services' ? 'rotate-180' : ''}`} />
                   <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/services') || openDropdown === 'services' ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   {openDropdown === 'services' && (
                     <motion.div
                       initial={{ opacity: 0, y: 8 }}
@@ -1178,7 +1199,7 @@ export default function Header() {
                   <ChevronDown className={`w-3 h-3 flex-shrink-0 transition-transform duration-300 ${openDropdown === 'resources' ? 'rotate-180' : ''}`} />
                   <span className={`absolute bottom-2 left-0 h-[2px] bg-cyan-500 transition-all duration-300 ${isActive('/resources') || openDropdown === 'resources' ? 'w-full' : 'w-0 group-hover/nav:w-full'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.32, 0.72, 0, 1)' }}></span>
                 </Link>
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   {openDropdown === 'resources' && (
                     <motion.div
                       initial={{ opacity: 0, y: 8 }}
