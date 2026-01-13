@@ -38,8 +38,26 @@ import {
   Settings,
   CreditCard,
   Quote,
-  Building2
+  Building2,
+  Hash,
+  BarChart3,
+  LineChart,
+  TrendingUp
 } from 'lucide-react';
+import {
+  ComposedChart,
+  Scatter,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  Cell,
+  ScatterChart
+} from 'recharts';
 
 // Reusable Section Component for the Style Guide
 const StyleSection = ({ title, description, children }: { title: string; description?: string; children: React.ReactNode }) => (
@@ -73,7 +91,7 @@ export default function DesignSystem() {
       <div className="bg-gradient-to-br from-primary-navy to-[#001a4d] py-20 mb-16">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-4">
-            Version 1.1 • January 2026
+            Version 2.0 • January 2026
           </p>
           <h1 className="text-5xl font-black text-white mb-6 tracking-tight">
             Master Design System
@@ -234,6 +252,12 @@ export default function DesignSystem() {
                   <p className="text-xs font-mono text-slate-500">from-secondary-teal via-secondary-teal to-accent-cyan</p>
                 </div>
                 <div className="space-y-3">
+                  <div className="h-24 w-full bg-gradient-to-r from-[#002776] via-[#04849C] to-[#058A9F] rounded-xl shadow-lg flex items-center justify-center">
+                    <span className="text-3xl font-bold text-white">customization and execution.</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">from-[#002776] via-[#04849C] to-[#058A9F] • Homepage Hero Text • bg-clip-text text-transparent</p>
+                </div>
+                <div className="space-y-3">
                   <div className="h-20 w-full bg-gradient-to-r from-primary-navy via-secondary-teal to-accent-cyan rounded-xl shadow-lg flex items-center justify-center">
                     <span className="text-white text-xs font-bold uppercase tracking-widest">Headline Gradient</span>
                   </div>
@@ -244,6 +268,14 @@ export default function DesignSystem() {
                     <span className="text-white text-xs font-bold uppercase tracking-widest">Secondary Headline</span>
                   </div>
                   <p className="text-xs font-mono text-slate-500">from-secondary-teal via-accent-cyan to-accent-skyBlue • .gradient-headline-secondary</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-20 w-full rounded-xl shadow-lg flex items-center justify-center" style={{
+                    background: 'radial-gradient(at 0% 0%, hsla(197,100%,49%,0.12) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(180,100%,48%,0.08) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(222,47%,11%,0.04) 0, transparent 50%), #FBFBFE'
+                  }}>
+                    <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">Page Background Radial</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">radial-gradient(hsla) × 3 layers • Used in page headers and hero sections</p>
                 </div>
               </div>
             </Subsection>
@@ -468,6 +500,18 @@ export default function DesignSystem() {
                     <span className="text-xs text-slate-500">.glass-card</span>
                   </div>
                   <p className="text-xs font-mono text-slate-500">backdrop-blur(20px) • 95% white • Floating cards</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-20 w-full glass-card glow-border rounded-2xl flex items-center justify-center cursor-pointer transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,240,243,0.2)] hover:border-[#00F0F3] hover:-translate-y-2">
+                    <span className="text-xs text-slate-500">.glass-card.glow-border</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">Hover: cyan glow + translateY(-8px) • Used on product info cards</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-20 w-full specular-glass bg-white rounded-2xl border border-slate-200 flex items-center justify-center">
+                    <span className="text-xs text-slate-500">.specular-glass</span>
+                  </div>
+                  <p className="text-xs font-mono text-slate-500">border-top: 1px solid rgba(255,255,255,0.5) • Light edge highlight</p>
                 </div>
               </div>
             </Subsection>
@@ -1066,10 +1110,366 @@ export default function DesignSystem() {
         </StyleSection>
 
         {/* ============================================= */}
-        {/* 09 - ANIMATIONS */}
+        {/* 09 - DATA VISUALIZATION */}
         {/* ============================================= */}
         <StyleSection 
-          title="09 — Animations & Transitions" 
+          title="09 — Data Visualization (Recharts)" 
+          description="Scientific graphs and charts using Recharts library. Used on /biomarker-sample-analysis and product pages."
+        >
+          <div className="space-y-16">
+            {/* Chart Overview */}
+            <Subsection title="Chart Components Overview">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                  <LineChart className="w-8 h-8 text-cyan-500 mb-4" />
+                  <h4 className="font-bold text-primary-navy mb-2">ComposedChart + Scatter</h4>
+                  <p className="text-xs text-slate-500">Log-scale standard curves with R² values. Used for IL-3 MSD data.</p>
+                  <p className="text-[10px] font-mono text-slate-400 mt-2">HumanIL3Graph.tsx</p>
+                </div>
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                  <BarChart3 className="w-8 h-8 text-cyan-500 mb-4" />
+                  <h4 className="font-bold text-primary-navy mb-2">BarChart + Gradient Fill</h4>
+                  <p className="text-xs text-slate-500">Cell stimulation comparisons with gradient bars.</p>
+                  <p className="text-[10px] font-mono text-slate-400 mt-2">JurkatStimulationGraph.tsx</p>
+                </div>
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                  <TrendingUp className="w-8 h-8 text-cyan-500 mb-4" />
+                  <h4 className="font-bold text-primary-navy mb-2">ScatterChart + ReferenceLine</h4>
+                  <p className="text-xs text-slate-500">Plasma analysis with mean value indicators.</p>
+                  <p className="text-[10px] font-mono text-slate-400 mt-2">PlasmaIL1BetaGraph.tsx</p>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* Sample Line/Scatter Chart */}
+            <Subsection title="Standard Curve Chart (HumanIL3Graph Pattern)">
+              <div className="max-w-3xl p-8 bg-white rounded-[2.5rem] shadow-inner border border-slate-100/50">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <h4 className="text-xl font-bold text-primary-navy tracking-tight">Sample Standard Curve</h4>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-600 mt-1">Sensitivity Validation</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">R² Value</span>
+                    <div className="text-sm font-mono font-bold text-primary-navy">0.9998</div>
+                  </div>
+                </div>
+                <div className="h-64 w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <ComposedChart margin={{ top: 20, right: 20, bottom: 40, left: 50 }}>
+                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                      <XAxis 
+                        type="number" 
+                        dataKey="x" 
+                        domain={[0, 100]} 
+                        stroke="#94a3b8"
+                        fontSize={10}
+                        fontWeight={700}
+                        label={{ value: 'Concentration (pg/ml)', position: 'bottom', offset: 10, fill: '#64748b', fontSize: 10, fontWeight: 900 }}
+                      />
+                      <YAxis 
+                        type="number" 
+                        dataKey="y" 
+                        domain={[0, 1000]} 
+                        stroke="#94a3b8"
+                        fontSize={10}
+                        fontWeight={700}
+                        label={{ value: 'Pixel Intensity', angle: -90, position: 'insideLeft', fill: '#64748b', fontSize: 10, fontWeight: 900 }}
+                      />
+                      <Line 
+                        type="monotone" 
+                        data={[{x: 1, y: 50}, {x: 10, y: 100}, {x: 50, y: 400}, {x: 100, y: 900}]}
+                        dataKey="y" 
+                        stroke="#00F0F3" 
+                        strokeWidth={2} 
+                        dot={false}
+                      />
+                      <Scatter 
+                        data={[{x: 1, y: 50}, {x: 10, y: 100}, {x: 50, y: 400}, {x: 100, y: 900}]}
+                        fill="#002776"
+                      />
+                    </ComposedChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="mt-6 pt-6 border-t border-slate-50 flex justify-between items-center">
+                  <div className="flex gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-[#00F0F3]"></div>
+                      <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Digital Fit</span>
+                    </div>
+                  </div>
+                  <p className="text-[10px] italic text-slate-400">Validated: MSD QuickPlex SQ 120MM</p>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* Sample Bar Chart */}
+            <Subsection title="Bar Chart with Gradient (JurkatStimulation Pattern)">
+              <div className="max-w-3xl p-8 bg-white rounded-[2.5rem] shadow-inner border border-slate-100/50">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <h4 className="text-xl font-bold text-primary-navy tracking-tight">Cell Stimulation Comparison</h4>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-cyan-600 mt-1">Jurkat Cell Analysis</p>
+                  </div>
+                  <div className="bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Technique</span>
+                    <div className="text-[10px] font-bold text-primary-navy">Cell Culture Bioassay</div>
+                  </div>
+                </div>
+                <div className="h-64 w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={[
+                      { name: 'Control', value: 50 },
+                      { name: 'PHA', value: 240 },
+                      { name: 'PMA', value: 80 },
+                      { name: 'PHA/PMA', value: 640 },
+                    ]} margin={{ top: 20, right: 20, bottom: 40, left: 20 }}>
+                      <defs>
+                        <linearGradient id="barGradientDemo" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#00F0F3" />
+                          <stop offset="100%" stopColor="#002776" />
+                        </linearGradient>
+                      </defs>
+                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                      <XAxis dataKey="name" stroke="#94a3b8" fontSize={10} fontWeight={700} />
+                      <YAxis stroke="#94a3b8" fontSize={10} fontWeight={700} />
+                      <Bar dataKey="value" radius={[8, 8, 0, 0]} barSize={45}>
+                        {[0, 1, 2, 3].map((index) => (
+                          <Cell key={`cell-${index}`} fill={index === 0 ? '#e2e8f0' : 'url(#barGradientDemo)'} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="mt-6 pt-6 border-t border-slate-50 flex gap-6">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#00F0F3]"></div>
+                    <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Stimulated</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+                    <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Basal/Control</span>
+                  </div>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* Activity Bar Chart (from interferon-decoy-receptor) */}
+            <Subsection title="Activity Profile Chart (Custom CSS Bars)">
+              <div className="max-w-3xl p-10 bg-white rounded-[3.3rem] shadow-sm border border-slate-100">
+                <div className="flex justify-between items-center mb-8">
+                  <h4 className="text-2xl font-bold text-primary-navy flex items-center gap-3">Activity Profile (IU/mg)</h4>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Validated Antagonism</span>
+                </div>
+                <div className="relative h-48 mb-8 flex items-end justify-between gap-1 border-b-2 border-slate-100 pb-4">
+                  {[100, 85, 70, 60, 50, 45, 40, 35, 30, 25, 20, 18, 15, 12].map((height, index) => (
+                    <div 
+                      key={index} 
+                      className={`flex-1 bg-gradient-to-t from-[#002776] ${index === 0 ? 'to-cyan-500' : 'to-cyan-400'} rounded-t-lg`}
+                      style={{ 
+                        height: `${height}%`,
+                        filter: index === 0 ? 'drop-shadow(0 0 8px rgba(0, 240, 243, 0.4))' : 'none'
+                      }}
+                    />
+                  ))}
+                </div>
+                <p className="text-xs text-slate-400">Custom CSS bar chart • gradient fill • first bar highlighted with glow</p>
+                <p className="text-[10px] font-mono text-slate-400 mt-2">Used in /products/proteins/interferon-decoy-receptor</p>
+              </div>
+            </Subsection>
+
+            {/* Chart Styling Tokens */}
+            <Subsection title="Chart Styling Tokens">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <div className="w-8 h-2 bg-[#00F0F3] rounded mb-2"></div>
+                  <p className="text-xs font-bold text-slate-700">Line Stroke</p>
+                  <p className="text-[10px] font-mono text-slate-400">#00F0F3</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <div className="w-4 h-4 bg-[#002776] rounded-full border-2 border-white shadow mb-2"></div>
+                  <p className="text-xs font-bold text-slate-700">Scatter Point</p>
+                  <p className="text-[10px] font-mono text-slate-400">#002776 + white stroke</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <div className="w-8 h-2 bg-[#f1f5f9] mb-2"></div>
+                  <p className="text-xs font-bold text-slate-700">Grid Lines</p>
+                  <p className="text-[10px] font-mono text-slate-400">#f1f5f9 dashed</p>
+                </div>
+                <div className="p-4 bg-slate-50 rounded-xl">
+                  <p className="text-xs font-bold text-slate-700 mb-1">Axis Labels</p>
+                  <p className="text-[10px] font-mono text-slate-400">10px • 900 weight • #64748b</p>
+                </div>
+              </div>
+            </Subsection>
+          </div>
+        </StyleSection>
+
+        {/* ============================================= */}
+        {/* 10 - PRODUCT CATALOG TABLE */}
+        {/* ============================================= */}
+        <StyleSection 
+          title="10 — Product Catalog Table" 
+          description="Data table component for product listings with document downloads and quantity inputs."
+        >
+          <div className="space-y-12">
+            {/* Desktop Table Preview */}
+            <Subsection title="Desktop Table (ProductCatalog.tsx)">
+              <div className="rounded-[2.5rem] border border-slate-200/60 bg-white/80 backdrop-blur-2xl shadow-[0_32px_64px_-16px_rgba(0,39,118,0.1)] overflow-hidden specular-glass">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-slate-50/50 border-b border-slate-100">
+                      <th className="px-6 py-4 text-[10px] font-black text-primary-navy uppercase tracking-[0.2em]">
+                        <div className="flex items-center gap-2"><Hash className="w-3 h-3 text-cyan-500"/> Catalog No.</div>
+                      </th>
+                      <th className="px-6 py-4 text-[10px] font-black text-primary-navy uppercase tracking-[0.2em]">
+                        <div className="flex items-center gap-2"><FileText className="w-3 h-3 text-cyan-500"/> Description</div>
+                      </th>
+                      <th className="px-6 py-4 text-[10px] font-black text-primary-navy uppercase tracking-[0.2em]">Size</th>
+                      <th className="px-6 py-4 text-[10px] font-black text-primary-navy uppercase tracking-[0.2em]">Documents</th>
+                      <th className="px-6 py-4 text-[10px] font-black text-primary-navy uppercase tracking-[0.2em] text-right">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100/80">
+                    <tr className="hover:bg-slate-50/80 transition-all duration-300">
+                      <td className="px-6 py-6">
+                        <span className="inline-flex items-center justify-center px-3 py-1.5 rounded-xl bg-primary-navy text-white font-mono text-sm font-bold shadow-lg shadow-blue-900/10">
+                          12185-1
+                        </span>
+                      </td>
+                      <td className="px-6 py-6">
+                        <p className="text-sm font-semibold text-slate-800">Mouse IFN Alpha Neutralizing Protein</p>
+                      </td>
+                      <td className="px-6 py-6">
+                        <span className="text-xs font-black text-slate-400 tracking-tighter uppercase">10 µg</span>
+                      </td>
+                      <td className="px-6 py-6">
+                        <a href="#" className="inline-flex items-center gap-2 text-[10px] font-bold text-cyan-600 hover:text-primary-navy">
+                          <Download className="w-3 h-3"/> CoA
+                        </a>
+                      </td>
+                      <td className="px-6 py-6 text-right">
+                        <div className="text-xl font-black bg-gradient-to-r from-primary-navy to-secondary-teal bg-clip-text text-transparent">
+                          $315.00
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-slate-400 mt-4">backdrop-blur-2xl • specular-glass border • gradient price text</p>
+            </Subsection>
+
+            {/* Table Features */}
+            <Subsection title="Key Table Features">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="p-6 bg-slate-50 rounded-2xl">
+                  <span className="inline-flex items-center justify-center px-3 py-1.5 rounded-xl bg-primary-navy text-white font-mono text-sm font-bold shadow-lg shadow-blue-900/10 mb-4">
+                    12185-1
+                  </span>
+                  <p className="text-xs font-bold text-slate-700">Catalog Number Badge</p>
+                  <p className="text-[10px] text-slate-400">Navy bg + white mono text + shadow</p>
+                </div>
+                <div className="p-6 bg-slate-50 rounded-2xl">
+                  <div className="text-2xl font-black bg-gradient-to-r from-primary-navy to-secondary-teal bg-clip-text text-transparent mb-4">
+                    $1,200.00
+                  </div>
+                  <p className="text-xs font-bold text-slate-700">Price Gradient Text</p>
+                  <p className="text-[10px] text-slate-400">Navy to teal gradient • bg-clip-text</p>
+                </div>
+                <div className="p-6 bg-slate-50 rounded-2xl">
+                  <a href="#" className="inline-flex items-center gap-2 text-[10px] font-bold text-cyan-600 hover:text-primary-navy mb-4">
+                    <Download className="w-4 h-4"/> Download CoA
+                  </a>
+                  <p className="text-xs font-bold text-slate-700 mt-2">Document Links</p>
+                  <p className="text-[10px] text-slate-400">Cyan with underline decoration</p>
+                </div>
+              </div>
+            </Subsection>
+
+            {/* CTA Footer */}
+            <Subsection title="Table CTA Footer">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-10 bg-primary-navy rounded-[3rem] shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(0,240,243,0.15)_0,transparent_50%)]"></div>
+                <div className="relative z-10 text-center md:text-left">
+                  <h4 className="text-2xl font-bold text-white mb-2 tracking-tight">Request a custom study evaluation</h4>
+                  <p className="text-blue-200 font-light text-sm">Our scientists provide fit-for-purpose assay development.</p>
+                </div>
+                <Link href="#" className="relative z-10 px-10 py-5 bg-[#00F0F3] text-primary-navy rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-cyan-400/20 hover:scale-105 hover:bg-white transition-all">
+                  Consult a Scientist →
+                </Link>
+              </div>
+              <p className="text-xs text-slate-400 mt-4">Dark navy footer with radial cyan glow overlay • accent CTA button</p>
+            </Subsection>
+          </div>
+        </StyleSection>
+
+        {/* ============================================= */}
+        {/* 11 - DARK MODE COMPONENTS */}
+        {/* ============================================= */}
+        <StyleSection 
+          title="11 — Dark Mode Components" 
+          description="Dark-themed UI components used in product purchase sections and featured areas."
+        >
+          <div className="space-y-12">
+            {/* Dark Purchase Card */}
+            <Subsection title="Dark Purchase Portal (interferon-decoy-receptor)">
+              <div className="max-w-md p-12 rounded-[3.5rem] bg-slate-900 text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(at_0%_0%,rgba(0,240,243,0.15)_0,transparent_50%)]"></div>
+                <div className="relative z-10">
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-cyan-400 mb-2">Available Now</div>
+                  <div className="text-6xl font-black mb-10">
+                    $315.00 <span className="text-sm font-normal text-slate-400 ml-2">USD</span>
+                  </div>
+                  
+                  <div className="space-y-8 mb-12">
+                    <div>
+                      <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 block mb-4">Pack Size</label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <button className="py-5 border-2 rounded-2xl text-xs font-bold transition-all border-cyan-400 bg-cyan-400/10 text-white">
+                          10 µg
+                        </button>
+                        <button className="py-5 border-2 rounded-2xl text-xs font-bold transition-all border-white/10 hover:border-white/30 text-slate-400">
+                          100 µg
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button className="w-full py-6 bg-[#00F0F3] text-primary-navy rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all shadow-xl shadow-cyan-400/30">
+                    Add to Inquiry Cart →
+                  </button>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 mt-4">bg-slate-900 • radial cyan overlay • cyan accent CTA</p>
+            </Subsection>
+
+            {/* Dark Mode Spec Grid */}
+            <Subsection title="Dark Mode Specifications Grid">
+              <div className="max-w-md p-10 rounded-[3rem] bg-slate-50 border border-slate-100 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-[9px] font-black uppercase text-slate-400 mb-1">Weight</p>
+                  <p className="text-base font-bold text-primary-navy">32 KDa</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-black uppercase text-slate-400 mb-1">Purity</p>
+                  <p className="text-base font-bold text-primary-navy">≥95%</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-black uppercase text-slate-400 mb-1">Endotoxin</p>
+                  <p className="text-base font-bold text-primary-navy">&lt; 1 EU/µg</p>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 mt-4">Compact specification display beneath purchase card</p>
+            </Subsection>
+          </div>
+        </StyleSection>
+
+        {/* ============================================= */}
+        {/* 12 - ANIMATIONS */}
+        {/* ============================================= */}
+        <StyleSection 
+          title="12 — Animations & Transitions" 
           description="Keyframe animations and transition timing functions used throughout the interface."
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -1146,10 +1546,10 @@ export default function DesignSystem() {
         </StyleSection>
 
         {/* ============================================= */}
-        {/* 10 - ICONS */}
+        {/* 13 - ICONS */}
         {/* ============================================= */}
         <StyleSection 
-          title="10 — Icon Library" 
+          title="13 — Icon Library" 
           description="Lucide React icons used throughout the interface at consistent sizes (16-24px)."
         >
           <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-4">
@@ -1190,6 +1590,10 @@ export default function DesignSystem() {
               { icon: CreditCard, name: 'Card' },
               { icon: Quote, name: 'Quote' },
               { icon: Building2, name: 'Building' },
+              { icon: Hash, name: 'Hash' },
+              { icon: BarChart3, name: 'BarChart' },
+              { icon: LineChart, name: 'LineChart' },
+              { icon: TrendingUp, name: 'Trending' },
             ].map((item) => (
               <div key={item.name} className="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-slate-50 transition-colors">
                 <item.icon className="w-5 h-5 text-slate-600" />
@@ -1200,10 +1604,10 @@ export default function DesignSystem() {
         </StyleSection>
 
         {/* ============================================= */}
-        {/* 11 - TRUST ELEMENTS */}
+        {/* 14 - TRUST ELEMENTS */}
         {/* ============================================= */}
         <StyleSection 
-          title="11 — Trust & Security Elements" 
+          title="14 — Trust & Security Elements" 
           description="Visual elements that build user confidence for a scientific e-commerce platform."
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1227,10 +1631,10 @@ export default function DesignSystem() {
         {/* ============================================= */}
         <div className="mt-24 pt-12 border-t border-slate-100 text-center">
           <p className="text-[10px] text-slate-400 uppercase tracking-widest">
-            PBL Assay Science Design System • Version 1.1 • Updated January 2026
+            PBL Assay Science Design System • Version 2.0 • Updated January 2026
           </p>
           <p className="text-[9px] text-slate-300 mt-2">
-            Fonts: Open Sauce One + Inter • Icons: Lucide React • Styling: Tailwind CSS
+            Fonts: Open Sauce One + Inter • Icons: Lucide React • Charts: Recharts • Styling: Tailwind CSS
           </p>
         </div>
 
