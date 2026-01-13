@@ -327,9 +327,9 @@ export default function Header() {
               <ShoppingCart className="h-4 w-4" />
             </Link>
             <Link
-              href="/contact-us"
+              href="/messages"
               className="p-1.5 text-gray-700 hover:text-primary-navy transition-colors"
-              aria-label="Contact us"
+              aria-label="Messages"
             >
               <Mail className="h-4 w-4" />
             </Link>
@@ -1491,13 +1491,13 @@ export default function Header() {
                   <span className="text-xs font-medium">Cart</span>
               </Link>
               <Link
-                href="/contact-us"
+                href="/messages"
                 onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-1.5 px-3 py-2 text-gray-700 hover:text-primary-navy transition-colors rounded-lg hover:bg-slate-50"
-                aria-label="Contact us"
+                aria-label="Messages"
               >
                   <Mail className="h-4 w-4" />
-                  <span className="text-xs font-medium">Contact</span>
+                  <span className="text-xs font-medium">Messages</span>
               </Link>
               <Link
                 href="/user/login"
