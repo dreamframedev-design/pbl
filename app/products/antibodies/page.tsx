@@ -45,26 +45,13 @@ export default function AntibodiesPage() {
 
       {/* Introduction Section */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-7 space-y-8 text-slate-600 leading-relaxed font-light text-lg">
-            <p>
-              Monoclonal and polyclonal antibodies are often interchangeable; however in some applications, one or the other antibody will give a better result.
-            </p>
-            <p>
-              Monoclonal antibodies (MAbs) are monospecific antibodies that are the same because they are made by identical immune cells that are all clones of a unique parent cell. MAbs have monovalent affinity, in that they bind to the same epitope and offer high specificity in applications such as ELISA, flow cytometry or epitope mapping where specific binding is desirable.
-            </p>
-          </div>
-          
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:border-cyan-400 transition-all duration-500 shadow-sm">
-              <div className="text-cyan-500 font-black text-4xl mb-2 group-hover:scale-110 transition-transform">Validated</div>
-              <div className="text-[9px] uppercase tracking-[0.25em] font-black text-slate-400">Multi-Species</div>
-            </div>
-            <div className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:border-cyan-400 transition-all duration-500 shadow-sm">
-              <div className="text-cyan-500 font-black text-4xl mb-2 group-hover:scale-110 transition-transform italic">High</div>
-              <div className="text-[9px] uppercase tracking-[0.25em] font-black text-slate-400">Specificity Standard</div>
-            </div>
-          </div>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 space-y-8 text-slate-600 leading-relaxed font-light text-lg">
+          <p>
+            Monoclonal and polyclonal antibodies are often interchangeable; however in some applications, one or the other antibody will give a better result.
+          </p>
+          <p>
+            Monoclonal antibodies (MAbs) are monospecific antibodies that are the same because they are made by identical immune cells that are all clones of a unique parent cell. MAbs have monovalent affinity, in that they bind to the same epitope and offer high specificity in applications such as ELISA, flow cytometry or epitope mapping where specific binding is desirable.
+          </p>
         </div>
       </section>
 
