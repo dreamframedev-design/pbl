@@ -70,15 +70,18 @@ export default async function DynamicProteinPage({ params }: { params: Promise<{
   
   const pageContent = pageContentMap[slug.join('/')];
   
-  // Sub-category description overrides
+  // Sub-category description overrides (use empty string to hide description)
   const subCategoryDescriptionOverrides: Record<string, string> = {
     'cytokines-growth-factors/human-cell-expressed-cytokines': 'Human Cell Expressed (HCE) cytokines closely mimic native human proteins. Interleukin-15, 22, 28A, 28B, and 29 available.',
-    // E.coli card - remove any artifact brackets from markdown
-    'cytokines-growth-factors/e.coli-&-cho-expressed-cytokine-&-growth-factor': 'PBL offers recombinant cytokines and growth factors expressed in E.coli and CHO cells for life science research applications.',
+    // E.coli card - no subtitle text
+    'cytokines-growth-factors/e.coli-&-cho-expressed-cytokine-&-growth-factor': '',
   };
   
   // External link overrides for sub-category cards
   const externalLinkMap: Record<string, string> = {
+    // Cytokines and Growth Factors sub-pages
+    'cytokines-growth-factors/e.coli-&-cho-expressed-cytokine-&-growth-factor': 'https://www.pblassaysci.com/cytokines-and-growth-factors',
+    'cytokines-growth-factors/human-cell-expressed-cytokines': 'https://www.pblassaysci.com/proteins/human-cell-expressed-cytokines',
     // Human IFN Proteins sub-pages (slugs derived from directory names like "Human IFN-Alpha" → 'human-ifn-alpha')
     'interferons/human/human-ifn-alpha': 'https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/human-ifn-alpha',
     'interferons/human/human-ifn-beta': 'https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/human-ifn-beta',
@@ -241,8 +244,8 @@ export default async function DynamicProteinPage({ params }: { params: Promise<{
         </section>
       )}
 
-      {/* Main Content - Only show if NOT a product listing page */}
-      {markdownData && !isProductListingPage && (
+      {/* Main Content - Only show if NOT a product listing page and NOT showing intro paragraphs */}
+      {markdownData && !isProductListingPage && !pageContent?.introParagraphs && (
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <MarkdownContent content={markdownData.content} />
