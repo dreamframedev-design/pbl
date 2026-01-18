@@ -734,14 +734,13 @@ export default function Header() {
                           </Link>
                           <div className="pl-4 border-l border-slate-100 space-y-2">
                             <div>
-                              <a 
-                                href="https://www.pblassaysci.com/proteins/human-ifn-proteins" 
-                                target="_blank"
-                                rel="noopener noreferrer"
+                              <Link 
+                                href="/products/proteins/interferons/human"
+                                onClick={handleLinkClick}
                                 className="block text-[11px] font-semibold mb-1 hover:text-[#058A9F]"
                               >
                                 Human IFN Proteins
-                              </a>
+                              </Link>
                               <div className="pl-3 space-y-1">
                                 <a 
                                   href="https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/human-ifn-alpha" 
@@ -1509,7 +1508,7 @@ export default function Header() {
                     <div>
                         <Link href="/products/proteins/interferons" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Interferons</Link>
                       <div className="pl-3 space-y-1">
-                          <a href="https://www.pblassaysci.com/proteins/human-ifn-proteins" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IFN Proteins</a>
+                          <Link href="/products/proteins/interferons/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IFN Proteins</Link>
                           <Link href="/products/proteins/interferons/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mouse IFN Proteins</Link>
                           <a href="https://www.pblassaysci.com/proteins/rat-ifn-proteins" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Rat IFN Proteins</a>
                           <a href="https://www.pblassaysci.com/proteins/mammalian-ifn-proteins-non-human-non-mouse" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mammalian IFN Proteins</a>

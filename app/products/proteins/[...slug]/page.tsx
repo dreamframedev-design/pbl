@@ -66,6 +66,13 @@ export default async function DynamicProteinPage({ params }: { params: Promise<{
         'HCE cytokines possess authentic human N-and/or O-linked glycosylation and other post-translational modifications preserving appropriate biological activities and epitopes. These proteins retain native properties and accurately mimic native human proteins, providing researchers a useful tool to use in human cell culture experiments.',
       ],
     },
+    // Prevent markdown content from showing on these category pages (only show nav cards)
+    'interferons/human': {
+      introParagraphs: [],
+    },
+    'interferons/mouse': {
+      introParagraphs: [],
+    },
   };
   
   const pageContent = pageContentMap[slug.join('/')];
@@ -75,6 +82,14 @@ export default async function DynamicProteinPage({ params }: { params: Promise<{
     'cytokines-growth-factors/human-cell-expressed-cytokines': 'Human Cell Expressed (HCE) cytokines closely mimic native human proteins. Interleukin-15, 22, 28A, 28B, and 29 available.',
     // E.coli card - no subtitle text
     'cytokines-growth-factors/e.coli-&-cho-expressed-cytokine-&-growth-factor': '',
+    // Mouse IFN Proteins sub-page descriptions
+    'interferons/mouse/mouse-ifn-alpha': 'Useful mouse IFN-Alpha proteins for research studies.',
+    'interferons/mouse/mouse-ifn-beta': 'Mouse IFN-Beta proteins for research studies -- mammalian and E.coli versions available with and without carrier protein.',
+    'interferons/mouse/mouse-ifn-lambda': 'Mouse interferon lambda proteins for life science research.',
+    // Human IFN Proteins sub-page descriptions
+    'interferons/human/human-ifn-alpha': 'Human Interferon Alpha proteins including hard-to-find subtypes.',
+    'interferons/human/human-ifn-beta': 'Human Interferon Beta proteins are expressed in mammalian or E.coli cells.',
+    'interferons/human/other-human-ifns': 'Various human interferon proteins.',
   };
   
   // External link overrides for sub-category cards
@@ -253,8 +268,8 @@ export default async function DynamicProteinPage({ params }: { params: Promise<{
         </section>
       )}
 
-      {/* Page-Specific Content */}
-      {pageContent && (
+      {/* Page-Specific Content - Only show if there are bullets or paragraphs */}
+      {pageContent && (pageContent.bullets || pageContent.paragraphs) && (
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 space-y-8">
             {pageContent.bullets && (
