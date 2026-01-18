@@ -7,6 +7,7 @@ interface BannerHeroProps {
   titleLine2?: string;
   titleSuffix?: string;
   description?: string | React.ReactNode;
+  showLine?: boolean;
   breadcrumbs?: { label: string; href?: string }[];
   className?: string;
   titleClassName?: string;
@@ -19,6 +20,7 @@ export default function BannerHero({
   titleLine2,
   titleSuffix,
   description,
+  showLine = true,
   breadcrumbs,
   className = '',
   titleClassName = '',
@@ -65,7 +67,10 @@ export default function BannerHero({
             </>
           )}
         </h1>
-        <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-[#002776] rounded-full mb-8"></div>
+        
+        {showLine && (
+          <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-[#002776] rounded-full mb-8"></div>
+        )}
         
         {description && (
           <div className={`max-w-2xl text-xl md:text-2xl text-gray-600 font-light leading-relaxed ${descriptionClassName}`}>

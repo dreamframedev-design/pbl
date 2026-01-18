@@ -9,7 +9,7 @@ export default function PolyclonalAntibodiesPage() {
         titleLine1="Polyclonal"
         titleLine2="Antibodies"
         titleSuffix="(PAbs)"
-        description="Obtained using a mixture of immunoglobulin molecules secreted against a specific antigen, each recognizing a different epitope."
+        showLine={false}
         breadcrumbs={[
           { label: 'Products', href: '/products' },
           { label: 'Antibodies', href: '/products/antibodies' }
