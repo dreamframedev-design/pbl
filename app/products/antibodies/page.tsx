@@ -51,7 +51,7 @@ export default function AntibodiesPage() {
               Monoclonal and polyclonal antibodies are often interchangeable; however in some applications, one or the other antibody will give a better result.
             </p>
             <p>
-              PBL's antibodies deliver superior <em className="text-[#002776]">product stability</em> and <em className="text-[#002776]">high specificity</em> while providing <em className="text-[#002776]">reliable</em> and <em className="text-[#002776]">reproducible results</em> across a range of mammalian species.
+              Monoclonal antibodies (MAbs) are monospecific antibodies that are the same because they are made by identical immune cells that are all clones of a unique parent cell. MAbs have monovalent affinity, in that they bind to the same epitope and offer high specificity in applications such as ELISA, flow cytometry or epitope mapping where specific binding is desirable.
             </p>
           </div>
           
