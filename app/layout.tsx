@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import VisualEditingWrapper from "@/components/VisualEditingWrapper";
+import { draftMode } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +24,7 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -33,6 +35,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        {(await draftMode()).isEnabled && <VisualEditingWrapper />}
       </body>
     </html>
   );

@@ -26,6 +26,7 @@ export default function AssayKitsPage() {
             <span>Assay Kits</span>
           </nav>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
+            <span className="block">High-performance</span>
             <span className="block">IFN & Cytokine</span>
             <span className="block font-light text-gray-400 font-serif italic">ELISA Kits</span>
           </h1>
@@ -35,27 +36,6 @@ export default function AssayKitsPage() {
         </div>
       </header>
 
-      {/* Stats Section */}
-      <section className="bg-white border-y border-slate-100 py-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
-          <div>
-            <div className="text-cyan-500 font-bold text-3xl mb-1">Ultra</div>
-            <div className="text-[9px] font-black uppercase tracking-widest text-slate-400">High Sensitivity</div>
-          </div>
-          <div>
-            <div className="text-cyan-500 font-bold text-3xl mb-1">Validated</div>
-            <div className="text-[9px] font-black uppercase tracking-widest text-slate-400">Multi-Species Data</div>
-          </div>
-          <div>
-            <div className="text-cyan-500 font-bold text-3xl mb-1">&lt; 10%</div>
-            <div className="text-[9px] font-black uppercase tracking-widest text-slate-400">Inter-Assay CV</div>
-          </div>
-          <div>
-            <div className="text-cyan-500 font-bold text-3xl mb-1">ISO 9001</div>
-            <div className="text-[9px] font-black uppercase tracking-widest text-slate-400">Quality Standard</div>
-          </div>
-        </div>
-      </section>
 
       {/* Three-Category Grid Section */}
       <section className="py-24 bg-slate-50">
