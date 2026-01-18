@@ -42,16 +42,16 @@ export default function PolyclonalAntibodiesPage() {
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">H</div>
                 </div>
-                <Link href="/products/antibodies/polyclonal/anti-human-ifn" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                <a href="https://www.pblassaysci.com/antibodies/anti-human-ifn-pabs" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-600 transition-colors">
                   <h3 className="text-2xl font-bold text-[#002776]">
                     Anti-Human <br/>IFN PAbs
                   </h3>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Anti-Human Interferon Polyclonal Antibodies</p>
                 <div className="mt-auto">
-                  <Link href="/products/antibodies/polyclonal/anti-human-ifn" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  <a href="https://www.pblassaysci.com/antibodies/anti-human-ifn-pabs" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                     Explore Products
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -62,16 +62,16 @@ export default function PolyclonalAntibodiesPage() {
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover:bg-blue-600 group-hover:text-white transition-all font-black italic text-lg">M</div>
                 </div>
-                <Link href="/products/antibodies/polyclonal/anti-mouse-ifn" className="block mb-2 group-hover:text-[#2563EB] transition-colors">
+                <a href="https://www.pblassaysci.com/antibodies/anti-mouse-ifn-pabs" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-[#2563EB] transition-colors">
                   <h3 className="text-2xl font-bold text-[#002776]">
                     Anti-Mouse <br/>IFN PAbs
                   </h3>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Anti-Mouse Interferon Polyclonal Antibodies</p>
                 <div className="mt-auto">
-                  <Link href="/products/antibodies/polyclonal/anti-mouse-ifn" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  <a href="https://www.pblassaysci.com/antibodies/anti-mouse-ifn-pabs" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                     Explore Products
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -82,16 +82,16 @@ export default function PolyclonalAntibodiesPage() {
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black italic text-lg">R</div>
                 </div>
-                <Link href="/products/antibodies/polyclonal/anti-rat-ifn" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                <a href="https://www.pblassaysci.com/antibodies/anti-rat-ifn-pabs" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-500 transition-colors">
                   <h3 className="text-2xl font-bold text-[#002776]">
                     Anti-Rat <br/>IFN PAbs
                   </h3>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Anti-Rat Interferon Polyclonal Antibodies</p>
                 <div className="mt-auto">
-                  <Link href="/products/antibodies/polyclonal/anti-rat-ifn" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                  <a href="https://www.pblassaysci.com/antibodies/anti-rat-ifn-pabs" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                     Explore Products
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
