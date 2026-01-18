@@ -37,8 +37,7 @@ export default function AntibodiesPage() {
             </h1>
 
             <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-              High-specificity reagents engineered for <span className="text-[#002776] font-semibold">ELISA</span>, 
-              flow cytometry, and epitope mapping.
+              PBL Offers Monoclonal and Polyclonal Antibodies From Multiple Mammalian Species
             </p>
           </div>
         </div>
