@@ -31,53 +31,24 @@ export default function ProteinsPage() {
             </nav>
             
             <h1 className="text-4xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
-              <span className="block text-[#002776]">Recombinant</span>
-              <span className="block font-light text-gray-400 font-serif italic">Proteins</span>
+              <span className="block text-[#002776]">Proteins</span>
             </h1>
-
-            <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-              High-purity reagents engineered for <span className="text-[#002776] font-semibold">lot-to-lot consistency</span>, 
-              maximum bioactivity, and sub-nanogram endotoxin levels.
-            </p>
           </div>
         </div>
       </section>
 
       {/* Technical Details Section */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-7 space-y-8 text-slate-600 leading-relaxed font-light text-lg">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl space-y-8 text-slate-600 leading-relaxed font-light text-lg">
             <p>
               With over 30 years of experience developing and manufacturing recombinant proteins for life science research, our manufacturing and quality standards ensure that our proteins exhibit <strong className="text-[#002776] font-semibold">lot-to-lot consistency</strong>, as well as high levels of <strong className="text-[#002776] font-semibold">bioactivity</strong>, high <strong className="text-[#002776] font-semibold">purity</strong>, and <strong className="text-[#002776] font-semibold">low endotoxin</strong> levels.
             </p>
             <p>
-              Providing our proteins by <strong className="text-[#002776] font-semibold">activity</strong> instead of mass ensures that your results are biologically relevant and highly reproducible.
+              Many of our proteins are sold as units of <strong className="text-[#002776] font-semibold">activity</strong> per vial instead of in units of mass per vial (µg or mg). Each new lot of protein is tested internally using the same bioassay to provide a valid activity comparison between lots. (ED<sub>50</sub> is the amount of protein required to elicit a 50% maximum response in the bioassay.)
             </p>
-          </div>
-          
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:border-cyan-400 transition-all duration-500 shadow-sm">
-              <div className="text-cyan-500 font-black text-5xl mb-2 group-hover:scale-110 transition-transform">30+</div>
-              <div className="text-[9px] uppercase tracking-[0.25em] font-black text-slate-400">Years expertise</div>
-            </div>
-            <div className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 group hover:border-cyan-400 transition-all duration-500 shadow-sm">
-              <div className="text-cyan-500 font-black text-4xl mb-2 group-hover:scale-110 transition-transform italic">ED<sub>50</sub></div>
-              <div className="text-[9px] uppercase tracking-[0.25em] font-black text-slate-400">Validated Activity</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Activity Details Section */}
-      <section className="py-24 bg-slate-50/50 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl p-10 rounded-[3rem] shadow-xl" style={{
-            background: 'rgba(255, 255, 255, 0.95)',
-            backdropFilter: 'blur(20px)',
-            border: '1px solid rgba(226, 232, 240, 0.8)'
-          }}>
-            <p className="text-lg text-slate-500 font-light leading-relaxed">
-              Many of our proteins are sold as units of <strong className="text-[#002776] font-bold">activity</strong> per vial instead of in units of mass per vial (µg or mg). Each new lot of protein is tested internally using the same bioassay to provide a valid activity comparison between lots. (ED<sub>50</sub> is the amount of protein required to elicit a 50% maximum response in the bioassay.)
+            <p>
+              Providing our proteins by <strong className="text-[#002776] font-semibold">activity</strong> instead of mass ensures that your results are biologically relevant and highly reproducible.
             </p>
           </div>
         </div>
@@ -98,16 +69,17 @@ export default function ProteinsPage() {
                   <h3 className="text-2xl font-bold text-[#002776]">Cytokines and Growth Factors</h3>
                 </Link>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
-                  PBL offers a comprehensive range of recombinant cytokines and
-                  growth factors for life science research applications.
+                  Cytokines and growth factor products expressed in human, E.coli, and CHO-cells.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
-                  <Link
-                    href="/products/proteins/cytokines-growth-factors/ecoli-cho-expressed"
+                  <a
+                    href="https://www.pblassaysci.com/proteins/human-erythropoietin-epo-ultrapure-11965"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     E.coli & CHO Expressed Cytokine & Growth Factor
-                  </Link>
+                  </a>
                   <Link
                     href="/products/proteins/cytokines-growth-factors/human-cell-expressed"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
@@ -131,20 +103,21 @@ export default function ProteinsPage() {
                   <h3 className="text-2xl font-bold text-[#002776]">Interferon Decoy Receptor</h3>
                 </Link>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
-                  Specialized proteins for interferon research and neutralization
-                  applications.
+                  Viral C12R Interferon Antagonist selectively neutralizes all mouse IFN-Alpha subtypes.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
-                  <Link
-                    href="/products/proteins/interferon-decoy-receptor"
+                  <a
+                    href="https://www.pblassaysci.com/proteins/c12r-mouse-ifn-alpha-decoy-receptor-neutralizing-12185"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 leading-tight transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Mouse Interferon Alpha All-Subtype Neutralizing Viral Protein
-                  </Link>
+                  </a>
                 </div>
-                <Link href="/products/proteins/interferon-decoy-receptor" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                <a href="https://www.pblassaysci.com/proteins/c12r-mouse-ifn-alpha-decoy-receptor-neutralizing-12185" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                   View Details
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -158,34 +131,39 @@ export default function ProteinsPage() {
                   <h3 className="text-2xl font-bold text-[#002776]">Interferon</h3>
                 </Link>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
-                  Comprehensive collection of interferon proteins across multiple
-                  species for research applications.
+                  Our IFNs are high purity, provide consistent performance and biological activity, and are suitable for use in a range of research applications.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
-                  <Link
-                    href="/products/proteins/interferons"
+                  <a
+                    href="https://www.pblassaysci.com/proteins/human-ifn-proteins"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Human IFN Proteins
-                  </Link>
-                  <Link
-                    href="/products/proteins/interferons"
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/proteins/rat-ifn-proteins"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Rat IFN Proteins
-                  </Link>
+                  </a>
                   <Link
-                    href="/products/proteins/interferons"
+                    href="/products/proteins/interferons/mouse"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Mouse IFN Proteins
                   </Link>
-                  <Link
-                    href="/products/proteins/interferons"
+                  <a
+                    href="https://www.pblassaysci.com/proteins/mammalian-ifn-proteins-non-human-non-mouse"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 leading-tight transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Mammalian IFN Proteins (Non-Human, Non-Mouse)
-                  </Link>
+                  </a>
                 </div>
                 <Link href="/products/proteins/interferons" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                   View Full Catalog

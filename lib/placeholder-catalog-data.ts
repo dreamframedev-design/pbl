@@ -339,6 +339,80 @@ export function getPlaceholderCatalogData(pagePath: string): CatalogProduct[] | 
       },
     ],
 
+    // Human Cell-Expressed Cytokines
+    'cytokines-growth-factors/human-cell-expressed': [
+      {
+        catalogNo: '11725-1',
+        description: 'Human FLT3L, HCE',
+        packSize: '10 μg',
+        documents: [
+          { label: '11725-1 CoA' },
+          { label: '11725 SDS' },
+        ],
+        price: '$315.00',
+      },
+      {
+        catalogNo: '11730-1',
+        description: 'Human GM-CSF, HCE',
+        packSize: '10 μg',
+        documents: [
+          { label: '11730-1 CoA' },
+          { label: '11730 SDS' },
+        ],
+        price: '$315.00',
+      },
+      {
+        catalogNo: '11740-1',
+        description: 'Human IL-3, HCE',
+        packSize: '10 μg',
+        documents: [
+          { label: '11740-1 CoA' },
+          { label: '11740 SDS' },
+        ],
+        price: '$315.00',
+      },
+      {
+        catalogNo: '11750-1',
+        description: 'Human IL-4, HCE',
+        packSize: '10 μg',
+        documents: [
+          { label: '11750-1 CoA' },
+          { label: '11750 SDS' },
+        ],
+        price: '$315.00',
+      },
+      {
+        catalogNo: '11760-1',
+        description: 'Human IL-6, HCE',
+        packSize: '10 μg',
+        documents: [
+          { label: '11760-1 CoA' },
+          { label: '11760 SDS' },
+        ],
+        price: '$315.00',
+      },
+      {
+        catalogNo: '11770-1',
+        description: 'Human SCF, HCE',
+        packSize: '10 μg',
+        documents: [
+          { label: '11770-1 CoA' },
+          { label: '11770 SDS' },
+        ],
+        price: '$315.00',
+      },
+      {
+        catalogNo: '11780-1',
+        description: 'Human TPO, HCE',
+        packSize: '10 μg',
+        documents: [
+          { label: '11780-1 CoA' },
+          { label: '11780 SDS' },
+        ],
+        price: '$315.00',
+      },
+    ],
+
     // Cytokines and Growth Factors
     'cytokines-growth-factors': [
       {

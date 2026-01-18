@@ -81,9 +81,9 @@ export default function InterferonDecoyReceptorPage() {
             <span>Interferon Decoy Receptor</span>
           </nav>
           
-          <h1 className="text-6xl md:text-[90px] font-black tracking-tighter leading-[0.85] mb-12 max-w-6xl">
-            <span className="text-[#002776]">Mouse IFN Alpha</span><br/>
-            <span className="text-slate-300 italic font-light font-serif text-4xl md:text-7xl">Neutralizing Viral Protein</span>
+          <h1 className="text-5xl md:text-[80px] font-black tracking-tighter leading-[0.85] mb-12 max-w-6xl">
+            <span className="text-[#002776]">Mouse Interferon Alpha All-Subtype</span><br/>
+            <span className="text-slate-300 italic font-light font-serif text-4xl md:text-6xl">Neutralizing Viral Protein</span>
           </h1>
 
           <div className="flex flex-wrap items-center gap-6">

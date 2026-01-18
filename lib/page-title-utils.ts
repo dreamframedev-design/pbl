@@ -32,6 +32,8 @@ export function generatePageTitleFromSlug(
     'non-human': 'Non-Human Interferon ELISAs',
     // Proteins
     'cytokines-growth-factors': 'Cytokines and Growth Factors',
+    'ecoli-cho-expressed': 'E.coli CHO Expressed',
+    'human-cell-expressed': 'Human Cell-Expressed Cytokines',
     'interferon-decoy-receptor': 'Interferon Decoy Receptor',
     'interferons': 'Interferons',
     'human': 'Human IFN Proteins',

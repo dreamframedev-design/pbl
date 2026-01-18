@@ -57,24 +57,30 @@ export default function InterferonsPage() {
                   Human Interferon proteins for Type I, II and III.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
-                  <Link
-                    href="/products/proteins/interferons/human/ifn-alpha"
+                  <a
+                    href="https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/human-ifn-alpha"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Human IFN-Alpha
-                  </Link>
-                  <Link
-                    href="/products/proteins/interferons/human/ifn-beta"
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/human-ifn-beta"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Human IFN-Beta
-                  </Link>
-                  <Link
-                    href="/products/proteins/interferons/human/other"
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/other-human-ifns"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Other Human IFNs
-                  </Link>
+                  </a>
                 </div>
                 <Link href="/products/proteins/interferons/human" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                   View Products
@@ -97,24 +103,30 @@ export default function InterferonsPage() {
                   Mouse Interferon Alpha, Beta, and Lambda proteins.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
-                  <Link
-                    href="/products/proteins/interferons/mouse/ifn-alpha"
+                  <a
+                    href="https://www.pblassaysci.com/proteins/interferons/mouse-ifn-proteins/mouse-ifn-alpha"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#2563EB] hover:pl-3 hover:text-[#2563EB] hover:bg-[rgba(37,99,235,0.04)]"
                   >
                     Mouse IFN-Alpha
-                  </Link>
-                  <Link
-                    href="/products/proteins/interferons/mouse/ifn-beta"
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/proteins/interferons/mouse-ifn-proteins/mouse-ifn-beta"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#2563EB] hover:pl-3 hover:text-[#2563EB] hover:bg-[rgba(37,99,235,0.04)]"
                   >
                     Mouse IFN-Beta
-                  </Link>
-                  <Link
-                    href="/products/proteins/interferons/mouse/ifn-lambda"
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/proteins/mouseifnlambda"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#2563EB] hover:pl-3 hover:text-[#2563EB] hover:bg-[rgba(37,99,235,0.04)]"
                   >
                     Mouse IFN-Lambda
-                  </Link>
+                  </a>
                 </div>
                 <Link href="/products/proteins/interferons/mouse" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                   View Products
@@ -129,18 +141,18 @@ export default function InterferonsPage() {
                   <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">M</div>
                   <span className="px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-[9px] font-black uppercase tracking-widest h-fit">Cross-Species</span>
                 </div>
-                <Link href="/products/proteins/interferons/mammalian" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                <a href="https://www.pblassaysci.com/proteins/mammalian-ifn-proteins-non-human-non-mouse" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-600 transition-colors">
                   <h2 className="text-3xl font-bold text-[#002776]">
                     Mammalian IFN Proteins <br/>(Non-Human, Non-Mouse)
                   </h2>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Cynomolgus, Rhesus, Feline, Porcine, and Bovine Interferon proteins.
                 </p>
                 <div className="mt-auto">
-                  <Link href="/products/proteins/interferons/mammalian" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                  <a href="https://www.pblassaysci.com/proteins/mammalian-ifn-proteins-non-human-non-mouse" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                     View Products
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -151,18 +163,18 @@ export default function InterferonsPage() {
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg italic">R</div>
                 </div>
-                <Link href="/products/proteins/interferons/rat" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                <a href="https://www.pblassaysci.com/proteins/rat-ifn-proteins" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-500 transition-colors">
                   <h2 className="text-3xl font-bold text-[#002776]">
                     Rat IFN Proteins
                   </h2>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   Type I and II rat interferon proteins for life science research.
                 </p>
                 <div className="mt-auto">
-                  <Link href="/products/proteins/interferons/rat" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                  <a href="https://www.pblassaysci.com/proteins/rat-ifn-proteins" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                     View Products
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
