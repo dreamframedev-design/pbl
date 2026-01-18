@@ -53,6 +53,13 @@ export default async function DynamicAntibodyPage({ params }: { params: Promise<
     'monoclonal/anti-human-ifn/mabs-against-other-human-ifns': 'https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/mabs-against-other-human-ifns',
   };
   
+  // Sub-category description overrides
+  const subCategoryDescriptionOverrides: Record<string, string> = {
+    'monoclonal/anti-human-ifn/anti-human-ifn-alpha-mabs': 'Anti-Human Interferon Alpha Monoclonal Antibodies',
+    'monoclonal/anti-human-ifn/anti-human-ifn-beta-mabs': 'Anti-Human Interferon Beta Monoclonal Antibodies',
+    'monoclonal/anti-human-ifn/anti-human-ifn-receptor-mabs': 'Anti-Human Interferon Receptor Monoclonal Antibodies',
+  };
+  
   // Additional sub-categories to add (not from markdown directories)
   const additionalSubCategories: Record<string, Array<{ name: string; slug: string; description?: string }>> = {
     'monoclonal/anti-human-ifn': [
@@ -143,11 +150,15 @@ export default async function DynamicAntibodyPage({ params }: { params: Promise<
                           </h3>
                         </Link>
                       )}
-                      {subCategory.description && (
-                        <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
-                          {subCategory.description}
-                        </p>
-                      )}
+                      {(() => {
+                        const overrideKey = `${slug.join('/')}/${subCategory.slug}`;
+                        const description = subCategoryDescriptionOverrides[overrideKey] || subCategory.description;
+                        return description ? (
+                          <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
+                            {description}
+                          </p>
+                        ) : null;
+                      })()}
                       <div className="mt-auto">
                         {linkInfo.isExternal ? (
                           <a
