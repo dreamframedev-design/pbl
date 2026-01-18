@@ -172,7 +172,7 @@ export default async function DynamicAntibodyPage({ params }: { params: Promise<
                             }`}
                           >
                             View Products
-                          </a>
+                          </Link>
                         )}
                       </div>
                     </div>
