@@ -695,40 +695,31 @@ export default function Header() {
                           Cytokines and Growth Factors
                         </Link>
                         <div className="pl-4 border-l border-slate-100 space-y-1">
-                          <Link 
-                            href="/products/proteins/cytokines-growth-factors/ecoli-cho" 
-                            onClick={handleLinkClick}
-                            className={`block text-[11px] ${
-                              isDropdownActive('/products/proteins/cytokines-growth-factors/ecoli-cho')
-                                ? 'text-[#058A9F]'
-                                : 'hover:text-[#058A9F]'
-                            }`}
+                          <a 
+                            href="https://www.pblassaysci.com/cytokines-and-growth-factors" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-[11px] hover:text-[#058A9F]"
                           >
                             E.coli & CHO Expressed
-                          </Link>
-                          <Link 
-                            href="/products/proteins/cytokines-growth-factors/human-cell" 
-                            onClick={handleLinkClick}
-                            className={`block text-[11px] ${
-                              isDropdownActive('/products/proteins/cytokines-growth-factors/human-cell')
-                                ? 'text-[#058A9F]'
-                                : 'hover:text-[#058A9F]'
-                            }`}
+                          </a>
+                          <a 
+                            href="https://www.pblassaysci.com/proteins/human-cell-expressed-cytokines" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-[11px] hover:text-[#058A9F]"
                           >
                             Human Cell-Expressed
-                          </Link>
+                          </a>
                         </div>
-                        <Link 
-                          href="/products/proteins/interferon-decoy-receptor" 
-                          onClick={handleLinkClick}
-                          className={`phosphor-link block text-xs font-semibold ${
-                            isDropdownActive('/products/proteins/interferon-decoy-receptor')
-                              ? 'text-[#058A9F]'
-                              : 'text-slate-600'
-                          }`}
+                        <a 
+                          href="https://www.pblassaysci.com/proteins/c12r-mouse-ifn-alpha-decoy-receptor-neutralizing-12185" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="phosphor-link block text-xs font-semibold text-slate-600 hover:text-[#058A9F]"
                         >
                           Interferon Decoy Receptor
-                        </Link>
+                        </a>
                         <div>
                           <Link 
                             href="/products/proteins/interferons" 
@@ -743,51 +734,39 @@ export default function Header() {
                           </Link>
                           <div className="pl-4 border-l border-slate-100 space-y-2">
                             <div>
-                              <Link 
-                                href="/products/proteins/interferons/human" 
-                                onClick={handleLinkClick}
-                                className={`block text-[11px] font-semibold mb-1 ${
-                                  isDropdownActive('/products/proteins/interferons/human')
-                                    ? 'text-[#058A9F]'
-                                    : 'hover:text-[#058A9F]'
-                                }`}
+                              <a 
+                                href="https://www.pblassaysci.com/proteins/human-ifn-proteins" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block text-[11px] font-semibold mb-1 hover:text-[#058A9F]"
                               >
                                 Human IFN Proteins
-                              </Link>
+                              </a>
                               <div className="pl-3 space-y-1">
-                                <Link 
-                                  href="/products/proteins/interferons/human/ifn-alpha" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/proteins/interferons/human/ifn-alpha')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                <a 
+                                  href="https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/human-ifn-alpha" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Human IFN-Alpha
-                                </Link>
-                                <Link 
-                                  href="/products/proteins/interferons/human/ifn-beta" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/proteins/interferons/human/ifn-beta')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/human-ifn-beta" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Human IFN-Beta
-                                </Link>
-                                <Link 
-                                  href="/products/proteins/interferons/human/other" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/proteins/interferons/human/other')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/proteins/interferons/human-ifn-proteins/other-human-ifns" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Other Human IFNs
-                                </Link>
+                                </a>
                               </div>
                             </div>
                             <div>
@@ -803,63 +782,48 @@ export default function Header() {
                                 Mouse IFN Proteins
                               </Link>
                               <div className="pl-3 space-y-1">
-                                <Link 
-                                  href="/products/proteins/interferons/mouse/ifn-alpha" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/proteins/interferons/mouse/ifn-alpha')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                <a 
+                                  href="https://www.pblassaysci.com/proteins/interferons/mouse-ifn-proteins/mouse-ifn-alpha" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Mouse IFN-Alpha
-                                </Link>
-                                <Link 
-                                  href="/products/proteins/interferons/mouse/ifn-beta" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/proteins/interferons/mouse/ifn-beta')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/proteins/interferons/mouse-ifn-proteins/mouse-ifn-beta" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Mouse IFN-Beta
-                                </Link>
-                                <Link 
-                                  href="/products/proteins/interferons/mouse/ifn-lambda" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/proteins/interferons/mouse/ifn-lambda')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/proteins/mouseifnlambda" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Mouse IFN-Lambda
-                                </Link>
+                                </a>
                               </div>
                             </div>
-                            <Link 
-                              href="/products/proteins/interferons/rat" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] font-semibold ${
-                                isDropdownActive('/products/proteins/interferons/rat')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            <a 
+                              href="https://www.pblassaysci.com/proteins/rat-ifn-proteins" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] font-semibold hover:text-[#058A9F]"
                             >
                               Rat IFN Proteins
-                            </Link>
-                            <Link 
-                              href="/products/proteins/interferons/mammalian" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] font-semibold ${
-                                isDropdownActive('/products/proteins/interferons/mammalian')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            </a>
+                            <a 
+                              href="https://www.pblassaysci.com/proteins/mammalian-ifn-proteins-non-human-non-mouse" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] font-semibold hover:text-[#058A9F]"
                             >
                               Mammalian IFN Proteins
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -912,74 +876,64 @@ export default function Header() {
                                 Anti-Human IFN MAbs
                               </Link>
                               <div className="pl-3 space-y-1">
-                                <Link 
-                                  href="/products/antibodies/monoclonal/anti-human-ifn/receptor" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/antibodies/monoclonal/anti-human-ifn/receptor')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                <a 
+                                  href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-receptor-mabs" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Anti-Human IFN Receptor MAbs
-                                </Link>
-                                <Link 
-                                  href="/products/antibodies/monoclonal/anti-human-ifn/ifn-alpha" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/antibodies/monoclonal/anti-human-ifn/ifn-alpha')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-alpha-mabs" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Anti-Human IFN-Alpha MAbs
-                                </Link>
-                                <Link 
-                                  href="/products/antibodies/monoclonal/anti-human-ifn/ifn-beta" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/antibodies/monoclonal/anti-human-ifn/ifn-beta')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-beta-mabs" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Anti-Human IFN-Beta MAbs
-                                </Link>
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/mabs-against-other-human-ifns" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
+                                >
+                                  MAbs against other Human IFNs
+                                </a>
                               </div>
                             </div>
-                            <Link 
-                              href="/products/antibodies/monoclonal/anti-mouse-ifn" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] font-semibold ${
-                                isDropdownActive('/products/antibodies/monoclonal/anti-mouse-ifn')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            <a 
+                              href="https://www.pblassaysci.com/antibodies/anti-mouse-ifn-mabs" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] font-semibold hover:text-[#058A9F]"
                             >
                               Anti-Mouse IFN MAbs
-                            </Link>
-                            <Link 
-                              href="/products/antibodies/monoclonal/anti-porcine-ifn" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] font-semibold ${
-                                isDropdownActive('/products/antibodies/monoclonal/anti-porcine-ifn')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            </a>
+                            <a 
+                              href="https://www.pblassaysci.com/antibodies/anti-porcine-ifn-mabs" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] font-semibold hover:text-[#058A9F]"
                             >
                               Anti-Porcine IFN MAbs
-                            </Link>
-                            <Link 
-                              href="/products/antibodies/monoclonal/labeled" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] font-semibold ${
-                                isDropdownActive('/products/antibodies/monoclonal/labeled')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            </a>
+                            <a 
+                              href="https://www.pblassaysci.com/antibodies/labeled-anti-ifn-mabs-human-mouse" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] font-semibold hover:text-[#058A9F]"
                             >
                               Labeled Anti-IFN MAbs
-                            </Link>
+                            </a>
                           </div>
                         </div>
                         <div>
@@ -995,39 +949,30 @@ export default function Header() {
                             Polyclonal Antibodies (PAbs)
                           </Link>
                           <div className="pl-4 border-l border-slate-100 space-y-2">
-                            <Link 
-                              href="/products/antibodies/polyclonal/anti-human-ifn" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] ${
-                                isDropdownActive('/products/antibodies/polyclonal/anti-human-ifn')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            <a 
+                              href="https://www.pblassaysci.com/antibodies/anti-human-ifn-pabs" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] hover:text-[#058A9F]"
                             >
                               Anti-Human IFN PAbs
-                            </Link>
-                            <Link 
-                              href="/products/antibodies/polyclonal/anti-mouse-ifn" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] ${
-                                isDropdownActive('/products/antibodies/polyclonal/anti-mouse-ifn')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            </a>
+                            <a 
+                              href="https://www.pblassaysci.com/antibodies/anti-mouse-ifn-pabs" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] hover:text-[#058A9F]"
                             >
                               Anti-Mouse IFN PAbs
-                            </Link>
-                            <Link 
-                              href="/products/antibodies/polyclonal/anti-rat-ifn" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] ${
-                                isDropdownActive('/products/antibodies/polyclonal/anti-rat-ifn')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            </a>
+                            <a 
+                              href="https://www.pblassaysci.com/antibodies/anti-rat-ifn-pabs" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] hover:text-[#058A9F]"
                             >
                               Anti-Rat IFN PAbs
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1560,14 +1505,14 @@ export default function Header() {
                   <div className="pl-4 space-y-1.5">
                       <Link href="/products/proteins" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">All Proteins</Link>
                       <Link href="/products/proteins/cytokines-growth-factors" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Cytokines and Growth Factors</Link>
-                      <Link href="/products/proteins/interferon-decoy-receptor" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Interferon Decoy Receptor</Link>
+                      <a href="https://www.pblassaysci.com/proteins/c12r-mouse-ifn-alpha-decoy-receptor-neutralizing-12185" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Interferon Decoy Receptor</a>
                     <div>
                         <Link href="/products/proteins/interferons" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Interferons</Link>
                       <div className="pl-3 space-y-1">
-                          <Link href="/products/proteins/interferons/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IFN Proteins</Link>
+                          <a href="https://www.pblassaysci.com/proteins/human-ifn-proteins" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IFN Proteins</a>
                           <Link href="/products/proteins/interferons/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mouse IFN Proteins</Link>
-                          <Link href="/products/proteins/interferons/rat" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Rat IFN Proteins</Link>
-                          <Link href="/products/proteins/interferons/mammalian" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mammalian IFN Proteins</Link>
+                          <a href="https://www.pblassaysci.com/proteins/rat-ifn-proteins" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Rat IFN Proteins</a>
+                          <a href="https://www.pblassaysci.com/proteins/mammalian-ifn-proteins-non-human-non-mouse" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mammalian IFN Proteins</a>
                       </div>
                     </div>
                   </div>
@@ -1581,17 +1526,17 @@ export default function Header() {
                         <Link href="/products/antibodies/monoclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Monoclonal Antibodies (MAbs)</Link>
                       <div className="pl-3 space-y-1">
                           <Link href="/products/antibodies/monoclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Human IFN MAbs</Link>
-                          <Link href="/products/antibodies/monoclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Mouse IFN MAbs</Link>
-                          <Link href="/products/antibodies/monoclonal/anti-porcine-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Porcine IFN MAbs</Link>
-                          <Link href="/products/antibodies/monoclonal/labeled" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Labeled Anti-IFN MAbs</Link>
+                          <a href="https://www.pblassaysci.com/antibodies/anti-mouse-ifn-mabs" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Mouse IFN MAbs</a>
+                          <a href="https://www.pblassaysci.com/antibodies/anti-porcine-ifn-mabs" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Porcine IFN MAbs</a>
+                          <a href="https://www.pblassaysci.com/antibodies/labeled-anti-ifn-mabs-human-mouse" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Labeled Anti-IFN MAbs</a>
                       </div>
                     </div>
                     <div>
                         <Link href="/products/antibodies/polyclonal" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Polyclonal Antibodies (PAbs)</Link>
                       <div className="pl-3 space-y-1">
-                          <Link href="/products/antibodies/polyclonal/anti-human-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Human IFN PAbs</Link>
-                          <Link href="/products/antibodies/polyclonal/anti-mouse-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Mouse IFN PAbs</Link>
-                          <Link href="/products/antibodies/polyclonal/anti-rat-ifn" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Rat IFN PAbs</Link>
+                          <a href="https://www.pblassaysci.com/antibodies/anti-human-ifn-pabs" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Human IFN PAbs</a>
+                          <a href="https://www.pblassaysci.com/antibodies/anti-mouse-ifn-pabs" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Mouse IFN PAbs</a>
+                          <a href="https://www.pblassaysci.com/antibodies/anti-rat-ifn-pabs" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Anti-Rat IFN PAbs</a>
                       </div>
                     </div>
                   </div>
