@@ -70,24 +70,38 @@ export default function MonoclonalAntibodiesPage() {
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">Anti-Human Interferon Monoclonal Antibodies</p>
                 
                 <div className="mt-auto space-y-3 mb-10">
-                  <Link
-                    href="/products/antibodies/monoclonal/anti-human-ifn/anti-human-ifn-alpha"
+                  <a
+                    href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-alpha-mabs"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Anti-Human IFN-Alpha MAbs
-                  </Link>
-                  <Link
-                    href="/products/antibodies/monoclonal/anti-human-ifn/anti-human-ifn-beta"
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-beta-mabs"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Anti-Human IFN-Beta MAbs
-                  </Link>
-                  <Link
-                    href="/products/antibodies/monoclonal/anti-human-ifn/anti-human-ifn-receptor"
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-receptor-mabs"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Anti-Human IFN Receptor MAbs
-                  </Link>
+                  </a>
+                  <a
+                    href="https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/mabs-against-other-human-ifns"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
+                  >
+                    MAbs against other Human IFNs
+                  </a>
                 </div>
                 <Link href="/products/antibodies/monoclonal/anti-human-ifn" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                   Explore Products
