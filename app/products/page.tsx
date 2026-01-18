@@ -64,7 +64,7 @@ export default function ProductsPage() {
                 <div className="w-full flex flex-col items-center justify-center text-center">
                   <div className="flex flex-col items-center min-w-fit max-w-full">
                     <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap overflow-visible">Assay Kits</h2>
-                    <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 whitespace-nowrap">Immunoassay Solutions</p>
+                    <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 max-w-xs">High-performance IFN &amp; Cytokine ELISA kits are characterized to provide you with reliability and accuracy.</p>
                   </div>
                 </div>
                 
@@ -101,7 +101,7 @@ export default function ProductsPage() {
                 <div className="w-full flex flex-col items-center justify-center text-center">
                   <div className="flex flex-col items-center min-w-fit max-w-full">
                     <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap overflow-visible">Proteins</h2>
-                    <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 whitespace-nowrap">High-Purity Reagents</p>
+                    <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 max-w-xs">Interferons, Cytokines &amp; Growth Factors for life science research.</p>
                   </div>
                 </div>
                 
@@ -138,7 +138,7 @@ export default function ProductsPage() {
                 <div className="w-full flex flex-col items-center justify-center text-center">
                   <div className="flex flex-col items-center min-w-fit max-w-full">
                     <h2 className="text-3xl font-bold mb-2 text-[#002776] whitespace-nowrap overflow-visible">Antibodies</h2>
-                    <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-8 whitespace-nowrap">MAbs & PAbs</p>
+                    <p className="text-slate-500 text-sm font-light leading-relaxed mb-8 max-w-xs">Monoclonal and Polyclonal Antibodies validated for use in biological assays.</p>
                   </div>
                 </div>
                 
