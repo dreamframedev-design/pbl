@@ -77,24 +77,6 @@ export default function AntibodiesPage() {
                 <Link href="/products/antibodies/monoclonal" className="block cursor-pointer mb-2">
                   <h3 className="text-3xl font-bold mb-6 text-[#002776]">Monoclonal Antibodies (MAbs)</h3>
                 </Link>
-                <div className="text-slate-500 font-light leading-relaxed mb-10 flex-grow text-sm space-y-4">
-                  <p>
-                    Monoclonal antibodies (MAbs) are monospecific antibodies that
-                    are the same because they are made by identical immune cells
-                    that are all clones of a unique parent cell. MAbs have
-                    monovalent affinity, in that they bind to the same epitope and
-                    offer high specificity in applications such as{' '}
-                    <strong className="text-[#002776] font-semibold">ELISA</strong>, <strong className="text-[#002776] font-semibold">flow cytometry</strong> or{' '}
-                    <strong className="text-[#002776] font-semibold">epitope mapping</strong> where specific binding is
-                    desirable.
-                  </p>
-                  <p>
-                    PBL's MAbs are derived against a range of interferons from
-                    various mammalian species. They deliver superior{' '}
-                    <em>product stability</em> and <em>high specificity</em> while
-                    providing <em>reliable</em> and <em>reproducible results</em>.
-                  </p>
-                </div>
                 
                 <div className="space-y-3 mb-10">
                   <Link
@@ -140,24 +122,6 @@ export default function AntibodiesPage() {
                 <Link href="/products/antibodies/polyclonal" className="block cursor-pointer mb-2">
                   <h3 className="text-3xl font-bold mb-6 text-[#002776]">Polyclonal Antibodies (PAbs)</h3>
                 </Link>
-                <div className="text-slate-500 font-light leading-relaxed mb-10 flex-grow text-sm space-y-4">
-                  <p>
-                    Polyclonal antibodies (PAbs) are obtained using a mixture of
-                    immunoglobulin molecules secreted against a specific antigen,
-                    each recognizing a different epitope making them more tolerant
-                    to small changes in the structure of the antigen. PAbs are
-                    preferable for neutralization because they target a variety of
-                    specific epitopes of a particular antigen.
-                  </p>
-                  <p>
-                    PBL's PAbs are available for use in a range of applications
-                    including <strong className="text-[#002776] font-semibold">ELISA</strong>,{' '}
-                    <strong className="text-[#002776] font-semibold">neutralization assays</strong>,{' '}
-                    <strong className="text-[#002776] font-semibold">western blotting</strong>, <strong className="text-[#002776] font-semibold">flow cytometry</strong>,{' '}
-                    <strong className="text-[#002776] font-semibold">immunoprecipitation</strong>, and{' '}
-                    <strong className="text-[#002776] font-semibold">immunohistochemistry</strong>.
-                  </p>
-                </div>
                 
                 <div className="space-y-3 mb-10">
                   <Link
