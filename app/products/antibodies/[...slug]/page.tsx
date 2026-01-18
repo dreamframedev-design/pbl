@@ -44,8 +44,43 @@ export default async function DynamicAntibodyPage({ params }: { params: Promise<
   // Generate page title from slug
   const pageTitle = generatePageTitleFromSlug(slug, 'antibodies');
   
+  // External link overrides for sub-category cards
+  const externalLinkMap: Record<string, string> = {
+    // Anti-Human IFN MAbs sub-pages
+    'monoclonal/anti-human-ifn/anti-human-ifn-alpha-mabs': 'https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-alpha-mabs',
+    'monoclonal/anti-human-ifn/anti-human-ifn-beta-mabs': 'https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-beta-mabs',
+    'monoclonal/anti-human-ifn/anti-human-ifn-receptor-mabs': 'https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/anti-human-ifn-receptor-mabs',
+    'monoclonal/anti-human-ifn/mabs-against-other-human-ifns': 'https://www.pblassaysci.com/antibodies/monoclonal-antibodies-mabs/mabs-against-other-human-ifns',
+  };
+  
+  // Additional sub-categories to add (not from markdown directories)
+  const additionalSubCategories: Record<string, Array<{ name: string; slug: string; description?: string }>> = {
+    'monoclonal/anti-human-ifn': [
+      {
+        name: 'MAbs against other Human IFNs',
+        slug: 'mabs-against-other-human-ifns',
+        description: 'Monoclonal Antibodies against other Human Interferon Proteins',
+      },
+    ],
+  };
+  
+  // Helper function to get link for a sub-category
+  const getSubCategoryLink = (subCategorySlug: string): { href: string, isExternal: boolean } => {
+    const fullPath = `${slug.join('/')}/${subCategorySlug}`;
+    const externalUrl = externalLinkMap[fullPath];
+    if (externalUrl) {
+      return { href: externalUrl, isExternal: true };
+    }
+    return { href: `${currentPath}/${subCategorySlug}`, isExternal: false };
+  };
+  
+  // Merge additional sub-categories if any exist for this path
+  const currentSlugPath = slug.join('/');
+  const additionalItems = additionalSubCategories[currentSlugPath] || [];
+  const allSubCategories = [...subCategories, ...additionalItems];
+  
   // Determine if this is a product listing page (has catalog table, no sub-categories, no markdown content to show)
-  const isProductListingPage = catalogProducts.length > 0 && subCategories.length === 0;
+  const isProductListingPage = catalogProducts.length > 0 && allSubCategories.length === 0;
 
   // Build breadcrumbs from slug
   const breadcrumbs = [
@@ -70,54 +105,80 @@ export default async function DynamicAntibodyPage({ params }: { params: Promise<
       <BannerHero title={pageTitle} breadcrumbs={breadcrumbs} />
 
       {/* Sub-Categories Grid - Internal Navigation (Always at Top) */}
-      {subCategories.length > 0 && (
+      {allSubCategories.length > 0 && (
         <section className="py-24 bg-slate-50 border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {subCategories.map((subCategory, index) => (
-                <div
-                  key={subCategory.slug}
-                  className={`group rounded-[3rem] transition-all duration-500 flex flex-col ${
-                    index === subCategories.length - 1
-                      ? 'p-[2.5px] bg-gradient-to-br from-cyan-400 to-[#002776] hover:scale-[1.02] shadow-xl'
-                      : 'glass-card p-1 glow-border'
-                  }`}
-                >
-                  <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
-                    <div className="mb-6">
-                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all font-black text-lg ${
-                        index === subCategories.length - 1
-                          ? 'bg-slate-50 text-slate-400 group-hover:bg-[#002776] group-hover:text-white'
-                          : 'bg-cyan-50 text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776]'
-                      }`}>
-                        {subCategory.name.charAt(0)}
+              {allSubCategories.map((subCategory, index) => {
+                const linkInfo = getSubCategoryLink(subCategory.slug);
+                return (
+                  <div
+                    key={subCategory.slug}
+                    className={`group rounded-[3rem] transition-all duration-500 flex flex-col ${
+                      index === allSubCategories.length - 1
+                        ? 'p-[2.5px] bg-gradient-to-br from-cyan-400 to-[#002776] hover:scale-[1.02] shadow-xl'
+                        : 'glass-card p-1 glow-border'
+                    }`}
+                  >
+                    <div className="bg-white rounded-[2.8rem] p-12 h-full flex flex-col">
+                      <div className="mb-6">
+                        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all font-black text-lg ${
+                          index === allSubCategories.length - 1
+                            ? 'bg-slate-50 text-slate-400 group-hover:bg-[#002776] group-hover:text-white'
+                            : 'bg-cyan-50 text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776]'
+                        }`}>
+                          {subCategory.name.charAt(0)}
+                        </div>
+                      </div>
+                      {linkInfo.isExternal ? (
+                        <a href={linkInfo.href} target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                          <h3 className="text-2xl font-bold text-[#002776]">
+                            {subCategory.name}
+                          </h3>
+                        </a>
+                      ) : (
+                        <Link href={linkInfo.href} className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                          <h3 className="text-2xl font-bold text-[#002776]">
+                            {subCategory.name}
+                          </h3>
+                        </Link>
+                      )}
+                      {subCategory.description && (
+                        <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
+                          {subCategory.description}
+                        </p>
+                      )}
+                      <div className="mt-auto">
+                        {linkInfo.isExternal ? (
+                          <a
+                            href={linkInfo.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`w-full py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm ${
+                              index === allSubCategories.length - 1
+                                ? 'bg-[#002776] text-white hover:bg-cyan-600'
+                                : 'bg-slate-50 group-hover:bg-[#002776] group-hover:text-white'
+                            }`}
+                          >
+                            View Products
+                          </a>
+                        ) : (
+                          <Link
+                            href={linkInfo.href}
+                            className={`w-full py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm ${
+                              index === allSubCategories.length - 1
+                                ? 'bg-[#002776] text-white hover:bg-cyan-600'
+                                : 'bg-slate-50 group-hover:bg-[#002776] group-hover:text-white'
+                            }`}
+                          >
+                            View Products
+                          </a>
+                        )}
                       </div>
                     </div>
-                    <Link href={`${currentPath}/${subCategory.slug}`} className="block mb-2 group-hover:text-cyan-600 transition-colors">
-                      <h3 className="text-2xl font-bold text-[#002776]">
-                        {subCategory.name}
-                      </h3>
-                    </Link>
-                    {subCategory.description && (
-                      <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
-                        {subCategory.description}
-                      </p>
-                    )}
-                    <div className="mt-auto">
-                      <Link
-                        href={`${currentPath}/${subCategory.slug}`}
-                        className={`w-full py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm ${
-                          index === subCategories.length - 1
-                            ? 'bg-[#002776] text-white hover:bg-cyan-600'
-                            : 'bg-slate-50 group-hover:bg-[#002776] group-hover:text-white'
-                        }`}
-                      >
-                        View Products
-                      </Link>
-                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
