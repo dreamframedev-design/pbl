@@ -986,13 +986,7 @@ export default function Header() {
                       </div>
                     </div>
 
-                    {/* Featured Content Column */}
-                    <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
-                      <span className="text-[9px] font-black text-cyan-600 uppercase tracking-widest mb-2 block">New Technical Guide</span>
-                      <h5 className="text-sm font-bold text-[#002776] mb-2">High-Sensitivity ELISAs</h5>
-                      <p className="text-[11px] text-slate-500 font-light leading-relaxed mb-4">View our performance data for IL-15 and IL-22 quantification.</p>
-                      <Link href="/resources" onClick={handleLinkClick} className="text-[10px] font-black text-[#058A9F] uppercase tracking-widest">Learn More →</Link>
-                    </div>
+                    {/* Featured Content Column removed */}
                         </div>
                       </div>
                     </motion.div>
