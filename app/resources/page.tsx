@@ -32,12 +32,8 @@ export default async function ResourcesPage() {
             <span>PBL</span> <span className="text-gray-300">/</span> <span>Technical Resources</span>
           </nav>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
-            <span className="text-[#002776]">Technical</span> <br/> <span className="font-light text-gray-400 font-serif italic">Resources</span>
+            <span className="text-[#002776]">Resources</span>
           </h1>
-          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Access our comprehensive database of validated procedures, characterization studies, 
-            and published scientific insights.
-          </p>
         </div>
       </header>
 
@@ -80,14 +76,6 @@ export default async function ResourcesPage() {
                   )}
                 </div>
                 
-                <div className="mt-auto">
-                  <Link
-                    href="/resources/technical-presentations"
-                    className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all"
-                  >
-                    Browse Presentations
-                  </Link>
-                </div>
               </div>
             </div>
 
@@ -126,14 +114,6 @@ export default async function ResourcesPage() {
                   )}
                 </div>
                 
-                <div className="mt-auto">
-                  <Link
-                    href="/resources/general-protocols"
-                    className="w-full py-4 bg-slate-50 group-hover:bg-[#058A9F] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all"
-                  >
-                    View All Protocols
-                  </Link>
-                </div>
               </div>
             </div>
 
@@ -172,14 +152,6 @@ export default async function ResourcesPage() {
                   )}
                 </div>
 
-                <div className="mt-auto">
-                  <Link
-                    href="/resources/scientific-articles"
-                    className="w-full py-4 bg-slate-50 group-hover:bg-cyan-500 group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all"
-                  >
-                    Read All Articles
-                  </Link>
-                </div>
               </div>
             </div>
           </div>

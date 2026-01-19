@@ -27,9 +27,6 @@ export default function AssayDevelopmentPage() {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             <span className="text-[#002776]">Assay</span> <br/> <span className="font-light text-gray-400 font-serif italic">Development</span>
           </h1>
-          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Immunoassay Design & Development from Antibody Screening & Proof-of-Concept Feasibility to Validation & Characterization.
-          </p>
         </div>
       </header>
 

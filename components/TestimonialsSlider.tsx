@@ -144,11 +144,8 @@ export default function TestimonialsSlider() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-8 md:mb-12">
           <div className="flex-1 max-w-2xl">
             <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">
-              Trusted by Leading Researchers
+              Don’t Take Our Word For It
             </h2>
-            <p className="text-xl text-slate-600 font-light leading-relaxed">
-              From global pharmaceutical companies to pioneering biotech firms, research teams across industries rely on PBL for precise assay development and reliable results.
-            </p>
           </div>
           
           {/* Navigation Arrows - Desktop Only (lg and up) */}
@@ -219,9 +216,6 @@ export default function TestimonialsSlider() {
                   <div className="flex-grow flex flex-col justify-between">
                     {/* 2. Content Hierarchy */}
                     <div className="flex-grow flex flex-col justify-center">
-                      <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-4 block">
-                        Researcher Success Story
-                      </span>
                       <h3 className="text-lg font-normal text-slate-700 leading-relaxed">
                         "{testimonial.quote}"
                       </h3>

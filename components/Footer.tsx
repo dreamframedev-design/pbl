@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-white border-t border-slate-100 mt-8 overflow-x-hidden">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12">
         {/* Footer Content - All columns in one row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-2 space-y-6">
             <Link href="/" className="brand-link flex flex-col items-start no-underline group">
@@ -38,9 +38,6 @@ export default function Footer() {
               </svg>
               <div className="glow-line"></div>
             </Link>
-            <p className="text-sm text-slate-500 font-light leading-relaxed max-w-sm">
-              Expertise in interferons and cytokines since 1990. Providing high-performance reagents to the global life science community.
-            </p>
           </div>
 
           {/* Products */}
@@ -101,19 +98,19 @@ export default function Footer() {
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Resources</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-light">
               <li>
-                <Link href="/blog" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Scientific Insights Blog</Link>
+                <Link href="/blog" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Blog</Link>
               </li>
               <li>
-                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">All Resources</Link>
+                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Resources</Link>
               </li>
               <li>
-                <Link href="/resources/general-protocols" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">General Protocols</Link>
+                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">General Protocols</Link>
               </li>
               <li>
-                <Link href="/resources/scientific-articles" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Scientific Articles</Link>
+                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Scientific Articles</Link>
               </li>
               <li>
-                <Link href="/resources/technical-presentations" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Technical Presentations</Link>
+                <Link href="/resources" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Technical Presentations</Link>
               </li>
             </ul>
           </div>
@@ -123,7 +120,7 @@ export default function Footer() {
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Support</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-light">
               <li>
-                <Link href="/shipping" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Shipping Info</Link>
+                <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Shipping Info</Link>
               </li>
               <li>
                 <Link href="/distributors" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Distributors</Link>
@@ -138,6 +135,46 @@ export default function Footer() {
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#002776] mb-8">Company</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-light">
+              <li>
+                <a
+                  href="https://www.pblassaysci.com/index.php/about-us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.pblassaysci.com/index.php/company-basic-pages/events"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  Events
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.pblassaysci.com/location-directions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  Location &amp; Directions
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.pblassaysci.com/trademarks-disclaimers-terms-use"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  Company Policies &amp; Terms
+                </a>
+              </li>
               <li>
                 <Link href="/history" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Our History</Link>
               </li>

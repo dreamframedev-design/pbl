@@ -16,10 +16,6 @@ export default function ContactUsPage() {
             <span className="block">we help you</span>
             <span className="block font-light text-gray-400 font-serif italic">today?</span>
           </h1>
-          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Our subject matter experts are standing by to assist with product selection, 
-            technical protocols, and global logistics.
-          </p>
         </div>
       </header>
 
@@ -38,7 +34,6 @@ export default function ContactUsPage() {
                 <h3 className="text-2xl font-bold mb-6">General <br/>Support</h3>
                 <div className="space-y-6 text-sm">
                   <div>
-                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Email</span>
                     <a href="mailto:info@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors">info@pblassaysci.com</a>
                   </div>
                   <div>
@@ -63,12 +58,11 @@ export default function ContactUsPage() {
                 <h3 className="text-2xl font-bold mb-6">Order <br/>Support</h3>
                 <div className="space-y-6 text-sm">
                   <div>
-                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Sales Email</span>
                     <a href="mailto:sales@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors">sales@pblassaysci.com</a>
                   </div>
                   <div>
                     <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Phone Inquiry</span>
-                    <p className="font-bold">+1 732-777-9123 <span className="text-cyan-500 ml-1">Option 2</span></p>
+                    <p className="font-bold">+1 732-777-9123</p>
                   </div>
                   <div className="pt-4 border-t border-slate-50">
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1 italic">Accounts Payable</span>
@@ -88,30 +82,25 @@ export default function ContactUsPage() {
                 <h3 className="text-2xl font-bold mb-6">Assay <br/>Services</h3>
                 <div className="space-y-6 text-sm">
                   <div>
-                    <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Email Specialist</span>
                     <a href="mailto:assayservices@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors">assayservices@pblassaysci.com</a>
                   </div>
                   <div>
                     <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Service Direct</span>
-                    <p className="font-bold">+1 732-777-9123 <span className="text-cyan-500 ml-1">Option 6</span></p>
+                    <p className="font-bold">+1 732-777-9123</p>
                   </div>
-                </div>
-                <div className="mt-auto pt-8">
-                  <span className="w-full py-3 bg-slate-50 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-2">Ready to Start Study →</span>
                 </div>
               </div>
             </div>
 
-            {/* Global Distributors */}
-            <div className="group p-[2px] rounded-[2.5rem] bg-gradient-to-br from-cyan-400 to-[#002776] transition-all duration-500 hover:scale-[1.02]">
+            {/* Distributors */}
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.9)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
               <div className="bg-white rounded-[2.2rem] p-10 h-full flex flex-col">
-                <h3 className="text-2xl font-bold mb-2">Global <br/>Distributors</h3>
+                <h3 className="text-2xl font-bold mb-2">Distributors</h3>
                 <p className="text-xs text-slate-400 mb-8 leading-relaxed">PBL works with a network of distribution partners worldwide to serve our international customers.</p>
-                <div className="mt-auto">
-                  <Link href="/distributors" className="w-full py-4 bg-[#002776] text-white rounded-xl font-bold text-sm text-center block shadow-xl shadow-[#002776]/20 hover:bg-cyan-500 transition-colors">
-                    Find Your Local Partner
-                  </Link>
-                </div>
               </div>
             </div>
 
@@ -137,7 +126,7 @@ export default function ContactUsPage() {
                 <div className="w-12 h-12 rounded-full bg-white border border-slate-200 flex items-center justify-center flex-shrink-0 font-bold text-cyan-500">02</div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">International Orders</h4>
-                  <p className="text-slate-500 font-light leading-relaxed">PBL ships globally. International orders can be placed by e-mail, phone, fax, or mail, <strong className="text-[#002776]">but not on the website.</strong></p>
+                  <p className="text-slate-500 font-light leading-relaxed">PBL ships globally. International orders can be placed by e-mail, phone, fax, or mail, but not on the website. PBL also maintains a network of dedicated and reliable <Link href="https://www.pblassaysci.com/distributors" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-[#002776] underline">distribution partners</Link>.</p>
                 </div>
               </div>
               <div className="mt-12 p-8 rounded-3xl border border-slate-100 flex items-start gap-6" style={{
@@ -157,22 +146,36 @@ export default function ContactUsPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 space-y-4">
-            <h2 className="text-4xl font-bold mb-12 tracking-tight">Logistics</h2>
-            <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm">
-              <div className="text-cyan-500 font-bold text-3xl mb-1 italic">1:00 PM EST</div>
-              <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-4">Domestic Cutoff</div>
-              <p className="text-xs text-slate-500 font-light">Orders received Mon–Thurs by this time typically ship same-day.</p>
-            </div>
-            <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm">
-              <div className="text-cyan-500 font-bold text-3xl mb-1 italic">$55</div>
-              <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-4">Overnight Flat Fee</div>
-              <p className="text-xs text-slate-500 font-light">Applies to domestic orders up to $1000 received by 3:00 PM EST.</p>
-            </div>
-            <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm">
-              <div className="text-[#002776] font-bold text-3xl mb-1 italic">Mon / Fri</div>
-              <div className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-4">International Schedule</div>
-              <p className="text-xs text-slate-500 font-light">Global shipments generally depart at the start and end of the week.</p>
+          <div className="lg:col-span-5 space-y-10">
+            <h2 className="text-4xl font-bold mb-12 tracking-tight">Shipping & Delivery</h2>
+            
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-[#8B2981]">Domestic US Orders</h3>
+                <div className="space-y-2 text-slate-500 font-light leading-relaxed">
+                  <p>Domestic orders received by 1 pm EST Monday - Thursday are generally shipped the same day and should arrive the following day by 3 pm.</p>
+                  <p>Any orders placed after 1 pm on Thursday will typically ship on Monday (excluding US holidays).</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-[#8B2981]">International Orders</h3>
+                <p className="text-slate-500 font-light leading-relaxed">International orders generally ship on Monday or Friday.</p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-[#8B2981]">Shipping & Ice/Handling Fees</h3>
+                <div className="space-y-2 text-slate-500 font-light leading-relaxed">
+                  <p>$55 overnight shipping for all domestic orders up to $1000 received by 3 pm. <Link href="/contact-us" className="text-[#002776] underline">Contact us</Link> for international shipping rates.</p>
+                  <p>Shipping fees correspond to the total retail value of your order.</p>
+                </div>
+              </div>
+
+              <div className="pt-8">
+                <p className="text-2xl font-bold text-[#8B2981] leading-tight">
+                  Please contact <Link href="/contact-us" className="underline decoration-slate-400">customer service</Link> for questions about ordering or order status.
+                </p>
+              </div>
             </div>
           </div>
 

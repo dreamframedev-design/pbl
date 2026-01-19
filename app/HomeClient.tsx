@@ -425,8 +425,10 @@ export default function HomeClient({ data }: HomeClientProps) {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-            <Link
-              href="/assay-kits/human-il-15-elisa-kit-high-sensitivity-serum-plasma-tcm-41702"
+            <a
+              href="https://www.pblassaysci.com/index.php/assay-kits/human-il-15-elisa-kit-high-sensitivity-serum-plasma-tcm-41702"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
@@ -445,10 +447,12 @@ export default function HomeClient({ data }: HomeClientProps) {
                 Total Human IL-15 ELISA Kit
               </h4>
               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">High-Sensitivity</span>
-            </Link>
+            </a>
 
-            <Link
-              href="/assay-kits/elisas/human-interferon-elisas/human-ifn-alpha-elisas"
+            <a
+              href="https://www.pblassaysci.com/assay-kits/ELISAs/human-interferon-ELISAs/human-ifn-alpha-ELISAs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
@@ -466,10 +470,12 @@ export default function HomeClient({ data }: HomeClientProps) {
               <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human IFN Alpha ELISA Kits
               </h4>
-            </Link>
+            </a>
 
-            <Link
-              href="/assay-kits/elisas/mouse-interferon-elisas/mouse-ifn-beta-elisas"
+            <a
+              href="https://www.pblassaysci.com/assay-kits/elisas/mouse-interferon-elisas/mouse-ifn-beta-elisas"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
@@ -487,10 +493,12 @@ export default function HomeClient({ data }: HomeClientProps) {
               <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Mouse IFN-Beta ELISAs
               </h4>
-            </Link>
+            </a>
 
-            <Link
-              href="/proteins/human-ifn-alpha-alpha2a-11100"
+            <a
+              href="https://www.pblassaysci.com/proteins/human-ifn-alpha-alpha-2a-11100"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
@@ -508,10 +516,12 @@ export default function HomeClient({ data }: HomeClientProps) {
               <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human IFN-Alpha 2a (Alpha A) Protein
               </h4>
-            </Link>
+            </a>
 
-            <Link
-              href="/antibodies/human-type-1-ifn-neutralizing-antibody-mixture-39000"
+            <a
+              href="https://www.pblassaysci.com/index.php/antibodies/human-type-1-ifn-neutralizing-antibody-mixture-39000"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
@@ -529,10 +539,12 @@ export default function HomeClient({ data }: HomeClientProps) {
               <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human Type I IFN Neutralizing Antibody Mixture
               </h4>
-            </Link>
+            </a>
 
-            <Link
-              href="/proteins/human-interleukin-15-il15ra-heterodimer-human-cell-expressed-11702"
+            <a
+              href="https://www.pblassaysci.com/proteins/human-interleukin-15-il-15ra-heterodimer-human-cell-expressed-11702"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group cursor-pointer"
             >
               <div className="aspect-square rounded-3xl mb-6 transition-all duration-500 group-hover:border-cyan-400 group-hover:shadow-2xl overflow-hidden relative" style={{
@@ -541,7 +553,7 @@ export default function HomeClient({ data }: HomeClientProps) {
                 border: '1px solid rgba(226, 232, 240, 0.8)'
               }}>
                 <Image
-                  src="/images/12.webp"
+                  src="/images/11.webp"
                   alt="Human Interleukin 15 / IL-15Rα Heterodimer"
                   fill
                   className="object-cover rounded-3xl transition-transform group-hover:scale-110"
@@ -550,7 +562,7 @@ export default function HomeClient({ data }: HomeClientProps) {
               <h4 className="text-lg font-bold group-hover:text-cyan-600 transition-colors text-[#002776]">
                 Human Interleukin 15 / IL-15Rα Heterodimer
               </h4>
-            </Link>
+            </a>
           </div>
 
         </div>
