@@ -62,7 +62,10 @@ export default function BannerHero({
             <>
               <span className="text-[#002776]">{line1}</span>
               {titleSuffix && (
-                <span className="font-light text-gray-400 font-serif italic"> {titleSuffix}</span>
+                <>
+                  <br/>
+                  <span className="font-light text-gray-400 font-serif italic">{titleSuffix}</span>
+                </>
               )}
             </>
           )}

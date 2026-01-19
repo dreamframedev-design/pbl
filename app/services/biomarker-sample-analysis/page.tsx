@@ -80,19 +80,23 @@ export default function BiomarkerSampleAnalysisPage() {
                   Single Molecule Counting technology for high-precision quantification of low-abundance proteins.
                 </p>
                 <div className="space-y-3 mb-10">
-                  <Link
-                    href="/services/biomarker-sample-analysis/smc"
+                  <a
+                    href="https://www.pblassaysci.com/cytokine-assay/SMC-service"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     Erenna® & SMCxPRO™ Systems
-                  </Link>
+                  </a>
                 </div>
-                <Link
-                  href="/services/biomarker-sample-analysis/smc"
+                <a
+                  href="https://www.pblassaysci.com/cytokine-assay/SMC-service"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm"
                 >
                   Explore SMC™
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -160,6 +164,9 @@ export default function BiomarkerSampleAnalysisPage() {
                 <li>
                   180+ <strong>validated</strong> fit-for-purpose singleplex and preconfigured multiplex panel ELISAs (V-PLEX) available with excellent performance specifications and lot-to-lot consistency
                 </li>
+                <li>
+                  <a href="https://www.pblassaysci.com/msd-assay-services-immunoassay-testing" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-[#002776] underline">more</a>
+                </li>
               </ul>
               <p className="text-lg text-slate-600 font-light leading-relaxed mb-6">
                 Offering high-precision protein quantification services for a broad range of sample matrices for Human, Non-Human Primate (NHP), Mouse, Rat, and Canine samples. MSD's validated multiplex panel assay kits (V-PLEX) enable simultaneous comparison of the expression of pertinent cytokines, chemokines, and other biomarkers in samples from diseased and normal patients at different intervals.
@@ -212,6 +219,9 @@ export default function BiomarkerSampleAnalysisPage() {
                 <li>
                   40+ cytokine assays covering several disease areas including IFN-γ, IL-1a, IL-1b, IL-4, IL-6, IL-8, IL-10, IL-13, IL-15, IL-17A, IL-17F, IL-17 heterodimer, IL-23, GLP-1, and TNF-α
                 </li>
+                <li>
+                  <a href="https://www.pblassaysci.com/cytokine-assay/SMC-service" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-[#002776] underline">more</a>
+                </li>
               </ul>
               <p className="text-lg text-slate-600 font-light leading-relaxed mb-6">
                 MilliporeSigma's SMC (Single Molecule Counting) technology in conjunction with robust microparticle (MP) based sandwich immunoassays enables accurate, high-precision baseline quantification of low-abundance analytes at or below sub-picogram concentrations. Accurately measuring low-abundance analytes present in complex matrices is essential for the profiling and characterization of cytokines and other biomarker analytes.
@@ -240,6 +250,9 @@ export default function BiomarkerSampleAnalysisPage() {
                 </li>
                 <li>
                   50+ analyte panels available including IL-17A, TNF-alpha, IL-23, IP-10, TRAIL, IL-6, IL-10, and IL-12p70
+                </li>
+                <li>
+                  <a href="https://www.pblassaysci.com/simoa-assay-services" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-[#002776] underline">more</a>
                 </li>
               </ul>
               <p className="text-lg text-slate-600 font-light leading-relaxed mb-6">

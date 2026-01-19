@@ -48,7 +48,7 @@ export default async function InterleukinElisasPage() {
             </h1>
             <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-[#002776] rounded-full mb-8"></div>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-xl">
-              Designed to provide accurate and sensitive quantification of endogenous levels in healthy and disease sera/plasma and tissue culture media samples.
+              Interleukin ELISA kits designed to provide accurate and sensitive quantification of endogenous levels in healthy and disease sera/plasma and tissue culture media samples.
             </p>
           </div>
         </div>
@@ -64,17 +64,17 @@ export default async function InterleukinElisasPage() {
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">IL15</div>
                 </div>
-                <Link href="/products/assay-kits/interleukin-elisas/human-il-15" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                <a href="https://www.pblassaysci.com/assay-kits/human-il-15-elisa-kit-high-sensitivity-serum-plasma-tcm-41702" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-600 transition-colors">
                   <h2 className="text-2xl font-bold text-[#002776]">
                     Human IL-15 ELISA
                   </h2>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   This ELISA measures endogenous human IL-15 at or near basal levels with LLOQ of 0.51 pg/ml in serum, plasma, and tissue culture media.
                 </p>
-                <Link href="/products/assay-kits/interleukin-elisas/human-il-15" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                <a href="https://www.pblassaysci.com/assay-kits/human-il-15-elisa-kit-high-sensitivity-serum-plasma-tcm-41702" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                   View Products
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -84,17 +84,17 @@ export default async function InterleukinElisasPage() {
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#002776] group-hover:text-white transition-all font-black text-lg">IL22</div>
                 </div>
-                <Link href="/products/assay-kits/interleukin-elisas/human-il-22" className="block mb-2 group-hover:text-cyan-500 transition-colors">
+                <a href="https://www.pblassaysci.com/assay-kits/human-il-22-elisa-high-sensitivity-serum-plasma-tcm-41701" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-500 transition-colors">
                   <h2 className="text-2xl font-bold text-[#002776]">
                     Human IL-22 ELISA
                   </h2>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
                   This ELISA is designed for accurate low-level quantitation of endogenous human IL-22 in healthy & disease sera/plasma, and tissue culture media (TCM) samples with an LLOQ of 0.78 pg/ml.
                 </p>
-                <Link href="/products/assay-kits/interleukin-elisas/human-il-22" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
+                <a href="https://www.pblassaysci.com/assay-kits/human-il-22-elisa-high-sensitivity-serum-plasma-tcm-41701" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                   View Products
-                </Link>
+                </a>
               </div>
             </div>
           </div>

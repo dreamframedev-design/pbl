@@ -12,11 +12,11 @@ export default function SmcAssayServicesPage() {
           <nav className="mb-8 flex items-center gap-2 text-sm font-semibold text-cyan-600 uppercase tracking-[0.25em] flex-wrap">
             <span>Services</span> <span className="text-gray-300">/</span> <span>Biomarker Analysis</span> <span className="text-gray-300">/</span> <span className="break-words">SMC</span>
           </nav>
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
-            <span className="text-[#002776]">SMC</span> <br/> <span className="font-light text-gray-400 font-serif italic">Assay Services</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 text-[#002776]">
+            Single Molecule Counting (SMCxPRO & Erenna) Assay Services: Sensitive Cytokine Testing
           </h1>
           <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Single Molecule Counting (SMCxPRO® & Erenna®) technology for <strong className="text-[#002776]">sub-picogram level measurements</strong> of low-abundance analytes.
+            MilliporeSigma Single Molecule Counting (SMCxPRO® & Erenna®)
           </p>
         </div>
       </header>

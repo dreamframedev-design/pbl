@@ -26,44 +26,16 @@ export default function AntibodyCharacterizationPage() {
             <span>PBL</span> <span className="text-gray-300">/</span> <span>Services</span> <span className="text-gray-300">/</span> <span className="break-words">Antibody Characterization</span>
           </nav>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
-            <span className="block text-[#002776]">Antibody</span>
-            <span className="block font-light text-gray-400 font-serif italic">Characterization</span>
+            <span className="block text-[#002776]">Antibody Characterization</span>
+            <span className="block font-light text-gray-400 font-serif italic">Service</span>
           </h1>
-          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Real-time BLI-based biophysical characterization of antibody affinities, association/dissociation rates, epitope binning, and antibody screening.
-          </p>
         </div>
       </header>
 
-      {/* Reagent Development Services Section */}
+      {/* Antibody Characterization Service Section */}
       <section className="py-24 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#8B2981] mb-8 leading-relaxed">PBL's reagent development services offer customized production of cytokines, interferons, antibodies, and other proteins.</h2>
-            <ul className="space-y-3 text-lg text-slate-600 font-light">
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#8B2981] mt-2.5 flex-shrink-0"></span>
-                <span>Recombinant protein production and purification (bacterial & mammalian)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#8B2981] mt-2.5 flex-shrink-0"></span>
-                <span>Cytokine and antibody production and characterization</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#8B2981] mt-2.5 flex-shrink-0"></span>
-                <span>Hybridoma, polyclonal antibody, and cell line development</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#8B2981] mt-2.5 flex-shrink-0"></span>
-                <span>Protein and antibody labeling and biophysical characterization</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Antibody Characterization Service */}
           <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#8B2981] mb-10">Antibody Characterization Service</h2>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               
               {/* Affinity of protein-protein interactions */}

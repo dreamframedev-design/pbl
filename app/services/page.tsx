@@ -28,9 +28,8 @@ export default function ServicesPage() {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             <span className="text-[#002776]">Assay</span> <br/> <span className="font-light text-gray-400 font-serif italic">Services</span>
           </h1>
-          <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Let us do it for you. Comprehensive assay development, biomarker analysis, 
-            and custom production services to <span className="text-[#002776] font-semibold">accelerate your research.</span>
+          <p className="max-w-2xl text-4xl md:text-5xl lg:text-6xl font-bold text-[#058A9F] tracking-tight leading-tight">
+            Let Us Do It For You
           </p>
         </div>
       </header>
@@ -133,12 +132,10 @@ export default function ServicesPage() {
                   </div>
                 </div>
                 <Link href="/services/antibody-characterization" className="block mb-2 group-hover:text-cyan-500 transition-colors">
-                  <h3 className="text-3xl font-bold text-[#002776]">Antibody Characterization</h3>
+                  <h3 className="text-3xl font-bold text-[#002776]">Antibody Characterization Service</h3>
                 </Link>
                 <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Real-Time BLI Biophysics</p>
-                <p className="text-slate-500 text-sm font-light leading-relaxed mb-10 flex-grow">
-                  Real-time BLI-based biophysical characterization of antibody affinities, association/dissociation rates, epitope binning, and antibody screening.
-                </p>
+                <div className="flex-grow"></div>
                 <Link href="/services/antibody-characterization" className="w-full py-4 bg-[#002776] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm hover:bg-cyan-600">
                   View Full Service
                 </Link>
@@ -188,28 +185,28 @@ export default function ServicesPage() {
             <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 transition-all duration-500 hover:border-cyan-400 hover:shadow-xl group text-center">
               <div className="text-cyan-500 font-black text-2xl mb-4 group-hover:scale-110 transition-transform">Cost-Effective</div>
               <p className="text-[13px] text-slate-500 font-light leading-relaxed">
-                As a non-regulated bioanalytical lab that grew out of an immunoassay manufacturing company, we do not carry the overhead of regulated CROs.
+                As a non-regulated bioanalytical lab that grew out of an immunoassay manufacturing company, we do not carry the overhead of regulated CROs. We have experience transferring assays for validation in a regulated environment.
               </p>
             </div>
 
             <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 transition-all duration-500 hover:border-cyan-400 hover:shadow-xl group text-center">
-              <div className="text-cyan-500 font-black text-2xl mb-4 group-hover:scale-110 transition-transform italic">Nimble</div>
+              <div className="text-cyan-500 font-black text-2xl mb-4 group-hover:scale-110 transition-transform">Shorter Timelines</div>
               <p className="text-[13px] text-slate-500 font-light leading-relaxed">
-                As a nimble small business, we have the flexibility to start your project with minimal delay and complete work efficiently.
+                As a nimble small business, we have the flexibility to start your project with minimal delay and complete work efficiently. We are listed on <a href="https://www.scientist.com" target="_blank" rel="noopener noreferrer" className="text-[#002776] underline hover:text-cyan-600">Scientist.com</a> and <a href="https://www.scienceexchange.com" target="_blank" rel="noopener noreferrer" className="text-[#002776] underline hover:text-cyan-600">ScienceExchange</a> to expedite the onboarding process.
               </p>
             </div>
 
             <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 transition-all duration-500 hover:border-cyan-400 hover:shadow-xl group text-center">
-              <div className="text-cyan-500 font-black text-2xl mb-4 group-hover:scale-110 transition-transform">Expertise</div>
+              <div className="text-cyan-500 font-black text-2xl mb-4 group-hover:scale-110 transition-transform">Depth of Understanding</div>
               <p className="text-[13px] text-slate-500 font-light leading-relaxed">
-                With 3 decades of experience developing highly sensitive and specific assays, our experts guide your project from beginning to end.
+                With 3 decades of experience developing highly sensitive and specific assays, we understand the difficulties you face. Our experts take the time to understand what you want to accomplish and guide your project from beginning to end.
               </p>
             </div>
 
             <div className="p-10 rounded-[2.5rem] bg-white border border-slate-100 transition-all duration-500 hover:border-cyan-400 hover:shadow-xl group text-center">
-              <div className="text-cyan-500 font-black text-2xl mb-4 group-hover:scale-110 transition-transform underline decoration-cyan-300">High Quality</div>
+              <div className="text-cyan-500 font-black text-2xl mb-4 group-hover:scale-110 transition-transform">High Quality</div>
               <p className="text-[13px] text-slate-500 font-light leading-relaxed">
-                Clients rely upon PBL's defining characteristics: our high performance standards and the professionalism of our approach.
+                Clients have come to rely upon PBL's defining company characteristics: our high performance standards and the professionalism of our approach. We have successfully completed hundreds of Assay Services projects for clients.
               </p>
             </div>
 

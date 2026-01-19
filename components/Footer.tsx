@@ -5,24 +5,6 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-slate-100 mt-8 overflow-x-hidden">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12">
-        {/* Authority Bar */}
-        <div className="bg-slate-50/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-8 mb-12 sm:mb-16 lg:mb-20 border-y border-slate-100">
-          <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
-            <div className="text-center">
-              <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Certified Quality</div>
-              <div className="text-sm font-bold text-[#002776]">ISO 9001:2015</div>
-            </div>
-            <div className="text-center">
-              <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Global Reach</div>
-              <div className="text-sm font-bold text-[#002776]">Worldwide Distribution</div>
-            </div>
-            <div className="text-center">
-              <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Research Impact</div>
-              <div className="text-sm font-bold text-[#002776]">Cited in 50+ Journals</div>
-            </div>
-          </div>
-        </div>
-
         {/* Footer Content - All columns in one row */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-20">
           {/* Company Info */}

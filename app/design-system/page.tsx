@@ -1130,26 +1130,6 @@ export default function DesignSystem() {
             </div>
           </Subsection>
 
-          {/* Authority Bar - NEW */}
-          <Subsection title="Footer Authority Bar">
-            <div className="bg-slate-50/50 p-6 rounded-2xl border-y border-slate-100">
-              <div className="flex flex-wrap items-center justify-center gap-12">
-                <div className="text-center">
-                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Certified Quality</div>
-                  <div className="text-sm font-bold text-primary-navy">ISO 9001:2015</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Global Reach</div>
-                  <div className="text-sm font-bold text-primary-navy">Worldwide Distribution</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Research Impact</div>
-                  <div className="text-sm font-bold text-primary-navy">Cited in 50+ Journals</div>
-                </div>
-              </div>
-            </div>
-          </Subsection>
-
           {/* 60/40 Science Card */}
           <Subsection title="60/40 Science Card (Featured Product)">
             <div className="max-w-5xl bg-white border border-slate-100 rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden flex flex-col lg:flex-row">

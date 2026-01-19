@@ -70,15 +70,10 @@ export default function SimoaAssayServicesPage() {
             </div>
 
           </div>
-        </div>
-      </section>
-
-      {/* Two Column Section */}
-      <section className="py-32 bg-slate-50 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-          <div className="lg:col-span-6 space-y-8">
-            <h2 className="text-4xl font-bold tracking-tight text-[#002776]">Analytical Partnership</h2>
-            <p className="text-xl text-slate-500 font-light leading-relaxed">
+          
+          {/* Description paragraph */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <p className="text-xl text-slate-500 font-light leading-relaxed text-center">
               Understanding the role of protein biomarkers in various disease
               states is essential, as are the most robust tools for examining
               your therapeutic candidates modulate these biomarkers. For your
@@ -87,13 +82,16 @@ export default function SimoaAssayServicesPage() {
               scientists communicate with you building a <strong className="text-[#002776]">transparent,
               collaborative environment</strong> and eliminating costly project missteps.
             </p>
-            <div className="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm italic text-lg text-[#058A9F] font-medium">
-              "We strive to be a partner you can trust"
-            </div>
           </div>
-          <div className="lg:col-span-6">
-            <div className="glass-card p-10 rounded-[3rem] shadow-2xl space-y-8">
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Key Features</span>
+        </div>
+      </section>
+
+      {/* Two Column Section */}
+      <section className="py-32 bg-slate-50 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-20 items-stretch">
+          <div className="lg:col-span-6 flex flex-col">
+            <h2 className="text-3xl font-bold tracking-tight text-[#002776] mb-8">Key Features offered by Simoa Platform:</h2>
+            <div className="glass-card p-10 rounded-[3rem] shadow-2xl space-y-8 flex-grow">
               <div className="space-y-6">
                 <div className="flex gap-6">
                   <div className="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 flex-shrink-0 text-xs font-bold">1</div>
@@ -111,13 +109,18 @@ export default function SimoaAssayServicesPage() {
               <p className="text-[10px] text-slate-400 font-medium italic pt-4">Powered by Quanterix Single Molecule Array technology, Lexington, MA, U.S.A.</p>
             </div>
           </div>
+          <div className="lg:col-span-6 flex">
+            <div className="glass-card p-10 rounded-[3rem] shadow-2xl flex items-center justify-center border-2 border-dashed border-slate-300 w-full">
+              <p className="text-slate-400 text-center font-medium">Simoa Representation Calibration Curves Placeholder container</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Citations Section */}
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h3 className="text-2xl font-bold mb-10 tracking-tight text-[#002776]">Scientific Citations</h3>
+          <h3 className="text-2xl font-bold mb-10 tracking-tight text-[#002776]">8 Citations</h3>
           <div className="space-y-6">
 
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
@@ -135,7 +138,7 @@ export default function SimoaAssayServicesPage() {
                   10.14814/phy2.16118
                 </a>
               </p>
-              <a href="https://doi.org/10.14814/phy2.16118" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://doi.org/10.14814/phy2.16118" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
               <p className="text-xs text-slate-500 font-light leading-relaxed">
@@ -152,7 +155,7 @@ export default function SimoaAssayServicesPage() {
                   10.1016/j.xcrm.2024.101413
                 </a>
               </p>
-              <a href="https://doi.org/10.1016/j.xcrm.2024.101413" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://doi.org/10.1016/j.xcrm.2024.101413" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
               <p className="text-xs text-slate-500 font-light leading-relaxed">
@@ -170,7 +173,7 @@ export default function SimoaAssayServicesPage() {
                   10.1177/0271678X231147298
                 </a>
               </p>
-              <a href="https://dx.doi.org/10.1177/0271678X231157298" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://dx.doi.org/10.1177/0271678X231157298" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
               <p className="text-xs text-slate-500 font-light leading-relaxed">
@@ -187,7 +190,7 @@ export default function SimoaAssayServicesPage() {
                   10.1186/s13195-022-01058-9
                 </a>
               </p>
-              <a href="https://doi.org/10.1186/s13195-022-01058-9" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://doi.org/10.1186/s13195-022-01058-9" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
               <p className="text-xs text-slate-500 font-light leading-relaxed">
@@ -205,7 +208,7 @@ export default function SimoaAssayServicesPage() {
                   10.26502/fccm.92920221
                 </a>
               </p>
-              <a href="https://doi.org/10.26502/fccm.92920221" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://doi.org/10.26502/fccm.92920221" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
               <p className="text-xs text-slate-500 font-light leading-relaxed">
@@ -222,7 +225,7 @@ export default function SimoaAssayServicesPage() {
                   10.1186/s12974-021-02281-1
                 </a>
               </p>
-              <a href="https://doi.org/10.1186/s12974-021-02281-1" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://doi.org/10.1186/s12974-021-02281-1" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
               <p className="text-xs text-slate-500 font-light leading-relaxed">
@@ -238,7 +241,7 @@ export default function SimoaAssayServicesPage() {
                   10.1038/s41386-018-0038-4
                 </a>
               </p>
-              <a href="https://doi.org/10.1038/s41386-018-0038-4" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://doi.org/10.1038/s41386-018-0038-4" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-cyan-400 transition-all">
               <p className="text-xs text-slate-500 font-light leading-relaxed">
@@ -256,7 +259,7 @@ export default function SimoaAssayServicesPage() {
                   10.4049/jimmunol.1602142
                 </a>
               </p>
-              <a href="https://doi.org/10.4049/jimmunol.1602142" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View Publication →</a>
+              <a href="https://doi.org/10.4049/jimmunol.1602142" target="_blank" rel="noopener noreferrer" className="text-[10px] font-black text-cyan-600 uppercase tracking-widest mt-2 block">View →</a>
             </div>
           </div>
         </div>

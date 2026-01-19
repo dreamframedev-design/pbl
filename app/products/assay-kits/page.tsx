@@ -48,23 +48,25 @@ export default function AssayKitsPage() {
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 group-hover:bg-[#00F0F3] group-hover:text-[#002776] transition-all font-black text-lg">C</div>
                 </div>
-                <Link href="/products/assay-kits/cell-based-assays" className="block mb-2 group-hover:text-cyan-600 transition-colors">
+                <a href="https://www.pblassaysci.com/assay-kits/ilite-human-type-i-interferon-responsive-cells-51100" target="_blank" rel="noopener noreferrer" className="block mb-2 group-hover:text-cyan-600 transition-colors">
                   <h3 className="text-2xl font-bold text-[#002776]">Cell-Based Assays</h3>
-                </Link>
+                </a>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
-                  Reporter gene cells for measuring interferon bioactivity and neutralizing antibodies in research applications.
+                  iLite Human Type I IFN Responsive Cells for bioactivity measurement.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
-                  <Link
-                    href="/products/assay-kits/cell-based-assays"
+                  <a
+                    href="https://www.pblassaysci.com/assay-kits/ilite-human-type-i-interferon-responsive-cells-51100"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-xs font-bold text-slate-600 transition-all border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-3 hover:text-[#058A9F] hover:bg-[rgba(0,240,243,0.04)]"
                   >
                     iLite Human Type I IFN Responsive Cells for bioactivity measurement
-                  </Link>
+                  </a>
                 </div>
-                <Link href="/products/assay-kits/cell-based-assays" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
+                <a href="https://www.pblassaysci.com/assay-kits/ilite-human-type-i-interferon-responsive-cells-51100" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-slate-50 group-hover:bg-[#002776] group-hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-widest text-center block transition-all shadow-sm">
                   Explore Bioassays
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -116,7 +118,7 @@ export default function AssayKitsPage() {
                   <h3 className="text-2xl font-bold text-[#002776]">Interleukin (IL) ELISAs</h3>
                 </Link>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed flex-grow">
-                  High-sensitivity ELISA kits for accurate quantification of interleukins in serum, plasma, and tissue culture media.
+                  IL ELISA kits designed to provide sensitive quantification of endogenous levels of human interleukins.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
                   <Link

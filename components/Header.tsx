@@ -489,17 +489,14 @@ export default function Header() {
                         >
                           All Assay Kits
                         </Link>
-                        <Link 
-                          href="/products/assay-kits/cell-based-assays" 
-                          onClick={handleLinkClick}
-                          className={`phosphor-link block text-xs font-semibold ${
-                            isDropdownActive('/products/assay-kits/cell-based-assays')
-                              ? 'text-[#058A9F]'
-                              : 'text-slate-600'
-                          }`}
+                        <a 
+                          href="https://www.pblassaysci.com/assay-kits/ilite-human-type-i-interferon-responsive-cells-51100" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="phosphor-link block text-xs font-semibold text-slate-600 hover:text-[#058A9F]"
                         >
                           Cell-Based Assays
-                        </Link>
+                        </a>
                         <div>
                           <Link 
                             href="/products/assay-kits/interferon-elisas" 
@@ -526,39 +523,38 @@ export default function Header() {
                                 Human Interferon ELISAs
                               </Link>
                               <div className="pl-3 space-y-1">
-                                <Link 
-                                  href="/products/assay-kits/interferon-elisas/human/ifn-alpha" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/assay-kits/interferon-elisas/human/ifn-alpha')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/ELISAs/human-interferon-ELISAs/human-ifn-alpha-ELISAs" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Human IFN-Alpha ELISA Kits
-                                </Link>
-                                <Link 
-                                  href="/products/assay-kits/interferon-elisas/human/ifn-beta" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/assay-kits/interferon-elisas/human/ifn-beta')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/ELISAs/human-interferon-ELISAs/human-ifn-beta-ELISAs" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Human IFN-Beta ELISA Kits
-                                </Link>
-                                <Link 
-                                  href="/products/assay-kits/interferon-elisas/human/ifn-gamma-receptor" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/assay-kits/interferon-elisas/human/ifn-gamma-receptor')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/human-ifngr1-elisa-kit-serum-plasma-cell-lysate-tcm-41580" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Human IFN-Gamma Receptor ELISA
-                                </Link>
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/interferon-ifn-elisas/human-ifn-lambda-elisas" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
+                                >
+                                  Human IFN-Lambda ELISAs
+                                </a>
                               </div>
                             </div>
                             <div>
@@ -574,52 +570,71 @@ export default function Header() {
                                 Mouse Interferon ELISAs
                               </Link>
                               <div className="pl-3 space-y-1">
-                                <Link 
-                                  href="/products/assay-kits/interferon-elisas/mouse/ifn-alpha" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/assay-kits/interferon-elisas/mouse/ifn-alpha')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/ELISAs/mouse-interferon-ELISAs/mouse-ifn-alpha-ELISAs" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Mouse IFN-Alpha ELISAs
-                                </Link>
-                                <Link 
-                                  href="/products/assay-kits/interferon-elisas/mouse/ifn-beta" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/assay-kits/interferon-elisas/mouse/ifn-beta')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/elisas/mouse-interferon-elisas/mouse-ifn-beta-elisas" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Mouse IFN-Beta ELISAs
-                                </Link>
-                                <Link 
-                                  href="/products/assay-kits/interferon-elisas/mouse/ifn-lambda" 
-                                  onClick={handleLinkClick}
-                                  className={`block text-[11px] ${
-                                    isDropdownActive('/products/assay-kits/interferon-elisas/mouse/ifn-lambda')
-                                      ? 'text-[#058A9F]'
-                                      : 'hover:text-[#058A9F]'
-                                  }`}
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/diy-mouse-ifn-lambda-23-il-28ab-elisa-tcm-62830" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
                                 >
                                   Mouse IFN-Lambda ELISA
-                                </Link>
+                                </a>
                               </div>
                             </div>
-                            <Link 
-                              href="/products/assay-kits/interferon-elisas/non-human" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] font-semibold ${
-                                isDropdownActive('/products/assay-kits/interferon-elisas/non-human')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
-                            >
-                              Non-Human Interferon ELISAs
-                            </Link>
+                            <div className="mt-3">
+                              <Link 
+                                href="/products/assay-kits/interferon-elisas/non-human" 
+                                onClick={handleLinkClick}
+                                className={`block text-[11px] font-semibold mb-1 ${
+                                  isDropdownActive('/products/assay-kits/interferon-elisas/non-human')
+                                    ? 'text-[#058A9F]'
+                                    : 'hover:text-[#058A9F]'
+                                }`}
+                              >
+                                Non-Human Interferon ELISAs
+                              </Link>
+                              <div className="pl-3 space-y-0.5">
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/cynomolgusrhesus-ifn-alpha-elisa-kit-serum-plasma-tcm-46100" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
+                                >
+                                  Cynomolgus/Rhesus IFN-Alpha ELISA
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/pig-ifn-alpha-elisa-kit-serum-plasma-tcm-47100" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
+                                >
+                                  Pig IFN-Alpha ELISA
+                                </a>
+                                <a 
+                                  href="https://www.pblassaysci.com/assay-kits/cynomolgus-ifn-beta-elisa-kit-serum-plasma-tcm-46415-1" 
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-[11px] hover:text-[#058A9F]"
+                                >
+                                  Cynomolgus IFN-Beta ELISA
+                                </a>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div>
@@ -635,28 +650,22 @@ export default function Header() {
                             Interleukin (IL) ELISA Kits
                           </Link>
                           <div className="pl-4 border-l border-slate-100 space-y-2">
-                            <Link 
-                              href="/products/assay-kits/interleukin-elisas/human-il-15" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] ${
-                                isDropdownActive('/products/assay-kits/interleukin-elisas/human-il-15')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            <a 
+                              href="https://www.pblassaysci.com/assay-kits/human-il-15-elisa-kit-high-sensitivity-serum-plasma-tcm-41702" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] hover:text-[#058A9F]"
                             >
                               Human IL-15 ELISA
-                            </Link>
-                            <Link 
-                              href="/products/assay-kits/interleukin-elisas/human-il-22" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] ${
-                                isDropdownActive('/products/assay-kits/interleukin-elisas/human-il-22')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            </a>
+                            <a 
+                              href="https://www.pblassaysci.com/assay-kits/human-il-22-elisa-high-sensitivity-serum-plasma-tcm-41701" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] hover:text-[#058A9F]"
                             >
                               Human IL-22 ELISA
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -1057,17 +1066,14 @@ export default function Header() {
                             >
                               SIMOA Assay Services
                             </Link>
-                            <Link 
-                              href="/services/biomarker-sample-analysis/smc" 
-                              onClick={handleLinkClick}
-                              className={`block text-[11px] ${
-                                isDropdownActive('/services/biomarker-sample-analysis/smc')
-                                  ? 'text-[#058A9F]'
-                                  : 'hover:text-[#058A9F]'
-                              }`}
+                            <a 
+                              href="https://www.pblassaysci.com/cytokine-assay/SMC-service" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[11px] hover:text-[#058A9F]"
                             >
                               SMC Assay Services
-                            </Link>
+                            </a>
                             <Link 
                               href="/services/biomarker-sample-analysis/multiplex-elisa" 
                               onClick={handleLinkClick}
@@ -1095,7 +1101,6 @@ export default function Header() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-4">Additional Services</h4>
                       <div className="space-y-4">
                         <Link 
                           href="/services/custom-production" 
@@ -1480,20 +1485,23 @@ export default function Header() {
                     <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm font-semibold text-slate-700">Assay Kits</Link>
                   <div className="pl-4 space-y-1.5">
                       <Link href="/products/assay-kits" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">All Assay Kits</Link>
-                      <Link href="/products/assay-kits/cell-based-assays" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Cell-Based Assays</Link>
+                      <a href="https://www.pblassaysci.com/assay-kits/ilite-human-type-i-interferon-responsive-cells-51100" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Cell-Based Assays</a>
                     <div>
                         <Link href="/products/assay-kits/interferon-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Interferon (IFN) ELISA Kits</Link>
                       <div className="pl-3 space-y-1">
                           <Link href="/products/assay-kits/interferon-elisas/human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human Interferon ELISAs</Link>
                           <Link href="/products/assay-kits/interferon-elisas/mouse" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Mouse Interferon ELISAs</Link>
                           <Link href="/products/assay-kits/interferon-elisas/non-human" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Non-Human Interferon ELISAs</Link>
+                          <a href="https://www.pblassaysci.com/assay-kits/cynomolgusrhesus-ifn-alpha-elisa-kit-serum-plasma-tcm-46100" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-400 pl-2">Cynomolgus/Rhesus IFN-Alpha ELISA</a>
+                          <a href="https://www.pblassaysci.com/assay-kits/pig-ifn-alpha-elisa-kit-serum-plasma-tcm-47100" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-400 pl-2">Pig IFN-Alpha ELISA</a>
+                          <a href="https://www.pblassaysci.com/assay-kits/cynomolgus-ifn-beta-elisa-kit-serum-plasma-tcm-46415-1" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-400 pl-2">Cynomolgus IFN-Beta ELISA</a>
                       </div>
                     </div>
                     <div>
                         <Link href="/products/assay-kits/interleukin-elisas" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Interleukin (IL) ELISA Kits</Link>
                       <div className="pl-3 space-y-1">
-                          <Link href="/products/assay-kits/interleukin-elisas/human-il-15" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IL-15 ELISA</Link>
-                          <Link href="/products/assay-kits/interleukin-elisas/human-il-22" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IL-22 ELISA</Link>
+                          <a href="https://www.pblassaysci.com/assay-kits/human-il-15-elisa-kit-high-sensitivity-serum-plasma-tcm-41702" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IL-15 ELISA</a>
+                          <a href="https://www.pblassaysci.com/assay-kits/human-il-22-elisa-high-sensitivity-serum-plasma-tcm-41701" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Human IL-22 ELISA</a>
                       </div>
                     </div>
                   </div>
@@ -1561,7 +1569,7 @@ export default function Header() {
                         <Link href="/services/biomarker-sample-analysis" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs font-semibold text-slate-700">Biomarker Sample Analysis</Link>
                       <div className="pl-3 space-y-1">
                           <Link href="/services/biomarker-sample-analysis/simoa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">SIMOA Assay Services</Link>
-                          <Link href="/services/biomarker-sample-analysis/smc" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">SMC Assay Services</Link>
+                          <a href="https://www.pblassaysci.com/cytokine-assay/SMC-service" target="_blank" rel="noopener noreferrer" className="block py-0.5 text-[11px] text-slate-500">SMC Assay Services</a>
                           <Link href="/services/biomarker-sample-analysis/multiplex-elisa" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-[11px] text-slate-500">Multiplex ELISA Assay Services</Link>
                       </div>
                     </div>
@@ -1569,7 +1577,6 @@ export default function Header() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-[#002776] uppercase tracking-[0.2em] mb-2 pt-2">Additional Services</p>
                   <div className="space-y-1.5">
                       <Link href="/services/custom-production" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Custom Production</Link>
                       <Link href="/services/antibody-characterization" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-xs text-slate-600">Antibody Characterization Service</Link>

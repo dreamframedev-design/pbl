@@ -36,7 +36,7 @@ export default function InterferonElisasPage() {
             </h1>
             <div className="h-1.5 w-24 bg-gradient-to-r from-cyan-400 to-[#002776] rounded-full mb-8"></div>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-light max-w-xl">
-              Designed to provide <span className="text-[#4B5563] font-semibold">accurate and reproducible quantitation</span> of IFNs in samples from human, mouse, and other species. Cited in high impact journals by researchers for over three decades.
+              PBL Assay Science's Interferon (IFN) ELISA kits are designed to provide <span className="text-[#4B5563] font-semibold">accurate and reproducible quantitation</span> of IFNs in samples from human, mouse, and other species. They have been cited in high impact journals by IFN & Cytokine researchers for over three decades.
             </p>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function InterferonElisasPage() {
                   <h2 className="text-2xl font-bold text-[#002776]">Human Interferon ELISAs</h2>
                 </Link>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
-                  ELISA kits target various <strong className="text-slate-700 font-semibold">human interferon analytes</strong>. Kits range in <em>sensitivity</em> and <em>matrix compatibility</em>.
+                  ELISA kits target various human interferon analytes.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
                   <Link
@@ -121,7 +121,7 @@ export default function InterferonElisasPage() {
                   <h2 className="text-2xl font-bold text-[#002776]">Mouse Interferon ELISAs</h2>
                 </Link>
                 <p className="text-slate-500 text-sm font-light mb-10 leading-relaxed">
-                  ELISA kits targeting various <strong className="text-slate-700 font-semibold">mouse interferon analytes</strong>. Kits range in <em>sensitivity</em> and <em>matrix compatibility</em>.
+                  ELISA kits targeting various mouse interferon analytes.
                 </p>
                 <div className="mt-auto space-y-3 mb-10">
                   <Link

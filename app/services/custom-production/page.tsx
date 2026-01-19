@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FlaskConical, Monitor, Sliders, Sparkles } from 'lucide-react';
+import { Dna, Shield, GitMerge, Tag } from 'lucide-react';
 
 export default function CustomProductionPage() {
   return (
@@ -29,7 +29,7 @@ export default function CustomProductionPage() {
             <span className="text-[#002776]">Custom</span> <br/> <span className="font-light text-gray-400 font-serif italic">Production</span>
           </h1>
           <p className="max-w-2xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Expression, Purification & Characterization of Proteins & Monoclonals; Antibody & Protein Labeling; Immunoassay (ELISA) Manufacturing.
+            PBL's reagent development services offer customized production of cytokines, interferons, antibodies, and other proteins.
           </p>
         </div>
       </header>
@@ -46,16 +46,9 @@ export default function CustomProductionPage() {
                   background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
                   border: '1px solid rgba(0, 240, 243, 0.2)'
                 }}>
-                  <FlaskConical className="w-7 h-7" strokeWidth={1.5} />
+                  <Dna className="w-7 h-7" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-3xl font-bold mb-6 leading-tight text-[#002776]">Recombinant Protein Production and Purification</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Bacterial & Mammalian Systems</p>
-                <p className="text-slate-500 text-[15px] font-light leading-relaxed mb-8 flex-grow">
-                  PBL provides comprehensive recombinant protein production services utilizing both bacterial and mammalian expression systems. Our bacterial expression capabilities offer cost-effective, high-yield production for proteins that do not require complex post-translational modifications. For proteins requiring authentic glycosylation and native folding, our mammalian cell expression systems deliver proteins with full biological activity. All production processes include rigorous purification protocols to ensure high purity, low endotoxin levels, and optimal protein quality for research and therapeutic applications.
-                </p>
-                <div className="pt-6 border-t border-slate-50">
-                  <span className="text-[10px] font-black text-cyan-500 uppercase tracking-widest">High Purity / Low Endotoxin</span>
-                </div>
+                <h3 className="text-3xl font-bold mb-6 leading-tight text-[#002776]">Recombinant Protein Production and Purification (Bacterial & Mammalian)</h3>
               </div>
             </div>
 
@@ -66,16 +59,9 @@ export default function CustomProductionPage() {
                   background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
                   border: '1px solid rgba(0, 240, 243, 0.2)'
                 }}>
-                  <Monitor className="w-7 h-7" strokeWidth={1.5} />
+                  <Shield className="w-7 h-7" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-3xl font-bold mb-6 leading-tight text-[#002776]">Cytokine and Antibody Production and Characterization</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Biological Activity Validation</p>
-                <p className="text-slate-500 text-[15px] font-light leading-relaxed mb-8 flex-grow">
-                  Our specialized cytokine and antibody production services leverage decades of expertise in immunological research. We produce high-quality cytokines with authentic post-translational modifications, ensuring full biological activity and proper receptor binding. Our antibody production services encompass both monoclonal and polyclonal antibodies, with comprehensive characterization including specificity testing, affinity determination, and functional validation. All products undergo rigorous quality control to meet the highest standards for research and diagnostic applications.
-                </p>
-                <div className="pt-6 border-t border-slate-50">
-                  <span className="text-[10px] font-black text-cyan-500 uppercase tracking-widest">Affinity Determination / Functional Validation</span>
-                </div>
               </div>
             </div>
 
@@ -86,16 +72,9 @@ export default function CustomProductionPage() {
                   background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
                   border: '1px solid rgba(0, 240, 243, 0.2)'
                 }}>
-                  <Sliders className="w-7 h-7" strokeWidth={1.5} />
+                  <GitMerge className="w-7 h-7" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-3xl font-bold mb-6 leading-tight text-[#002776]">Hybridoma, Polyclonal Antibody, and Cell Line Development</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Stable Expression Models</p>
-                <p className="text-slate-500 text-[15px] font-light leading-relaxed mb-8 flex-grow">
-                  PBL offers complete cell line development services, including hybridoma generation for monoclonal antibody production and polyclonal antibody development through immunization protocols. Our hybridoma services include cell fusion, screening, cloning, and stable cell line establishment to deliver monoclonal antibodies with defined specificity and high affinity. For polyclonal antibodies, we manage the entire immunization process and purification workflow. We also develop custom stable cell lines for protein production, reporter assays, and other research applications, ensuring optimal expression levels and long-term stability.
-                </p>
-                <div className="pt-6 border-t border-slate-50">
-                  <span className="text-[10px] font-black text-cyan-500 uppercase tracking-widest">Defined Specificity / Long-Term Stability</span>
-                </div>
               </div>
             </div>
 
@@ -106,16 +85,9 @@ export default function CustomProductionPage() {
                   background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
                   border: '1px solid rgba(0, 240, 243, 0.2)'
                 }}>
-                  <Sparkles className="w-7 h-7" strokeWidth={1.5} />
+                  <Tag className="w-7 h-7" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-3xl font-bold mb-6 leading-tight text-[#002776]">Protein and Antibody Labeling and Biophysical Characterization</h3>
-                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Fluorescence & Enzymatic Conjugation</p>
-                <p className="text-slate-500 text-[15px] font-light leading-relaxed mb-8 flex-grow">
-                  Our labeling services provide conjugation of proteins and antibodies with a wide range of fluorophores, enzymes, biotin, and other tags while preserving biological activity and binding specificity. We employ optimized conjugation protocols to ensure consistent labeling ratios and minimal aggregation. Our biophysical characterization services include analysis of protein stability, aggregation propensity, thermal stability, and structural integrity. Comprehensive characterization reports provide detailed insights into protein quality, enabling informed decisions for research and development applications.
-                </p>
-                <div className="pt-6 border-t border-slate-50">
-                  <span className="text-[10px] font-black text-cyan-500 uppercase tracking-widest">Optimized Conjugation / Stability Analysis</span>
-                </div>
               </div>
             </div>
 
