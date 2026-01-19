@@ -44,8 +44,8 @@ export default function ProductCatalog({ title, products }: ProductCatalogProps)
           </h2>
         </div>
 
-        {/* DESKTOP ENGINE - Unified at md: breakpoint */}
-        <div className="hidden md:block relative group">
+        {/* DESKTOP ENGINE - Unified at lg: breakpoint */}
+        <div className="hidden lg:block relative group">
           {/* Performance Optimized Glow background */}
           <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-400/5 via-transparent to-blue-600/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 will-change-opacity"></div>
           
@@ -65,7 +65,7 @@ export default function ProductCatalog({ title, products }: ProductCatalogProps)
                 {products.map((product) => (
                   <tr key={product.catalogNo} className="group/row hover:bg-slate-50/80 transition-all duration-300">
                     <td className="px-8 py-8">
-                      <span className="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-[#002776] text-white font-mono text-sm font-bold shadow-lg shadow-blue-900/10 group-hover/row:scale-105 transition-transform">
+                      <span className="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-[#002776] text-white font-mono text-sm font-bold shadow-lg shadow-blue-900/10 group-hover/row:scale-105 transition-transform whitespace-nowrap">
                         {product.catalogNo}
                       </span>
                     </td>
@@ -115,7 +115,7 @@ export default function ProductCatalog({ title, products }: ProductCatalogProps)
         </div>
 
         {/* MOBILE CARDS - "The Concierge Grid" */}
-        <div className="md:hidden space-y-8">
+        <div className="lg:hidden space-y-8">
           {products.map((product) => (
             <div key={product.catalogNo} className="bg-white rounded-[2.5rem] border border-slate-200 p-8 shadow-xl relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-2 h-full bg-[#002776] opacity-10 group-hover:opacity-100 transition-opacity"></div>
