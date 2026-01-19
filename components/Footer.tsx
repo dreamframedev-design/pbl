@@ -193,10 +193,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 sm:pt-10 lg:pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black text-slate-300 tracking-widest uppercase italic">
-          <p>© {new Date().getFullYear()} PBL ASSAY SCIENCE. PRECISION REAGENTS.</p>
+          <p>© {new Date().getFullYear()} PBL ASSAY SCIENCE.</p>
           <div className="flex gap-6 sm:gap-8 lg:gap-10 text-slate-400">
-            <Link href="/terms" className="hover:text-slate-600 transition-colors">Terms</Link>
-            <Link href="/privacy" className="hover:text-slate-600 transition-colors">Privacy</Link>
+            <Link href="/privacy" className="hover:text-slate-600 transition-colors">Privacy Policy</Link>
+            <a href="/sitemap.xml" className="hover:text-slate-600 transition-colors">Site map</a>
           </div>
         </div>
       </div>
