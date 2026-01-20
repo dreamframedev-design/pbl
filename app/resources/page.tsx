@@ -37,10 +37,10 @@ export default async function ResourcesPage() {
         </div>
       </header>
 
-      {/* Three-Column Entry Portal */}
+      {/* Resource Cards Grid */}
       <section className="py-24 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Column 1: Technical Presentations */}
             <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
               background: 'rgba(255, 255, 255, 0.95)',
@@ -152,6 +152,40 @@ export default async function ResourcesPage() {
                   )}
                 </div>
 
+              </div>
+            </div>
+
+            {/* Column 4: Blog */}
+            <div className="group p-1 rounded-[2.5rem] transition-all duration-500 hover-glow" style={{
+              background: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(226, 232, 240, 0.8)'
+            }}>
+              <div className="bg-white rounded-[2.2rem] p-8 h-full flex flex-col">
+                <div className="aspect-video rounded-2xl overflow-hidden mb-8 shadow-inner transition-all duration-700">
+                  <Image
+                    src="/images/10.webp"
+                    alt="Blog"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Blog</h3>
+                <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-6">Latest Updates</p>
+                
+                <div className="space-y-3 mb-10 flex-1">
+                  <p className="text-[11px] text-slate-600 leading-relaxed">
+                    Stay up to date with the latest news, product updates, and scientific insights from PBL Assay Science.
+                  </p>
+                </div>
+
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#002776] hover:text-cyan-600 transition-colors"
+                >
+                  Visit Blog →
+                </Link>
               </div>
             </div>
           </div>
