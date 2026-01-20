@@ -14,7 +14,7 @@ export default function ContactUsPage() {
             src="/images/15.webp"
             alt="Contact Us"
             fill
-            className="object-cover -scale-x-100"
+            className="object-cover"
             priority
           />
           {/* White gradient overlay - solid white on left, fades to transparent on right */}
