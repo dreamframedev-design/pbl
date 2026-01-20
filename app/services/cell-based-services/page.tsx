@@ -28,9 +28,6 @@ export default function CellBasedServicesPage() {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
             <span className="text-[#002776]">Cell-Based:</span> <br/> <span className="text-[#002776]">Bioactivity & Antiviral</span> <br/> <span className="font-light text-gray-400 font-serif italic">Assays</span>
           </h1>
-          <p className="max-w-3xl text-xl md:text-2xl text-slate-500 font-light leading-relaxed">
-            Assays measuring Cytokine & Chemokine Bioactivity, Cytokine Release, NAb Activity, Proliferation & Anti-Proliferation, and Antiviral Activity.
-          </p>
         </div>
       </header>
 
