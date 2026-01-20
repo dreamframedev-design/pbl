@@ -27,7 +27,7 @@ export default function ContactUsPage() {
           <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
             <span className="block">How can</span>
             <span className="block">we help you</span>
-            <span className="block font-light text-gray-400 font-serif italic">today?</span>
+            <span className="block font-light text-[#002776] font-serif italic">today?</span>
           </h1>
         </div>
       </header>
@@ -95,7 +95,7 @@ export default function ContactUsPage() {
                 <h3 className="text-2xl font-bold mb-6">Assay <br/>Services</h3>
                 <div className="space-y-6 text-sm">
                   <div>
-                    <a href="mailto:assayservices@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors">assayservices@pblassaysci.com</a>
+                    <a href="mailto:assayservices@pblassaysci.com" className="font-bold text-[#058A9F] hover:text-cyan-400 transition-colors text-xs break-all">assayservices@pblassaysci.com</a>
                   </div>
                   <div>
                     <span className="text-[10px] font-black text-slate-300 uppercase tracking-widest block mb-1">Service Direct</span>
@@ -141,20 +141,6 @@ export default function ContactUsPage() {
                   <h4 className="text-xl font-bold mb-2">International Orders</h4>
                   <p className="text-slate-500 font-light leading-relaxed">PBL ships globally. International orders can be placed by e-mail, phone, fax, or mail, but not on the website. PBL also maintains a network of dedicated and reliable <Link href="https://www.pblassaysci.com/distributors" target="_blank" rel="noopener noreferrer" className="text-cyan-600 hover:text-[#002776] underline">distribution partners</Link>.</p>
                 </div>
-              </div>
-              <div className="mt-12 p-8 rounded-3xl border border-slate-100 flex items-start gap-6" style={{
-                background: 'rgba(255, 255, 255, 0.9)',
-                backdropFilter: 'blur(20px)',
-                border: '1px solid rgba(226, 232, 240, 0.8)'
-              }}>
-                <div className="w-10 h-10 bg-[#002776] rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                </div>
-                <address className="not-italic text-sm text-slate-500 leading-relaxed font-light">
-                  <strong className="text-[#002776] font-bold block mb-1 uppercase tracking-widest text-[10px]">Mailing Address</strong>
-                  131 Ethel Road West, Suite 6<br/>
-                  Piscataway, NJ 08854, USA
-                </address>
               </div>
             </div>
           </div>
