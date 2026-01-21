@@ -176,16 +176,44 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/history" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Our History</Link>
+                <a
+                  href="https://www.pblassaysci.com/history"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  Our History
+                </a>
               </li>
               <li>
-                <Link href="/pbl-team" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">PBL Team</Link>
+                <a
+                  href="https://www.pblassaysci.com/pbl-team"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  PBL Team
+                </a>
               </li>
               <li>
-                <Link href="/careers" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Careers</Link>
+                <a
+                  href="https://www.pblassaysci.com/careers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  Careers
+                </a>
               </li>
               <li>
-                <Link href="/values" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Values</Link>
+                <a
+                  href="https://www.pblassaysci.com/belief-vision-values"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
+                >
+                  Company Values
+                </a>
               </li>
             </ul>
           </div>
