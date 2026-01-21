@@ -56,10 +56,10 @@ const DEFAULTS: HomeData = {
   card2Title: 'Assay Development',
   card2Description: 'PBL develops assays for research use or to a standard that will support GLP validation - the choice is yours. We support cell-based assay development, immunoassay development and assay optimization. Wherever you are in the research journey, our team is here to work alongside you.',
   qualityProductsTitle: "Quality Products You Won't Find Anywhere Else",
-  ctaTagline: 'Specialized Development',
-  ctaTitle: 'Need a custom solution?',
-  ctaDescription: 'Fit-for-purpose assay development, customization and execution.',
-  ctaButtonText: 'Contact Us',
+  ctaTagline: '',
+  ctaTitle: 'Speak to a Scientist',
+  ctaDescription: 'PBL\'s Customer Support Team is ready to assist by email, phone, or chat.',
+  ctaButtonText: 'Speak to a Scientist',
 }
 
 async function getHomeData(isDraftMode: boolean): Promise<HomeData> {

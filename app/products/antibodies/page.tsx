@@ -156,17 +156,18 @@ export default function AntibodiesPage() {
       {/* Final CTA Section */}
       <section className="pt-32 pb-12 bg-white text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <span className="text-cyan-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Specialized Development</span>
-          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Need a custom solution?</h2>
+          <h2 className="text-5xl font-bold mb-6 tracking-tight text-[#002776]">Speak to a Scientist</h2>
           <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
-            Fit-for-purpose assay development, customization and execution.
+            PBL's Customer Support Team is ready to assist by email, phone, or chat.
           </p>
-          <Link
-            href="/contact-us"
+          <a
+            href="https://www.pblassaysci.com/speak-to-a-scientist"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
           >
-            Talk to a Scientist
-          </Link>
+            Speak to a Scientist
+          </a>
         </div>
       </section>
     </main>
