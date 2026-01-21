@@ -221,9 +221,20 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 sm:pt-10 lg:pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-black text-slate-300 tracking-widest uppercase italic">
-          <p>© {new Date().getFullYear()} PBL ASSAY SCIENCE.</p>
+          <div className="flex items-center gap-4">
+            <p>© {new Date().getFullYear()} PBL ASSAY SCIENCE.</p>
+            <a
+              href="https://www.linkedin.com/company/pbl-assay-science"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-[#0077B5] transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
           <div className="flex gap-6 sm:gap-8 lg:gap-10 text-slate-400">
-            <Link href="/privacy" className="hover:text-slate-600 transition-colors">Privacy Policy</Link>
+            <a href="https://www.pblassaysci.com/node/34" target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 transition-colors">Privacy Policy</a>
             <a href="/sitemap.xml" className="hover:text-slate-600 transition-colors">Site map</a>
           </div>
         </div>
