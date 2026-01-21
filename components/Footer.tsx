@@ -123,7 +123,7 @@ export default function Footer() {
                 <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Shipping Info</Link>
               </li>
               <li>
-                <Link href="/distributors" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Distributors</Link>
+                <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Distributors</Link>
               </li>
               <li>
                 <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Contact us</Link>
