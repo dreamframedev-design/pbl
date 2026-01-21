@@ -165,14 +165,14 @@ export default function ContactUsPage() {
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-[#8B2981]">Shipping & Ice/Handling Fees</h3>
                 <div className="space-y-2 text-slate-500 font-light leading-relaxed">
-                  <p>$55 overnight shipping for all domestic orders up to $1000 received by 3 pm. <Link href="/contact-us" className="text-[#002776] underline">Contact us</Link> for international shipping rates.</p>
+                  <p>$55 overnight shipping for all domestic orders up to $1000 received by 3 pm. Contact us for international shipping rates.</p>
                   <p>Shipping fees correspond to the total retail value of your order.</p>
                 </div>
               </div>
 
               <div className="pt-8">
                 <p className="text-2xl font-bold text-[#8B2981] leading-tight">
-                  Please contact <Link href="/contact-us" className="underline decoration-slate-400">customer service</Link> for questions about ordering or order status.
+                  Please contact Order Support for questions about ordering or order status.
                 </p>
               </div>
             </div>
