@@ -292,12 +292,14 @@ export default function Header() {
           </button>
 
           {/* Request a Quote Button - Tablet: Teal gradient */}
-          <Link
-            href="/speak-to-a-scientist"
+          <a
+            href="https://www.pblassaysci.com/products/request-quote"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:flex lg:hidden bg-gradient-to-r from-[#058A9F] to-[#00B8C0] px-4 py-2.5 text-white text-[12px] font-medium rounded-xl hover:scale-105 transition-all shadow-xl shadow-cyan-500/20"
           >
             Request a Quote
-          </Link>
+          </a>
 
           {/* Mobile Menu Button: Explicitly last in the flex row */}
           <button
@@ -313,12 +315,14 @@ export default function Header() {
 
           {/* Desktop Logic: Request a Quote CTA, icons on far right */}
           <div className="hidden lg:flex items-center gap-x-3 ml-auto">
-            <Link
-              href="/speak-to-a-scientist"
+            <a
+              href="https://www.pblassaysci.com/products/request-quote"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-[#058A9F] to-[#00B8C0] text-white rounded-xl text-[13px] font-medium whitespace-nowrap transition-all shadow-md hover:scale-105 hover:shadow-xl shadow-cyan-500/20"
             >
               Request a Quote
-            </Link>
+            </a>
             <Link
               href="/cart"
               className="p-1.5 text-gray-700 hover:text-primary-navy transition-colors"
@@ -1611,13 +1615,15 @@ export default function Header() {
 
             {/* Bottom Action (Stay Static) */}
             <div className="p-6 bg-slate-50/50 border-t border-slate-100 flex-shrink-0">
-              <Link
-                href="/speak-to-a-scientist"
+              <a
+                href="https://www.pblassaysci.com/products/request-quote"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="block w-full py-5 bg-gradient-to-r from-[#058A9F] to-[#00B8C0] text-white rounded-2xl font-bold text-center shadow-xl shadow-cyan-500/20 hover:scale-[1.02] transition-all"
               >
                 Request a Quote
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -182,7 +182,7 @@ export default async function CellBasedAssaysPage() {
             Speak with our assay team to determine the most suitable program for your goals.
           </p>
           <Link
-            href="/speak-to-a-scientist"
+            href="/contact-us"
             className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl shadow-2xl shadow-[#002776]/30 hover:scale-105 transition-all"
           >
             Initiate Study Evaluation

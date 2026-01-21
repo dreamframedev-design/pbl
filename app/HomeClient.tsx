@@ -293,10 +293,10 @@ export default function HomeClient({ data }: HomeClientProps) {
               </div>
 
               <Link
-                href="/speak-to-a-scientist"
+                href="/contact-us"
                 className="px-10 py-5 bg-[#002776] text-white rounded-full font-bold text-lg hover:bg-cyan-600 transition-all shadow-xl shadow-blue-900/20 w-fit"
               >
-                Speak to a Scientist
+                Contact Us
               </Link>
             </div>
           </div>
@@ -581,7 +581,7 @@ export default function HomeClient({ data }: HomeClientProps) {
             {data.ctaDescription}
           </p>
           <Link
-            href="/speak-to-a-scientist"
+            href="/contact-us"
             className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
           >
             {data.ctaButtonText}

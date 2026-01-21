@@ -311,10 +311,10 @@ export default function ShoppingCart() {
                     Our scientists can help with product selection and technical questions.
                   </p>
                   <Link 
-                    href="/speak-to-a-scientist" 
+                    href="/contact-us" 
                     className="text-[10px] font-bold text-secondary-teal hover:text-cyan-600 uppercase tracking-[0.1em] transition-colors"
                   >
-                    Speak to a Scientist →
+                    Contact Us →
                   </Link>
                 </div>
               </div>

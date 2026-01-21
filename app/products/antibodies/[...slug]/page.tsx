@@ -218,7 +218,7 @@ export default async function DynamicAntibodyPage({ params }: { params: Promise<
             Fit-for-purpose assay development, customization and execution.
           </p>
           <Link
-            href="/speak-to-a-scientist"
+            href="/contact-us"
             className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
           >
             Talk to a Scientist

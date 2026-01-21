@@ -59,7 +59,7 @@ const DEFAULTS: HomeData = {
   ctaTagline: 'Specialized Development',
   ctaTitle: 'Need a custom solution?',
   ctaDescription: 'Fit-for-purpose assay development, customization and execution.',
-  ctaButtonText: 'Talk to a Scientist',
+  ctaButtonText: 'Contact Us',
 }
 
 async function getHomeData(isDraftMode: boolean): Promise<HomeData> {

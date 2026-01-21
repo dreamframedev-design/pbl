@@ -270,7 +270,7 @@ export default function Messages() {
               </p>
             </div>
             <Link
-              href="/speak-to-a-scientist"
+              href="/contact-us"
               className="inline-flex items-center gap-2 bg-primary-navy text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-[0.1em] hover:bg-secondary-teal transition-all shadow-lg shadow-blue-900/20 group"
             >
               <Send className="w-4 h-4" />
