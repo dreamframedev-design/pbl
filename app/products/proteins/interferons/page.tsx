@@ -189,14 +189,12 @@ export default function InterferonsPage() {
           <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
             PBL's Customer Support Team is ready to assist by email, phone, or chat.
           </p>
-          <a
-            href="https://www.pblassaysci.com/speak-to-a-scientist"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/speak-to-a-scientist"
             className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
           >
             Speak to a Scientist
-          </a>
+          </Link>
         </div>
       </footer>
     </main>

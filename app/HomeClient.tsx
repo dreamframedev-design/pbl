@@ -579,14 +579,12 @@ export default function HomeClient({ data }: HomeClientProps) {
           <p className="text-xl text-slate-500 mb-12 font-light leading-relaxed">
             {data.ctaDescription}
           </p>
-          <a
-            href="https://www.pblassaysci.com/speak-to-a-scientist"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/speak-to-a-scientist"
             className="inline-flex items-center px-14 py-6 bg-[#002776] text-white rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl shadow-[#002776]/30"
           >
             {data.ctaButtonText}
-          </a>
+          </Link>
         </div>
       </section>
     </main>
