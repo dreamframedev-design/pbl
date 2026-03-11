@@ -47,7 +47,7 @@ export default function NeutralizationGraph() {
 
                     <Line type="monotone" dataKey="alpha" name="Hu-IFN Alpha 2a" stroke="#002776" strokeWidth={2} dot={true} />
                     <Line type="monotone" dataKey="beta" name="Hu-IFN Beta 1a" stroke="#00F0F3" strokeWidth={2} dot={{ fill: '#00F0F3' }} />
-                    <Line type="monotone" dataKey="omega" name="Hu-IFN Omega" stroke="#a855f7" strokeWidth={2} dot={{ shape: 'diamond' }} />
+                    <Line type="monotone" dataKey="omega" name="Hu-IFN Omega" stroke="#a855f7" strokeWidth={2} dot={{ r: 4, fill: "#a855f7" }} />
                 </LineChart>
             </ResponsiveContainer>
         </BrochureGraphCard>
