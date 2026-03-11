@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Cell
 } from 'recharts';
 import BrochureGraphCard from './BrochureGraphCard';
 
@@ -51,7 +51,7 @@ export default function ActivityHumanMouseGraph() {
                             <Bar dataKey="val" fill="#002776" radius={[4, 4, 0, 0]} isAnimationActive={false}>
                                 {
                                     HUMAN_CELLS.map((entry, index) => (
-                                        <cell key={`cell-${index}`} fill={index === 0 ? '#cbd5e1' : (index === 2 ? '#002776' : '#64748b')} />
+                                        <Cell key={`cell-${index}`} fill={index === 0 ? '#cbd5e1' : (index === 2 ? '#002776' : '#64748b')} />
                                     ))
                                 }
                             </Bar>
@@ -73,7 +73,7 @@ export default function ActivityHumanMouseGraph() {
                             <Bar dataKey="val" fill="#00F0F3" radius={[4, 4, 0, 0]} isAnimationActive={false} >
                                 {
                                     MOUSE_CELLS.map((entry, index) => (
-                                        <cell key={`cell-${index}`} fill={index === 1 ? '#cbd5e1' : (index === 2 ? '#002776' : '#00F0F3')} />
+                                        <Cell key={`cell-${index}`} fill={index === 1 ? '#cbd5e1' : (index === 2 ? '#002776' : '#00F0F3')} />
                                     ))
                                 }
                             </Bar>
