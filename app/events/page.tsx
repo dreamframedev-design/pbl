@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import { ExternalLink, MapPin } from 'lucide-react';
 import PageHero from '@/components/company/PageHero';
 import SpeakToScientistCTA from '@/components/company/SpeakToScientistCTA';
 
@@ -14,6 +15,7 @@ interface EventItem {
   dates: string;
   location: string;
   href: string;
+  image: string;
 }
 
 const events: EventItem[] = [
@@ -22,18 +24,21 @@ const events: EventItem[] = [
     dates: 'April 13–17, 2026',
     location: 'Dallas, Texas',
     href: 'https://www.wrib.org/',
+    image: 'dallas.jpg',
   },
   {
     name: 'DDN East — Drug Discovery Networking Conference',
     dates: 'May 7–8, 2026',
     location: 'Philadelphia, PA',
     href: 'https://nexus-conference.com/ddneast/',
+    image: 'philadelphia.jpg',
   },
   {
     name: 'AAPS National Biotechnology Conference (NBC)',
     dates: 'May 11–14, 2026',
     location: 'San Diego, CA',
     href: 'https://www.aaps.org/nbc',
+    image: 'san-diego.jpg',
   },
 ];
 
@@ -67,7 +72,7 @@ export default function EventsPage() {
 
       {/* Upcoming events */}
       <section className="py-20 md:py-28 bg-[#F4F4F9]/40">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight whitespace-nowrap">
               Where to Find Us
@@ -75,27 +80,44 @@ export default function EventsPage() {
             <span className="h-px flex-1 bg-gradient-to-r from-secondary-teal/40 to-transparent" />
           </div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {events.map((event) => (
               <a
                 key={event.name}
                 href={event.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-8 bg-white rounded-[2rem] p-8 md:p-10 border border-slate-100 shadow-sm hover:shadow-image transition-all duration-500 hover:-translate-y-1"
+                className="group flex flex-col bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-image transition-all duration-500 hover:-translate-y-1.5"
               >
-                <div className="md:w-56 flex-shrink-0">
-                  <p className="text-xs font-black text-secondary-teal uppercase tracking-[0.2em]">
+                {/* City image */}
+                <div className="relative h-52 w-full overflow-hidden">
+                  <Image
+                    src={`/images/events/${event.image}`}
+                    alt={`${event.location} skyline`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#002776]/80 via-[#002776]/10 to-transparent" />
+                  <div className="absolute bottom-4 left-5 right-5 flex items-center gap-2 text-white">
+                    <MapPin className="w-4 h-4 flex-shrink-0" />
+                    <span className="text-sm font-semibold tracking-wide">{event.location}</span>
+                  </div>
+                </div>
+
+                {/* Details */}
+                <div className="flex flex-col flex-1 p-7">
+                  <p className="text-xs font-black text-secondary-teal uppercase tracking-[0.2em] mb-3">
                     {event.dates}
                   </p>
-                  <p className="text-sm text-slate-400 font-medium mt-1">{event.location}</p>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-[#002776] group-hover:text-secondary-teal transition-colors">
+                  <h3 className="text-lg font-bold text-[#002776] leading-snug group-hover:text-secondary-teal transition-colors flex-1">
                     {event.name}
                   </h3>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#002776] group-hover:gap-3 transition-all">
+                    Visit event site
+                    <ExternalLink className="w-4 h-4" />
+                  </span>
                 </div>
-                <ExternalLink className="w-5 h-5 text-slate-300 group-hover:text-secondary-teal transition-colors flex-shrink-0" />
               </a>
             ))}
           </div>
