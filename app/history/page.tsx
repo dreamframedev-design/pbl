@@ -14,23 +14,18 @@ interface Milestone {
   text: string;
 }
 
-interface EraImage {
-  src: string;
-  caption: string;
-}
-
 interface Era {
   range: string;
-  images?: EraImage[];
+  image: string;
+  caption?: string;
   milestones: Milestone[];
 }
 
 const eras: Era[] = [
   {
     range: '1990 – 1994',
-    images: [
-      { src: 'first-elisa-immunoassays.jpg', caption: 'PBL’s first ELISA-based immunoassays' },
-    ],
+    image: 'history/founders-1990.jpg',
+    caption: 'Dr. Sidney Pestka and Joan Pestka, circa 1990',
     milestones: [
       { year: '1990', text: 'Dr. Sidney Pestka and Joan Pestka found Pestka Biomedical Laboratories.' },
       { year: '1991', text: 'Launches first human and mouse interferon proteins, antibodies, and immunoassay kits available for sale including Human IFN Alpha-2a, Mouse IFN-Beta, Anti-Human IFN Alpha (sheep polyclonal), and Human IFN-Alpha ELISA Kit.' },
@@ -40,6 +35,8 @@ const eras: Era[] = [
   },
   {
     range: '1995 – 1999',
+    image: 'history/first-elisa-immunoassays.jpg',
+    caption: 'PBL’s first ELISA-based immunoassays',
     milestones: [
       { year: '1995', text: 'Doubles number of interferons, antibodies, ELISA kits and other proteins in product line.' },
       { year: '1997', text: 'Expands sales channels for worldwide distribution of PBL products.' },
@@ -49,6 +46,8 @@ const eras: Era[] = [
   },
   {
     range: '2000 – 2004',
+    image: 'history/facility-new-jersey.jpg',
+    caption: 'PBL Assay Science facility — New Jersey',
     milestones: [
       { year: '2000', text: 'Expands product range to include pioneering Human IFN Alpha Multi-Subtype Serum ELISA.' },
       { year: '2000', text: 'Introduces first-to-market Mouse IFN-Alpha ELISA Kit.' },
@@ -57,9 +56,8 @@ const eras: Era[] = [
   },
   {
     range: '2005 – 2009',
-    images: [
-      { src: 'interferonsource-elisa-kits.jpg', caption: 'PBL InterferonSource ELISA Kits' },
-    ],
+    image: 'history/interferonsource-elisa-kits.jpg',
+    caption: 'PBL InterferonSource ELISA Kits',
     milestones: [
       { year: '2005', text: 'Launches first-to-market Mouse IFN-Beta ELISA Kit.' },
       { year: '2006', text: 'Changes name to PBL InterferonSource to emphasize the expertise PBL provides to customers.' },
@@ -69,9 +67,7 @@ const eras: Era[] = [
   },
   {
     range: '2010 – 2014',
-    images: [
-      { src: 'holiday-party-2014.jpg', caption: 'The PBL team — Holiday Party, 2014' },
-    ],
+    image: '3.webp',
     milestones: [
       { year: '2010', text: 'Implements major product improvement initiative in response to customer feedback.' },
       { year: '2011', text: 'Adds Quansys Q-Plex™ multiplex arrays to portfolio for simultaneous quantification of cytokines and other biomarkers.' },
@@ -82,10 +78,8 @@ const eras: Era[] = [
   },
   {
     range: '2015 – 2019',
-    images: [
-      { src: 'verikine-ifn-alpha-kit.jpg', caption: 'VeriKine Human IFN-Alpha Multi-Subtype ELISA Kit' },
-      { src: 'smcxpro.jpg', caption: 'MilliporeSigma SMCxPRO® at PBL Assay Science' },
-    ],
+    image: 'history/smcxpro.jpg',
+    caption: 'MilliporeSigma SMCxPRO® at PBL Assay Science',
     milestones: [
       { year: '2015', text: 'Launches first Human IFN-Alpha All Subtype ELISA Kit, High Sensitivity, the only ELISA that can detect the full range of human IFN-alpha subtypes in healthy donors and disease patients.' },
       { year: '2015', text: 'Named as Preferred Provider by Quanterix to develop and run ultra-sensitive biomarker assays on the SIMOA® HD-1 platform.' },
@@ -97,9 +91,8 @@ const eras: Era[] = [
   },
   {
     range: '2020 – Future',
-    images: [
-      { src: 'simoa-hd-x.jpg', caption: 'Quanterix SIMOA® HD-X at PBL Assay Science' },
-    ],
+    image: 'history/simoa-hd-x.jpg',
+    caption: 'Quanterix SIMOA® HD-X at PBL Assay Science',
     milestones: [
       { year: '2020', text: 'PBL maintains ongoing bioanalytical services operations to meet client needs as COVID-19 pandemic escalates.' },
       { year: '2020', text: 'Launches best-in-class VeriKine-HS™ Human IL-22 ELISA Kit, the only ELISA able to quantify basal levels of IL-22 in both healthy-donor and disease-state samples.' },
@@ -111,22 +104,53 @@ const eras: Era[] = [
   },
 ];
 
-function EraImageCard({ image }: { image: EraImage }) {
+function EraBlock({ era, index }: { era: Era; index: number }) {
+  const imageLeft = index % 2 === 0;
   return (
-    <figure className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-        <Image
-          src={`/images/history/${image.src}`}
-          alt={image.caption}
-          fill
-          sizes="(max-width: 768px) 100vw, 40vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+    <div className="grid lg:grid-cols-5 gap-8 lg:gap-14 items-start">
+      {/* Image column */}
+      <figure
+        className={`lg:col-span-2 ${imageLeft ? 'lg:order-1' : 'lg:order-2'} lg:sticky lg:top-28`}
+      >
+        <div className="overflow-hidden rounded-[1.75rem] border border-slate-100 shadow-image">
+          <div className="relative aspect-[4/3] w-full bg-slate-100">
+            <Image
+              src={`/images/${era.image}`}
+              alt={era.caption || `PBL Assay Science, ${era.range}`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+        </div>
+        {era.caption && (
+          <figcaption className="mt-3 px-1 text-xs text-slate-500 font-medium italic">
+            {era.caption}
+          </figcaption>
+        )}
+      </figure>
+
+      {/* Text column */}
+      <div className={`lg:col-span-3 ${imageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+        <div className="flex items-center gap-4 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#002776] tracking-tight whitespace-nowrap">
+            {era.range}
+          </h2>
+          <span className="h-px flex-1 bg-gradient-to-r from-secondary-teal/40 to-transparent" />
+        </div>
+        <ol className="relative border-l-2 border-slate-200 ml-3 space-y-8">
+          {era.milestones.map((m, i) => (
+            <li key={i} className="relative pl-8">
+              <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-secondary-teal" />
+              <span className="inline-block text-xs font-black text-secondary-teal uppercase tracking-[0.2em] mb-2">
+                {m.year}
+              </span>
+              <p className="text-base text-slate-600 font-light leading-relaxed">{m.text}</p>
+            </li>
+          ))}
+        </ol>
       </div>
-      <figcaption className="px-5 py-4 text-xs text-slate-500 font-medium italic">
-        {image.caption}
-      </figcaption>
-    </figure>
+    </div>
   );
 }
 
@@ -179,98 +203,32 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      {/* Founders feature */}
-      <section className="py-20 md:py-28 bg-[#F4F4F9]/40">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <figure className="order-2 lg:order-1 overflow-hidden rounded-[2rem] border border-slate-100 shadow-image">
-            <div className="relative aspect-[4/3] w-full bg-slate-100">
-              <Image
-                src="/images/history/founders-1990.jpg"
-                alt="Sidney Pestka and Joan Pestka, circa 1990"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="px-6 py-4 text-xs text-slate-500 font-medium italic bg-white">
-              Dr. Sidney Pestka and Joan Pestka, circa 1990
-            </figcaption>
-          </figure>
-          <div className="order-1 lg:order-2">
-            <p className="text-[10px] font-black text-cyan-600 uppercase tracking-[0.3em] mb-6">
-              A Family Legacy
-            </p>
-            <p className="text-lg text-slate-600 font-light leading-relaxed">
-              What began in a family basement was built on the pioneering interferon research
-              of co-founder{' '}
-              <span className="font-semibold text-[#002776]">Sidney Pestka, M.D.</span> —
-              often called the{' '}
-              <span className="italic text-[#8B2981] font-medium">
-                &ldquo;father of interferons.&rdquo;
-              </span>{' '}
-              Together with Joan Pestka, they set out to make the research products he had
-              developed available to scientists around the world, planting the seed for what
-              PBL Assay Science is today.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
+      {/* Timeline — alternating image + milestones per era */}
       <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="space-y-20">
-            {eras.map((era) => (
-              <div key={era.range}>
-                <div className="flex items-center gap-4 mb-8">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#002776] tracking-tight whitespace-nowrap">
-                    {era.range}
-                  </h2>
-                  <span className="h-px flex-1 bg-gradient-to-r from-secondary-teal/40 to-transparent" />
-                </div>
-
-                {era.images && era.images.length > 0 && (
-                  <div className={`grid gap-6 mb-10 ${era.images.length > 1 ? 'sm:grid-cols-2' : 'sm:grid-cols-1 max-w-md'}`}>
-                    {era.images.map((img) => (
-                      <EraImageCard key={img.src} image={img} />
-                    ))}
-                  </div>
-                )}
-
-                <ol className="relative border-l-2 border-slate-200 ml-3 space-y-8">
-                  {era.milestones.map((m, i) => (
-                    <li key={i} className="relative pl-8">
-                      <span className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-secondary-teal" />
-                      <span className="inline-block text-xs font-black text-secondary-teal uppercase tracking-[0.2em] mb-2">
-                        {m.year}
-                      </span>
-                      <p className="text-base text-slate-600 font-light leading-relaxed">
-                        {m.text}
-                      </p>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="space-y-24">
+            {eras.map((era, i) => (
+              <EraBlock key={era.range} era={era} index={i} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Today / facility feature */}
+      {/* Looking forward — the PBL team */}
       <section className="py-20 md:py-28 bg-[#F4F4F9]/40">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <figure className="overflow-hidden rounded-[2rem] border border-slate-100 shadow-image">
             <div className="relative aspect-[4/3] w-full bg-slate-100">
               <Image
-                src="/images/history/facility-new-jersey.jpg"
-                alt="PBL Assay Science facility, New Jersey"
+                src="/images/history/holiday-party-2014.jpg"
+                alt="The PBL Assay Science team"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
             <figcaption className="px-6 py-4 text-xs text-slate-500 font-medium italic bg-white">
-              PBL Assay Science facility — New Jersey
+              The PBL Assay Science team
             </figcaption>
           </figure>
           <div>
