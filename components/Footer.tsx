@@ -123,7 +123,7 @@ export default function Footer() {
                 <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Shipping Info</Link>
               </li>
               <li>
-                <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Distributors</Link>
+                <Link href="/distributors" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Distributors</Link>
               </li>
               <li>
                 <Link href="/contact-us" className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1">Contact us</Link>
@@ -137,9 +137,7 @@ export default function Footer() {
             <ul className="space-y-4 text-xs text-slate-500 font-light">
               <li>
                 <a
-                  href="https://www.pblassaysci.com/index.php/about-us"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/about-us"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   About Us
@@ -147,9 +145,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.pblassaysci.com/index.php/company-basic-pages/events"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/events"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   Events
@@ -157,9 +153,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.pblassaysci.com/location-directions"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/location-directions"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   Location &amp; Directions
@@ -167,9 +161,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.pblassaysci.com/trademarks-disclaimers-terms-use"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/terms"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   Company Policies &amp; Terms
@@ -177,9 +169,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.pblassaysci.com/history"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/history"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   Our History
@@ -187,9 +177,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.pblassaysci.com/pbl-team"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/pbl-team"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   PBL Team
@@ -197,9 +185,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.pblassaysci.com/careers"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/careers"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   Careers
@@ -207,9 +193,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.pblassaysci.com/belief-vision-values"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/company-values"
                   className="block border-l-2 border-transparent hover:border-[#00F0F3] hover:pl-2 hover:text-[#058A9F] transition-all py-1"
                 >
                   Company Values
