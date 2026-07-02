@@ -175,8 +175,10 @@ export default function TeamGrid({ sections }: { sections: Section[] }) {
               <span className="h-px flex-1 bg-gradient-to-r from-secondary-teal/40 to-transparent" />
             </div>
             <div
-              className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 ${
-                section.narrow ? 'max-w-2xl' : ''
+              className={`grid gap-6 items-start ${
+                section.narrow
+                  ? 'grid-cols-2 max-w-xl'
+                  : 'grid-cols-2 sm:grid-cols-2 lg:grid-cols-4'
               }`}
             >
               {section.members.map((member) => (
